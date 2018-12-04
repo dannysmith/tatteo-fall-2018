@@ -1,0 +1,31 @@
+(function ($) {
+
+  $(function () {
+    $(function () {
+      $('.add-user-btn').on('submit', function (event) {
+        event.preventDefault();
+        let data = {
+          email: 'someone @somewhere.net',
+          username: 'someone',
+          password: Math.random().toString(36).substring(7)
+        };
+        $.ajax({
+            method: 'POST',
+            url: api_vars.root_url + 'wp/v2/users',
+            data: data,
+            beforeSend: function (xhr) {
+              xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
+            }
+          })
+          .done(function () {
+            event.preventDefault();
+            $('.quote-form').css("display", 'none');
+            $(".entry-header").append(`<p>Thanks, your quote submission was received!</p>`);
+          })
+          .fail(function (t) {
+            //post and alert with failure var from functions.php
+          });
+      });
+    });
+  });
+})(jQuery);
