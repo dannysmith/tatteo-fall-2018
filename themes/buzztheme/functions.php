@@ -143,3 +143,15 @@ function modify_contact_methods($profile_fields)
     return $profile_fields;
 }
 add_filter('user_contactmethods', 'modify_contact_methods');
+
+// Adding menus in the footer
+
+function register_my_menus() {
+    register_nav_menus(
+      array(
+        'new-menu' => __( 'Links' ),
+        'another-menu' => __( 'Social Media' ),
+      )
+    );
+  }
+  add_action( 'init', 'register_my_menus' );
