@@ -1,0 +1,13 @@
+.site-header{
+    width: 100vw;
+    display: inline-flex;
+    background-color: white;
+    border-bottom: $border;
+    padding: 16px;
+    .site-branding{
+        img{
+            width: 40%;
+            height: auto;
+        }
+    }
+}
