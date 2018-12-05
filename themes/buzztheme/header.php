@@ -21,17 +21,20 @@
 <body <?php body_class();?>>
 
   <div class="overlay"></div>
-  <div class=dilog-container>
+
+  <div class="dilog-container">
+
+
     <div class="modal-dilog-roles">
-      <a class="cancel-modal-dilog-roles"><a>
-          <div class="flex-container">
-            <h1>Sign up here to have full access to Buzz!</h1>
-            <div>
-              <a class="studio-role role">Studio</a>
-              <a class="artist-role role">Artist</a>
-            </div>
-            <p>Already have an account? Login <a>here</a>.</p>
-          </div>
+      <a class="cancel-modal-dilog-roles"></a>
+      <div class="flex-container">
+        <h2>Sign up here to have full access to Buzz!</h2>
+        <div class="roles-links">
+          <a class="studio-role role">Studio</a>
+          <a class="artist-role role">Artist</a>
+        </div>
+        <p>Already have an account? Login <a>here</a>.</p>
+      </div>
     </div>
 
     <!-- <div class="modal-dilog">

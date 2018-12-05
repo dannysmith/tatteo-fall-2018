@@ -14,12 +14,18 @@
 
 @mixin desktop {
 	@media (min-width: $desktop-width) {
-	  @content;
+		@content;
 	}
 }
-	
- @mixin mobile {
+
+@mixin tablet {
 	@media (min-width: $tablet-width) {
-	  @content;
+		@content;
 	}
+}
+
+@mixin flex-centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

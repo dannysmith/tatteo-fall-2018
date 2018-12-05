@@ -58,7 +58,6 @@ textarea {
 }
 
 .dilog-container {
-
 	// display: flex;
 	display: none;
 	width: 100vw;
@@ -67,27 +66,67 @@ textarea {
 	align-items: center;
 
 	.modal-dilog-roles {
-		width: 60%;
-		height: 60%;
+
+		@include tablet {
+			width: 60%;
+			height: 80%;
+			min-height: 500px;
+		}
+
+		padding: 2%;
 		background-color: #fff;
 		z-index: 11;
+		border: 7px solid #000000;
 
 		.cancel-modal-dilog-roles:before {
 			font-family: "FontAwesome";
 			content: '\f00d';
-			font-size: 24px;
+			font-size: 60px;
+			margin-left: 2%;
 		}
 
-		flex-container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+		//not working
+		.flex-container {
+			width: 100%;
+			@include flex-centered;
+			flex-direction: column;
 
-			input {
-				display: block;
-				margin-top: 12px;
+			h2 {
+				margin-top: 0;
+
+				@media (max-width: 800px) {
+					font-size: 1rem;
+				}
+			}
+
+			.roles-links {
+				display: flex;
+
+				a {
+					@include flex-centered;
+
+					@include tablet {
+						height: 40vh;
+						width: 20vw;
+						max-width: 223px;
+						max-height: 300px;
+						margin: 7%;
+					}
+
+					width: 20vw;
+					height: auto;
+					padding: 4px;
+
+					border: $border;
+					@include text($color__text-main, 1.5rem, $font__main);
+					font-weight: bold;
+					margin: 2%;
+				}
+			}
+
+			p {
+				margin-bottom: 5%;
 			}
 		}
-
 	}
 }

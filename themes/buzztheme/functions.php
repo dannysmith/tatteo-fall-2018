@@ -125,41 +125,20 @@ require get_template_directory() . '/inc/extras.php';
 
 // Add a custom user role
 
-$result = add_role('artist', __('Artist'), array(
-    'read' => true,
-    'edit_posts' => false,
-    'edit_pages' => false,
-    'edit_others_posts' => false,
-    'create_posts' => false,
-    'manage_categories' => false,
-    'publish_posts' => false,
-    'install_plugins' => false,
-    'update_plugin' => false,
-    'update_core' => false,
+$result = add_role('artist', __('Artist'), array());
 
-));
-
-$result = add_role('studio', __('Studio'), array(
-    'read' => true,
-    'edit_posts' => false,
-    'edit_pages' => false,
-    'edit_others_posts' => false,
-    'create_posts' => false,
-    'manage_categories' => false,
-    'publish_posts' => false,
-    'install_plugins' => false,
-    'update_plugin' => false,
-    'update_core' => false,
-));
+$result = add_role('studio', __('Studio'), array());
 
 add_action('edit_user_profile', 'wk_custom_user_profile_fields');
 
 function modify_contact_methods($profile_fields)
 {
-    // New fields
-    // $profile_fields['twitter'] = 'Twitter Username';
-    // $profile_fields['facebook'] = 'Facebook URL';
-    // $profile_fields['gplus'] = 'Google+ URL';
+    $profile_fields['location'] = 'Address';
+    $profile_fields['phone'] = 'Phone Number';
+    $profile_fields['date_of_birth'] = 'Date of Birth';
+    $profile_fields['instagram'] = 'Instagram';
+    $profile_fields['facebook'] = 'Facebook';
+    $profile_fields['youtube'] = 'Youtube';
 
     return $profile_fields;
 }
