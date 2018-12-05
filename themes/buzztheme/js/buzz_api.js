@@ -20,7 +20,7 @@
           console.log(response);
         })
         .fail(function () {
-          console.log("fail");
+          console.log('fail');
           //post and alert with failure var from functions.php
         });
     });
