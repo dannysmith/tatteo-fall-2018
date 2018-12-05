@@ -23,9 +23,9 @@
   <div class="overlay"></div>
   <div class=dilog-container>
     <div class="modal-dilog-roles">
-      <a class="cancel-modal-dilog-roles"><i class="fas fa-times"></i><a>
+      <a class="cancel-modal-dilog-roles"><a>
           <div class="flex-container">
-            <p>Sign up here to have full access to Buzz!</p>
+            <h1>Sign up here to have full access to Buzz!</h1>
             <div>
               <a class="studio-role role">Studio</a>
               <a class="artist-role role">Artist</a>
