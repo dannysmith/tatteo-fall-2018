@@ -21,10 +21,7 @@
 <body <?php body_class();?>>
 
   <div class="overlay"></div>
-
   <div class="dilog-container">
-
-
     <div class="modal-dilog-roles">
       <a class="cancel-modal-dilog-roles"></a>
       <div class="flex-container">
@@ -49,24 +46,15 @@
   </div>
 
   <div id="page" class="hfeed site">
-    <a class="skip-link screen-reader-text" href="#content">
-      <?php echo esc_html('Skip to content'); ?></a>
 
     <header id="masthead" class="site-header" role="banner">
       <div class="site-branding">
-        <h1 class="site-title screen-reader-text"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-            <?php bloginfo('name');?></a></h1>
-        <p class="site-description">
-          <?php bloginfo('description');?>
-        </p>
+        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="site-logo" src="<?php echo get_bloginfo('template_directory'); ?>/assets/logo/buzz-writing.png"></a>
       </div><!-- .site-branding -->
-
+      <a class="login-link">Login</a>
       <nav id="site-navigation" class="main-navigation" role="navigation">
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-          <?php echo esc_html('Primary Menu'); ?></button>
-        <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu'));?>
+
       </nav><!-- #site-navigation -->
-      <a class="login-link">login</a>
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">

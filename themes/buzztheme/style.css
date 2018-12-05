@@ -328,6 +328,68 @@ h2 {
   font-family: "Roboto"; }
 
 /*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */ }
+
+blockquote,
+q {
+  quotes: "" ""; }
+  blockquote:before, blockquote:after,
+  q:before,
+  q:after {
+    content: ''; }
+
+hr {
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5rem; }
+
+ul,
+ol {
+  margin: 0 0 1.5rem 3rem; }
+
+ul {
+  list-style: disc; }
+
+ol {
+  list-style: decimal; }
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5rem; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0 1.5rem 1.5rem; }
+
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+table {
+  margin: 0 0 1.5rem;
+  width: 100%; }
+
+/*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 /* Buttons */
@@ -496,3 +558,14 @@ textarea {
 # Page Templates
 --------------------------------------------------------------*/
 /* Front page */
+.site-header {
+  width: 100vw;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: white;
+  border-bottom: 6px solid #000000;
+  padding: 16px; }
+  .site-header .site-branding img {
+    width: 40%;
+    height: auto; }
