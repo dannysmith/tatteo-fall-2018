@@ -23,12 +23,15 @@
   <div class="overlay"></div>
   <div class=dilog-container>
     <div class="modal-dilog-roles">
-      <p>Sign up here to have full access to Buzz!</p>
-      <div>
-        <a class="studio-role role">Studio</a>
-        <a class="artist-role role">Artist</a>
-      </div>
-      <p>Already have an account? Login <a>here</a>.</p>
+      <a class="cancel-modal-dilog-roles"><i class="fas fa-times"></i><a>
+          <div class="flex-container">
+            <p>Sign up here to have full access to Buzz!</p>
+            <div>
+              <a class="studio-role role">Studio</a>
+              <a class="artist-role role">Artist</a>
+            </div>
+            <p>Already have an account? Login <a>here</a>.</p>
+          </div>
     </div>
 
     <!-- <div class="modal-dilog">
