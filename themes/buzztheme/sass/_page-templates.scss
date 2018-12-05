@@ -3,3 +3,53 @@
 --------------------------------------------------------------*/
 
 /* Front page */
+
+/* Footer */
+
+footer {
+    display: grid;
+    grid-auto-columns: auto;
+    background: black;
+    @include text($color__text-secondary, 1rem , $font__main);
+    font-weight: bold;
+    padding-top: 3rem;
+        a {
+            &:link,
+            &:hover,
+            &:active,
+            &:focus {
+                @include text($color__text-secondary, 1rem , $font__main);
+            }
+            text-decoration: none;
+        }
+
+        .logo {
+            grid-column: 1;
+            margin-left: 5.5rem;
+            img {
+                height: 2.4rem;
+            }
+        }
+
+            ul {
+                list-style: none;
+            }
+
+                .footerlinks {
+                    grid-column: 1;
+                    grid-row: 2;
+                }
+
+                    .copyright {
+                        grid-column: 1;
+                        margin-left: 5.5rem;
+                    }
+
+                        .footersocialmedia {
+                            grid-column: 3;
+                            grid-row: 2;
+                            justify-self: right;
+                            margin-right: 5rem;
+                            text-align: right;
+                        }
+}
