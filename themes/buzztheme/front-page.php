@@ -40,11 +40,4 @@ get_header();?>
 
 <?php get_sidebar();?>
 
-<form class="register-form">
-  <label>User name</label>
-  <input type="text" class="new-user-name" />
-  <label>Password</label>
-  <input type="password" class="new-user-password" />
-  <input class="add-user-btn" type="submit" value="Submit">
-</form>
 <?php get_footer();?>

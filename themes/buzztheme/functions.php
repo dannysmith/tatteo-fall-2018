@@ -97,8 +97,9 @@ function red_starter_scripts()
         wp_enqueue_script('comment-reply');
     }
 
+    wp_enqueue_script('login', get_template_directory_uri() . '/build/js/login.min.js', array(), '20151215', true);
     if (function_exists("rest_url")) {
-        wp_enqueue_script('buzz_api', get_template_directory_uri() . '/build/js/api.min.js', array(), false, true);
+        wp_enqueue_script('buzz_api', get_template_directory_uri() . '/build/js/buzz_api.min.js', array(), false, true);
 
         wp_localize_script('buzz_api', 'api_vars', array(
             'root_url' => esc_url_raw(rest_url()),
@@ -120,3 +121,45 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+// Add a custom user role
+
+$result = add_role('artist', __('Artist'), array(
+    'read' => true,
+    'edit_posts' => false,
+    'edit_pages' => false,
+    'edit_others_posts' => false,
+    'create_posts' => false,
+    'manage_categories' => false,
+    'publish_posts' => false,
+    'install_plugins' => false,
+    'update_plugin' => false,
+    'update_core' => false,
+
+));
+
+$result = add_role('studio', __('Studio'), array(
+    'read' => true,
+    'edit_posts' => false,
+    'edit_pages' => false,
+    'edit_others_posts' => false,
+    'create_posts' => false,
+    'manage_categories' => false,
+    'publish_posts' => false,
+    'install_plugins' => false,
+    'update_plugin' => false,
+    'update_core' => false,
+));
+
+add_action('edit_user_profile', 'wk_custom_user_profile_fields');
+
+function modify_contact_methods($profile_fields)
+{
+    // New fields
+    // $profile_fields['twitter'] = 'Twitter Username';
+    // $profile_fields['facebook'] = 'Facebook URL';
+    // $profile_fields['gplus'] = 'Google+ URL';
+
+    return $profile_fields;
+}
+add_filter('user_contactmethods', 'modify_contact_methods');

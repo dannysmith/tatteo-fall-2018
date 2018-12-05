@@ -415,14 +415,36 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
-.register-form {
-  padding: 20px;
-  width: 40%;
-  height: 40%;
-  background-color: #248a83; }
-  .register-form input {
-    display: block;
-    margin-top: 12px; }
+/* overlay styles, all needed */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10; }
+
+.dilog-container {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .dilog-container .modal-dilog-roles {
+    width: 60%;
+    height: 60%;
+    background-color: #fff;
+    z-index: 11;
+    /* 1px higher than the overlay layer */ }
+    .dilog-container .modal-dilog-roles input {
+      display: block;
+      margin-top: 12px; }
 
 /*--------------------------------------------------------------
 # Navigation
