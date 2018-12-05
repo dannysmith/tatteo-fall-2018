@@ -60,3 +60,44 @@ textarea {
 	padding-left: 3px;
 	width: 100%;
 }
+
+
+body {
+	// position: relative;
+}
+
+/* overlay styles, all needed */
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 10;
+}
+
+.dilog-container {
+
+	// display: flex;
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+
+	.modal-dilog-roles {
+		width: 60%;
+		height: 60%;
+		background-color: #fff;
+		z-index: 11;
+
+
+		/* 1px higher than the overlay layer */
+		input {
+			display: block;
+			margin-top: 12px;
+		}
+	}
+}

@@ -13,6 +13,7 @@ themes/*
 !themes/buzztheme/
 # Ignore packages #
 themes/buzztheme/node_modules/
+themes/buzztheme/build/
 # Ignore OS files #
 .DS_Store
 .DS_Store?

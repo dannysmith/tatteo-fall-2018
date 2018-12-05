@@ -7,16 +7,17 @@
 
 ?>
 
-			</div><!-- #content -->
+</div><!-- #content -->
 
-			<footer id="colophon" class="site-footer" role="contentinfo">
-				<div class="site-info">
-				
-				</div><!-- .site-info -->
-			</footer><!-- #colophon -->
-		</div><!-- #page -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
 
-		<?php wp_footer(); ?>
+  </div><!-- .site-info -->
+</footer><!-- #colophon -->
+</div><!-- #page -->
 
-	</body>
+<?php wp_footer();?>
+
+</body>
+
 </html>
