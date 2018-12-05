@@ -312,7 +312,21 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+  color: #000000;
+  font-size: 14px;
+  font-family: "Roboto"; }
+
 /* Headings */
+h2 {
+  color: #000000;
+  font-size: 1.7rem;
+  font-family: "Roboto"; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -430,26 +444,74 @@ textarea {
       -ms-flex-align: center;
           align-items: center; }
   .dilog-container .modal-dilog-roles {
-    width: 60%;
-    height: 60%;
+    padding: 2%;
     background-color: #fff;
-    z-index: 11; }
+    z-index: 11;
+    border: 7px solid #000000; }
+    @media (min-width: 420px) {
+      .dilog-container .modal-dilog-roles {
+        width: 60%;
+        height: 80%;
+        min-height: 500px; } }
     .dilog-container .modal-dilog-roles .cancel-modal-dilog-roles:before {
       font-family: "FontAwesome";
-      content: '\f00d'; }
-    .dilog-container .modal-dilog-roles flex-container {
+      content: '\f00d';
+      font-size: 60px;
+      margin-left: 2%; }
+    .dilog-container .modal-dilog-roles .flex-container {
+      width: 100%;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; }
-      .dilog-container .modal-dilog-roles flex-container input {
-        display: block;
-        margin-top: 12px; }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .dilog-container .modal-dilog-roles .flex-container h2 {
+        margin-top: 0; }
+        @media (max-width: 800px) {
+          .dilog-container .modal-dilog-roles .flex-container h2 {
+            font-size: 1rem; } }
+      .dilog-container .modal-dilog-roles .flex-container .roles-links {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .dilog-container .modal-dilog-roles .flex-container .roles-links a {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          width: 20vw;
+          height: auto;
+          padding: 4px;
+          border: 6px solid #000000;
+          color: #000000;
+          font-size: 1.5rem;
+          font-family: "Roboto";
+          font-weight: bold;
+          margin: 2%; }
+          @media (min-width: 420px) {
+            .dilog-container .modal-dilog-roles .flex-container .roles-links a {
+              height: 40vh;
+              width: 20vw;
+              max-width: 223px;
+              max-height: 300px;
+              margin: 7%; } }
+      .dilog-container .modal-dilog-roles .flex-container p {
+        margin-bottom: 5%; }
+  .dilog-container .modal-dilog-submit {
+    display: none; }
 
 /*--------------------------------------------------------------
 # Widgets
@@ -490,66 +552,6 @@ textarea {
   word-wrap: break-word; }
 
 .bypostauthor {
-  display: block; }
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-  border: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0; }
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-  max-width: 100%; }
-
-/* Captions */
-.wp-caption {
-  margin-bottom: 1.5rem;
-  max-width: 100%; }
-  .wp-caption img[class*="wp-image-"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto; }
-  .wp-caption .wp-caption-text {
-    margin: 0.8075rem 0; }
-
-.wp-caption-text {
-  text-align: center; }
-
-/* Galleries*/
-.gallery {
-  margin-bottom: 1.5rem; }
-
-.gallery-item {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  width: 100%; }
-  .gallery-columns-2 .gallery-item {
-    max-width: 50%; }
-  .gallery-columns-3 .gallery-item {
-    max-width: 33.33%; }
-  .gallery-columns-4 .gallery-item {
-    max-width: 25%; }
-  .gallery-columns-5 .gallery-item {
-    max-width: 20%; }
-  .gallery-columns-6 .gallery-item {
-    max-width: 16.66%; }
-  .gallery-columns-7 .gallery-item {
-    max-width: 14.28%; }
-  .gallery-columns-8 .gallery-item {
-    max-width: 12.5%; }
-  .gallery-columns-9 .gallery-item {
-    max-width: 11.11%; }
-
-.gallery-caption {
   display: block; }
 
 /*--------------------------------------------------------------
