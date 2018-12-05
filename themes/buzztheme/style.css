@@ -448,6 +448,8 @@ textarea {
               margin: 7%; } }
       .dilog-container .modal-dilog-roles .flex-container p {
         margin-bottom: 5%; }
+  .dilog-container .modal-dilog-submit {
+    display: none; }
 
 /*--------------------------------------------------------------
 # Widgets

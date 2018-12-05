@@ -85,7 +85,6 @@ textarea {
 			margin-left: 2%;
 		}
 
-		//not working
 		.flex-container {
 			width: 100%;
 			@include flex-centered;
@@ -128,5 +127,9 @@ textarea {
 				margin-bottom: 5%;
 			}
 		}
+	}
+
+	.modal-dilog-submit {
+		display: none;
 	}
 }

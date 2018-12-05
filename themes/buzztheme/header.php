@@ -37,15 +37,15 @@
       </div>
     </div>
 
-    <!-- <div class="modal-dilog">
-    <form class="register-form">
-      <label>User name</label>
-      <input type="text" class="new-user-name" />
-      <label>Password</label>
-      <input type="password" class="new-user-password" />
-      <input class="add-user-btn" type="submit" value="Submit">
-    </form>
-  </div> -->
+    <div class="modal-dilog-submit">
+      <form class="register-form">
+        <label>User name</label>
+        <input type="text" class="new-user-name" />
+        <label>Password</label>
+        <input type="password" class="new-user-password" />
+        <input class="add-user-btn" type="submit" value="Submit">
+      </form>
+    </div>
   </div>
 
   <div id="page" class="hfeed site">
