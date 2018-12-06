@@ -62,7 +62,7 @@ function guestspot_post_type() {
 	    'template lock' 		=> 'all',
 	    'template' => array(
 		    array( 'core/paragraph', array(
-			'placeholder' => 'Add adventure entry',
+			'placeholder' => 'Add guestspot entry',
 		) ),
 	),
 	);

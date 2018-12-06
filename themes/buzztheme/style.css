@@ -535,6 +535,26 @@ textarea {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.featured-artist aside h2 {
+  border: 1px black solid;
+  padding: 10px;
+  background-color: white;
+  position: absolute;
+  z-index: 1; }
+
+.featured-artist aside p {
+  position: absolute;
+  z-index: 1;
+  border: 1px black solid;
+  padding: 10px;
+  background-color: white;
+  bottom: 10px; }
+
+.featured-artist aside img {
+  position: relative;
+  width: 700px;
+  margin: 5% 0; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
