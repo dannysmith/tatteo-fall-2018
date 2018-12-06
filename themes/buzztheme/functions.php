@@ -112,9 +112,9 @@ function red_starter_scripts()
 
     wp_enqueue_script('login', get_template_directory_uri() . '/build/js/login.min.js', array(), '20151215', true);
     if (function_exists("rest_url")) {
-        wp_enqueue_script('buzz_api', get_template_directory_uri() . '/build/js/buzz_api.min.js', array(), false, true);
+        wp_enqueue_script('sign-up', get_template_directory_uri() . '/build/js/sign-up.min.js', array(), false, true);
 
-        wp_localize_script('buzz_api', 'api_vars', array(
+        wp_localize_script('sign-up', 'api_vars', array(
             'root_url' => esc_url_raw(rest_url()),
             'home_url' => esc_url_raw(home_url()),
             'nonce' => wp_create_nonce('wp_rest'),
@@ -158,6 +158,13 @@ add_filter('user_contactmethods', 'modify_contact_methods');
 
 function auto_login_new_user($user_id)
 {
+    if (isset($_POST['first_name'])) {
+        update_user_meta($user_id, 'first_name', $_POST['first_name']);
+    }
+    $new_user = get_user_by('id', $user_id);
+
+    $new_user->set_role($_POST['role']);
+
     wp_set_current_user($user_id);
     wp_set_auth_cookie($user_id);
     $user = get_user_by('id', $user_id);
@@ -166,6 +173,16 @@ function auto_login_new_user($user_id)
     exit;
 }
 add_action('user_register', 'auto_login_new_user');
+
+add_action('user_register', 'registration', 10, 1);
+
+function registration($user_id)
+{
+    //update_user_meta($user_id, 'first_name', 'test');
+
+}
+
+add_action('profile_update', 'registration', 10, 1);
 
 // Adding menus in the footer
 

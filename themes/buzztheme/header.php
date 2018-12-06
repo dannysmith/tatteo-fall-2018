@@ -45,6 +45,18 @@
       </form>
     </div>
 
+    <div class="modal-dilog-login">
+      <a class="cancel-modal-dilog-roles"></a>
+      <form class="register-form">
+        <label>Username</label>
+        <input type="text" class="user-name" />
+        <label>Password</label>
+        <input type="password" class="user-password" />
+        <input class="log-in-user-btn" type="login" value="Login">
+      </form>
+      <p>Don't have an account yet? Sign up <a class="sign-up-link">here</a>.</p>
+    </div>
+
   </div>
 
   <div id="page" class="hfeed site">

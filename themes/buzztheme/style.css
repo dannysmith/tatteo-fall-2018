@@ -452,7 +452,7 @@ textarea {
     padding: 2%;
     background-color: #fff;
     z-index: 11;
-    border: 7px solid #000000; }
+    border: 6px solid #000000; }
     @media (min-width: 420px) {
       .dilog-container .modal-dilog-roles {
         width: 60%;
@@ -530,6 +530,12 @@ textarea {
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column; }
+  .dilog-container .modal-dilog-login {
+    display: none;
+    background-color: #fff;
+    border: 6px solid #000000;
+    z-index: 12;
+    position: absolute; }
 
 /*--------------------------------------------------------------
 # Widgets

@@ -83,7 +83,7 @@ textarea {
 		padding: 2%;
 		background-color: #fff;
 		z-index: 11;
-		border: 7px solid #000000;
+		border: $border;
 
 
 
@@ -143,5 +143,14 @@ textarea {
 			flex-direction: column;
 
 		}
+	}
+
+	.modal-dilog-login {
+		display: none;
+		background-color: #fff;
+		border: $border;
+		z-index: 12;
+		position: absolute;
+
 	}
 }
