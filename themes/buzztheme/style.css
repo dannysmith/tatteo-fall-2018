@@ -795,9 +795,13 @@ footer {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-line-pack: center;
+<<<<<<< HEAD
         align-content: center;
     width: 200px;
     overflow: hidden; }
+=======
+        align-content: center; }
+>>>>>>> 015b25fdfdb318c6599cd90cb9cf36e855c115da
     @media (min-width: 600px) {
       .site-header .dropdown-menu {
         width: 500px; } }
