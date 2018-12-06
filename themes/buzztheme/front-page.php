@@ -10,6 +10,28 @@ get_header();?>
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main">
 
+  	<section class="examplefirstblock">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clem-onojeghuo-121575-unsplash.png" width="" height="" alt="background" />
+		</section>
+
+		<section class="examplesecondblock">
+      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Adam-Sage.png" width="" height="" alt="the warren tattoo"></div>
+      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Caleb-Kilby.png" width="" height="" alt="aesthetic ambition"></div>
+      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Clare-Xthg.png" width="" height="" alt="black ink tattoo"></div>
+      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Duncan-X.png" width="" height="" alt="mirror studios"></div>
+      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/False-Modigliani.png" width="" height="" alt="human tattoo"></div>
+      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Adam-Sage.png" width="" height="" alt="skinz place"></div>
+    </section>
+    
+    <section class="examplethirdblock">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/karol-kaczorek-753191-unsplash.png" width="" height="" alt="background" />
+    </section>
+
+    <section class="examplefourthblock">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/oldhabits-12.png" width="" height="" alt="background" />
+      <img class="textures" src="<?php echo get_template_directory_uri(); ?>/assets/images/Textures-2.png" width="" height="" alt="background" />
+    </section>
+
     <?php if (have_posts()): ?>
 
     <?php if (is_home() && !is_front_page()): ?>
@@ -37,7 +59,5 @@ get_header();?>
 
   </main><!-- #main -->
 </div><!-- #primary -->
-
-<?php get_sidebar();?>
 
 <?php get_footer();?>
