@@ -61,8 +61,6 @@ class Buzz_Featured_Artist extends WP_Widget {
 			)
 		);
 
-	add_action( 'admin_enqueue_scripts', array( $this, 'mfc_assets' ) );
-
 	} // end constructor
 
     /**
@@ -102,7 +100,6 @@ class Buzz_Featured_Artist extends WP_Widget {
 		$title = empty( $instance['title'] ) ? '' : apply_filters( 'widget_title', $instance['title'] );
 		$artist_name = empty( $instance['artist_name'] ) ? '' : apply_filters( 'artist_name', $instance['artist_name'] );
 		$artist_description = empty( $instance['artist_description'] ) ? '' : apply_filters( 'artist_description', $instance['artist_description'] );
-		$image = $instance['image'];
 		// TODO: other fields go here...
 
 		ob_start();
@@ -154,7 +151,6 @@ class Buzz_Featured_Artist extends WP_Widget {
 				'title' => 'Featured Artist',
 				'artist_name' => '',
 				'artist_description' => '',
-				'image' => '',
 			)
 		);
 
@@ -167,22 +163,13 @@ class Buzz_Featured_Artist extends WP_Widget {
 		include( plugin_dir_path( __FILE__ ) . 'views/admin.php' );
 
 	} // end form
-
-	public function mfc_assets(){
-
-			wp_enqueue_script('media-upload');
-			wp_enqueue_script('thickbox');
-			wp_enqueue_script('mfc-media-upload', plugin_dir_url(__FILE__) . 'mfc-media-upload.js', array( 'jquery' )) ;
-			wp_enqueue_style('thickbox');
-
-	}
  // end class
 
-function mfc_init() {
-	register_widget( 'mfc_widget' );
 }
-}
+
 // TODO: Remember to change 'Widget_Name' to match the class name definition
 add_action( 'widgets_init', function(){
      register_widget( 'Buzz_Featured_Artist' );
 });
+
+
