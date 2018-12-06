@@ -18,10 +18,15 @@
   <?php wp_head();?>
 </head>
 
-<body <?php body_class();?>>
 
-  <div class="overlay"></div>
+<body <?php body_class();?>>
+  <div class="overlay">
+  </div>
   <div class="dilog-container">
+
+    <!-- Login form -->
+
+    <!-- Sign-up form with roles -->
     <div class="modal-dilog-roles">
       <a class="cancel-modal-dilog-roles"></a>
       <div class="flex-container">
@@ -34,6 +39,7 @@
       </div>
     </div>
 
+    <!-- Sign-up form with emal and password -->
     <div class="modal-dilog-submit">
       <a class="cancel-modal-dilog-roles"></a>
       <form class="register-form">
@@ -45,23 +51,40 @@
       </form>
     </div>
 
+    <div class="modal-dilog-login">
+      <a class="cancel-modal-dilog-roles"></a>
+      <div class="flex-container">
+        <form class="login-form" action="/buzz/wp-login.php" name="loginform" id="loginform" method="post">
+          <label>Username</label>
+          <input type="text" class="user-name" name="log" id="user_login" />
+          <label>Password</label>
+          <input type="password" class="user-password" name="pwd" id="user_pass" />
+          <input class="log-in-user-btn" type="submit" value="Log in" name="wp-submit" id="wp-submit">
+
+          <input type="hidden" name="redirect_to" value="http://localhost:8888/buzz/wp-admin/" />
+          <input type="hidden" name="testcookie" value="1" />
+        </form>
+        <p>Don't have an account yet? Sign up <a class="sign-up-link">here</a>.</p>
+      </div>
+    </div>
   </div>
 
-  <div id="page" class="hfeed site">
 
+
+  <div id="page" class="hfeed site">
     <header id="masthead" class="site-header" role="banner">
       <div class="site-branding">
         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="site-logo" src="<?php echo get_bloginfo('template_directory'); ?>/assets/logo/buzz-writing.png"></a>
       </div><!-- .site-branding -->
       <div class="dropdown-menu">
-      <button class="dropbtn"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
-      <nav id="site-navigation" class="main-navigation" role="navigation">
-        <?php wp_nav_menu(); ?>
-        <div class="container-header-nav">
-       <?php get_search_form(); ?>
-        <a class="login-link">Login</a>
-        </div>
-      </nav><!-- #site-navigation -->
+        <button class="dropbtn"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+          <?php wp_nav_menu();?>
+          <div class="container-header-nav">
+            <?php get_search_form();?>
+            <a class="login-link">Login</a>
+          </div>
+        </nav><!-- #site-navigation -->
       </div> <!-- dropdown-menu-->
     </header><!-- #masthead -->
 
