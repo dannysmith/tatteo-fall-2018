@@ -11,7 +11,7 @@
       var keycode = ((typeof e.keyCode != 'undefined' && e.keyCode) ? e.keyCode : e.which);
       if (keycode === 27) {
         toHide();
-      };
+      }
     });
 
     $('.login-link').on('click', function (event) {
