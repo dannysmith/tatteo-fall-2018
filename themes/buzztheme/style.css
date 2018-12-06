@@ -605,3 +605,45 @@ footer {
   .site-header .site-branding img {
     width: 40%;
     height: auto; }
+
+.search-label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .search-label .fa-search {
+    color: #248a83; }
+
+.search-form {
+  height: 30px;
+  margin-top: -20px; }
+  .search-form .search-label {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .search-form .search-label .fa-search {
+      color: #248a83; }
+  .search-form fieldset {
+    height: 33px;
+    border: none; }
+    .search-form fieldset input[type='search'] {
+      width: 0;
+      background-color: transparent;
+      border: none;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+      outline: none;
+      color: black; }
+      .search-form fieldset input[type='search']::-webkit-input-placeholder {
+        color: grey; }
+      .search-form fieldset input[type='search']::-ms-input-placeholder {
+        color: grey; }
+      .search-form fieldset input[type='search']::placeholder {
+        color: grey; }
+      .search-form fieldset input[type='search']:focus {
+        width: 160px; }

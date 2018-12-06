@@ -51,9 +51,10 @@
       <div class="site-branding">
         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="site-logo" src="<?php echo get_bloginfo('template_directory'); ?>/assets/logo/buzz-writing.png"></a>
       </div><!-- .site-branding -->
-      <a class="login-link">Login</a>
       <nav id="site-navigation" class="main-navigation" role="navigation">
-
+        <?php wp_nav_menu(); ?>
+       <?php get_search_form(); ?>
+        <a class="login-link">Login</a>
       </nav><!-- #site-navigation -->
     </header><!-- #masthead -->
 
