@@ -55,8 +55,10 @@
       </div><!-- .site-branding -->
       <nav id="site-navigation" class="main-navigation" role="navigation">
         <?php wp_nav_menu(); ?>
+        <div class="container-header-nav">
        <?php get_search_form(); ?>
         <a class="login-link">Login</a>
+        </div>
       </nav><!-- #site-navigation -->
     </header><!-- #masthead -->
 
