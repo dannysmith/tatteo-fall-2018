@@ -110,7 +110,7 @@ function red_starter_scripts()
         wp_enqueue_script('comment-reply');
     }
 
-    wp_enqueue_script('login', get_template_directory_uri() . '/build/js/login.min.js', array(), '20151215', true);
+    wp_enqueue_script('header', get_template_directory_uri() . '/build/js/header.min.js', array(), '20151215', true);
     if (function_exists("rest_url")) {
         wp_enqueue_script('sign-up', get_template_directory_uri() . '/build/js/sign-up.min.js', array(), false, true);
 

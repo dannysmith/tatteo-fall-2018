@@ -64,7 +64,7 @@ gulp.task('browser-sync', function() {
   ];
 
   browserSync.init(files, {
-    proxy: 'http://localhost:8888/wordpress'
+    proxy: 'http://localhost:8888/buzz'
   });
 
   gulp.watch(files).on('change', browserSync.reload);

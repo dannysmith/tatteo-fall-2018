@@ -76,10 +76,16 @@
       <div class="site-branding">
         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="site-logo" src="<?php echo get_bloginfo('template_directory'); ?>/assets/logo/buzz-writing.png"></a>
       </div><!-- .site-branding -->
-      <a class="login-link">Login</a>
-      <nav id="site-navigation" class="main-navigation" role="navigation">
-
-      </nav><!-- #site-navigation -->
+      <div class="dropdown-menu">
+        <button class="dropbtn"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+          <?php wp_nav_menu();?>
+          <div class="container-header-nav">
+            <?php get_search_form();?>
+            <a class="login-link">Login</a>
+          </div>
+        </nav><!-- #site-navigation -->
+      </div> <!-- dropdown-menu-->
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">
