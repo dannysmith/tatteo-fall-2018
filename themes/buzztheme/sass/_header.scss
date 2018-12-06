@@ -22,6 +22,14 @@
     .dropdown-menu{
         display: flex;
         align-content: center;
+        width: 200px;
+        overflow: hidden;
+        @include tablet{
+            width : 500px;
+        }
+        @include desktop{
+            width: 900px;
+        }
         button{
             border : none;
             font-size: 20px;
@@ -39,10 +47,12 @@
         display: none;
         flex-direction: column;
         @include tablet{
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        }
+            width: 100%;
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            }
 
         ul {
             list-style: none;
@@ -50,7 +60,6 @@
             margin: 0;
             @include tablet{
                 display: inline-flex;
-                margin-right: 600px;
             }
 
             li {
@@ -87,7 +96,7 @@
                     padding-top: 0;
                     border: none;
                     @include tablet{
-                        padding-top: 4.9px;
+                        padding-top: 5px;
                     }
                     input[type='search'] {
                         width: 160px;
