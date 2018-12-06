@@ -577,47 +577,47 @@ textarea {
 # Page Templates
 --------------------------------------------------------------*/
 /* Front page */
-#page {
+.home #page {
   display: grid;
   grid-auto-columns: auto;
   grid-auto-rows: auto; }
-  #page .site-main {
+  .home #page .site-main {
     display: grid;
     grid-auto-columns: auto;
     grid-auto-rows: auto;
     border-bottom: 6px solid #000; }
-    #page .site-main .examplefirstblock {
+    .home #page .site-main .examplefirstblock {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       border-bottom: 6px solid #000; }
-    #page .site-main .examplesecondblock {
+    .home #page .site-main .examplesecondblock {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 1rem;
       border-bottom: 6px solid #000;
       margin-top: 5rem;
       padding-bottom: 5rem; }
-      #page .site-main .examplesecondblock .exampleguestspots {
+      .home #page .site-main .examplesecondblock .exampleguestspots {
         justify-self: center; }
-      #page .site-main .examplesecondblock button {
+      .home #page .site-main .examplesecondblock button {
         grid-column: 2;
         width: 8rem;
         justify-self: center; }
-    #page .site-main .examplethirdblock {
+    .home #page .site-main .examplethirdblock {
       margin: 0 auto;
       padding-top: 5rem;
       padding-bottom: 5rem; }
-    #page .site-main .examplefourthblock {
+    .home #page .site-main .examplefourthblock {
       border-top: 6px solid #000;
       border-bottom: 6px solid #000; }
-      #page .site-main .examplefourthblock img {
+      .home #page .site-main .examplefourthblock img {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex; }
-      #page .site-main .examplefourthblock img.textures {
+      .home #page .site-main .examplefourthblock img.textures {
         margin-top: 5rem; }
-    #page .site-main article {
+    .home #page .site-main article {
       display: none; }
 
 /* Footer */
@@ -655,6 +655,25 @@ footer {
     justify-self: right;
     margin-right: 5rem;
     text-align: right; }
+
+/* 404 Form */
+.error404 .site-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 5rem; }
+  .error404 .site-content .not-found {
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .error404 .site-content .not-found fieldset {
+      text-align: center;
+      border: none; }
 
 .site-header {
   width: 100vw;
