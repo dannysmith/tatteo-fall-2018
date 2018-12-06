@@ -422,7 +422,10 @@ textarea {
   padding-left: 3px;
   width: 100%; }
 
-/* overlay styles, all needed */
+body {
+  position: relative; }
+
+/* overlay styles */
 .overlay {
   display: none;
   position: fixed;
@@ -442,18 +445,24 @@ textarea {
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  position: absolute; }
   .dilog-container .cancel-modal-dilog-roles:before {
     font-family: "FontAwesome";
     content: '\f00d';
     font-size: 60px;
-    margin-left: 2%; }
+    margin-left: 2%;
+    display: block; }
   .dilog-container .modal-dilog-roles {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 2%;
     background-color: #fff;
     z-index: 11;
     border: 6px solid #000000; }
-    @media (min-width: 420px) {
+    @media (min-width: 600px) {
       .dilog-container .modal-dilog-roles {
         width: 60%;
         height: 80%;
@@ -501,7 +510,7 @@ textarea {
           font-family: "Roboto";
           font-weight: bold;
           margin: 2%; }
-          @media (min-width: 420px) {
+          @media (min-width: 600px) {
             .dilog-container .modal-dilog-roles .flex-container .roles-links a {
               height: 40vh;
               width: 20vw;
@@ -535,7 +544,81 @@ textarea {
     background-color: #fff;
     border: 6px solid #000000;
     z-index: 12;
-    position: absolute; }
+    position: absolute;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 70%;
+    color: #000000;
+    font-size: 1rem;
+    font-family: "Roboto"; }
+    @media (min-width: 600px) {
+      .dilog-container .modal-dilog-login {
+        min-width: 500px; } }
+    .dilog-container .modal-dilog-login .flex-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .dilog-container .modal-dilog-login .flex-container a {
+        cursor: pointer;
+        text-decoration: underline; }
+      .dilog-container .modal-dilog-login .flex-container .login-form {
+        padding: 5%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; }
+        .dilog-container .modal-dilog-login .flex-container .login-form input {
+          width: 40vw;
+          max-width: 320px;
+          margin-top: 8px;
+          border: 3px solid #000000; }
+        .dilog-container .modal-dilog-login .flex-container .login-form label {
+          margin-top: 12px;
+          color: #000000;
+          font-size: 1rem;
+          font-family: "Roboto";
+          font-weight: bold; }
+        .dilog-container .modal-dilog-login .flex-container .login-form label,
+        .dilog-container .modal-dilog-login .flex-container .login-form input {
+          -ms-flex-item-align: start;
+              align-self: flex-start;
+          color: #000000;
+          font-size: 1rem;
+          font-family: "Roboto"; }
+        .dilog-container .modal-dilog-login .flex-container .login-form input[type="submit"] {
+          -ms-flex-item-align: center;
+              align-self: center;
+          background-image: url("../../assets/Buttons/button_texture.png");
+          background-size: cover;
+          margin: 16px;
+          border: none;
+          width: 155px;
+          height: 70px;
+          color: #fff;
+          font-weight: bold; }
+      .dilog-container .modal-dilog-login .flex-container p {
+        padding: 5%; }
 
 /*--------------------------------------------------------------
 # Widgets

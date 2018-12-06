@@ -162,7 +162,6 @@ function auto_login_new_user($user_id)
         update_user_meta($user_id, 'first_name', $_POST['first_name']);
     }
     $new_user = get_user_by('id', $user_id);
-
     $new_user->set_role($_POST['role']);
 
     wp_set_current_user($user_id);
