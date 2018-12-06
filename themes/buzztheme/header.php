@@ -35,14 +35,16 @@
     </div>
 
     <div class="modal-dilog-submit">
+      <a class="cancel-modal-dilog-roles"></a>
       <form class="register-form">
-        <label>User name</label>
-        <input type="text" class="new-user-name" />
+        <label>Email</label>
+        <input type="text" class="new-user-email" />
         <label>Password</label>
         <input type="password" class="new-user-password" />
         <input class="add-user-btn" type="submit" value="Submit">
       </form>
     </div>
+
   </div>
 
   <div id="page" class="hfeed site">

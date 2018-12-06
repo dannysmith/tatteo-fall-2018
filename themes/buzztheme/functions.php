@@ -41,6 +41,18 @@ endif; // red_starter_setup
 add_action('after_setup_theme', 'red_starter_setup');
 
 /**
+ * Including jQuery
+ */
+function include_jquery_script()
+{
+
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
+
+}
+add_action('wp_enqueue_scripts', 'include_jquery_script');
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * @global int $content_width
@@ -144,14 +156,26 @@ function modify_contact_methods($profile_fields)
 }
 add_filter('user_contactmethods', 'modify_contact_methods');
 
+function auto_login_new_user($user_id)
+{
+    wp_set_current_user($user_id);
+    wp_set_auth_cookie($user_id);
+    $user = get_user_by('id', $user_id);
+    do_action('wp_login', $user->user_login); //`[Codex Ref.][1]
+    wp_redirect(home_url()); // You can change home_url() to the specific URL,such as "wp_redirect( 'http://www.wpcoke.com' )";
+    exit;
+}
+add_action('user_register', 'auto_login_new_user');
+
 // Adding menus in the footer
 
-function register_my_menus() {
+function register_my_menus()
+{
     register_nav_menus(
-      array(
-        'new-menu' => __( 'Links' ),
-        'another-menu' => __( 'Social Media' ),
-      )
+        array(
+            'new-menu' => __('Links'),
+            'another-menu' => __('Social Media'),
+        )
     );
-  }
-  add_action( 'init', 'register_my_menus' );
+}
+add_action('init', 'register_my_menus');
