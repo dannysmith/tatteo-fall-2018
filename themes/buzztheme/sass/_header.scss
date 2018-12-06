@@ -4,22 +4,54 @@
     background-color: white;
     border-bottom: $border;
     padding: 16px;
-
+    font-weight: 600;
+    font-size: 14px;
+    justify-content: space-around;
+    @include tablet{
+        font-size: 16px;
+    }
     .site-branding {
+        display: flex;
+        align-content: center;
+        align-items: center;
         img {
             max-width: none;
-            height: 2rem;
+            height: 3rem;
         }
     }
-
+    .dropdown-menu{
+        display: flex;
+        align-content: center;
+        button{
+            border : none;
+            font-size: 20px;
+            &:focus{
+                outline: none;
+            }
+            @include tablet{
+             display: none;
+            }
+        }
+        .show{
+            display: flex;
+        }
     .main-navigation {
+        display: none;
+        flex-direction: column;
+        @include tablet{
         display: inline-flex;
+        flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        }
 
         ul {
-            display: inline-flex;
             list-style: none;
+            padding: 0;
+            margin: 0;
+            @include tablet{
+                display: inline-flex;
+                margin-right: 600px;
+            }
 
             li {
                 a {
@@ -32,10 +64,18 @@
         }
 
         .container-header-nav {
-            display: inline-flex;
+            display: flex;
+            flex-direction: column;
+            @include tablet{
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            a{
+              
+                padding-left: 10px;
+            }
             .search-form {
-                height: 30px;
-                margin-top: -20px;
 
                 .search-label {
                     display: inline-flex;
@@ -44,10 +84,13 @@
 
                 fieldset {
                     height: 33px;
+                    padding-top: 0;
                     border: none;
-
+                    @include tablet{
+                        padding-top: 4.9px;
+                    }
                     input[type='search'] {
-                        width: 0;
+                        width: 160px;
                         background-color: transparent;
                         border: none;
                         transition: width 0.4s ease-in-out;
@@ -57,13 +100,17 @@
                         &::placeholder {
                             color: grey;
                         }
-
-                        &:focus {
-                            width: 160px;
+                        @include tablet{
+                            overflow: hidden;
+                            width: 0;
+                            &:focus {
+                                width: 125px;
+                            }
                         }
                     }
                 }
             }
         }
     }
+}
 }
