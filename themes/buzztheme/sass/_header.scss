@@ -1,13 +1,69 @@
-.site-header{
+.site-header {
     width: 100vw;
     display: inline-flex;
     background-color: white;
     border-bottom: $border;
     padding: 16px;
-    .site-branding{
-        img{
-            width: 40%;
-            height: auto;
+
+    .site-branding {
+        img {
+            max-width: none;
+            height: 2rem;
+        }
+    }
+
+    .main-navigation {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            display: inline-flex;
+            list-style: none;
+
+            li {
+                a {
+                    color: black;
+                    text-decoration: none;
+                }
+
+                margin: 10px;
+            }
+        }
+
+        .container-header-nav {
+            display: inline-flex;
+            .search-form {
+                height: 30px;
+                margin-top: -20px;
+
+                .search-label {
+                    display: inline-flex;
+                    align-items: center;
+                }
+
+                fieldset {
+                    height: 33px;
+                    border: none;
+
+                    input[type='search'] {
+                        width: 0;
+                        background-color: transparent;
+                        border: none;
+                        transition: width 0.4s ease-in-out;
+                        outline: none;
+                        color: black;
+
+                        &::placeholder {
+                            color: grey;
+                        }
+
+                        &:focus {
+                            width: 160px;
+                        }
+                    }
+                }
+            }
         }
     }
 }

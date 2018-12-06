@@ -35,14 +35,16 @@
     </div>
 
     <div class="modal-dilog-submit">
+      <a class="cancel-modal-dilog-roles"></a>
       <form class="register-form">
-        <label>User name</label>
-        <input type="text" class="new-user-name" />
+        <label>Email</label>
+        <input type="text" class="new-user-email" />
         <label>Password</label>
         <input type="password" class="new-user-password" />
         <input class="add-user-btn" type="submit" value="Submit">
       </form>
     </div>
+
   </div>
 
   <div id="page" class="hfeed site">
@@ -51,9 +53,12 @@
       <div class="site-branding">
         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img class="site-logo" src="<?php echo get_bloginfo('template_directory'); ?>/assets/logo/buzz-writing.png"></a>
       </div><!-- .site-branding -->
-      <a class="login-link">Login</a>
       <nav id="site-navigation" class="main-navigation" role="navigation">
-
+        <?php wp_nav_menu(); ?>
+        <div class="container-header-nav">
+       <?php get_search_form(); ?>
+        <a class="login-link">Login</a>
+        </div>
       </nav><!-- #site-navigation -->
     </header><!-- #masthead -->
 
