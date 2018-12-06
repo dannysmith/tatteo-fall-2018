@@ -1,13 +1,59 @@
-.site-header{
+.site-header {
     width: 100vw;
     display: inline-flex;
     background-color: white;
     border-bottom: $border;
     padding: 16px;
-    .site-branding{
-        img{
+
+    .site-branding {
+        img {
             width: 40%;
             height: auto;
+        }
+    }
+}
+
+.search-label {
+    display: inline-flex;
+    align-items: center;
+
+    .fa-search {
+        color: #248a83;
+    }
+}
+
+.search-form {
+    height: 30px;
+    margin-top: -20px;
+
+    .search-label {
+        display: inline-flex;
+        align-items: center;
+
+        .fa-search {
+            color: #248a83;
+        }
+    }
+
+    fieldset {
+        height: 33px;
+        border: none;
+
+        input[type='search'] {
+            width: 0;
+            background-color: transparent;
+            border: none;
+            transition: width 0.4s ease-in-out;
+            outline: none;
+            color: black;
+
+            &::placeholder {
+                color: grey;
+            }
+
+            &:focus {
+                width: 160px;
+            }
         }
     }
 }
