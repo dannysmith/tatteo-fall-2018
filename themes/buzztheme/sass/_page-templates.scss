@@ -4,59 +4,61 @@
 
 /* Front page */
 
-#page {
-    display: grid;
-    grid-auto-columns: auto;
-    grid-auto-rows: auto;
-
-    .site-main {
+.home {
+    #page {
         display: grid;
         grid-auto-columns: auto;
         grid-auto-rows: auto;
-        border-bottom: 6px solid #000;
 
-        .examplefirstblock {
-            display: flex;
-            border-bottom: 6px solid #000;
-        }
-
-        .examplesecondblock {
+        .site-main {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 1rem;
+            grid-auto-columns: auto;
+            grid-auto-rows: auto;
             border-bottom: 6px solid #000;
-            margin-top: 5rem;
-            padding-bottom: 5rem;
 
-            .exampleguestspots {
-                justify-self: center;
+            .examplefirstblock {
+                display: flex;
+                border-bottom: 6px solid #000;
             }
-                button {
-                    grid-column: 2;
-                    width: 8rem;
+
+            .examplesecondblock {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 1rem;
+                border-bottom: 6px solid #000;
+                margin-top: 5rem;
+                padding-bottom: 5rem;
+
+                .exampleguestspots {
                     justify-self: center;
                 }
-        }
-
-        .examplethirdblock {
-            margin: 0 auto;
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-
-        .examplefourthblock {
-            border-top: 6px solid #000;
-            border-bottom: 6px solid #000;
-            img {
-                display: flex;
+                    button {
+                        grid-column: 2;
+                        width: 8rem;
+                        justify-self: center;
+                    }
             }
-            img.textures {
-                margin-top: 5rem;
-            }
-        }
 
-        article {
-            display: none;
+            .examplethirdblock {
+                margin: 0 auto;
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+            }
+
+            .examplefourthblock {
+                border-top: 6px solid #000;
+                border-bottom: 6px solid #000;
+                img {
+                    display: flex;
+                }
+                img.textures {
+                    margin-top: 5rem;
+                }
+            }
+
+            article {
+                display: none;
+            }
         }
     }
 }
@@ -109,4 +111,25 @@ footer {
                             margin-right: 5rem;
                             text-align: right;
                         }
+}
+
+/* 404 Form */
+
+.error404 {
+
+    .site-content {
+        display: flex;
+        justify-content: center;
+        margin: 5rem;
+    
+        .not-found {
+            text-align: center;
+            flex-direction: column;
+            
+            fieldset {
+                text-align: center;
+                border: none;
+            }
+        }
+    }
 }
