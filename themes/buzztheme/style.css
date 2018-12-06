@@ -443,6 +443,11 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+  .dilog-container .cancel-modal-dilog-roles:before {
+    font-family: "FontAwesome";
+    content: '\f00d';
+    font-size: 60px;
+    margin-left: 2%; }
   .dilog-container .modal-dilog-roles {
     padding: 2%;
     background-color: #fff;
@@ -453,11 +458,6 @@ textarea {
         width: 60%;
         height: 80%;
         min-height: 500px; } }
-    .dilog-container .modal-dilog-roles .cancel-modal-dilog-roles:before {
-      font-family: "FontAwesome";
-      content: '\f00d';
-      font-size: 60px;
-      margin-left: 2%; }
     .dilog-container .modal-dilog-roles .flex-container {
       width: 100%;
       display: -webkit-box;
@@ -511,7 +511,25 @@ textarea {
       .dilog-container .modal-dilog-roles .flex-container p {
         margin-bottom: 5%; }
   .dilog-container .modal-dilog-submit {
-    display: none; }
+    display: none;
+    padding: 2%;
+    background-color: #fff;
+    z-index: 11;
+    border: 7px solid #000000; }
+    .dilog-container .modal-dilog-submit .register-form {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
 
 /*--------------------------------------------------------------
 # Widgets
