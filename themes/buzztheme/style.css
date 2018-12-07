@@ -795,13 +795,9 @@ footer {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-line-pack: center;
-<<<<<<< HEAD
         align-content: center;
     width: 200px;
     overflow: hidden; }
-=======
-        align-content: center; }
->>>>>>> 015b25fdfdb318c6599cd90cb9cf36e855c115da
     @media (min-width: 600px) {
       .site-header .dropdown-menu {
         width: 500px; } }
@@ -820,6 +816,8 @@ footer {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; }
+    .site-header .dropdown-menu .login-link {
+      cursor: pointer; }
     .site-header .dropdown-menu .main-navigation {
       display: none;
       -webkit-box-orient: vertical;
@@ -912,3 +910,6 @@ footer {
                 width: 0; }
                 .site-header .dropdown-menu .main-navigation .container-header-nav .search-form fieldset input[type='search']:focus {
                   width: 125px; } }
+
+.cancel-modal-dilog-roles {
+  cursor: pointer; }
