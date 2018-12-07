@@ -50,7 +50,11 @@
       })
       .done(function (response) {
         toHide();
-        location.reload(true);
+        window.blah = response;
+        if ($(response).text().includes('ERROR')) {
+          //login failed
+        }
+        //location.reload(true);
       })
       .fail(function (response) {
         console.log('fail');
@@ -88,6 +92,10 @@
     event.preventDefault();
     role = rolesEnum.artist;
     console.log(role);
+    toHide();
+    $('.overlay').css('display', 'block');
+    $('.dilog-container').css('display', 'flex');
+    $('.modal-dilog-submit').css('display', 'flex');
   });
 
   $('.cancel-modal-dilog-roles').on('click', function (event) {
@@ -112,10 +120,9 @@
         method: 'POST',
         data: data,
       })
-      .done(function (response) {
-
-        console.log(response);
+      .done(function () {
         toHide();
+        location.reload(true);
       })
       .fail(function (response) {
         console.log('fail');
