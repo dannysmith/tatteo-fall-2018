@@ -131,9 +131,7 @@
 
         // window.blah = response;
 
-
         if ($(response).text().includes('ERROR')) {
-
           $('.error-message-sign-up').empty();
           $('.error-message-sign-up').css('display', 'block');
           let parser = new DOMParser();

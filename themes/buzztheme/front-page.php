@@ -11,7 +11,6 @@ get_header();?>
   <main id="main" class="site-main" role="main">
 
   	<section class="examplefirstblock">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clem-onojeghuo-121575-unsplash.png" width="" height="" alt="background" />
 		</section>
 
 		<section class="examplesecondblock">
@@ -22,9 +21,9 @@ get_header();?>
       <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/False-Modigliani.png" width="" height="" alt="human tattoo"></div>
       <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Adam-Sage.png" width="" height="" alt="skinz place"></div>
     </section>
-    
-    <section class="examplethirdblock">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/karol-kaczorek-753191-unsplash.png" width="" height="" alt="background" />
+
+    <section class="featured-artist">
+    <?php get_sidebar();?>
     </section>
 
     <section class="examplefourthblock">
@@ -59,5 +58,4 @@ get_header();?>
 
   </main><!-- #main -->
 </div><!-- #primary -->
-<?php get_sidebar();?>
 <?php get_footer();?>

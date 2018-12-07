@@ -11,7 +11,6 @@
 // Register Custom Post Type
 function guestspot_post_type()
 {
-
     $labels = array(
         'name' => _x('Guestspots', 'Post Type General Name', 'text_domain'),
         'singular_name' => _x('Guestspot', 'Post Type Singular Name', 'text_domain'),
@@ -58,7 +57,7 @@ function guestspot_post_type()
         'has_archive' => true,
         'exclude_from_search' => false,
         'publicly_queryable' => true,
-        $capabilities = array(
+        'capabilities' => array(
             'publish_posts' => 'publish_guestspot',
             'edit_posts' => 'edit_guestspot',
             'edit_others_posts' => 'edit_others_guestspot',
@@ -69,6 +68,7 @@ function guestspot_post_type()
             'delete_post' => 'delete_guestspot',
             'read_post' => 'read_guestspot',
         ),
+        'map_meta_cap' => false,
         'show_in_rest' => true,
         'template lock' => 'all',
         'template' => array(

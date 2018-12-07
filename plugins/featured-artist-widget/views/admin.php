@@ -12,9 +12,5 @@
 		<input class="widefat" id="<?php echo $this->get_field_id('artist_description'); ?>" name="<?php echo $this->get_field_name('artist_description'); ?>" type="text" value="<?php echo $artist_description; ?>">
    </p>
    <p>
-    <label for="<?php echo $this->get_field_name( 'image' ); ?>"><?php _e( 'Image:' ); ?></label>
-    <input class="upload_image_button" type="button" value="Upload Image" />
-</p>
-
 
 </div>
