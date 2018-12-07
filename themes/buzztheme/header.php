@@ -33,9 +33,9 @@
         <form class="login-form" action="/buzz/wp-login.php" name="loginform" id="loginform" method="post">
 
           <label>Username</label>
-          <input type="text" class="user-name" name="log" id="user_login" />
+          <input type="text" class="user-name" name="log" id="user_login" required />
           <label>Password</label>
-          <input type="password" class="user-password" name="pwd" id="user_pass" />
+          <input type="password" class="user-password" name="pwd" id="user_pass" required />
           <input class="log-in-user-btn" type="submit" value="Log in" name="wp-submit" id="wp-submit">
 
           <input type="hidden" name="redirect_to" value="http://localhost:8888/buzz/wp-admin/" />
@@ -62,13 +62,14 @@
     <div class="modal-dilog-submit">
       <a class="cancel-modal-dilog-roles"></a>
       <div class="flex-container">
+        <p class="error-message-sign-up"></p>
         <form class="register-form">
           <label>User name</label>
-          <input type="text" class="new-user-name" />
+          <input type="text" class="new-user-name" required />
           <label>Email</label>
-          <input type="text" class="new-user-email" />
+          <input type="text" class="new-user-email" required />
           <label>Password</label>
-          <input type="password" class="new-user-password" />
+          <input type="password" class="new-user-password" required />
           <input class="add-user-btn" type="submit" value="Submit">
         </form>
       </div>

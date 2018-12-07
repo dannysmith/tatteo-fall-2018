@@ -7,6 +7,10 @@
     $('.modal-dilog-submit').css('display', 'none');
     $('.modal-dilog-login').css('display', 'none');
     $('.error-message').css('display', 'none');
+    $('.error-message-sign-up').css('display', 'none');
+    $('.error-message').empty();
+    $('.error-message-sign-up').empty();
+
   }
 
 
@@ -50,8 +54,6 @@
         data: data,
       })
       .done(function (response) {
-
-        window.blah = response;
         if ($(response).text().includes('ERROR')) {
           $('.error-message').css('display', 'block');
           $('.error-message').text("Incorrect user name or password. Please try again.")
@@ -125,9 +127,25 @@
         method: 'POST',
         data: data,
       })
-      .done(function () {
-        toHide();
-        location.reload(true);
+      .done(function (response) {
+
+        // window.blah = response;
+
+
+        if ($(response).text().includes('ERROR')) {
+
+          $('.error-message-sign-up').empty();
+          $('.error-message-sign-up').css('display', 'block');
+          let parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(response, 'text/html');
+          console.log($(htmlDoc).find("#login_error").html());
+          $(".error-message-sign-up").append($(htmlDoc).find("#login_error").html());
+          // $('.error-message').text("Incorrect user name or password. Please try again.")
+        } else {
+          toHide();
+          location.reload(true);
+        }
+
       })
       .fail(function (response) {
         console.log('fail');
