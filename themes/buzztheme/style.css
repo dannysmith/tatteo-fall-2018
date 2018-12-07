@@ -837,15 +837,12 @@ body {
     margin-top: 5rem;
     padding-bottom: 5rem; }
     .home #page .examplesecondblock .exampleguestspots {
-      justify-self: center; }
-  .home #page .examplefourthblock {
-    border-top: 6px solid #000; }
-    .home #page .examplefourthblock img {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex; }
-    .home #page .examplefourthblock img.textures {
-      margin-top: 5rem; }
+      justify-self: center;
+      border: 6px solid #000; }
+  .home #page .examplefourthblock img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .home #page .not-found {
     display: none; }
 
