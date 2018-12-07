@@ -625,24 +625,80 @@ body {
 # Widgets
 --------------------------------------------------------------*/
 .featured-artist aside h2 {
-  border: 1px black solid;
+  border: 6px solid #000000;
   padding: 10px;
   background-color: white;
-  position: absolute;
-  z-index: 1; }
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 230px;
+  font-style: italic;
+  font-size: 25px;
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 0px; }
 
-.featured-artist aside p {
-  position: absolute;
-  z-index: 1;
-  border: 1px black solid;
-  padding: 10px;
-  background-color: white;
-  bottom: 10px; }
+.featured-artist aside .artist-name {
+  font-weight: 600;
+  text-align: center;
+  font-style: italic;
+  font-size: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 6px solid #000000; }
+
+.featured-artist aside .artist-description {
+  display: none; }
+  .featured-artist aside .artist-description p {
+    font-size: 16px;
+    z-index: 2;
+    background-color: white; }
+  .featured-artist aside .artist-description a {
+    width: 120px;
+    height: 55px;
+    margin-right: 10px;
+    background-image: url("../../assets/Buttons/button.png");
+    background-size: cover;
+    color: white;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    text-decoration: none; }
+  @media (min-width: 600px) {
+    .featured-artist aside .artist-description {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      height: 232px;
+      width: 312px;
+      width: 266px;
+      color: #000000;
+      font-size: 16px;
+      letter-spacing: 0.8px;
+      line-height: 21px;
+      border: 6px solid #000000; } }
 
 .featured-artist aside img {
+  z-index: 1;
   position: relative;
-  width: 700px;
-  margin: 5% 0; }
+  width: 90%;
+  margin: 10% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*--------------------------------------------------------------
 # Content
