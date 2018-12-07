@@ -18,6 +18,9 @@
         .examplefirstblock {
             display: flex;
             border-bottom: 6px solid #000;
+            background: url('../../assets/images/clem-onojeghuo-121575-unsplash.png') no-repeat center;
+            height: 40rem;
+            width: 100%;
         }
 
         .examplesecondblock {
@@ -27,15 +30,6 @@
             border-bottom: 6px solid #000;
             margin-top: 5rem;
             padding-bottom: 5rem;
-
-            .exampleguestspots {
-                justify-self: center;
-            }
-                button {
-                    grid-column: 2;
-                    width: 8rem;
-                    justify-self: center;
-                }
         }
 
         .examplethirdblock {
@@ -103,7 +97,7 @@ footer {
                     }
 
                         .footersocialmedia {
-                            grid-column: 3;
+                            grid-column: 2;
                             grid-row: 2;
                             justify-self: right;
                             margin-right: 5rem;
