@@ -6,6 +6,7 @@
     $('.modal-dilog-roles').css('display', 'none');
     $('.modal-dilog-submit').css('display', 'none');
     $('.modal-dilog-login').css('display', 'none');
+    $('.error-message').css('display', 'none');
   }
 
 
@@ -49,12 +50,16 @@
         data: data,
       })
       .done(function (response) {
-        toHide();
+
         window.blah = response;
         if ($(response).text().includes('ERROR')) {
-          //login failed
+          $('.error-message').css('display', 'block');
+          $('.error-message').text("Incorrect user name or password. Please try again.")
+        } else {
+          toHide();
+          location.reload(true);
         }
-        //location.reload(true);
+        //
       })
       .fail(function (response) {
         console.log('fail');

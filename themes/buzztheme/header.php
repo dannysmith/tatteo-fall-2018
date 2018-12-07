@@ -29,7 +29,9 @@
     <div class="modal-dilog-login">
       <a class="cancel-modal-dilog-roles"></a>
       <div class="flex-container">
+        <p class="error-message"></p>
         <form class="login-form" action="/buzz/wp-login.php" name="loginform" id="loginform" method="post">
+
           <label>Username</label>
           <input type="text" class="user-name" name="log" id="user_login" />
           <label>Password</label>
