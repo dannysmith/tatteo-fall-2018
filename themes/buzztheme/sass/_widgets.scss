@@ -36,14 +36,16 @@
 
         .artist-description {
             display: none;
+
             p {
 
                 font-size: 16px;
                 z-index: 2;
                 background-color: white;
-    
+
             }
-            a{
+
+            a {
                 width: 120px;
                 height: 55px;
                 margin-right: 10px;
@@ -53,6 +55,7 @@
                 align-self: flex-end;
                 text-decoration: none;
             }
+
             @include tablet {
                 width: fit-content;
                 display: flex;
