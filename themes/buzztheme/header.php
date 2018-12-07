@@ -24,33 +24,8 @@
   </div>
   <div class="dilog-container">
 
+
     <!-- Login form -->
-
-    <!-- Sign-up form with roles -->
-    <div class="modal-dilog-roles">
-      <a class="cancel-modal-dilog-roles"></a>
-      <div class="flex-container">
-        <h2>Sign up here to have full access to Buzz!</h2>
-        <div class="roles-links">
-          <a class="studio-role role">Studio</a>
-          <a class="artist-role role">Artist</a>
-        </div>
-        <p>Already have an account? Login <a>here</a>.</p>
-      </div>
-    </div>
-
-    <!-- Sign-up form with emal and password -->
-    <div class="modal-dilog-submit">
-      <a class="cancel-modal-dilog-roles"></a>
-      <form class="register-form">
-        <label>Email</label>
-        <input type="text" class="new-user-email" />
-        <label>Password</label>
-        <input type="password" class="new-user-password" />
-        <input class="add-user-btn" type="submit" value="Submit">
-      </form>
-    </div>
-
     <div class="modal-dilog-login">
       <a class="cancel-modal-dilog-roles"></a>
       <div class="flex-container">
@@ -67,6 +42,36 @@
         <p>Don't have an account yet? Sign up <a class="sign-up-link">here</a>.</p>
       </div>
     </div>
+
+    <!-- Sign-up form with roles -->
+    <div class="modal-dilog-roles">
+      <a class="cancel-modal-dilog-roles"></a>
+      <div class="flex-container">
+        <h2>Sign up here to have full access to Buzz!</h2>
+        <div class="roles-links">
+          <a class="studio-role role">Studio</a>
+          <a class="artist-role role">Artist</a>
+        </div>
+        <p>Already have an account? Login <a class="login-here">here</a>.</p>
+      </div>
+    </div>
+
+    <!-- Sign-up form with emal and password -->
+    <div class="modal-dilog-submit">
+      <a class="cancel-modal-dilog-roles"></a>
+      <div class="flex-container">
+        <form class="register-form">
+          <label>User name</label>
+          <input type="text" class="new-user-name" />
+          <label>Email</label>
+          <input type="text" class="new-user-email" />
+          <label>Password</label>
+          <input type="password" class="new-user-password" />
+          <input class="add-user-btn" type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+
   </div>
 
 
