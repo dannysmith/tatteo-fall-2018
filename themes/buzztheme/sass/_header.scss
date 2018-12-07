@@ -43,6 +43,9 @@
         .show{
             display: flex;
         }
+    .login-link{
+        cursor: pointer;
+    }
     .main-navigation {
         display: none;
         flex-direction: column;
@@ -123,4 +126,7 @@
         }
     }
 }
+}
+.cancel-modal-dilog-roles{
+    cursor: pointer;
 }

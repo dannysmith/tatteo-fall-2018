@@ -11,7 +11,6 @@ get_header();?>
   <main id="main" class="site-main" role="main">
 
   	<section class="examplefirstblock">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clem-onojeghuo-121575-unsplash.png" width="" height="" alt="background" />
 		</section>
 
 		<section class="examplesecondblock">
@@ -29,7 +28,6 @@ get_header();?>
 
     <section class="examplefourthblock">
       <img src="<?php echo get_template_directory_uri(); ?>/assets/images/oldhabits-12.png" width="" height="" alt="background" />
-      <img class="textures" src="<?php echo get_template_directory_uri(); ?>/assets/images/Textures-2.png" width="" height="" alt="background" />
     </section>
 
     <?php if (have_posts()): ?>

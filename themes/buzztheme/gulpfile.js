@@ -22,7 +22,6 @@ gulp.task('sass', function() {
         browsers: ['last 2 versions']
       })
     )
-    .pipe(gulp.dest('./'))
     .pipe(cssnano())
     .pipe(rename('style.min.css'))
     .pipe(sourcemaps.write('../maps'))
