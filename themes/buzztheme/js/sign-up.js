@@ -16,6 +16,15 @@
     }
   });
 
+  // Showing login form 
+  $('.login-here').on('click', function (event) {
+    event.preventDefault();
+    toHide();
+    $('.overlay').css('display', 'block');
+    $('.dilog-container').css('display', 'flex');
+    $('.modal-dilog-login').css('display', 'flex');
+  });
+
   $('.login-link').on('click', function (event) {
     event.preventDefault();
     toHide();
@@ -24,8 +33,7 @@
     $('.modal-dilog-login').css('display', 'flex');
   });
 
-  // Log in form  
-
+  // Log in submit
   $('.login-form').on('submit', function (event) {
     event.preventDefault();
     let data = {
@@ -50,7 +58,7 @@
       });
   });
 
-  // Sign-up link
+  // Sign-up form
   $(".sign-up-link").on("click", function () {
     toHide();
     $('.overlay').css('display', 'block');
@@ -64,7 +72,7 @@
     "studio": "studio"
   }
 
-
+  // chosing studio role
   $('.studio-role').on('click', function (event) {
     event.preventDefault();
     role = rolesEnum.studio;
@@ -75,7 +83,7 @@
     $('.modal-dilog-submit').css('display', 'flex');
 
   });
-
+  // chosing artist role
   $('.artist-role').on('click', function (event) {
     event.preventDefault();
     role = rolesEnum.artist;
@@ -87,17 +95,17 @@
     toHide();
   });
 
-
+  // Sign-up submit
   $('.register-form').on('submit', function (event) {
     event.preventDefault();
 
     let data = {
       user_email: $('.new-user-email').val(),
-      user_login: $('.new-user-email').val(),
+      user_login: $('.new-user-name').val(),
       pass1: $('.new-user-password').val(),
       // role: 'studio'
-      first_name: 'john',
-      role: "studio"
+      // first_name: 'john',
+      role: role
     };
     $.ajax({
         url: api_vars.home_url + "/wp-login.php?action=register",
@@ -112,18 +120,7 @@
       .fail(function (response) {
         console.log('fail');
         console.log(response);
-        //post and alert with failure var from functions.php
       });
   });
 
 })(jQuery);
-
-
-// $('.login-link').on('click', function (event) {
-//   event.preventDefault();
-//   toHide();
-//   $('.overlay').css('display', 'block');
-//   $('.dilog-container').css('display', 'flex');
-//   $('.modal-dilog-roles').css('display', 'flex');
-
-// });
