@@ -67,7 +67,7 @@ function guestspot_post_type()
             'read_private_posts' => 'read_private_guestspot',
             'edit_post' => 'edit_guestspot',
             'delete_post' => 'delete_guestspot',
-            'read_post' => 'read_guestspot'
+            'read_post' => 'read_guestspot',
         ),
         'show_in_rest' => true,
         'template lock' => 'all',
@@ -80,4 +80,4 @@ function guestspot_post_type()
     register_post_type('guestspot', $args);
 
 }
-add_action('init', 'guestspot_post_type', 0)
+add_action('init', 'guestspot_post_type', 0);

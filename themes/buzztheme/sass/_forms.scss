@@ -84,6 +84,8 @@ body {
 
 	}
 
+
+
 	.modal-dilog-roles {
 		flex-direction: column;
 		padding: 2%;
@@ -144,6 +146,7 @@ body {
 			p {
 				margin-top: 5%;
 				margin-bottom: 5%;
+				text-align: center;
 			}
 		}
 	}
@@ -274,7 +277,17 @@ body {
 
 			p {
 				padding: 5%;
+				text-align: center;
+			}
+
+			.error-message {
+				@include text(red, 0.8rem, $font__main);
+				text-align: center;
+				margin: 0;
+				padding: 0;
 			}
 		}
 	}
+
+
 }
