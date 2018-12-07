@@ -11,7 +11,6 @@
 // Register Custom Post Type
 function guestspot_post_type()
 {
-
     $labels = array(
         'name' => _x('Guestspots', 'Post Type General Name', 'text_domain'),
         'singular_name' => _x('Guestspot', 'Post Type Singular Name', 'text_domain'),
