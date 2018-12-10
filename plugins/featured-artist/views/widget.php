@@ -19,6 +19,7 @@ echo $this->get_image_html( $instance, true );
 if ( ! empty( $description ) ) {
 	echo '<div class="' . esc_attr( $this->widget_options['classname'] ) . '-description" >';
 	echo wpautop( $description );
+	echo '<a href="#"></a>';
 	echo '</div>';
 }
 echo $after_widget;
