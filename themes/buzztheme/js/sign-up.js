@@ -10,6 +10,7 @@
     $('.error-message-sign-up').css('display', 'none');
     $('.error-message').empty();
     $('.error-message-sign-up').empty();
+
   }
 
   $(document).on("keydown", this, function (e) {
