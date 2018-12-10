@@ -201,7 +201,7 @@ body {
 					@include text($color__text-main, 1rem, $font__main);
 					font-weight: bold;
 				}
-
+			}
 				label,
 				input {
 					align-self: flex-start;
