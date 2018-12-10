@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) )
 
 echo $before_widget;
 ?>
-<h1 class="title-featured-artist">Featured Artist</h1>
+<h2 class="title-featured-artist">Featured Artist</h2>
 <?php 
 if ( ! empty( $title ) ) { echo $before_title . $title . $after_title; }
 
