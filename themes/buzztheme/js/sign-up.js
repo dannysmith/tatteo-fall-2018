@@ -76,6 +76,7 @@
     "studio": "studio"
   }
 
+
   // chosing studio role
   $('.studio-role').on('click', function (event) {
     event.preventDefault();
@@ -87,6 +88,7 @@
     $('.modal-dilog-submit').css('display', 'flex');
 
   });
+
   // chosing artist role
   $('.artist-role').on('click', function (event) {
     event.preventDefault();
@@ -96,6 +98,7 @@
     $('.overlay').css('display', 'block');
     $('.dilog-container').css('display', 'flex');
     $('.modal-dilog-submit').css('display', 'flex');
+
   });
 
   $('.cancel-modal-dilog-roles').on('click', function (event) {
