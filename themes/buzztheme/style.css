@@ -448,6 +448,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: absolute; }
+
   .dilog-container .cancel-modal-dilog-roles {
     background-image: url("../../assets/Buttons/close-icon.png");
     background-size: cover;
@@ -459,6 +460,7 @@ body {
         width: 58px;
         height: 58px;
         margin: 8px; } }
+
   .dilog-container .modal-dilog-roles {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -639,6 +641,7 @@ body {
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
               flex-direction: column; }
+
       .dilog-container .modal-dilog-login .flex-container a {
         cursor: pointer;
         text-decoration: underline; }
@@ -694,24 +697,80 @@ body {
 # Widgets
 --------------------------------------------------------------*/
 .featured-artist aside h2 {
-  border: 1px black solid;
+  border: 6px solid #000000;
   padding: 10px;
   background-color: white;
-  position: absolute;
-  z-index: 1; }
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 230px;
+  font-style: italic;
+  font-size: 25px;
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 0px; }
 
-.featured-artist aside p {
-  position: absolute;
-  z-index: 1;
-  border: 1px black solid;
-  padding: 10px;
-  background-color: white;
-  bottom: 10px; }
+.featured-artist aside .artist-name {
+  font-weight: 600;
+  text-align: center;
+  font-style: italic;
+  font-size: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 6px solid #000000; }
+
+.featured-artist aside .artist-description {
+  display: none; }
+  .featured-artist aside .artist-description p {
+    font-size: 16px;
+    z-index: 2;
+    background-color: white; }
+  .featured-artist aside .artist-description a {
+    width: 120px;
+    height: 55px;
+    margin-right: 10px;
+    background-image: url("../../assets/Buttons/button.png");
+    background-size: cover;
+    color: white;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    text-decoration: none; }
+  @media (min-width: 600px) {
+    .featured-artist aside .artist-description {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      height: 232px;
+      width: 312px;
+      width: 266px;
+      color: #000000;
+      font-size: 16px;
+      letter-spacing: 0.8px;
+      line-height: 21px;
+      border: 6px solid #000000; } }
 
 .featured-artist aside img {
+  z-index: 1;
   position: relative;
-  width: 700px;
-  margin: 5% 0; }
+  width: 90%;
+  margin: 10% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*--------------------------------------------------------------
 # Content
@@ -760,11 +819,13 @@ body {
   grid-auto-columns: auto;
   grid-auto-rows: auto;
   border-bottom: 6px solid #000; }
+
   .home #page .site-main {
     display: grid;
     grid-auto-columns: auto;
     grid-auto-rows: auto;
     border-bottom: 6px solid #000; }
+
   .home #page .examplefirstblock {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -781,17 +842,15 @@ body {
     margin-top: 5rem;
     padding-bottom: 5rem; }
     .home #page .examplesecondblock .exampleguestspots {
-      justify-self: center; }
-  .home #page .examplefourthblock {
-    border-top: 6px solid #000; }
-    .home #page .examplefourthblock img {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex; }
-    .home #page .examplefourthblock img.textures {
-      margin-top: 5rem; }
+      justify-self: center;
+      border: 6px solid #000; }
+  .home #page .examplefourthblock img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .home #page .not-found {
     display: none; }
+
 
 /* Footer */
 footer {
@@ -880,9 +939,10 @@ footer {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-line-pack: center;
-        align-content: center;
+        align-content: center; }
     width: 200px;
     overflow: hidden; }
+
     @media (min-width: 600px) {
       .site-header .dropdown-menu {
         width: 500px; } }
@@ -901,6 +961,8 @@ footer {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; }
+    .site-header .dropdown-menu .login-link {
+      cursor: pointer; }
     .site-header .dropdown-menu .main-navigation {
       display: none;
       -webkit-box-orient: vertical;
@@ -993,3 +1055,5 @@ footer {
                 width: 0; }
                 .site-header .dropdown-menu .main-navigation .container-header-nav .search-form fieldset input[type='search']:focus {
                   width: 125px; } }
+.cancel-modal-dilog-roles {
+  cursor: pointer; }

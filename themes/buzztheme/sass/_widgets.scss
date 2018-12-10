@@ -2,30 +2,83 @@
 # Widgets
 --------------------------------------------------------------*/
 
-.featured-artist{
+.featured-artist {
 
-    aside{
+    aside {
 
-        h2{
-        border: 1px black solid;
-        padding: 10px;
-        background-color: white;
-        position: absolute;
-        z-index: 1;
+        h2 {
+            border: $border;
+            padding: 10px;
+            background-color: white;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 230px;
+            font-style: italic;
+            font-size: 25px;
+            padding: 10px;
+            padding-top: 10px;
+            padding-bottom: 0px;
         }
-        p{
-        position: absolute;
-        z-index: 1;
-        border: 1px black solid;
-        padding: 10px;
-        background-color: white;
-        bottom: 10px;
+
+        .artist-name {
+            font-weight: 600;
+            text-align: center;
+            font-style: italic;
+            font-size: 25px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 10px;
+            padding-bottom: 0px;
+            width: fit-content;
+            border: $border;
         }
 
-        img{
-        position: relative;
-        width:700px;
-        margin:5% 0;
-        } 
+        .artist-description {
+            display: none;
+
+            p {
+
+                font-size: 16px;
+                z-index: 2;
+                background-color: white;
+
+            }
+
+            a {
+                width: 120px;
+                height: 55px;
+                margin-right: 10px;
+                background-image: url("../../assets/Buttons/button.png");
+                background-size: cover;
+                color: white;
+                align-self: flex-end;
+                text-decoration: none;
+            }
+
+            @include tablet {
+                width: fit-content;
+                display: flex;
+                flex-direction: column;
+                height: 232px;
+                width: 312px;
+                width: 266px;
+                color: #000000;
+                font-size: 16px;
+                letter-spacing: 0.8px;
+                line-height: 21px;
+                border: $border;
+            }
+        }
+
+        img {
+            z-index: 1;
+            position: relative;
+            width: 90%;
+            margin: 10% 0;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 }

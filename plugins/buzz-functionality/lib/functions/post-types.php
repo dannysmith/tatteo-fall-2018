@@ -8,7 +8,6 @@
 // Add your custom post types here...
 
 // Register Custom Post Type
-// Register Custom Post Type
 function guestspot_post_type()
 {
     $labels = array(
@@ -78,6 +77,5 @@ function guestspot_post_type()
         ),
     );
     register_post_type('guestspot', $args);
-
 }
 add_action('init', 'guestspot_post_type', 0);
