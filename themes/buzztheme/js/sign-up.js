@@ -10,9 +10,7 @@
     $('.error-message-sign-up').css('display', 'none');
     $('.error-message').empty();
     $('.error-message-sign-up').empty();
-
   }
-
 
   $(document).on("keydown", this, function (e) {
     var keycode = ((typeof e.keyCode != 'undefined' && e.keyCode) ? e.keyCode : e.which);
@@ -94,6 +92,7 @@
     $('.modal-dilog-submit').css('display', 'flex');
 
   });
+
   // chosing artist role
   $('.artist-role').on('click', function (event) {
     event.preventDefault();
@@ -128,9 +127,6 @@
         data: data,
       })
       .done(function (response) {
-
-        // window.blah = response;
-
         if ($(response).text().includes('ERROR')) {
           $('.error-message-sign-up').empty();
           $('.error-message-sign-up').css('display', 'block');
@@ -138,12 +134,10 @@
           const htmlDoc = parser.parseFromString(response, 'text/html');
           console.log($(htmlDoc).find("#login_error").html());
           $(".error-message-sign-up").append($(htmlDoc).find("#login_error").html());
-          // $('.error-message').text("Incorrect user name or password. Please try again.")
         } else {
           toHide();
           location.reload(true);
         }
-
       })
       .fail(function (response) {
         console.log('fail');

@@ -7,117 +7,148 @@
     font-weight: 600;
     font-size: 14px;
     justify-content: space-around;
-    @include tablet{
+
+    @include tablet {
         font-size: 16px;
     }
+
     .site-branding {
         display: flex;
         align-content: center;
         align-items: center;
+
         img {
             max-width: none;
             height: 3rem;
         }
     }
-    .dropdown-menu{
+
+    .dropdown-menu {
         display: flex;
         align-content: center;
         width: 200px;
         overflow: hidden;
-        @include tablet{
-            width : 500px;
+
+        @include tablet {
+            width: 500px;
         }
-        @include desktop{
+
+        @include desktop {
             width: 900px;
         }
-        button{
-            border : none;
+
+        button {
+            border: none;
             font-size: 20px;
-            &:focus{
+
+            &:focus {
                 outline: none;
             }
-            @include tablet{
-             display: none;
+
+            @include tablet {
+                display: none;
             }
         }
-        .show{
+
+        .show {
             display: flex;
         }
-    .login-link{
-        cursor: pointer;
-    }
-    .main-navigation {
-        display: none;
-        flex-direction: column;
-        @include tablet{
-        width: 100%;
-        display: inline-flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+
+        .login-link {
+            cursor: pointer;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            @include tablet{
-              
-                display: inline-flex;
-            }
-
-            li {
-                a {
-                    color: black;
-                    text-decoration: none;
-                }
-
-                margin: 10px;
-            }
-        }
-
-        .container-header-nav {
-            display: flex;
+        .main-navigation {
+            display: none;
             flex-direction: column;
-            @include tablet{
+
+            @include tablet {
+                width: 100%;
                 display: inline-flex;
                 flex-direction: row;
+                justify-content: space-between;
                 align-items: center;
             }
-            a{
-              
-                padding-left: 10px;
-            }
-            .search-form {
 
-                .search-label {
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                @include tablet {
+
                     display: inline-flex;
+                }
+
+                li {
+                    a {
+                        color: black;
+                        text-decoration: none;
+                    }
+
+                    margin: 10px;
+                }
+            }
+
+            .container-header-nav {
+                display: flex;
+                flex-direction: column;
+
+                @include tablet {
+                    display: inline-flex;
+                    flex-direction: row;
                     align-items: center;
                 }
 
-                fieldset {
-                    height: 33px;
-                    padding-top: 0;
-                    border: none;
-                    @include tablet{
-                        padding-top: 5px;
-                    }
-                    input[type='search'] {
-                        width: 160px;
-                        background-color: transparent;
-                        border: none;
-                        transition: width 0.4s ease-in-out;
-                        outline: none;
-                        color: black;
+                a {
 
-                        &::placeholder {
-                            color: grey;
+                    padding-left: 10px;
+                }
+
+                .wp-user-avatar {
+                    display: inline-block;
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    border: 3px solid black;
+
+                }
+
+                .search-form {
+
+                    .search-label {
+                        display: inline-flex;
+                        align-items: center;
+                    }
+
+                    fieldset {
+                        height: 33px;
+                        padding-top: 0;
+                        border: none;
+
+                        @include tablet {
+                            padding-top: 5px;
                         }
-                        @include tablet{
-                            overflow: hidden;
-                            width: 0;
-                            &:focus {
-                                width: 125px;
+
+                        input[type='search'] {
+                            width: 160px;
+                            background-color: transparent;
+                            border: none;
+                            transition: width 0.4s ease-in-out;
+                            outline: none;
+                            color: black;
+
+                            &::placeholder {
+                                color: grey;
+                            }
+
+                            @include tablet {
+                                overflow: hidden;
+                                width: 0;
+
+                                &:focus {
+                                    width: 125px;
+                                }
                             }
                         }
                     }
@@ -126,7 +157,7 @@
         }
     }
 }
-}
-.cancel-modal-dilog-roles{
+
+.cancel-modal-dilog-roles {
     cursor: pointer;
 }

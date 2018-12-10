@@ -90,7 +90,16 @@
           <?php wp_nav_menu();?>
           <div class="container-header-nav">
             <?php get_search_form();?>
+            <!-- <a class="login-link">Login</a> -->
+            <?php if (!is_user_logged_in()): ?>
             <a class="login-link">Login</a>
+            <?php else: ?>
+            <a>
+              <?php $current_user = wp_get_current_user();
+echo get_avatar($current_user->user_email, 150);
+// echo get_avatar($current_user->user_email, 20);?>
+            </a>
+            <?php endif?>
           </div>
         </nav><!-- #site-navigation -->
       </div> <!-- dropdown-menu-->
