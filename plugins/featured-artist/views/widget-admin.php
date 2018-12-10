@@ -23,7 +23,7 @@ $id_prefix = $this->get_field_id( '' );
 	<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Artist Name', 'image-widget' ); ?>:</label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( strip_tags( $instance['title'] ) ); ?>" /></p>
 
-	<p><label for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Description', 'image-widget' ); ?>:</label>
+	<p><label for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Artist Description', 'image-widget' ); ?>:</label>
 	<textarea rows="8" class="widefat" id="<?php echo $this->get_field_id( 'description' ); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>"><?php echo format_to_edit( $instance['description'] ); ?></textarea></p>
 
 	<?php
@@ -49,5 +49,6 @@ $id_prefix = $this->get_field_id( '' );
 		<input id="<?php echo $this->get_field_id( 'height' ); ?>" name="<?php echo $this->get_field_name( 'height' ); ?>" type="text" value="<?php echo esc_attr( strip_tags( $instance['height'] ) ); ?>" onchange="imageWidget.changeImgHeight( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>' )" size="3" /></p>
 
 	</div>
+
 
 </div>
