@@ -23,6 +23,7 @@
   <div class="overlay">
   </div>
   <div class="dilog-container">
+  
 
     <!-- Login form -->
     <div class="modal-dilog-login">
@@ -132,3 +133,4 @@ echo get_avatar($current_user->user_email, 150);
         <?php endif?>
         <li><a>Sign out</a></li>
       </div>
+     
