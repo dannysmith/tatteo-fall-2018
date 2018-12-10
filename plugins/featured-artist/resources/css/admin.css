@@ -5,18 +5,18 @@
 	width: 100%;
 }
 
-.preview .aligncenter {
+.tribe_preview .aligncenter {
 	display: block;
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
 
-.preview {
+.tribe_preview {
 	max-height: 300px;
 	overflow: hidden;
 }
 
-.preview img {
+.tribe_preview img {
 	height: auto;
 	margin: 10px 0;
 	max-width: 100%;

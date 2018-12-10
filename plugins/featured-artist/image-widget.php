@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Image Widget
+Plugin Name: Featured Artist
 Plugin URI: http://wordpress.org/plugins/image-widget/
 Description: A simple image widget that uses the native WordPress media manager to add image widgets to your site. <strong><a href="http://m.tri.be/19my">Image Widget Plus</a> - Multiple images, slider and more.</strong>
 Author: Modern Tribe, Inc.
