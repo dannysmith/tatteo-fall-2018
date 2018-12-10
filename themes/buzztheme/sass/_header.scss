@@ -161,3 +161,31 @@
 .cancel-modal-dilog-roles {
     cursor: pointer;
 }
+
+.site-content {
+    position: relative;
+
+    .show-menu {
+        display: none;
+    }
+
+    .user-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 12;
+        background-color: #fff;
+        border-bottom: $border;
+        border-left: $border;
+
+        .username {
+            border-bottom: 1px solid black;
+        }
+
+        li {
+            padding: 12px 40px 12px 12px;
+            list-style: none;
+        }
+
+    }
+}

@@ -94,7 +94,7 @@
             <?php if (!is_user_logged_in()): ?>
             <a class="login-link">Login</a>
             <?php else: ?>
-            <a>
+            <a class="user-link">
               <?php $current_user = wp_get_current_user();
 echo get_avatar($current_user->user_email, 150);
 // echo get_avatar($current_user->user_email, 20);?>
@@ -106,3 +106,13 @@ echo get_avatar($current_user->user_email, 150);
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">
+      <div class="user-menu show-menu">
+        <li class="username">
+          <?php echo $current_user->user_login ?>
+        </li>
+        <li><a>Edit Profile</a></li>
+        <?php if (current_user_can("studio")): ?>
+        <li><a>My Guestspots</a></li>
+        <?php endif?>
+        <li><a>Sign out</a></li>
+      </div>
