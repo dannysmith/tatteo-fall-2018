@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Featured Artist
+Plugin Name: Image Widget
 Plugin URI: http://wordpress.org/plugins/image-widget/
 Description: A simple image widget that uses the native WordPress media manager to add image widgets to your site. <strong><a href="http://m.tri.be/19my">Image Widget Plus</a> - Multiple images, slider and more.</strong>
 Author: Modern Tribe, Inc.
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Load the widget on widgets_init
-function load_image_widget() {
-	register_widget( 'Image_Widget' );
+function tribe_load_image_widget() {
+	register_widget( 'Tribe_Image_Widget' );
 }
-add_action( 'widgets_init', 'load_image_widget' );
+add_action( 'widgets_init', 'tribe_load_image_widget' );
 
-class Image_Widget extends WP_Widget {
+class Tribe_Image_Widget extends WP_Widget {
 
 	const VERSION = '4.4.7';
 

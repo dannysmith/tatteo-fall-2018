@@ -5,6 +5,4 @@
   $(".user-link").on("click", function () {
     $(".user-menu").toggleClass("show-menu");
   });
-
-  $
 })(jQuery);

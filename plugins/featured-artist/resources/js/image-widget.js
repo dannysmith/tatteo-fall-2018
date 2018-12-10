@@ -1,6 +1,5 @@
 /**
  * Tribe Image Widget Javascript
- *
  * @author Modern Tribe, Inc.
  * Copyright 2013.
  */
@@ -12,10 +11,10 @@ jQuery(document).ready(function($){
 		uploader : function( widget_id, widget_id_string ) {
 
 			var frame = wp.media({
-				title : ImageWidget.frame_title,
+				title : TribeImageWidget.frame_title,
 				multiple : false,
 				library : { type : 'image' },
-				button : { text : ImageWidget.button_title }
+				button : { text : TribeImageWidget.button_title }
 			});
 
 			// Handle results from media manager.
@@ -85,7 +84,7 @@ jQuery(document).ready(function($){
 
 		// Hide or display the WordPress image size fields depending on if 'Custom' is selected.
 		toggleSizes : function( widget_id, widget_id_string ) {
-			if ( $( '#' + widget_id_string + 'size' ).val() == 'image_widget_custom' ) {
+			if ( $( '#' + widget_id_string + 'size' ).val() == 'tribe_image_widget_custom' ) {
 				$( '#' + widget_id_string + 'custom_size_fields').slideDown();
 			} else {
 				$( '#' + widget_id_string + 'custom_size_fields').slideUp();

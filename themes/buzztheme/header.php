@@ -30,13 +30,12 @@
       <a class="cancel-modal-dilog-roles"></a>
       <div class="flex-container">
         <p class="error-message"></p>
-        <form class="login-form" action="/buzz/wp-login.php" name="loginform" id="loginform" method="post">
-
+        <form class="login-form" action="/buzz/wp-login.php" name="loginform" method="post">
           <label>Username</label>
           <input type="text" class="user-name" name="log" id="user_login" required />
           <label>Password</label>
-          <input type="password" class="user-password" name="pwd" id="user_pass" required />
-          <input class="log-in-user-btn" type="submit" value="Log in" name="wp-submit" id="wp-submit">
+          <input type="password" class="user-password" name="pwd" required />
+          <input class="log-in-user-btn" type="submit" value="Log in" name="wp-submit">
 
           <input type="hidden" name="redirect_to" value="http://localhost:8888/buzz/wp-admin/" />
           <input type="hidden" name="testcookie" value="1" />
@@ -59,7 +58,7 @@
       </div>
     </div>
 
-    <!-- Sign-up form with emal and password -->
+    <!-- Sign-up form with username, emal and password -->
     <div class="modal-dilog-submit">
       <a class="cancel-modal-dilog-roles"></a>
       <div class="flex-container">
@@ -75,23 +74,7 @@
         </form>
       </div>
     </div>
-
-    <div class="modal-dilog-login">
-      <a class="cancel-modal-dilog-roles"></a>
-      <div class="flex-container">
-        <form class="login-form" action="/buzz/wp-login.php" name="loginform" id="loginform" method="post">
-          <label>Username</label>
-          <input type="text" class="user-name" name="log" id="user_login" />
-          <label>Password</label>
-          <input type="password" class="user-password" name="pwd" id="user_pass" />
-          <input class="log-in-user-btn" type="submit" value="Log in" name="wp-submit" id="wp-submit">
-
-          <input type="hidden" name="redirect_to" value="http://localhost:8888/buzz/wp-admin/" />
-          <input type="hidden" name="testcookie" value="1" />
-        </form>
-        <p>Don't have an account yet? Sign up <a class="sign-up-link">here</a>.</p>
-      </div>
-    </div>
+  </div>
   </div>
 
 
