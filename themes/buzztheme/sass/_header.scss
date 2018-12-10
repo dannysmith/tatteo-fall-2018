@@ -23,15 +23,24 @@
         }
     }
 
+    .menu {
+        position: relative;
+    }
+
     .dropdown-menu {
-        .current-menu-item {
-            z-index: 2;
-            background-image: url("../../assets/Buttons/rough-circle.png");
-            background-size: cover;
-            
-          
-            a {
+        @include tablet {
+            .current-menu-item {
                 z-index: 1;
+
+                a {
+                    padding: 10px;
+                    padding-left: 25px;
+                    padding-right: 37px;
+                    padding-bottom: 17px;
+                    z-index: 2;
+                    background-image: url("../../assets/Buttons/rough-circle.png");
+                    background-size: cover;
+                }
             }
         }
 
@@ -67,6 +76,11 @@
 
         .login-link {
             cursor: pointer;
+
+            @include tablet {
+                font-size: 18px;
+            }
+
         }
 
         .main-navigation {
@@ -85,6 +99,7 @@
                 list-style: none;
                 padding: 0;
                 margin: 0;
+
                 @include tablet {
 
                     display: inline-flex;
@@ -92,6 +107,13 @@
 
                 li {
                     a {
+                        @include desktop{
+                            padding: 10px;
+                            padding-left: 25px;
+                            padding-right: 37px;
+                            padding-bottom: 17px;
+                        }
+                      
                         color: black;
                         text-decoration: none;
                     }
@@ -116,6 +138,11 @@
                 }
 
                 .search-form {
+                    i.fa.fa-search::before {
+                        @include tablet {
+                            font-size: 26px;
+                        }
+                    }
 
                     .search-label {
                         display: inline-flex;
@@ -124,11 +151,11 @@
 
                     fieldset {
                         height: 33px;
-                        padding-top: 0;
+                        padding-top: 0px;
                         border: none;
 
                         @include tablet {
-                            padding-top: 5px;
+                            padding-top: 3px;
                         }
 
                         input[type='search'] {
@@ -153,6 +180,7 @@
                             }
                         }
                     }
+
                 }
             }
         }
