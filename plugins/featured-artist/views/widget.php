@@ -9,7 +9,9 @@ if ( ! defined( 'ABSPATH' ) )
 	die( '-1' );
 
 echo $before_widget;
-
+?>
+<h1 class="title-featured-artist">Featured Artist</h1>
+<?php 
 if ( ! empty( $title ) ) { echo $before_title . $title . $after_title; }
 
 echo $this->get_image_html( $instance, true );
