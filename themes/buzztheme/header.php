@@ -113,5 +113,5 @@ echo get_avatar($current_user->user_email, 150);
         <?php if (current_user_can("studio")): ?>
         <li><a>My Guestspots</a></li>
         <?php endif?>
-        <li><a>Sign out</a></li>
+        <li><a href="<?php echo wp_logout_url(home_url()); ?>">Sign out</a></li>
       </div>
