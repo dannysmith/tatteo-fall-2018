@@ -6,13 +6,18 @@
     $('.modal-dilog-roles').css('display', 'none');
     $('.modal-dilog-submit').css('display', 'none');
     $('.modal-dilog-login').css('display', 'none');
-  }
+    $('.error-message').css('display', 'none');
+    $('.error-message-sign-up').css('display', 'none');
+    $('.error-message').empty();
+    $('.error-message-sign-up').empty();
 
+  }
 
   $(document).on("keydown", this, function (e) {
     var keycode = ((typeof e.keyCode != 'undefined' && e.keyCode) ? e.keyCode : e.which);
     if (keycode === 27) {
       toHide();
+      $(".user-menu").css("display", "none");
     }
   });
 
@@ -49,12 +54,14 @@
         data: data,
       })
       .done(function (response) {
-        toHide();
-        window.blah = response;
         if ($(response).text().includes('ERROR')) {
-          //login failed
+          $('.error-message').css('display', 'block');
+          $('.error-message').text("Incorrect user name or password. Please try again.")
+        } else {
+          toHide();
+          location.reload(true);
         }
-        //location.reload(true);
+        //
       })
       .fail(function (response) {
         console.log('fail');
@@ -76,6 +83,7 @@
     "studio": "studio"
   }
 
+
   // chosing studio role
   $('.studio-role').on('click', function (event) {
     event.preventDefault();
@@ -87,6 +95,7 @@
     $('.modal-dilog-submit').css('display', 'flex');
 
   });
+
   // chosing artist role
   $('.artist-role').on('click', function (event) {
     event.preventDefault();
@@ -96,6 +105,7 @@
     $('.overlay').css('display', 'block');
     $('.dilog-container').css('display', 'flex');
     $('.modal-dilog-submit').css('display', 'flex');
+
   });
 
   $('.cancel-modal-dilog-roles').on('click', function (event) {
@@ -120,9 +130,18 @@
         method: 'POST',
         data: data,
       })
-      .done(function () {
-        toHide();
-        location.reload(true);
+      .done(function (response) {
+        if ($(response).text().includes('ERROR')) {
+          $('.error-message-sign-up').empty();
+          $('.error-message-sign-up').css('display', 'block');
+          let parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(response, 'text/html');
+          console.log($(htmlDoc).find("#login_error").html());
+          $(".error-message-sign-up").append($(htmlDoc).find("#login_error").html());
+        } else {
+          toHide();
+          location.reload(true);
+        }
       })
       .fail(function (response) {
         console.log('fail');

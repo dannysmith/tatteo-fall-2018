@@ -24,16 +24,17 @@
   </div>
   <div class="dilog-container">
 
-
     <!-- Login form -->
     <div class="modal-dilog-login">
       <a class="cancel-modal-dilog-roles"></a>
       <div class="flex-container">
+        <p class="error-message"></p>
         <form class="login-form" action="/buzz/wp-login.php" name="loginform" id="loginform" method="post">
+
           <label>Username</label>
-          <input type="text" class="user-name" name="log" id="user_login" />
+          <input type="text" class="user-name" name="log" id="user_login" required />
           <label>Password</label>
-          <input type="password" class="user-password" name="pwd" id="user_pass" />
+          <input type="password" class="user-password" name="pwd" id="user_pass" required />
           <input class="log-in-user-btn" type="submit" value="Log in" name="wp-submit" id="wp-submit">
 
           <input type="hidden" name="redirect_to" value="http://localhost:8888/buzz/wp-admin/" />
@@ -42,6 +43,7 @@
         <p>Don't have an account yet? Sign up <a class="sign-up-link">here</a>.</p>
       </div>
     </div>
+
 
     <!-- Sign-up form with roles -->
     <div class="modal-dilog-roles">
@@ -60,18 +62,35 @@
     <div class="modal-dilog-submit">
       <a class="cancel-modal-dilog-roles"></a>
       <div class="flex-container">
+        <p class="error-message-sign-up"></p>
         <form class="register-form">
           <label>User name</label>
-          <input type="text" class="new-user-name" />
+          <input type="text" class="new-user-name" required />
           <label>Email</label>
-          <input type="text" class="new-user-email" />
+          <input type="text" class="new-user-email" required />
           <label>Password</label>
-          <input type="password" class="new-user-password" />
+          <input type="password" class="new-user-password" required />
           <input class="add-user-btn" type="submit" value="Submit">
         </form>
       </div>
     </div>
 
+    <div class="modal-dilog-login">
+      <a class="cancel-modal-dilog-roles"></a>
+      <div class="flex-container">
+        <form class="login-form" action="/buzz/wp-login.php" name="loginform" id="loginform" method="post">
+          <label>Username</label>
+          <input type="text" class="user-name" name="log" id="user_login" />
+          <label>Password</label>
+          <input type="password" class="user-password" name="pwd" id="user_pass" />
+          <input class="log-in-user-btn" type="submit" value="Log in" name="wp-submit" id="wp-submit">
+
+          <input type="hidden" name="redirect_to" value="http://localhost:8888/buzz/wp-admin/" />
+          <input type="hidden" name="testcookie" value="1" />
+        </form>
+        <p>Don't have an account yet? Sign up <a class="sign-up-link">here</a>.</p>
+      </div>
+    </div>
   </div>
 
 
@@ -87,10 +106,29 @@
           <?php wp_nav_menu();?>
           <div class="container-header-nav">
             <?php get_search_form();?>
+            <!-- <a class="login-link">Login</a> -->
+            <?php if (!is_user_logged_in()): ?>
             <a class="login-link">Login</a>
+            <?php else: ?>
+            <a class="user-link">
+              <?php $current_user = wp_get_current_user();
+echo get_avatar($current_user->user_email, 150);
+// echo get_avatar($current_user->user_email, 20);?>
+            </a>
+            <?php endif?>
           </div>
         </nav><!-- #site-navigation -->
       </div> <!-- dropdown-menu-->
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">
+      <div class="user-menu show-menu">
+        <li class="username">
+          <?php echo $current_user->user_login ?>
+        </li>
+        <li><a>Edit Profile</a></li>
+        <?php if (current_user_can("studio")): ?>
+        <li><a>My Guestspots</a></li>
+        <?php endif?>
+        <li><a>Sign out</a></li>
+      </div>
