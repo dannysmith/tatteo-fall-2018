@@ -26,11 +26,6 @@ get_header();?>
     <?php get_sidebar();?>
     </section>
 
-    <section class="examplefourthblock">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/oldhabits-12.png" width="" height="" alt="background" />
-      <img class="textures" src="<?php echo get_template_directory_uri(); ?>/assets/images/Textures-2.png" width="" height="" alt="background" />
-    </section>
-
     <?php if (have_posts()): ?>
 
     <?php if (is_home() && !is_front_page()): ?>

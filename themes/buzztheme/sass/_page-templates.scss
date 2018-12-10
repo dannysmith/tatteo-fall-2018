@@ -36,18 +36,9 @@
 
                 .exampleguestspots {
                     justify-self: center;
+                    border: 6px solid #000;
                 }
         }
-
-            .examplefourthblock {
-                border-top: 6px solid #000;
-                img {
-                    display: flex;
-                }
-                img.textures {
-                    margin-top: 5rem;
-                }
-            }
 
             .not-found {
                 display: none;
