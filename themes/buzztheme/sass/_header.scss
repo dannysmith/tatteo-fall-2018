@@ -128,17 +128,17 @@
                 display: flex;
                 flex-direction: column;
 
-                .user-link {
-                    border: 4px solid black;
-                    padding: 0px;
-                    margin: 0;
-                    height: 50px;
-                    width: 50px;
-                    border-radius: 200px;
-                    img {
-                        border-radius: 200px;
-                    }
-                }
+                // .user-link {
+                //     border: 4px solid black;
+                //     padding: 0px;
+                //     margin: 0;
+                //     height: 50px;
+                //     width: 50px;
+                //     border-radius: 200px;
+                //     img {
+                //         border-radius: 200px;
+                //     }
+                // }
 
                 @include tablet {
                     display: inline-flex;
@@ -150,6 +150,18 @@
                 a {
 
                     padding-left: 10px;
+                }
+
+                .user-link {
+                    padding: 0;
+                }
+
+                .wp-user-avatar {
+                    display: inline-block;
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    border: 3px solid black;
                 }
 
                 .search-form {
@@ -227,6 +239,11 @@
         background-color: #fff;
         border-bottom: $border;
         border-left: $border;
+
+        a {
+            color: $color__text-main;
+            text-decoration: none;
+        }
 
         .username {
             border-bottom: 1px solid black;
