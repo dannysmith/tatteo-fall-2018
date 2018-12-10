@@ -69,6 +69,7 @@ body {
 	align-items: center;
 	position: absolute;
 
+
 	.cancel-modal-dilog-roles {
 		background-image: url("../../assets/Buttons/close-icon.png");
 		background-size: cover;
@@ -76,12 +77,12 @@ body {
 		height: 26px;
 		margin: 14px;
 
+
 		@include tablet {
 			width: 58px;
 			height: 58px;
 			margin: 8px;
 		}
-
 	}
 
 
@@ -299,6 +300,3 @@ body {
 			}
 		}
 	}
-
-
-}

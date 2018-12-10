@@ -8,6 +8,7 @@
     font-size: 14px;
     justify-content: space-around;
 
+
     @include tablet {
         font-size: 16px;
     }
@@ -97,6 +98,7 @@
 
                 @include tablet {
 
+
                     display: inline-flex;
                 }
 
@@ -127,6 +129,7 @@
                     align-items: center;
                 }
 
+
                 a {
 
                     padding-left: 10px;
@@ -150,7 +153,9 @@
 
                     fieldset {
                         height: 33px;
+
                         padding-top: 0;
+
                         border: none;
 
                         @include tablet {
@@ -176,6 +181,7 @@
                                 &:focus {
                                     width: 125px;
                                 }
+
                             }
                         }
                     }
@@ -185,11 +191,13 @@
         }
     }
 
+
 }
 
 .cancel-modal-dilog-roles {
     cursor: pointer;
 }
+
 
 .site-content {
     position: relative;
@@ -218,3 +226,4 @@
 
     }
 }
+

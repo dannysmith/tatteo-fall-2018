@@ -9,6 +9,7 @@
         display: grid;
         grid-auto-columns: auto;
         grid-auto-rows: auto;
+
         border-bottom: 6px solid #000;
 
         .site-main {
@@ -38,11 +39,13 @@
                     justify-self: center;
                     border: 6px solid #000;
                 }
+
         }
 
             .not-found {
                 display: none;
             }
+
     }
 }
 
