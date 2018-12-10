@@ -17,7 +17,7 @@ get_header(); ?>
     'number'        => 6,
     'optioncount'   => false, 
     'exclude_admin' => true, 
-    'show_fullname' => false,
+    'show_fullname' => true,
     'hide_empty'    => true,
     'echo'          => true,
     'feed'          => '', 

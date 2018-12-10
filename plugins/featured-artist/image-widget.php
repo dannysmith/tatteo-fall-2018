@@ -38,7 +38,7 @@ class Tribe_Image_Widget extends WP_Widget {
 		$widget_ops  = array( 'classname' => 'widget_sp_image', 'description' => __( 'Showcase a single image with a Title, URL, and a Description', 'image-widget' ) );
 		$control_ops = array( 'id_base' => 'widget_sp_image' );
 
-		parent::__construct( 'widget_sp_image', __( 'Image Widget', 'image-widget' ), $widget_ops, $control_ops );
+		parent::__construct( 'widget_sp_image', __( 'Featured Artist', 'image-widget' ), $widget_ops, $control_ops );
 
 		if ( $this->use_old_uploader() ) {
 			require_once( 'lib/ImageWidgetDeprecated.php' );
