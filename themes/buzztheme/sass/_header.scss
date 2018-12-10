@@ -77,11 +77,6 @@
 
         .login-link {
             cursor: pointer;
-
-            @include tablet {
-                font-size: 18px;
-            }
-
         }
 
         .main-navigation {
@@ -109,13 +104,13 @@
 
                 li {
                     a {
-                        @include desktop{
+                        @include desktop {
                             padding: 10px;
                             padding-left: 25px;
                             padding-right: 37px;
                             padding-bottom: 17px;
                         }
-                      
+
                         color: black;
                         text-decoration: none;
                     }
@@ -140,12 +135,16 @@
                     padding-left: 10px;
                 }
 
+                .wp-user-avatar {
+                    display: inline-block;
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    border: 3px solid black;
+
+                }
+
                 .search-form {
-                    i.fa.fa-search::before {
-                        @include tablet {
-                            font-size: 26px;
-                        }
-                    }
 
                     .search-label {
                         display: inline-flex;
@@ -154,12 +153,13 @@
 
                     fieldset {
                         height: 33px;
-                        padding-top: 0px;
+
+                        padding-top: 0;
 
                         border: none;
 
                         @include tablet {
-                            padding-top: 3px;
+                            padding-top: 5px;
                         }
 
                         input[type='search'] {
@@ -196,5 +196,34 @@
 
 .cancel-modal-dilog-roles {
     cursor: pointer;
+}
+
+
+.site-content {
+    position: relative;
+
+    .show-menu {
+        display: none;
+    }
+
+    .user-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 12;
+        background-color: #fff;
+        border-bottom: $border;
+        border-left: $border;
+
+        .username {
+            border-bottom: 1px solid black;
+        }
+
+        li {
+            padding: 12px 40px 12px 12px;
+            list-style: none;
+        }
+
+    }
 }
 
