@@ -1,4 +1,4 @@
-<?php
+s<?php
 /**
  * The template for displaying archive pages.
  *
@@ -10,10 +10,10 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-<section>		
+<section class="studio-users">		
 <?php
 $args1 = array(
- 'role' => 'studio',
+ 'role' => 'artist',
  'orderby' => 'registered',
  'order' => 'ASC', 
  'number' => '6'
