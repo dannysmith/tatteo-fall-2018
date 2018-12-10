@@ -6,8 +6,8 @@
     $('.modal-dilog-roles').css('display', 'none');
     $('.modal-dilog-submit').css('display', 'none');
     $('.modal-dilog-login').css('display', 'none');
-    $('.error-message').css('display', 'none');
     $('.error-message-sign-up').css('display', 'none');
+    $('.error-message').css('display', 'none');
     $('.error-message').empty();
     $('.error-message-sign-up').empty();
 
@@ -38,6 +38,7 @@
     $('.modal-dilog-login').css('display', 'flex');
   });
 
+  let err = false;
   // Log in submit
   $('.login-form').on('submit', function (event) {
     event.preventDefault();
@@ -51,22 +52,24 @@
     $.ajax({
         url: api_vars.home_url + "/wp-login.php",
         method: 'POST',
-        data: data,
+        data: $(this).serialize(),
+        success: function (response) {
+          if ($(response).text().includes('ERROR')) {
+            err = true;
+          }
+        }
       })
-      .done(function (response) {
-        if ($(response).text().includes('ERROR')) {
+      .done(function () {
+        if (err) {
           $('.error-message').css('display', 'block');
-          $('.error-message').text("Incorrect user name or password. Please try again.")
+          $('.error-message').empty();
+          $('.error-message').text("Incorrect Username or password. Please try again.");
         } else {
           toHide();
           location.reload(true);
         }
-        //
       })
-      .fail(function (response) {
-        console.log('fail');
-        console.log(response);
-      });
+      .fail(function (response) {});
   });
 
   // Sign-up form
@@ -131,6 +134,7 @@
         data: data,
       })
       .done(function (response) {
+        console.log(response);
         if ($(response).text().includes('ERROR')) {
           $('.error-message-sign-up').empty();
           $('.error-message-sign-up').css('display', 'block');
