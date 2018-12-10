@@ -10,46 +10,26 @@ get_header();?>
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main">
 
-  	<section class="examplefirstblock">
-		</section>
+<!-- need to edit this loop -->
 
-		<section class="examplesecondblock">
-      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Adam-Sage.png" width="" height="" alt="the warren tattoo"></div>
-      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Caleb-Kilby.png" width="" height="" alt="aesthetic ambition"></div>
-      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Clare-Xthg.png" width="" height="" alt="black ink tattoo"></div>
-      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Duncan-X.png" width="" height="" alt="mirror studios"></div>
-      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/False-Modigliani.png" width="" height="" alt="human tattoo"></div>
-      <div class="exampleguestspots"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Adam-Sage.png" width="" height="" alt="skinz place"></div>
-    </section>
+<section>
+      <?php
+        $args = array( 'post_type' => 'guestspots', 'order' => 'ASC', 'posts_per_page' => '6');
+        $guestspots_posts = get_posts( $args ); // returns an array of posts
+      ?>
+      <div class ="exampleguestspots">
+      <?php foreach ( $guestspots_posts as $post ) : setup_postdata( $post ); ?>
+      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+        <?php the_post_thumbnail();?> 
+      <?php endforeach; wp_reset_postdata(); ?>
+      </div>
+</section>
+    
 
     <section class="featured-artist">
     <?php get_sidebar();?>
     </section>
 
-    <?php if (have_posts()): ?>
-
-    <?php if (is_home() && !is_front_page()): ?>
-    <header>
-      <h1 class="page-title screen-reader-text">
-        <?php single_post_title();?>
-      </h1>
-    </header>
-    <?php endif;?>
-
-    <?php /* Start the Loop */?>
-    <?php while (have_posts()): the_post();?>
-
-    <?php get_template_part('template-parts/content');?>
-
-    <?php endwhile;?>
-
-    <?php the_posts_navigation();?>
-
-    <?php else: ?>
-
-    <?php get_template_part('template-parts/content', 'none');?>
-
-    <?php endif;?>
 
   </main><!-- #main -->
 </div><!-- #primary -->
