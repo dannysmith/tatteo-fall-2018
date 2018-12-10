@@ -25,6 +25,23 @@
   <div class="dilog-container">
 
     <!-- Login form -->
+    <div class="modal-dilog-login">
+      <a class="cancel-modal-dilog-roles"></a>
+      <div class="flex-container">
+        <form class="login-form" action="/buzz/wp-login.php" name="loginform" id="loginform" method="post">
+          <label>Username</label>
+          <input type="text" class="user-name" name="log" id="user_login" />
+          <label>Password</label>
+          <input type="password" class="user-password" name="pwd" id="user_pass" />
+          <input class="log-in-user-btn" type="submit" value="Log in" name="wp-submit" id="wp-submit">
+
+          <input type="hidden" name="redirect_to" value="http://localhost:8888/buzz/wp-admin/" />
+          <input type="hidden" name="testcookie" value="1" />
+        </form>
+        <p>Don't have an account yet? Sign up <a class="sign-up-link">here</a>.</p>
+      </div>
+    </div>
+
 
     <!-- Sign-up form with roles -->
     <div class="modal-dilog-roles">
@@ -35,20 +52,24 @@
           <a class="studio-role role">Studio</a>
           <a class="artist-role role">Artist</a>
         </div>
-        <p>Already have an account? Login <a>here</a>.</p>
+        <p>Already have an account? Login <a class="login-here">here</a>.</p>
       </div>
     </div>
 
     <!-- Sign-up form with emal and password -->
     <div class="modal-dilog-submit">
       <a class="cancel-modal-dilog-roles"></a>
-      <form class="register-form">
-        <label>Email</label>
-        <input type="text" class="new-user-email" />
-        <label>Password</label>
-        <input type="password" class="new-user-password" />
-        <input class="add-user-btn" type="submit" value="Submit">
-      </form>
+      <div class="flex-container">
+        <form class="register-form">
+          <label>User name</label>
+          <input type="text" class="new-user-name" />
+          <label>Email</label>
+          <input type="text" class="new-user-email" />
+          <label>Password</label>
+          <input type="password" class="new-user-password" />
+          <input class="add-user-btn" type="submit" value="Submit">
+        </form>
+      </div>
     </div>
 
     <div class="modal-dilog-login">

@@ -70,12 +70,19 @@ body {
 	position: absolute;
 
 
-	.cancel-modal-dilog-roles:before {
-		font-family: "FontAwesome";
-		content: '\f00d';
-		font-size: 60px;
-		margin-left: 2%;
-		display: block;
+	.cancel-modal-dilog-roles {
+		background-image: url("../../assets/Buttons/close-icon.png");
+		background-size: cover;
+		width: 26px;
+		height: 26px;
+		margin: 14px;
+
+
+		@include tablet {
+			width: 58px;
+			height: 58px;
+			margin: 8px;
+		}
 	}
 
 	.modal-dilog-roles {
@@ -87,11 +94,9 @@ body {
 
 		@include tablet {
 			width: 60%;
-			height: 80%;
+			height: auto;
 			min-height: 500px;
 		}
-
-
 
 		.flex-container {
 			width: 100%;
@@ -110,6 +115,7 @@ body {
 				display: flex;
 
 				a {
+					text-decoration: none;
 					@include flex-centered;
 
 					@include tablet {
@@ -131,7 +137,13 @@ body {
 				}
 			}
 
+			a {
+				cursor: pointer;
+				text-decoration: underline;
+			}
+
 			p {
+				margin-top: 5%;
 				margin-bottom: 5%;
 			}
 		}
@@ -139,15 +151,131 @@ body {
 
 	.modal-dilog-submit {
 		display: none;
-		padding: 2%;
 		background-color: #fff;
-		z-index: 11;
-		border: 7px solid #000000;
+		border: $border;
+		z-index: 12;
+		position: absolute;
+		flex-direction: column;
+		width: 60%;
+		@include text($color__text-main, 1rem, $font__main);
 
-		.register-form {
+		@include tablet {
+			min-width: 400px;
+		}
+
+		.flex-container {
 			@include flex-centered;
 			flex-direction: column;
 
+			.register-form {
+				@include flex-centered;
+				flex-direction: column;
+
+				a {
+					cursor: pointer;
+					text-decoration: underline;
+				}
+
+				input {
+					width: 40vw;
+					max-width: 320px;
+					margin-top: 8px;
+					border: 3px solid #000000;
+				}
+
+				label {
+					margin-top: 12px;
+					@include text($color__text-main, 1rem, $font__main);
+					font-weight: bold;
+				}
+
+				label,
+				input {
+					align-self: flex-start;
+					@include text($color__text-main, 1rem, $font__main);
+				}
+
+				input[type="submit"] {
+					align-self: center;
+					background-image: url("../../assets/Buttons/button_texture.png");
+					background-size: cover;
+					margin-top: 6%;
+					margin-bottom: 6%;
+					border: none;
+					width: 155px;
+					height: 70px;
+					color: #fff;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	.modal-dilog-login {
+		display: none;
+		background-color: #fff;
+		border: $border;
+		z-index: 12;
+		position: absolute;
+		flex-direction: column;
+		width: 60%;
+		@include text($color__text-main, 1rem, $font__main);
+
+
+		@include tablet {
+			min-width: 400px;
+		}
+
+		.flex-container {
+			@include flex-centered;
+			flex-direction: column;
+
+			a {
+				cursor: pointer;
+				text-decoration: underline;
+			}
+
+			.login-form {
+				padding: 5%;
+				@include flex-centered;
+				flex-direction: column;
+
+				input {
+					width: 40vw;
+					max-width: 320px;
+					margin-top: 8px;
+					border: 3px solid #000000;
+				}
+
+				label {
+					margin-top: 12px;
+					@include text($color__text-main, 1rem, $font__main);
+					font-weight: bold;
+				}
+
+				label,
+				input {
+					align-self: flex-start;
+					@include text($color__text-main, 1rem, $font__main);
+				}
+
+				input[type="submit"] {
+					align-self: center;
+					background-image: url("../../assets/Buttons/button_texture.png");
+					background-size: cover;
+					margin-top: 8%;
+					margin-bottom: 8%;
+					border: none;
+					width: 155px;
+					height: 70px;
+					color: #fff;
+					font-weight: bold;
+				}
+			}
+
+			p {
+				padding: 5%;
+			}
 		}
 	}
 

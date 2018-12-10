@@ -139,7 +139,16 @@ require get_template_directory() . '/inc/extras.php';
 
 $result = add_role('artist', __('Artist'), array());
 
-$result = add_role('studio', __('Studio'), array());
+$result = add_role('studio', __('Studio'), array(
+    'publish_guestspot' => true,
+    'edit_guestspot' => true,
+    'edit_others_guestspot' => true,
+    'delete_guestspot' => true,
+    'read_private_guestspot' => true,
+    'edit_guestspot' => true,
+    'delete_guestspot' => true,
+    'read_guestspot' => true,
+));
 
 add_action('edit_user_profile', 'wk_custom_user_profile_fields');
 
