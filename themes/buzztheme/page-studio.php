@@ -26,7 +26,7 @@ get_header(); ?>
     'style'         => 'list',
     'html'          => true,
     'exclude'       => '',
-    'include'       => '')); ?>
+    'include'       => '')); ?> 
 </section>
 	
 		</main><!-- #main -->
