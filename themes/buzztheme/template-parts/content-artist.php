@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in author.php.
+ * Template part for displaying page content in page.php.
  *
  * @package RED_Starter_Theme
  */
@@ -27,12 +27,6 @@
 
 	<section class="">
 	<h2>Instagram</h2> 
-	</section>
-
-
-	<section class="studio-location">
-	<h2>Location</h2>
-	<p><?php echo $curauth->location; ?></p>
 	</section>
 
 </article><!-- #post-## -->

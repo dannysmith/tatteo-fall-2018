@@ -10,8 +10,15 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+	<?php if (is_author($user, 'studio') ) {
+
+	 get_template_part( 'template-parts/content-studio', 'page' );
+
+	} elseif (is_author($user, 'artist') ) {
+
+	 get_template_part( 'template-parts/content-artist', 'page' ); 
 	
-	<?php get_template_part( 'template-parts/content-studio', 'page' ); ?>
+	} ?>
 
 
 		</main><!-- #main -->
