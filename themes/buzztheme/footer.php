@@ -13,9 +13,9 @@
   <div class="logo">
   <img src="<?php echo get_template_directory_uri(); ?>/assets/logo/buzz-writing-white.png" width="" height="" alt="buzz logo" />
   </div><!-- .logo -->
-  <?php wp_nav_menu( array( 'theme_location' => 'new-menu', 'container_class' => 'footerlinks' ) ); ?>
+  <?php wp_nav_menu( array( 'theme_location' => 'links', 'container_class' => 'footerlinks' ) ); ?>
   <p class="copyright">2019 Copyright ©</p>
-  <?php wp_nav_menu( array( 'theme_location' => 'another-menu', 'container_class' => 'footersocialmedia' ) ); ?>
+  <?php wp_nav_menu( array( 'theme_location' => 'social', 'container_class' => 'footersocialmedia' ) ); ?>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
