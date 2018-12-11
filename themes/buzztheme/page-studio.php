@@ -21,7 +21,7 @@ $args1 = array(
 );
  $studios = get_users($args1);
  foreach ($studios as $user) {
- echo '<div class="container"><div class="studio">'
+ echo '<a href="'.get_author_posts_url($user->ID).'"><div class="container"><div class="studio">'
  . get_avatar($user->ID, 120) .
  '</div><li>' 
  . $user->display_name .

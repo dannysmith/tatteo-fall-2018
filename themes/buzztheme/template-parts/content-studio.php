@@ -23,6 +23,25 @@
 
 	<section class="previous-guestspots">
 	<h2>Previous Guestspots</h2>
+	<?php
+    $loop = new WP_Query( array( 'post_type' => 'guestspot', 'order' => 'ASC', 'posts_per_page' => '3') );
+    if ( $loop->have_posts() ) :
+        while ( $loop->have_posts() ) : $loop->the_post(); ?>
+            <div class="guestspots">
+                <?php if ( has_post_thumbnail() ) { ?>
+                    <div class="link-guestspot">
+                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+                    </div>
+                <?php } ?>
+                <div class="">
+                    <p><?php echo get_the_title(); ?></p>
+                </div>
+            </div>
+        <?php endwhile;
+    endif;
+    wp_reset_postdata();
+?>
+
 	</section>
 
 	<section class="">

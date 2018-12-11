@@ -9,16 +9,18 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			
+	<?php $user = get_user_by('id', $author);
+			if ( in_array( 'artist', (array) $user->roles ) ) {
 
-	<?php if (is_author($user, 'studio') ) {
+				get_template_part( 'template-parts/content', 'artist' );
 
-	 get_template_part( 'template-parts/content-studio', 'page' );
+			}
+			if ( in_array( 'studio', (array) $user->roles ) ) {
 
-	} elseif (is_author($user, 'artist') ) {
+				get_template_part( 'template-parts/content', 'studio' );
 
-	 get_template_part( 'template-parts/content-artist', 'page' ); 
-	
-	} ?>
+			} ?>
 
 
 		</main><!-- #main -->

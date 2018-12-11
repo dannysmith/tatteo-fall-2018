@@ -13,9 +13,7 @@
 	</header><!-- .entry-header -->
 
 	<section class="single-studio">
-	<?php
-    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-    ?>
+	<?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
 	<div> <?php echo get_avatar($user->ID, 120) ?></div>
 	<h2><?php echo $curauth->nickname; ?></h2>
 	<p><?php echo $curauth->user_description; ?></p>
