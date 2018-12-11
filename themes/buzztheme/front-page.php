@@ -10,6 +10,17 @@ get_header();?>
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main">
 
+<section class="banner-image">
+<div class="banner-title">
+<h2>Tatoos.</h2>
+<h2>Travel.</h2>
+<h2>Worldwide.</h2>
+<div>
+  <div class="div-p-banner">
+<p class="sign-up-link banner-p">Get Started</p>
+</div>
+</section>
+
 <!-- need to edit this loop -->
 
 <section>

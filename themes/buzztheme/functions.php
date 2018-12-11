@@ -148,7 +148,27 @@ $result = add_role('studio', __('Studio'), array(
     'edit_guestspot' => true,
     'delete_guestspot' => true,
     'read_guestspot' => true,
+    'upload_files' => true,
+    'edit_attachments' => true,
+    'delete_attachments' => true,
+    'publish_attachments' => true,
 ));
+
+add_action('admin_init', 'allow_contributor_uploads');
+
+function allow_contributor_uploads()
+{
+    $contributor = get_role('studio');
+    $contributor->add_cap('upload_files');
+
+    $admin = get_role('administrator');
+    $admin->add_cap('edit_guestspot');
+    $admin->add_cap('edit_others_guestspot');
+    $admin->add_cap('delete_guestspot');
+    $admin->add_cap('read_private_guestspot');
+    $admin->add_cap('read_guestspot');
+
+}
 
 add_action('edit_user_profile', 'wk_custom_user_profile_fields');
 
