@@ -13,22 +13,22 @@ get_header(); ?>
 <section class="studio-users">		
 <?php
 $args1 = array(
- 'role' => 'studio',
+ 'role' => 'artist',
  'orderby' => 'registered',
  'order' => 'ASC', 
  'number' => '6'
 );
  $studios = get_users($args1);
  foreach ($studios as $user) {
- echo '<div><div class="studio">'
+ echo '<li>'
  . get_avatar($user->ID, 120) .
- '</div><li>'
+ '<br />'
  . $user->display_name .
- '</li> <li>'
+ '<br />'
  . $user->user_email .
- '</li> <li>'
+ '<br />'
  . $user->user_description .
- '</li> </div>';
+ '</li>';
  }
 ?>
 
@@ -39,3 +39,4 @@ $args1 = array(
 
 
 <?php get_footer(); ?>
+

@@ -49,6 +49,37 @@
     }
 }
 
+/* Studio Page */
+
+
+.studio-users{
+    display: flex;
+    height: 500px;
+
+
+    div{
+        display: flex;
+        flex-direction: column;
+        margin: 5% 2%;
+
+        .studio{
+            height: 150px;
+        }
+
+        img{
+            width: 400px;
+        }
+
+        li{
+            display: flex; 
+            flex-direction: column;
+            list-style: none;
+        }
+    
+    }
+
+}
+
 /* Footer */
 
 footer {
