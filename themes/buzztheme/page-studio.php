@@ -20,15 +20,15 @@ $args1 = array(
 );
  $studios = get_users($args1);
  foreach ($studios as $user) {
- echo '<div><div class="studio">'
+ echo '<a href="'.get_author_posts_url($user->ID).'"><div><div class="studio">'
  . get_avatar($user->ID, 120) .
- '</div><li>'
+ '</div><li>' 
  . $user->display_name .
  '</li> <li>'
  . $user->user_email .
  '</li> <li>'
  . $user->user_description .
- '</li> </div>';
+ '</li> </div></a>';
  }
 ?>
 
