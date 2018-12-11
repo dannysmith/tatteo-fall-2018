@@ -24,16 +24,24 @@ get_header();?>
 <!-- need to edit this loop -->
 
 <section>
-      <?php
-        $args = array( 'post_type' => 'guestspots', 'order' => 'ASC', 'posts_per_page' => '6');
-        $guestspots_posts = get_posts( $args ); // returns an array of posts
-      ?>
-      <div class ="exampleguestspots">
-      <?php foreach ( $guestspots_posts as $post ) : setup_postdata( $post ); ?>
-      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-        <?php the_post_thumbnail();?> 
-      <?php endforeach; wp_reset_postdata(); ?>
-      </div>
+<?php
+    $loop = new WP_Query( array( 'post_type' => 'guestspot', 'order' => 'ASC', 'posts_per_page' => '6') );
+    if ( $loop->have_posts() ) :
+        while ( $loop->have_posts() ) : $loop->the_post(); ?>
+            <div class="guestspots">
+                <?php if ( has_post_thumbnail() ) { ?>
+                    <div class="link-guestspot">
+                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+                    </div>
+                <?php } ?>
+                <div class="">
+                    <h2><?php echo get_the_title(); ?></h2>
+                </div>
+            </div>
+        <?php endwhile;
+    endif;
+    wp_reset_postdata();
+?>
 </section>
     
 
