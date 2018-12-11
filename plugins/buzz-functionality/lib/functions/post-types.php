@@ -43,6 +43,7 @@ function guestspot_post_type()
         'label' => __('Guestspot', 'text_domain'),
         'description' => __('Guestspot Description', 'text_domain'),
         'labels' => $labels,
+        'supports' => array('title', 'editor'),
         'taxonomies' => array('category', 'guestspot'),
         'hierarchical' => false,
         'public' => true,
