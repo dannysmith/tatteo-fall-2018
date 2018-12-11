@@ -112,7 +112,8 @@ echo get_avatar($current_user->user_email, 150);
         </li>
         <li><a>Edit Profile</a></li>
         <?php if (current_user_can("studio")): ?>
-        <li><a href="">My Guestspots</a></li>
+        <li><a href="<?php echo get_permalink(get_page_by_path('my-guestspots')) ?>">My Guestspots</a></li>
+
         <?php endif?>
         <li><a href="<?php echo wp_logout_url(home_url()); ?>">Sign out</a></li>
       </div>
