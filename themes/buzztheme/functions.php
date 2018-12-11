@@ -218,8 +218,8 @@ function register_my_menus()
 {
     register_nav_menus(
         array(
-            'new-menu' => __('Links'),
-            'another-menu' => __('Social Media'),
+            'links' => __('Links'),
+            'social' => __('Social Media'),
         )
     );
 }
