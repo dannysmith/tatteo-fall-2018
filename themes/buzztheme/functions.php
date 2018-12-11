@@ -166,7 +166,7 @@ function allow_contributor_uploads()
     $admin->add_cap('delete_guestspot');
     $admin->add_cap('read_private_guestspot');
     $admin->add_cap('read_guestspot');
-
+    $admin -> add_cap('publish_guestspot');
 }
 
 add_action('edit_user_profile', 'wk_custom_user_profile_fields');
