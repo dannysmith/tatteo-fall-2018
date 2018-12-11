@@ -12,7 +12,7 @@
 	margin: 0 0 $base__space-unit;
 }
 
-.updated:not(.published){
+.updated:not(.published) {
 	display: none;
 }
 
@@ -44,6 +44,26 @@
 .comment-content a {
 	word-wrap: break-word;
 }
+
 .bypostauthor {
 	display: block;
+}
+
+
+/* My Guestspots Page*/
+.guestspot-section {
+	padding: 56px;
+
+	h1 {
+		font-size: 1.5rem;
+		padding-bottom: 52px;
+	}
+
+	.guestspot,
+	.new-guestspot {
+		border: 7px solid #000;
+	}
+
+
+
 }
