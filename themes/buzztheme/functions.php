@@ -160,7 +160,6 @@ function allow_contributor_uploads()
 {
     $contributor = get_role('studio');
     $contributor->add_cap('upload_files');
-
     $admin = get_role('administrator');
     $admin->add_cap('edit_guestspot');
     $admin->add_cap('edit_others_guestspot');
