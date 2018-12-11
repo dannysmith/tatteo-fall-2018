@@ -86,7 +86,8 @@
       <div class="dropdown-menu">
         <button class="dropbtn"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
         <nav id="site-navigation" class="main-navigation" role="navigation">
-          <?php wp_nav_menu();?>
+          <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'dropdown-menu'));?>
+
           <div class="container-header-nav">
             <?php get_search_form();?>
             <!-- <a class="login-link">Login</a> -->

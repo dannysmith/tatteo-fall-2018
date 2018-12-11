@@ -10,7 +10,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-<section class="studio-users">		
+<section class="studio-users">
+	<h1>Studios</h1>
 <?php
 $args1 = array(
  'role' => 'studio',
@@ -20,7 +21,7 @@ $args1 = array(
 );
  $studios = get_users($args1);
  foreach ($studios as $user) {
- echo '<div><div class="studio">'
+ echo '<div class="container"><div class="studio">'
  . get_avatar($user->ID, 120) .
  '</div><li>'
  . $user->display_name .
@@ -31,9 +32,9 @@ $args1 = array(
  '</li> </div>';
  }
 ?>
-
+	<button>Load more</button>
 </section>
-	
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

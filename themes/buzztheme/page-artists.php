@@ -1,4 +1,4 @@
-s<?php
+<?php
 /**
  * The template for displaying archive pages.
  *
@@ -10,7 +10,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-<section class="studio-users">		
+<section class="studio-users">
+<h1>Artists</h1>	
 <?php
 $args1 = array(
  'role' => 'artist',
@@ -18,20 +19,20 @@ $args1 = array(
  'order' => 'ASC', 
  'number' => '6'
 );
- $studios = get_users($args1);
- foreach ($studios as $user) {
- echo '<li>'
- . get_avatar($user->ID, 120) .
- '<br />'
- . $user->display_name .
- '<br />'
- . $user->user_email .
- '<br />'
- . $user->user_description .
- '</li>';
+ $artists = get_users($args1);
+ foreach ($artists as $user) {
+echo '<div class="container"><div class="artist">'
+	. get_avatar($user->ID, 120) .
+	'</div><li>'
+	. $user->display_name .
+	'</li> <li>'
+	. $user->user_email .
+	'</li> <li>'
+	. $user->user_description .
+	'</li> </div>';
  }
 ?>
-
+	<button>Load more</button>
 </section>
 	
 		</main><!-- #main -->
