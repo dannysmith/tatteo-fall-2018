@@ -10,7 +10,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-<section class="studio-users">
+<section class="artist-users">
 <h1>Artists</h1>	
 <?php
 $args1 = array(
