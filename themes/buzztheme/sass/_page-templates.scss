@@ -158,6 +158,68 @@
     }
 
 
+/* Single Artist Page */
+
+.author {
+    .artist-profile {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+
+        .entry-header {
+            display: none;
+        }
+
+        .single-artist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 6px solid black;
+            div {
+                img {
+                    border: 6px solid black;
+                }
+            }
+            h2 {
+            grid-column: 2;
+            border: 6px solid black;
+            padding-left: 3.5rem;
+            padding-right: 3.5rem;
+            padding-top: 0.5rem;
+            font-style: italic;
+            text-align: center;
+            }
+            p {
+            border: 6px solid black;
+            padding-top: 0.5rem;
+            grid-column: 2;
+            }
+        }
+
+        .previous-guestspots {
+            border-bottom: 6px solid black;
+            h2 {
+                border: 6px solid black;
+                padding-left: 3.5rem;
+                padding-right: 3.5rem;
+                padding-top: 0.5rem;
+                font-style: italic;
+                text-align: center;
+            }
+        }
+
+        .instagram {
+            h2 {
+                border: 6px solid black;
+                padding-left: 3.5rem;
+                padding-right: 3.5rem;
+                padding-top: 0.5rem;
+                font-style: italic;
+                text-align: center;  
+            }
+        }
+
+    }
+}
+
 /* Footer */
 
 footer {
@@ -280,4 +342,4 @@ footer {
     .profilefooter{
         order:2;
     }
-}    
+}  
