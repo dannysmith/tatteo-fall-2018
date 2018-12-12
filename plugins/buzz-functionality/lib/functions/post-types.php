@@ -69,6 +69,8 @@ function guestspot_post_type()
         ),
         'map_meta_cap' => false,
         'show_in_rest' => true,
+        'rest_base' => 'guestspots-api',
+        'rest_controller_class' => 'WP_REST_Posts_Controller',
         'template lock' => 'all',
         'template' => array(
             array('core/paragraph', array(
