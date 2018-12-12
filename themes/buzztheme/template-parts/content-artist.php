@@ -7,12 +7,12 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="artist-profile" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<section class="single-studio">
+	<section class="single-artist">
 	<?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
 	<div> <?php echo get_avatar($user->ID, 120) ?></div>
 	<h2><?php echo $curauth->nickname; ?></h2>
@@ -23,7 +23,7 @@
 	<h2>Previous Guestspots</h2>
 	</section>
 
-	<section class="">
+	<section class="instagram">
 	<h2>Instagram</h2> 
 	</section>
 

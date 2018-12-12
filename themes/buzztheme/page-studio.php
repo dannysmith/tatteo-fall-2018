@@ -1,3 +1,5 @@
+<?php /* Template name: page-studio */ ?>
+
 <?php
 /**
  * The template for displaying archive pages.

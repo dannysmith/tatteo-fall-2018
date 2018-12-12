@@ -28,15 +28,14 @@ get_header();?>
     $loop = new WP_Query( array( 'post_type' => 'guestspot', 'order' => 'ASC', 'posts_per_page' => '6') );
     if ( $loop->have_posts() ) :
         while ( $loop->have_posts() ) : $loop->the_post(); ?>
-            <div class="guestspots">
-                <?php if ( has_post_thumbnail() ) { ?>
+            <div class="guestspots container">
                     <div class="link-guestspot">
-                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+                        <a href="<?php the_permalink(); ?>"><img src="<?php echo CFS()->get('image'); ?>" /></a>
                     </div>
-                <?php } ?>
-                <div class="">
-                    <h2><?php echo get_the_title(); ?></h2>
-                </div>
+                <ul class="">
+                   <li><?php echo get_the_title(); ?></li>
+                   <li> <?php echo CFS()->get('location'); ?></li>
+                </ul>
             </div>
         <?php endwhile;
     endif;
