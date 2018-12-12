@@ -279,3 +279,38 @@ footer {
         }
     }
 }
+
+
+/* Edit profile */
+
+.page-id-153{
+
+    .content-area{
+        width:100%;
+    }
+
+    .edit-profile{
+
+        .submit-form{
+            display:flex;
+            flex-direction:column;
+            font-size:1.5em;
+            justify-content: space-between;
+        
+
+            #username, #location, #instalink, #facelink, #userbio{
+                width:70%;
+                margin-bottom:2rem;
+                padding:5px;
+            }
+            #contactnumber, #dob{
+                width:50%;
+                margin-bottom:1.5rem;
+                padding:5px;
+            }
+        }    
+    }
+    .profilefooter{
+        order:2;
+    }
+}    

@@ -206,8 +206,8 @@ function auto_login_new_user($user_id)
     wp_set_current_user($user_id);
     wp_set_auth_cookie($user_id);
     $user = get_user_by('id', $user_id);
-    do_action('wp_login', $user->user_login); //`[Codex Ref.][1]
-    wp_redirect(home_url()); // You can change home_url() to the specific URL,such as "wp_redirect( 'http://www.wpcoke.com' )";
+    do_action('wp_login', $user->user_login);
+    wp_redirect(home_url());
     exit;
 }
 add_action('user_register', 'auto_login_new_user');
