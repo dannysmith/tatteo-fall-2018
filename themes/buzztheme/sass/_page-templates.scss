@@ -112,16 +112,13 @@
 
     h1 {
         @include profile-title;
-        <<<<<<< HEAD=======
     }
 
     button {
         @include loadmore-button;
     }
+}
 
-    >>>>>>>master
-}
-}
 
 .container {
     @include container;
@@ -129,8 +126,7 @@
     li {
         @include profile-list;
     }
-
-    <<<<<<< HEAD .studio {
+    .studio {
         @include profile-container;
 
         img {
@@ -139,11 +135,7 @@
     }
 }
 
-button {
-    @include loadmore-button;
-}
 
-=======>>>>>>>master
 /* Artist Page */
 
 
@@ -152,17 +144,14 @@ button {
 
     h1 {
         @include profile-title;
-        <<<<<<< HEAD=======
     }
 
     button {
         @include loadmore-button;
 
     }
+}
 
-    >>>>>>>master
-}
-}
 
 .container {
     @include container;
@@ -172,7 +161,7 @@ button {
     }
 
 
-
+}
 
     /* Single Artist Page */
 
@@ -383,13 +372,10 @@ button {
 
             }
         }
-
-        <<<<<<< HEAD
     }
 
     .profilefooter {
         order: 2;
-        =======
     }
 
     //Guestspots page
@@ -412,6 +398,4 @@ button {
             width: 80px;
             height: 30px;
         }
-
-        >>>>>>>master
     }
