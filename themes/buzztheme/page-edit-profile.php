@@ -8,7 +8,7 @@
 get_header();?>
 <!-- <i class="fas fa-quote-right"></i>
          <i class="fas fa-quote-left"></i>  -->
-<div id="primary" class="content-area">
+<div id="primary" class="content-area edit-area" >
   <main id="main" class="site-main" role="main">
     <section class="edit-profile">
       <?php if (is_user_logged_in()): ?>
