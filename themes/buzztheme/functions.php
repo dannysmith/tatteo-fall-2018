@@ -124,6 +124,7 @@ function red_starter_scripts()
         ));
 
         wp_enqueue_script('guestspot-util', get_template_directory_uri() . '/build/js/guestspot-util.min.js', array(), false, true);
+        wp_enqueue_script('guestspot-search', get_template_directory_uri() . '/build/js/guestspot-search.min.js', array(), false, true);
 
         wp_localize_script('guestspot-util', 'api_vars', array(
             'root_url' => esc_url_raw(rest_url()),
