@@ -314,7 +314,7 @@ footer {
 
 /* Edit profile */
 
-.page-id-153{
+
 
     .content-area{
         width:100%;
@@ -331,16 +331,19 @@ footer {
             flex-direction:column;
             font-size:1.5em;
             width:80%;
+            margin-left: 1em;
             
              #username, #location, #instalink, #facelink, #userbio{
                 width:90%;
                 margin-bottom:2rem;
                 padding:5px;
+                border:$border;
             }
             #contactnumber, #dob{
                 width:50%;
                 margin-bottom:1.5rem;
                 padding:5px;
+                border:$border;
             }
             button{
                      height: 3.5rem;
@@ -351,7 +354,9 @@ footer {
                     border: none;
                     color: $color__text-secondary;  
                     font-weight: bold;  
+                    margin-bottom:1rem;
             }
+            
         }  
         
         img{
@@ -360,11 +365,19 @@ footer {
             @include tablet{
                  display:inherit;
                  height:100%;
+                 border-left: $border;
                 
             }
+        }
+        label{
+            font-family: $font__main;
+            font-weight: bold;
+            margin-bottom:0.5rem;
+
+          
         }
     }
     .profilefooter{
         order:2;
     }
-}  
+  
