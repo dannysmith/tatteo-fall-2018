@@ -15,9 +15,9 @@
             }
           })
           .done(function () {
-            event.preventDefault(); 
+            event.preventDefault();
           })
-          .fail(function (t) {
+          .fail(function () {
             //post and alert with failure var from functions.php
           });
     })

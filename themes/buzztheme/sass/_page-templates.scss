@@ -112,16 +112,13 @@
 
     h1 {
         @include profile-title;
-        <<<<<<< HEAD=======
     }
 
     button {
         @include loadmore-button;
     }
+}
 
-    >>>>>>>master
-}
-}
 
 .container {
     @include container;
@@ -129,21 +126,19 @@
     li {
         @include profile-list;
     }
-
-    <<<<<<< HEAD .studio {
+    .studio {
         @include profile-container;
 
         img {
             @include profile-img;
         }
     }
+    button {
+        @include loadmore-button;
+    }
 }
 
-button {
-    @include loadmore-button;
-}
 
-=======>>>>>>>master
 /* Artist Page */
 
 
@@ -152,17 +147,14 @@ button {
 
     h1 {
         @include profile-title;
-        <<<<<<< HEAD=======
     }
 
     button {
         @include loadmore-button;
 
     }
+}
 
-    >>>>>>>master
-}
-}
 
 .container {
     @include container;
@@ -172,7 +164,7 @@ button {
     }
 
 
-
+}
 
     /* Single Artist Page */
 
@@ -332,64 +324,70 @@ button {
 
 
     /* Edit profile */
-
+    .edit-area{
+        width:100%;
+    }
 
     .edit-profile {
 
+        width:100%;
         display: flex;
         justify-content: space-between;
 
-        .submit-form {
-            display: flex;
-            flex-direction: column;
-            font-size: 1.5em;
-            width: 80%;
-
-            #username,
-            #location,
-            #instalink,
-            #facelink,
-            #userbio {
-                width: 90%;
-                margin-bottom: 2rem;
-                padding: 5px;
+        .submit-form{
+            display:flex;
+            flex-direction:column;
+            font-size:1.5em;
+            width:80%;
+            margin-left: 1em;
+            
+             #username, #location, #instalink, #facelink, #userbio{
+                width:90%;
+                margin-bottom:2rem;
+                padding:5px;
+                border:$border;
             }
-
-            #contactnumber,
-            #dob {
-                width: 50%;
-                margin-bottom: 1.5rem;
-                padding: 5px;
+            #contactnumber, #dob{
+                width:50%;
+                margin-bottom:1.5rem;
+                padding:5px;
+                border:$border;
             }
+            button{
+                     height: 3.5rem;
+                    width: 7.5rem;
+                    background: transparent url('../../assets/buttons/button_texture.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    border: none;
+                    color: $color__text-secondary;  
+                    font-weight: bold;  
+                    margin-bottom:1rem;
+            }
+            
+        }  
+        
+        img{
+            display:none;
 
-            button {
-                height: 3.5rem;
-                width: 7.5rem;
-                background: transparent url('../../assets/buttons/button_texture.png');
-                background-repeat: no-repeat;
-                background-size: contain;
-                border: none;
-                color: $color__text-secondary;
-                font-weight: bold;
+            @include tablet{
+                 display:inherit;
+                 height:100%;
+                 border-left: $border;
+                
             }
         }
+        label{
+            font-family: $font__main;
+            font-weight: bold;
+            margin-bottom:0.5rem;
 
-        img {
-            display: none;
-
-            @include tablet {
-                display: inherit;
-                height: 100%;
-
-            }
+          
         }
-
-        <<<<<<< HEAD
     }
 
     .profilefooter {
         order: 2;
-        =======
     }
 
     //Guestspots page
@@ -412,6 +410,4 @@ button {
             width: 80px;
             height: 30px;
         }
-
-        >>>>>>>master
     }
