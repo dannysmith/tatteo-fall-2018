@@ -111,6 +111,9 @@
     h1{
         @include profile-title;
         }
+    button {
+        @include loadmore-button; 
+    }
     }
 
     .container{
@@ -126,9 +129,7 @@
         }
     }
 
-    button {
-       @include loadmore-button; 
-    }
+   
 
 
 /* Artist Page */
@@ -139,6 +140,10 @@
 
     h1{
         @include profile-title;
+        }
+    button {
+            @include loadmore-button; 
+    
         }
     }
 
@@ -155,9 +160,7 @@
         }
     }
 
-    button {
-        @include loadmore-button; 
-    }
+   
 
 
 /* Single Artist Page */
@@ -368,3 +371,22 @@ footer {
         order:2;
     }
 }  
+//Guestspots page
+.filter-guestspot{
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    display: inline-flex;
+    input{
+        border-radius: 0;
+        font-weight: 600;
+        border : 4px solid black;
+    }
+    button{
+        margin-top: 50px;
+        border : 4px solid black;
+        font-weight: 600;
+        width: 80px;
+        height: 30px;
+    }
+}
