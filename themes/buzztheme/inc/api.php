@@ -57,10 +57,7 @@ add_action('rest_api_init', function () {
 
 function buzz_get_guestspot_meta_fields($object, $field_name, $request)
 {
-    $field_data = array($field_name => $value);
-    // $post_data = array('ID' => $object->ID); // the ID is required
-
-    CFS()->get($field_data, $post_data);
+    return CFS()->get($field_name, $object['id']);
 }
 /**
  * Handler for updating custom field data.
