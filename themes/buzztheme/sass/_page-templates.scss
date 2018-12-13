@@ -312,13 +312,32 @@
 
 
     .search {
-
-        h1 {
-            text-align: center;
-        }
+        padding: 28px;
+        width: 100vw;    
 
         article {
-            border: $border;
+            @extend %guestspot-mobile;
+    
+            img {
+            @include gs-img-mobile;
+            }
+    
+            @include tablet {
+                height: 288px;
+                flex-direction: row;
+    
+                img {
+                @include gs-img-tablet;
+                }
+            }
+    
+            .studio-information {
+                padding: 20px;
+    
+                @include tablet {
+                    padding: 44px;
+                }
+            }
         }
     }
 
