@@ -31,7 +31,7 @@ get_header(); ?>
 		<h1 class="page-title">Guestspots</h1>
 	</header><!-- .page-header -->
 
-	<section>
+	<section class="guestspots-container-js">
 <?php
     $loop = new WP_Query( array( 'post_type' => 'guestspot', 'order' => 'ASC', 'posts_per_page' => '-1') );
     if ( $loop->have_posts() ) :
