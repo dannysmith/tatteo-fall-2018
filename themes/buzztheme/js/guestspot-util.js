@@ -24,7 +24,6 @@
           xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
         }
       }).done(function (response) {
-        alert(response.id);
         uploadPost(response.id);
       }).fail(function (response) {
         alert("fail " + response.id);
@@ -41,28 +40,25 @@
         location: $("#location").val(),
         start_date: $('#start-date').val(),
         finish_date: $('#finish-date').val(),
-        image: imageId
+        image: imageId,
+        post_author: api_vars.user_id,
+        user_ID: api_vars.user_id
+        // author: 30
       };
       $.ajax({
           method: 'POST',
           url: api_vars.root_url + 'wp/v2/guestspots-api',
           data: data,
-          //cache: false,
-          // contentType: false,
-          //processData: false,
-          // success: function (data) {
-          //   alert(data);
-          //   console.log(data);
-          // },
           beforeSend: function (xhr) {
             xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
           }
         })
         .done(function () {
-
+          alert(api_vars.user_id);
+          // window.location.href = api_vars.home_url + "/my-guestspots/";
         })
         .fail(function () {
-          //post and alert with failure var from functions.php
+
         });
     }
   });

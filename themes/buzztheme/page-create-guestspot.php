@@ -22,19 +22,23 @@ get_currentuserinfo();?>
         </p>
         <p>
           <label for="location">Location</label><br />
-          <input type="text" id="location" required />
+          <input type="text" id="location" value="London1" required />
         </p>
         <p><label for="guestspot-start">Start Date</label><br />
-          <input type="date" id="start-date" required />
+          <input type="date" id="start-date" value="2018-12-20" required />
         </p>
-        <p><label for="guestspot-finish">Finish Date</label><br />
-          <input type="date" id="finish-date" required />
+        <p><label for="guestspot-finish">Finish Date </label><br />
+          <input type="date" id="finish-date" required value="2018-12-20" />
         </p>
         <p>
         </p>
         <input type='submit' name='Submit' value="Add Guestspot" class='upload-btn'>
       </form>
     </section>
+
+    <h1>
+      <?php echo get_the_author_meta('ID'); ?>
+    </h1>
   </main><!-- #main -->
 </div><!-- #primary -->
 <?php get_footer();?>

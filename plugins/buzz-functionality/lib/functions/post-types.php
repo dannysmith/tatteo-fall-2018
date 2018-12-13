@@ -54,6 +54,7 @@ function guestspot_post_type()
         'show_in_nav_menus' => true,
         'can_export' => true,
         'has_archive' => true,
+        "author" => true,
         'exclude_from_search' => false,
         'publicly_queryable' => true,
         'capabilities' => array(

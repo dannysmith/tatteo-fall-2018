@@ -130,6 +130,8 @@ function red_starter_scripts()
             'root_url' => esc_url_raw(rest_url()),
             'home_url' => esc_url_raw(home_url()),
             'nonce' => wp_create_nonce('wp_rest'),
+            // 'user_id' => get_current_user_id(),
+            'user_id' => wp_get_current_user()->ID,
             'success' => 'Thanks, your quote submission was received!',
             'failure' => 'Your submission could not be processed.',
         ));
