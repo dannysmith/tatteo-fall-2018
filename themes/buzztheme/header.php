@@ -23,7 +23,7 @@
   <div class="overlay">
   </div>
   <div class="dilog-container">
-  
+
 
     <!-- Login form -->
     <div class="modal-dilog-login">
@@ -87,7 +87,7 @@
       <div class="dropdown-menu">
         <button class="dropbtn"><i class="fa fa-align-justify" aria-hidden="true"></i></button>
         <nav id="site-navigation" class="main-navigation" role="navigation">
-          <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'dropdown-menu'));?>
+          <?php wp_nav_menu(array('theme_location' => 'primary', 'container_class' => 'dropdown-menu'));?>
 
           <div class="container-header-nav">
             <?php get_search_form();?>
@@ -111,7 +111,7 @@ echo get_avatar($current_user->user_email, 150);
         <li class="username">
           <?php echo $current_user->user_login ?>
         </li>
-        <li><a>Edit Profile</a></li>
+        <li><a href="<?php echo get_permalink(get_page_by_path('edit-profile')) ?>">Edit Profile</a></li>
         <?php if (current_user_can("studio")): ?>
         <li><a href="<?php echo get_permalink(get_page_by_path('my-guestspots')) ?>">My Guestspots</a></li>
 

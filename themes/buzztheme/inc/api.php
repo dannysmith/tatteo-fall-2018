@@ -8,7 +8,7 @@ add_action('rest_api_init', function () {
         'guestspot',
         'studio_name',
         array(
-            'get_callback' => null,
+            'get_callback' => 'buzz_get_guestspot_meta_fields',
             'update_callback' => 'buzz_update_guestspot_meta_fields',
             'schema' => null,
         )
@@ -18,7 +18,7 @@ add_action('rest_api_init', function () {
         'guestspot',
         'location',
         array(
-            'get_callback' => null,
+            'get_callback' => 'buzz_get_guestspot_meta_fields',
             'update_callback' => 'buzz_update_guestspot_meta_fields',
             'schema' => null,
         )
@@ -28,7 +28,7 @@ add_action('rest_api_init', function () {
         'guestspot',
         'start_date',
         array(
-            'get_callback' => null,
+            'get_callback' => 'buzz_get_guestspot_meta_fields',
             'update_callback' => 'buzz_update_guestspot_meta_fields',
             'schema' => null,
         )
@@ -38,13 +38,27 @@ add_action('rest_api_init', function () {
         'guestspot',
         'finish_date',
         array(
-            'get_callback' => null,
+            'get_callback' => 'buzz_get_guestspot_meta_fields',
+            'update_callback' => 'buzz_update_guestspot_meta_fields',
+            'schema' => null,
+        )
+    );
+
+    register_rest_field(
+        'guestspot',
+        'image',
+        array(
+            'get_callback' => 'buzz_get_guestspot_meta_fields',
             'update_callback' => 'buzz_update_guestspot_meta_fields',
             'schema' => null,
         )
     );
 });
 
+function buzz_get_guestspot_meta_fields($object, $field_name, $request)
+{
+    return CFS()->get($field_name, $object['id']);
+}
 /**
  * Handler for updating custom field data.
  */
@@ -53,17 +67,11 @@ function buzz_update_guestspot_meta_fields($value, $object, $field_name)
     if (!$value || !is_string($value)) {
         return;
     }
-    error_log('$value');
-    error_log($value);
-    error_log('object');
-    error_log(print_r($object, true));
-    error_log('fieldname');
-    error_log($field_name);
 
     $field_data = array($field_name => $value);
     $post_data = array('ID' => $object->ID); // the ID is required
 
     CFS()->save($field_data, $post_data);
 
-    return update_post_meta($object->ID, $field_name, strip_tags($value));
+    //return update_post_meta($object->ID, $field_name, strip_tags($value));
 }
