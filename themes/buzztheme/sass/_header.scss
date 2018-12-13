@@ -33,9 +33,10 @@
         align-content: center;
         width: 200px;
         overflow: hidden;
-        
+
         @include tablet {
             width: 500px;
+
             .current-menu-item {
                 z-index: 1;
 
