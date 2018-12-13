@@ -59,8 +59,8 @@
           }
         })
         .done(function () {
-          alert(api_vars.user_id);
-          // window.location.href = api_vars.home_url + "/my-guestspots/";
+
+          window.location.href = api_vars.home_url + "/my-guestspots/";
         })
         .fail(function () {
 
