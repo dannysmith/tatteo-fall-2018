@@ -23,6 +23,7 @@
 
   // Showing login form 
   $('.login-here').on('click', function (event) {
+    alert("test");
     event.preventDefault();
     toHide();
     $('.overlay').css('display', 'block');
