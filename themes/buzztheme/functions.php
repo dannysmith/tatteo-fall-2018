@@ -237,5 +237,3 @@ function register_my_menus()
 add_action('init', 'register_my_menus');
 
 require get_template_directory() . '/inc/api.php';
-
-
