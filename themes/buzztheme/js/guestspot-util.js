@@ -31,7 +31,11 @@
     });
 
     function uploadPost(imageId) {
+      /*
+      user_ID: 30
+      post_author: 30
 
+      */
       let data = {
         title: $("#studio-name").val(),
         "status": "publish",
@@ -41,6 +45,7 @@
         start_date: $('#start-date').val(),
         finish_date: $('#finish-date').val(),
         image: imageId,
+        author: api_vars.user_id,
         post_author: api_vars.user_id,
         user_ID: api_vars.user_id
         // author: 30

@@ -7,11 +7,12 @@
 
 get_header();?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area edit-area">
   <main id="main" class="site-main" role="main">
     <section class="create-guestspot-section">
-      <h1>New Guestspot</h1>
+
       <form method='post' class='image-upload-form'>
+        <h1>New Guestspot</h1>
         <input type='file' id='guespot-image' required>
 
         <?php global $current_user;
@@ -22,18 +23,21 @@ get_currentuserinfo();?>
         </p>
         <p>
           <label for="location">Location</label><br />
-          <input type="text" id="location" value="London1" required />
+          <input type="text" id="location" required />
         </p>
         <p><label for="guestspot-start">Start Date</label><br />
-          <input type="date" id="start-date" value="2018-12-20" required />
+          <input type="date" id="start-date" required />
         </p>
         <p><label for="guestspot-finish">Finish Date </label><br />
-          <input type="date" id="finish-date" required value="2018-12-20" />
+          <input type="date" id="finish-date" required />
         </p>
         <p>
         </p>
         <input type='submit' name='Submit' value="Add Guestspot" class='upload-btn'>
       </form>
+      <div class="imagecontainer">
+        <img src="../../../../buzz/wp-content/themes/buzztheme/assets/Images/Textures-2-Vertical.png" alt="sidetexture">
+      </div>
     </section>
 
     <h1>

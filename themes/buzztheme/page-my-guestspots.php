@@ -12,7 +12,7 @@ get_header();?>
     <section class="guestspot-section">
       <h1>My Guestspots</h1>
       <?php $args = array('post_type' => 'guestspot',
-    'meta_value' => wp_get_current_user()->ID);
+    'author' => wp_get_current_user()->ID);
 $guestspots = new WP_Query($args); /* $args set above*/?>
       <?php if ($guestspots->have_posts()): ?>
       <?php while ($guestspots->have_posts()): $guestspots->the_post();?>

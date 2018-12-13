@@ -43,7 +43,7 @@ function guestspot_post_type()
         'label' => __('Guestspot', 'text_domain'),
         'description' => __('Guestspot Description', 'text_domain'),
         'labels' => $labels,
-        'supports' => array('title', 'editor'),
+        'supports' => array('title', 'editor', "author"),
         'taxonomies' => array('category', 'guestspot'),
         'hierarchical' => false,
         'public' => true,
@@ -55,6 +55,7 @@ function guestspot_post_type()
         'can_export' => true,
         'has_archive' => true,
         "author" => true,
+        "post_author" => true,
         'exclude_from_search' => false,
         'publicly_queryable' => true,
         'capabilities' => array(
