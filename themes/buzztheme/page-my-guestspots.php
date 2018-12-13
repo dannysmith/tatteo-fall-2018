@@ -12,7 +12,7 @@ get_header();?>
     <section class="guestspot-section">
       <h1>My Guestspots</h1>
       <?php $args = array('post_type' => 'guestspot',
-    'meta_value' => wp_get_current_user()->ID);
+    'author' => wp_get_current_user()->ID);
 $guestspots = new WP_Query($args); /* $args set above*/?>
       <?php if ($guestspots->have_posts()): ?>
       <?php while ($guestspots->have_posts()): $guestspots->the_post();?>
@@ -28,10 +28,6 @@ $guestspots = new WP_Query($args); /* $args set above*/?>
         </div>
       </div>
       <?php endwhile;?>
-      <?php the_posts_navigation();?>
-      <?php wp_reset_postdata();?>
-      <?php else: ?>
-      <h2>Nothing found!</h2>
       <?php endif;?>
       <div class="new-guestspot">
         <a href="<?php echo get_permalink(get_page_by_path('create-guestspot')) ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/Buttons/add-button.png" /></a>
