@@ -31,13 +31,6 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	
-<?php
-$blogusers = get_users( array( 'search' => 'john' ) );
-// Array of WP_User objects.
-foreach ( $blogusers as $user ) {
-    echo '<span>' . esc_html( $user->user_email ) . '</span>';
-} ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
