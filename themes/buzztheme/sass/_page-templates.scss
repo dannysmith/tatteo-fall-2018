@@ -133,6 +133,9 @@
             @include profile-img;
         }
     }
+    button {
+        @include loadmore-button;
+    }
 }
 
 
