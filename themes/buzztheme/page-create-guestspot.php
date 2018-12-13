@@ -16,9 +16,6 @@ get_header();?>
 
         <?php global $current_user;
 get_currentuserinfo();?>
-        <h1>
-          <?php echo admin_url('admin-ajax.php') ?>
-        </h1>
         <p><label for="studio-name">Title</label><br />
           <input type="text" id="title" tabindex="1" value="<?php echo $current_user->user_login ?>" required />
         </p>
