@@ -1,5 +1,5 @@
 .site-header {
-    width: 100vw;
+    width: 100%;
     display: inline-flex;
     background-color: white;
     border-bottom: $border;
@@ -35,12 +35,10 @@
 
                 a {
                     padding: 10px;
-                    padding-left: 25px;
-                    padding-right: 37px;
-                    padding-bottom: 17px;
                     z-index: 2;
                     background-image: url("../../assets/Buttons/rough-circle.png");
-                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-size: 85%;
                 }
             }
         }
