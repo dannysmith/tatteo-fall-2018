@@ -8,7 +8,7 @@ add_action('rest_api_init', function () {
         'guestspot',
         'studio_name',
         array(
-            'get_callback' => null,
+            'get_callback' => 'buzz_get_guestspot_meta_fields',
             'update_callback' => 'buzz_update_guestspot_meta_fields',
             'schema' => null,
         )
@@ -18,7 +18,7 @@ add_action('rest_api_init', function () {
         'guestspot',
         'location',
         array(
-            'get_callback' => null,
+            'get_callback' => 'buzz_get_guestspot_meta_fields',
             'update_callback' => 'buzz_update_guestspot_meta_fields',
             'schema' => null,
         )
@@ -28,7 +28,7 @@ add_action('rest_api_init', function () {
         'guestspot',
         'start_date',
         array(
-            'get_callback' => null,
+            'get_callback' => 'buzz_get_guestspot_meta_fields',
             'update_callback' => 'buzz_update_guestspot_meta_fields',
             'schema' => null,
         )
@@ -38,7 +38,7 @@ add_action('rest_api_init', function () {
         'guestspot',
         'finish_date',
         array(
-            'get_callback' => null,
+            'get_callback' => 'buzz_get_guestspot_meta_fields',
             'update_callback' => 'buzz_update_guestspot_meta_fields',
             'schema' => null,
         )
@@ -48,13 +48,20 @@ add_action('rest_api_init', function () {
         'guestspot',
         'image',
         array(
-            'get_callback' => null,
+            'get_callback' => 'buzz_get_guestspot_meta_fields',
             'update_callback' => 'buzz_update_guestspot_meta_fields',
             'schema' => null,
         )
     );
 });
 
+function buzz_get_guestspot_meta_fields($object, $field_name, $request)
+{
+    $field_data = array($field_name => $value);
+    // $post_data = array('ID' => $object->ID); // the ID is required
+
+    CFS()->get($field_data, $post_data);
+}
 /**
  * Handler for updating custom field data.
  */
