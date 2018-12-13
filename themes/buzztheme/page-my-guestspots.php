@@ -28,10 +28,6 @@ $guestspots = new WP_Query($args); /* $args set above*/?>
         </div>
       </div>
       <?php endwhile;?>
-      <?php the_posts_navigation();?>
-      <?php wp_reset_postdata();?>
-      <?php else: ?>
-      <h2>Nothing found!</h2>
       <?php endif;?>
       <div class="new-guestspot">
         <a href="<?php echo get_permalink(get_page_by_path('create-guestspot')) ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/Buttons/add-button.png" /></a>

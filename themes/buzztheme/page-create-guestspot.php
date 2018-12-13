@@ -12,13 +12,11 @@ get_header();?>
     <section class="create-guestspot-section">
       <h1>New Guestspot</h1>
       <form method='post' class='image-upload-form'>
-        <input type='file' id='guespot-image'>
+        <input type='file' id='guespot-image' required>
 
         <?php global $current_user;
 get_currentuserinfo();?>
-        <p><label for="studio-name">Title</label><br />
-          <input type="text" id="title" tabindex="1" value="<?php echo $current_user->user_login ?>" required />
-        </p>
+
         <p><label for="studio-name">Studio Name</label><br />
           <input type="text" id="studio-name" value="<?php echo $current_user->user_login ?>" />
         </p>
