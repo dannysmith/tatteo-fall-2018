@@ -42,13 +42,13 @@
   // Log in submit
   $('.login-form').on('submit', function (event) {
     event.preventDefault();
-    let data = {
-      log: $('.user-name').val(),
-      pwd: $('.user-password').val(),
-      rememberme: "forever",
-      "wp-submit": "Log In",
-      testcookie: 1
-    };
+    // let data = {
+    //   log: $('.user-name').val(),
+    //   pwd: $('.user-password').val(),
+    //   rememberme: "forever",
+    //   "wp-submit": "Log In",
+    //   testcookie: 1
+    // };
     $.ajax({
         url: api_vars.home_url + "/wp-login.php",
         method: 'POST',
@@ -69,7 +69,7 @@
           location.reload(true);
         }
       })
-      .fail(function (response) {});
+      .fail(function () {});
   });
 
   // Sign-up form
