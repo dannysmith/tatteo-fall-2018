@@ -43,8 +43,8 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	border: none;
-	color: $color__text-secondary;  
-	font-weight: bold; 	
+	color: $color__text-secondary;
+	font-weight: bold;
 }
 
 @mixin multi-profile {
@@ -66,18 +66,18 @@
 
 @mixin container {
 	grid-row: 2;
-    justify-self: center;
+	justify-self: center;
 }
 
 @mixin profile-list {
 	text-align: left;
-    list-style: none;
-    font-weight: bold;
+	list-style: none;
+	font-weight: bold;
 }
 
 @mixin profile-container {
 	height: 25rem;
-	text-align: center;	
+	text-align: center;
 }
 
 @mixin profile-img {
@@ -106,5 +106,6 @@
 	width: 35%;
 	max-height: 100%;
 	object-fit: cover;
-	border-right:$border; 
+	border-right: $border;
+	border-bottom: none;
 }
