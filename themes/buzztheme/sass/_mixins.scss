@@ -128,6 +128,8 @@
 	@include desktop {
 		grid-template-columns: repeat(3, 1fr);
 	}
+}
+
 %guestspot-mobile {
 	border: $border2;
 	width: 100%;
