@@ -93,6 +93,8 @@
 
 	.guestspot {
 		@extend %guestspot-mobile;
+		@include text($color__text-main, 1rem, $font__main);
+
 
 		img {
 			@include gs-img-mobile;
@@ -108,10 +110,14 @@
 		}
 
 		.studio-information {
+			position: relative;
 			padding: 20px;
+			min-width: 30%;
+
 
 			@include tablet {
 				padding: 44px;
+
 			}
 		}
 	}
@@ -211,6 +217,107 @@
 		font-weight: bold;
 		display: inline-block;
 		margin-bottom: 0.5rem;
+
+	}
+}
+
+.guestspot {
+	width: 100%;
+
+
+	img {
+		margin-top: 8%;
+		position: relative;
+		width: 100%;
+
+
+		@include tablet {
+			width: 80%;
+			margin-top: 0;
+		}
+	}
+
+	.title {
+		position: absolute;
+		background: #fff;
+		border: $border;
+		padding: 1rem;
+		font-size: 1.5rem;
+		top: 3%;
+		margin: 0 auto;
+		left: auto;
+		right: auto;
+		left: 50%;
+
+		transform: translateX(-50%);
+
+		@include tablet {
+			top: 10%;
+			right: 10%;
+			left: none;
+			transform: none;
+			margin-top: none;
+			font-size: 2.5rem;
+		}
+	}
+
+
+
+	.info {
+		padding: 4% 8%;
+
+		h3 {
+			font-size: 1.4rem;
+		}
+
+		p,
+		a {
+			margin: 0;
+			font-size: 1rem;
+		}
+
+		.with-border {
+			display: inline-block;
+			border: $border2;
+			padding: 10px;
+			margin-bottom: 2%;
+
+		}
+
+		.with-border:not(span) {
+			width: 90%;
+
+			@include tablet {
+				width: 50%;
+			}
+		}
+
+		span {
+			width: 45%;
+			font-size: 1rem;
+
+			@include tablet {
+				width: 12rem;
+			}
+
+		}
+
+
+		.first-date {
+			border-right: none;
+		}
+
+		.content {
+			height: 200px;
+		}
+
+		a {
+			display: inline-block;
+			border: $border2;
+			padding: 10px;
+			margin-right: 12px;
+			margin-top: 4%;
+		}
 
 	}
 }

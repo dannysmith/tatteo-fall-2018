@@ -1,6 +1,10 @@
 (function ($) {
   $(function () {
 
+    $('.edit-guestspot').on("click", function () {
+
+    });
+
     $('.image-upload-form').submit(function (event) {
 
       event.preventDefault();
@@ -9,33 +13,22 @@
       formData.append('title', "title");
       formData.append('caption', "caption");
 
-      console.log($('#guespot-image'));
-
-
       $.ajax({
-
         url: api_vars.root_url + 'wp/v2/media',
         type: 'POST',
         data: formData,
         cache: false,
-        processData: false, // Don't process the files
-        contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+        processData: false,
+        contentType: false,
         beforeSend: function (xhr) {
           xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
         }
       }).done(function (response) {
         uploadPost(response.id);
-      }).fail(function (response) {
-        alert("fail " + response.id);
-      });
+      })
     });
 
     function uploadPost(imageId) {
-      /*
-      user_ID: 30
-      post_author: 30
-
-      */
       let data = {
         title: $("#studio-name").val(),
         "status": "publish",
@@ -59,7 +52,6 @@
           }
         })
         .done(function () {
-
           window.location.href = api_vars.home_url + "/my-guestspots/";
         })
         .fail(function () {
