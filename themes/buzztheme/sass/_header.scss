@@ -29,7 +29,14 @@
     }
 
     .dropdown-menu {
+        display: flex;
+        align-content: center;
+        width: 200px;
+        overflow: hidden;
+
         @include tablet {
+            width: 500px;
+
             .current-menu-item {
                 z-index: 1;
 
@@ -41,15 +48,6 @@
                     background-size: 85%;
                 }
             }
-        }
-
-        display: flex;
-        align-content: center;
-        width: 200px;
-        overflow: hidden;
-
-        @include tablet {
-            width: 500px;
         }
 
         @include desktop {
