@@ -12,16 +12,18 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<section class="single-studio" style="background-image: url(<?php echo get_avatar_url($user->ID, 120) ?>">
+	<section class="single-studio">
 	<?php
     $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
     ?>
-	<h2><?php echo $curauth->nickname; ?></h2>
-	<p class="studiodescription"><?php echo $curauth->user_description; ?></p>
+	<div class="avatar" style="background-image: url(<?php echo get_avatar_url($user->ID)?>);"></div>
+	<div class="studioname"><h2><?php echo $curauth->nickname; ?></h2></div>
+	<div class="studiodescription"><p><?php echo $curauth->user_description; ?></p></div>
 	</section>
 
 	<section class="previous-guestspots">
 	<h2>Previous Guestspots</h2>
+	<div class="grid-container">
 	<?php
     $loop = new WP_Query( array( 'post_type' => 'guestspot', 'order' => 'ASC', 'posts_per_page' => '3') );
     if ( $loop->have_posts() ) :
@@ -40,11 +42,12 @@
     endif;
     wp_reset_postdata();
 ?>
-
+	</div>
 	</section>
 
 	<section class="instagram">
-	<h2>Instagram</h2> 
+	<h2>Instagram</h2>
+	<div class="grid container"></div>
 	</section>
 
 

@@ -21,10 +21,12 @@
 
 	<section class="previous-guestspots">
 	<h2>Previous Guestspots</h2>
+	<div class="grid container"></div>
 	</section>
 
 	<section class="instagram">
-	<h2>Instagram</h2> 
+	<h2>Instagram</h2>
+	<div class="grid container"></div>
 	</section>
 
 </article><!-- #post-## -->
