@@ -95,7 +95,7 @@
 		@extend %guestspot-mobile;
 
 		img {
-		@include gs-img-mobile;
+			@include gs-img-mobile;
 		}
 
 		@include tablet {
@@ -103,7 +103,7 @@
 			flex-direction: row;
 
 			img {
-			@include gs-img-tablet;
+				@include gs-img-tablet;
 			}
 		}
 
@@ -118,26 +118,44 @@
 }
 
 // Create new guestpot page
+
 .create-guestspot-section {
 	// padding: 28px;
-	width: 100%;
+	width: auto;
+	height: 100%;
 	display: flex;
 	justify-content: space-between;
+
 
 	.image-upload-form {
 		display: flex;
 		flex-direction: column;
 		font-size: 1.5em;
 		width: 80%;
-		margin: 5%;
+		margin-left: 5%;
 
 		input:not([type="file"]):not([type="submit"]) {
-			width: 26%;
-
 			padding: 5px;
 			border: $border;
 			font-size: 1.5rem;
+			width: 80%;
+
+			@include tablet {
+				width: 26%;
+				min-width: 250px;
+			}
 		}
+
+		#studio-name,
+		#location {
+			width: 80%;
+
+			@include tablet {
+				width: 40%;
+				min-width: 360px;
+			}
+		}
+
 
 		::-webkit-file-upload-button {
 			height: 3.5rem;
@@ -150,10 +168,6 @@
 			font-weight: bold;
 		}
 
-		#studio-name,
-		#location {
-			width: 40%;
-		}
 
 		.upload-btn {
 			height: 3.5rem;
@@ -168,20 +182,35 @@
 		}
 	}
 
-	img {
+	.imagecontainer {
+		overflow: hidden;
+		position: relative;
+		width: 25%;
+		height: 100%;
 		display: none;
 
+
 		@include tablet {
-			display: inherit;
-			height: 100%;
+			display: block;
 			border-left: $border;
+
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				position: absolute;
+			}
 		}
 	}
+
+
 
 	label {
 		font-family: $font__main;
 		font-weight: bold;
-		margin-bottom: 1rem;
 		display: inline-block;
+		margin-bottom: 0.5rem;
+
 	}
 }
