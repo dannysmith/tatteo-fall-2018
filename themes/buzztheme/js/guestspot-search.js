@@ -1,6 +1,7 @@
 (function ($) {
   $('.form-guest-search').on('submit', function (event) {
-    const $guestspotsContainer = $('.guestspots-container-js')
+    const $guestspotsContainer = $('.guestspots-container-js');
+    const $guestspotsMessage = $('.guestspots-message');
     event.preventDefault();
     let data = {
       location: $("#location").val(),
@@ -21,6 +22,7 @@
       .done(function (response) {
         event.preventDefault();
         $guestspotsContainer.empty();
+        $guestspotsMessage.empty();
         for (let i = 0; i < response.length; i++) {
           let locationJson = response[i].location.toLowerCase();
           let startDateJson = new Date(response[i].start_date);
@@ -29,16 +31,17 @@
           let title = response[i].title.rendered;
           if (locationLow == locationJson) {
             if (startDateChoosen >= startDateJson && finishDateChoosen <= finishDateJson) {
-              $guestspotsContainer.empty();
               $guestspotsContainer.html(`<div><img src="${image}"><h2>${title}</h2>
               <p>${data.location}</p>`)
             }
+          } else {
+            $guestspotsMessage.html('<p>Sorry, no guestspots currently available in this location or for these dates..</p>');
           }
         }
       })
       .fail(function () {
         $guestspotsContainer.empty();
-        $guestspotsContainer.html('Sorry, try again...')
+        $guestspotsContainer.html('Something went wrong..')
       });
   })
 })(jQuery);
