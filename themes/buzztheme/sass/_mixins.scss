@@ -81,13 +81,13 @@
 
 @mixin profile-list {
 	text-align: left;
-    list-style: none;
-    font-weight: bold;
+	list-style: none;
+	font-weight: bold;
 }
 
 @mixin profile-container {
 	height: 25rem;
-	text-align: center;	
+	text-align: center;
 }
 
 @mixin profile-img {
@@ -128,4 +128,26 @@
 	@include desktop {
 		grid-template-columns: repeat(3, 1fr);
 	}
+%guestspot-mobile {
+	border: $border2;
+	width: 100%;
+	margin-bottom: 34px;
+	display: flex;
+	flex-direction: column;
+}
+
+
+@mixin gs-img-mobile {
+	width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+	border-bottom: $border2;
+}
+
+@mixin gs-img-tablet {
+	width: 35%;
+	max-height: 100%;
+	object-fit: cover;
+	border-right: $border;
+	border-bottom: none;
 }

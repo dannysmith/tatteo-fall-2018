@@ -130,6 +130,8 @@ function red_starter_scripts()
             'root_url' => esc_url_raw(rest_url()),
             'home_url' => esc_url_raw(home_url()),
             'nonce' => wp_create_nonce('wp_rest'),
+            // 'user_id' => get_current_user_id(),
+            'user_id' => wp_get_current_user()->ID,
             'success' => 'Thanks, your quote submission was received!',
             'failure' => 'Your submission could not be processed.',
         ));
@@ -237,3 +239,30 @@ function register_my_menus()
 add_action('init', 'register_my_menus');
 
 require get_template_directory() . '/inc/api.php';
+
+//======================================================================
+// Add post state to the projects page
+//======================================================================
+add_filter( 'display_post_states', 'ecs_add_post_state', 10, 2 );
+function ecs_add_post_state( $post_states, $post ) {
+	if( $post->post_name == 'edit-profile' ) {
+		$post_states[] = 'Profile edit page';
+	}
+	return $post_states;
+}
+//======================================================================
+// Add notice to the profile edit page
+//======================================================================
+add_action( 'admin_notices', 'ecs_add_post_notice' );
+function ecs_add_post_notice() {
+	global $post;
+	if( isset( $post->post_name ) && ( $post->post_name == 'edit-profile' ) ) {
+	  /* Add a notice to the edit page */
+		add_action( 'edit_form_after_title', 'ecs_add_page_notice', 1 );
+		/* Remove the WYSIWYG editor */
+		remove_post_type_support( 'page', 'editor' );
+	}	
+}
+function ecs_add_page_notice() {
+	echo '<div class="notice notice-warning inline"><p>' . __( 'You are currently editing the profile edit page. Do not edit the title or slug of this page!', 'textdomain' ) . '</p></div>';
+}

@@ -65,7 +65,7 @@
 	}
 
 	.new-guestspot {
-		border: 7px solid #000;
+		border: $border;
 		@include flex-centered;
 		flex-direction: column;
 		width: 100%;
@@ -92,17 +92,12 @@
 	}
 
 	.guestspot {
-		border: $border2;
-		width: 100%;
-		margin-bottom: 34px;
-		display: flex;
-		flex-direction: column;
+		@extend %guestspot-mobile;
+		@include text($color__text-main, 1rem, $font__main);
+
 
 		img {
-			width: 100%;
-			max-height: 100%;
-			object-fit: cover;
-			border-bottom: 7px solid #000;
+			@include gs-img-mobile;
 		}
 
 		@include tablet {
@@ -110,24 +105,219 @@
 			flex-direction: row;
 
 			img {
-				width: 35%;
-				max-height: 100%;
-				object-fit: cover;
-				border-right: 7px solid #000;
+				@include gs-img-tablet;
 			}
 		}
 
 		.studio-information {
+			position: relative;
 			padding: 20px;
+			min-width: 30%;
+
 
 			@include tablet {
 				padding: 44px;
+
 			}
 		}
 	}
 }
 
 // Create new guestpot page
+
 .create-guestspot-section {
-	padding: 28px;
+	// padding: 28px;
+	width: auto;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+
+
+	.image-upload-form {
+		display: flex;
+		flex-direction: column;
+		font-size: 1.5em;
+		width: 80%;
+		margin-left: 5%;
+
+		input:not([type="file"]):not([type="submit"]) {
+			padding: 5px;
+			border: $border;
+			font-size: 1.5rem;
+			width: 80%;
+
+			@include tablet {
+				width: 26%;
+				min-width: 250px;
+			}
+		}
+
+		#studio-name,
+		#location {
+			width: 80%;
+
+			@include tablet {
+				width: 40%;
+				min-width: 360px;
+			}
+		}
+
+
+		::-webkit-file-upload-button {
+			height: 3.5rem;
+			width: 7.5rem;
+			background: transparent url('../../assets/buttons/button_texture.png');
+			background-repeat: no-repeat;
+			background-size: contain;
+			border: none;
+			color: $color__text-secondary;
+			font-weight: bold;
+		}
+
+
+		.upload-btn {
+			height: 3.5rem;
+			width: 7.5rem;
+			background: transparent url('../../assets/buttons/button_texture.png');
+			background-repeat: no-repeat;
+			background-size: contain;
+			border: none;
+			color: $color__text-secondary;
+			font-weight: bold;
+			margin-bottom: 2rem;
+		}
+	}
+
+	.imagecontainer {
+		overflow: hidden;
+		position: relative;
+		width: 25%;
+		height: 100%;
+		display: none;
+
+
+		@include tablet {
+			display: block;
+			border-left: $border;
+
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				position: absolute;
+			}
+		}
+	}
+
+
+
+	label {
+		font-family: $font__main;
+		font-weight: bold;
+		display: inline-block;
+		margin-bottom: 0.5rem;
+
+	}
+}
+
+.guestspot {
+	width: 100%;
+
+
+	img {
+		margin-top: 8%;
+		position: relative;
+		width: 100%;
+
+
+		@include tablet {
+			width: 80%;
+			margin-top: 0;
+		}
+	}
+
+	.title {
+		position: absolute;
+		background: #fff;
+		border: $border;
+		padding: 1rem;
+		font-size: 1.5rem;
+		top: 3%;
+		margin: 0 auto;
+		left: auto;
+		right: auto;
+		left: 50%;
+
+		transform: translateX(-50%);
+
+		@include tablet {
+			top: 10%;
+			right: 10%;
+			left: none;
+			transform: none;
+			margin-top: none;
+			font-size: 2.5rem;
+		}
+	}
+
+
+
+	.info {
+		padding: 4% 8%;
+
+		h3 {
+			font-size: 1.4rem;
+		}
+
+		p,
+		a {
+			margin: 0;
+			font-size: 1rem;
+		}
+
+		.with-border {
+			display: inline-block;
+			border: $border2;
+			padding: 10px;
+			margin-bottom: 2%;
+
+		}
+
+		.with-border:not(span) {
+			width: 90%;
+
+			@include tablet {
+				width: 50%;
+			}
+		}
+
+		span {
+			width: 45%;
+			font-size: 1rem;
+
+			@include tablet {
+				width: 12rem;
+			}
+
+		}
+
+
+		.first-date {
+			border-right: none;
+		}
+
+		.content {
+			height: 200px;
+		}
+
+		a {
+			display: inline-block;
+			border: $border2;
+			padding: 10px;
+			margin-right: 12px;
+			margin-top: 4%;
+		}
+
+	}
 }

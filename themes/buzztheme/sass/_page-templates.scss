@@ -508,12 +508,35 @@ footer {
 
 .search{
 
-    h1{
-    text-align: center;
-    }
+        main{
+        padding: 28px;
+        width: 100vw;    
 
-    article{
-        border: $border;
+        article {
+            @extend %guestspot-mobile;
+    
+            img {
+            @include gs-img-mobile;
+            }
+    
+            @include tablet {
+                height: 288px;
+                flex-direction: row;
+    
+                img {
+                @include gs-img-tablet;
+                }
+            }
+    
+            .entry-summary {
+                padding: 20px;
+    
+                @include tablet {
+                    padding: 44px;
+                }
+            }
+        }
+        }
     }
 }
 
@@ -545,7 +568,28 @@ footer {
                 margin-bottom:1.5rem;
                 padding:5px;
             }
-        }    
+            input{
+                border-radius: 0px;
+            }
+        }  
+        
+        img{
+            display:none;
+
+            @include tablet{
+                 display:inherit;
+                 height:100%;
+                 border-left: $border;
+                
+            }
+        }
+        label{
+            font-family: $font__main;
+            font-weight: bold;
+            margin-bottom:0.5rem;
+
+          
+        }
     }
     .profilefooter{
         order:2;
