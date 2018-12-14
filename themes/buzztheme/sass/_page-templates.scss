@@ -312,6 +312,8 @@
 
 
     .search {
+
+        main{
         padding: 28px;
         width: 100vw;    
 
@@ -331,13 +333,14 @@
                 }
             }
     
-            .studio-information {
+            .entry-summary {
                 padding: 20px;
     
                 @include tablet {
                     padding: 44px;
                 }
             }
+        }
         }
     }
 
