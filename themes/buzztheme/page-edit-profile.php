@@ -5,15 +5,13 @@
 
 <?php get_header(); ?>
 
-	<?php get_template_part('parts/dashboard/user'); ?>
+
 
 	<?php if ( !have_posts() ) get_template_part( 'parts/notice/no-posts' ); ?>
 
 	<?php while (have_posts()) : the_post(); ?>
 
-		<section class="edit-profile" id="dashboard-content">
-		
-			<div class="wrap">
+	
 
 				<?php get_template_part( 'parts/dashboard/edit-profile/intro' ); ?>
 
@@ -69,14 +67,16 @@
         <div class="imagecontainer">
         <img src="../../../../buzz/wp-content/themes/buzztheme/assets/Images/Textures-2-Vertical.png" alt="sidetexture">
       </div>
-			</div>
-
-	<?php endwhile; ?>
-
-	<?php wp_reset_postdata(); ?>
-  </section>
+      </section>
+  <?php endwhile; ?>
+  <div class="profile-footer">
 <?php get_footer(); ?>
-</main><!-- #main -->
+</div>
+  </main><!-- #main -->
 </div><!-- #primary -->
+  <?php wp_reset_postdata(); ?>
+
+
+
 
      

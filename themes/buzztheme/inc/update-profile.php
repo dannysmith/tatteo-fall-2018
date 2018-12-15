@@ -41,7 +41,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['action'] ) && $_POS
     if ( !empty( $_POST['description'] ) ) {
         update_user_meta( $current_user->ID, 'description', esc_attr( $_POST['description'] ) );
     }
-    /* Let plugins hook in, like ACF who is handling the profile picture all by itself. Got to love the Elliot */
     do_action('edit_user_profile_update', $current_user->ID);
     /* We got here, assuming everything went OK */
     wp_redirect( get_permalink() . '?updated=true' );
