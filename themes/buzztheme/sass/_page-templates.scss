@@ -166,9 +166,9 @@
 
 }
 
-    /* Single Artist Page */
+/* Single Artist Page */
 
-    .author {
+.author {
         .artist-profile {
             display: grid;
             grid-template-rows: 1fr 1fr 1fr;
@@ -231,7 +231,8 @@
 
         }
 
-    }
+}
+
 /* Single Studio Page */
 
 .author {
@@ -354,9 +355,10 @@
         }
     }
 }
-    /* Footer */
 
-    footer {
+/* Footer */
+
+footer {
         display: grid;
         grid-auto-columns: auto;
         background: black;
@@ -406,11 +408,11 @@
             margin-right: 5rem;
             text-align: right;
         }
-    }
+}
 
-    /* 404 Form */
+/* 404 Form */
 
-    .error404 {
+.error404 {
 
         .site-content {
             display: flex;
@@ -427,12 +429,11 @@
                 }
             }
         }
-    }
+}
 
-    /* Search Result Page */
+/* Search Result Page */
 
-
-    .search {
+.search {
 
         main{
         padding: 28px;
@@ -463,15 +464,15 @@
             }
         }
         }
-    }
+}
 
 
-    /* Edit profile */
-    .edit-area{
+/* Edit profile */
+.edit-area{
         width:100%;
-    }
+}
 
-    .edit-profile {
+.edit-profile {
 
         width:100%;
         display: flex;
@@ -529,14 +530,14 @@
 
           
         }
-    }
+}
 
-    .profilefooter {
+.profilefooter {
         order: 2;
-    }
+}
 
-    //Guestspots page
-    .filter-guestspot {
+//Guestspots page
+.filter-guestspot {
         justify-content: space-around;
         align-items: center;
         width: 100vw;
@@ -555,4 +556,30 @@
             width: 80px;
             height: 30px;
         }
+}
+
+.page-header {
+    @include profile-title;
+    h1 {
+        padding-bottom: 0.5rem;
     }
+}
+
+.guestspots-container-js {
+    @include multi-profile;
+
+    .guestspots.container {
+        .link-guestspot {
+            height: 25rem;
+            border: $border;
+        }
+        p {
+            @include flex-centered;
+            font-weight: bold;
+            justify-content: left;
+            margin: 0.5rem;
+            font-size: 1rem;
+        }
+    }
+}
+
