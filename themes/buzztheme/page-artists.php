@@ -33,7 +33,7 @@ echo '<div class="container"><div class="artist">' .
 	'</li> </div></a>';
  }
 ?>
-	<button>Load more</button>
+	<button class="load-more">Load more</button>
 </section>
 	
 		</main><!-- #main -->
