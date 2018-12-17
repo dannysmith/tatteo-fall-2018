@@ -10,8 +10,9 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+<section class="title"><h1>Artists</h1></section>
 <section class="artist-users">
-<h1>Artists</h1>	
+
 <?php
 $args1 = array(
  'role' => 'artist',
@@ -33,7 +34,7 @@ echo '<div class="container"><div class="artist">' .
 	'</li> </div></a>';
  }
 ?>
-	<button>Load more</button>
+	<button class="load-more">Load more</button>
 </section>
 	
 		</main><!-- #main -->
