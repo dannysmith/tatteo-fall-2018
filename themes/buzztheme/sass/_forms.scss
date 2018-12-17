@@ -299,3 +299,14 @@ body {
 		}
 	}
 }
+
+.edit-guestspot-form {
+	display: none;
+	background-color: #fff;
+	border: $border;
+	z-index: 12;
+	position: absolute;
+	flex-direction: column;
+	width: 60%;
+	@include text($color__text-main, 1rem, $font__main);
+}
