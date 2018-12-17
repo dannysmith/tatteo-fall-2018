@@ -1,12 +1,30 @@
 (function ($) {
   $(function () {
 
-    $('.edit-guestspot').on("click", function () {
+    $('.edit-guestspot-btn').on("click", function () {
+      $(".edit-guestspot-form").css("display", "block");
+    });
+
+    $('.edit-guestspot-form').submit(function () {
+
+    });
+
+
+    $('.delete-guestspot-btn').on("click", function () {
+      $.ajax({
+          method: 'DELETE',
+          url: api_vars.root_url + 'wp/v2/guestspots-api/' + $('.guestspot').attr('id'),
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
+          }
+        })
+        .done(function () {
+          window.location.href = api_vars.home_url + "/my-guestspots/";
+        })
 
     });
 
     $('.image-upload-form').submit(function (event) {
-
       event.preventDefault();
       var formData = new FormData();
       formData.append('file', $('input[type = file]')[0].files[0]);

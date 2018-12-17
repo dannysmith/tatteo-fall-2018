@@ -300,6 +300,7 @@ body {
 	}
 }
 
+// Edit guestspot page form
 .edit-guestspot-form {
 	display: none;
 	background-color: #fff;
@@ -307,6 +308,15 @@ body {
 	z-index: 12;
 	position: absolute;
 	flex-direction: column;
-	width: 60%;
+	// width: 60%;
 	@include text($color__text-main, 1rem, $font__main);
+	padding: 10%;
+	top: 5%;
+	right: 10%;
+	left: 10%;
+
+
+	@include tablet {
+		min-width: 400px;
+	}
 }
