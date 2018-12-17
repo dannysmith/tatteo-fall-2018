@@ -114,7 +114,6 @@ function red_starter_scripts()
     if (function_exists("rest_url")) {
 
         wp_enqueue_script('sign-up', get_template_directory_uri() . '/build/js/sign-up.min.js', array(), false, true);
-
         wp_localize_script('sign-up', 'api_vars', array(
             'root_url' => esc_url_raw(rest_url()),
             'home_url' => esc_url_raw(home_url()),
@@ -124,15 +123,22 @@ function red_starter_scripts()
         ));
 
         wp_enqueue_script('guestspot-util', get_template_directory_uri() . '/build/js/guestspot-util.min.js', array(), false, true);
-        wp_enqueue_script('guestspot-search', get_template_directory_uri() . '/build/js/guestspot-search.min.js', array(), false, true);
-        wp_enqueue_script('myloadmore', get_template_directory_uri() . '/build/js/myloadmore.min.js', array(), false, true);
-
         wp_localize_script('guestspot-util', 'api_vars', array(
             'root_url' => esc_url_raw(rest_url()),
             'home_url' => esc_url_raw(home_url()),
             'nonce' => wp_create_nonce('wp_rest'),
             // 'user_id' => get_current_user_id(),
             'user_id' => wp_get_current_user()->ID,
+            'success' => 'Thanks, your quote submission was received!',
+            'failure' => 'Your submission could not be processed.',
+        ));
+
+        wp_enqueue_script('guestspot-search', get_template_directory_uri() . '/build/js/guestspot-search.min.js', array(), false, true);
+        wp_enqueue_script('myloadmore', get_template_directory_uri() . '/build/js/myloadmore.min.js', array(), false, true);
+        wp_localize_script('myloadmore', 'api_vars', array(
+            'root_url' => esc_url_raw(rest_url()),
+            'home_url' => esc_url_raw(home_url()),
+            'nonce' => wp_create_nonce('wp_rest'),
             'success' => 'Thanks, your quote submission was received!',
             'failure' => 'Your submission could not be processed.',
         ));
@@ -240,5 +246,3 @@ function register_my_menus()
 add_action('init', 'register_my_menus');
 
 require get_template_directory() . '/inc/api.php';
-
-
