@@ -540,58 +540,69 @@ footer {
 }
 
 
-/* Edit profile */
+ /* Edit profile */
+ .edit-area{
+    width:100%;
+}
 
-.page-id-153{
+.edit-profile {
 
-    .content-area{
-        width:100%;
-    }
+    width:100%;
+    display: flex;
+    justify-content: space-between;
 
-    .edit-profile{
-
-        .submit-form{
-            display:flex;
-            flex-direction:column;
-            font-size:1.5em;
-            justify-content: space-between;
+    .submit-form{
+        display:flex;
+        flex-direction:column;
+        font-size:1.5em;
+        width:80%;
+        margin-left: 1em;
         
-
-            #username, #location, #instalink, #facelink, #userbio{
-                width:70%;
-                margin-bottom:2rem;
-                padding:5px;
-            }
-            #contactnumber, #dob{
-                width:50%;
-                margin-bottom:1.5rem;
-                padding:5px;
-            }
-            input{
-                border-radius: 0px;
-                font-weight: 600;
-            }
-        }  
+         #username, #location, #instalink, #facelink, #userbio{
+            width:90%;
+            margin-bottom:2rem;
+            padding:5px;
+            border:$border;
+        }
+        #contactnumber, #dob{
+            width:50%;
+            margin-bottom:1.5rem;
+            padding:5px;
+            border:$border;
+        }
+        button{
+                 height: 3.5rem;
+                width: 7.5rem;
+                background: transparent url('../../assets/buttons/button_texture.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                border: none;
+                color: $color__text-secondary;  
+                font-weight: bold;  
+                margin-bottom:1rem;
+        }
         
-        img{
-            display:none;
+    }  
+    
+    img{
+        display:none;
 
-            @include tablet{
-                 display:inherit;
-                 height:100%;
-                 border-left: $border;
-                
-            }
-        }
-        label{
-            font-family: $font__main;
-            font-weight: bold;
-            margin-bottom:0.5rem;
-
-          
+        @include tablet{
+             display:inherit;
+             height:100%;
+             border-left: $border;
+            
         }
     }
-    .profilefooter{
-        order:2;
+    label{
+        font-family: $font__main;
+        font-weight: bold;
+        margin-bottom:0.5rem;
+
+      
     }
-}  
+}
+
+.profilefooter {
+    order: 2;
+}
