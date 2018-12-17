@@ -114,6 +114,9 @@
 			padding: 20px;
 			min-width: 30%;
 
+			a {
+				text-decoration: none;
+			}
 
 			@include tablet {
 				padding: 44px;

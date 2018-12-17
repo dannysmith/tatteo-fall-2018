@@ -34,7 +34,7 @@ $guestspots = new WP_Query($args);?>
       <?php endwhile;?>
       <?php endif;?>
       <div class="new-guestspot">
-        <a class="edit-guestspot-btn"><img src="<?php echo get_template_directory_uri() ?>/assets/Buttons/add-button.png" /></a>
+        <a class="edit-guestspot-btn" href="<?php echo get_permalink(get_page_by_path('create-guestspot')) ?>"><img src="<?php echo get_template_directory_uri() ?>/assets/Buttons/add-button.png" /></a>
         <h2>Add Guestspot</h2>
       </div>
 
