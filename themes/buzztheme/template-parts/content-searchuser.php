@@ -1,53 +1,60 @@
-<?php // The search term
-// $search_term = '';
+<?php 
 
 // WP_User_Query arguments
-$args = array (
-    'role__not_in' => 'Administrator',
-    'order'      => 'ASC',
-    'orderby'    => 'display_name',
-    // 'search'     => '*' . esc_attr( $search_term ) . '*',
+$search_string = get_search_query();
+
+// Create the WP_User_Query object
+$wp_user_query = new WP_User_Query( array(
+	'role__not_in' => 'Administrator',
+    'search'         => "*{$search_string}*",
+    'search_columns' => array(
+        'user_login',
+        'user_nickname',
+        'user_email',
+        'user_url',
+    ),
     'meta_query' => array(
         'relation' => 'OR',
         array(
-			'key'     => 'first_name',
-            'value'   => $search_term,
+            'key'     => 'nickname',
+            'value'   => $search_string,
             'compare' => 'LIKE'
         ),
         array(
             'key'     => 'last_name',
-            'value'   => $search_term,
+            'value'   => $search_string,
             'compare' => 'LIKE'
-        ),
-        array(
-            'key'     => 'description',
-            'value'   => $search_term ,
-            'compare' => 'LIKE'
-        )
+		), 
+		array(
+			'key'     => 'first_name',
+			'value'   => $search_term,
+			'compare' => 'LIKE'
+		)
     )
-);
+) );
 
-// Create the WP_User_Query object
-$wp_user_query = new WP_User_Query( $args );
 
 // Get the results
-$authors = $wp_user_query->get_results();
+$users = $wp_user_query->get_results();
 
 // Check for results
-if ( ! empty( $authors ) ) {
+
+if ( ! empty( $users ) ) {
     echo '<div>';
     // loop through each author
-    foreach ( $authors as $user ) {
-		// get all the user's data
-		
+    foreach ( $users as $user ) {
+        // get all the user's data
+        
+        $user_info = get_userdata( $user->ID );
 
-		$user_info = get_userdata( $user->ID );
-		
-		echo '<a href="'.get_author_posts_url($user->ID).'">
-		'. get_avatar($user->ID, 120). '
-		'. $user->display_name .'</a>';
+        echo '<a href="'.get_author_posts_url($user->ID).'">
+        '. get_avatar($user->ID, 120). '
+        '. $user->display_name .'</a>';
     }
     echo '</div>';
 } else {
-    echo 'No authors found';
-} ?>
+
+	get_template_part( 'template-parts/content', 'none' ); 
+
+
+} ?>  

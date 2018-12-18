@@ -241,4 +241,12 @@ add_action('init', 'register_my_menus');
 
 require get_template_directory() . '/inc/api.php';
 
+function filter_search($query) {
+    if ($query->is_search) {
+    $query->set('post_type', array('post', 'page'));
+    };
+    return $query;
+};
+add_filter('pre_get_posts', 'filter_search');
+
 
