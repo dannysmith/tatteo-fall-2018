@@ -16,10 +16,9 @@ get_header(); ?>
 			<h3>Location</h3>
 			<input type="text" id="location" placeholder="London">
 		</div>
-		<div date-div>
+		<div class="date-div">
 			<h3>Dates</h3>
-			<input id="start-date" type="date" value="2018-12-21">
-			<input id="finish-date" type="date" value="2018-12-21">
+			<input id="start-date" type="date" value="2018-12-21"><input id="finish-date" type="date" value="2018-12-21">
 		</div>
 		<button>Search</button>
 			</form>

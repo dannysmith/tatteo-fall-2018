@@ -31,7 +31,7 @@
                     <img src="${element.avatar}"
                         width="120" height="120" alt="" class="avatar avatar-120 wp-user-avatar wp-user-avatar-120 photo avatar-default"></a></div>
                     <li><a href="${element.link}">${element.name}</a></li><a href="${element.link}">
-                    <li>artist3@artist3.artist3</li>
+                    <li>${element.location}</li>
                     <li></li>
                     </a>
                 </div>`);
