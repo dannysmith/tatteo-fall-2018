@@ -47,4 +47,3 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['action'] ) && $_POS
 	exit;
 }
 
-<div class="container"><div class="artist"><a href="http://localhost:8888/buzz/author/artist3/"><img src="http://localhost:8888/buzz/wp-content/plugins/wp-user-avatar/images/wpua-150x150.png" width="120" height="120" alt="" class="avatar avatar-120 wp-user-avatar wp-user-avatar-120 photo avatar-default"></a></div><li><a href="http://localhost:8888/buzz/author/artist3/">artist3</a></li><a href="http://localhost:8888/buzz/author/artist3/"> <li>artist3@artist3.artist3</li> <li></li> </a></div>
