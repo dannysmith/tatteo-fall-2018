@@ -36,8 +36,10 @@ $args1 = array(
  '</li> </div></a>';
  }
 ?>
-	<button class="load-more">Load more</button>
+
 </section>
+
+<section class="button"><button class="load-more">Load more</button></section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
