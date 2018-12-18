@@ -9,19 +9,29 @@ get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+		
+		<div class="tab">
+			<button class="tablinks" id="defaultOpen" onclick="openSearch(event, 'posts')" >Guestspots</button>
+			<button class="tablinks" onclick="openSearch(event, 'studio')">Studios</button>
+			<button class="tablinks" onclick="openSearch(event, 'artist')">Artists</button>
+			</div>
+			
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( esc_html( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
+			
 
-			<?php /* Start the Loop */ ?>
+			<!-- Start the Loop  -->
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/content', 'searchuser' ); ?>
-				<?php get_template_part( 'template-parts/content', 'search' ); ?>
+			<div id="posts" class="tabcontent"><?php get_template_part( 'template-parts/content', 'search' ); ?></div>
+
+			
+			<div id="studio" class="tabcontent"><?php get_template_part( 'template-parts/content', 'search-studio' ); ?></div>
+			<div id="artist" class="tabcontent"><?php get_template_part( 'template-parts/content', 'search-artist' ); ?></div>
 
 			<?php endwhile; ?>
 
@@ -29,9 +39,12 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+		
+		<div id="studio" class="tabcontent"><?php get_template_part( 'template-parts/content', 'search-studio' ); ?></div>
+		<div id="artist" class="tabcontent"><?php get_template_part( 'template-parts/content', 'search-artist' ); ?></div>
 
 		<?php endif; ?>
+			
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

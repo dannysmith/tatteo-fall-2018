@@ -37,10 +37,13 @@ foreach ($artists as $user) {
         '</li> </div></a>';
 }
 ?>
-    </section>
-    <button class="load-more">Load more</button>
-  </main><!-- #main -->
-</div><!-- #primary -->
+
+</section>
+
+<section class="button"><button class="load-more">Load more</button></section>
+	
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 
-<?php get_footer();?>
+<?php get_footer(); ?>

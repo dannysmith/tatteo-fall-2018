@@ -36,13 +36,15 @@
           let objectLocation = response[i].location
           if (locationLow == locationJson) {
             if (startDateChoosen >= startDateJson && finishDateChoosen <= finishDateJson) {
-              $guestspotsContainer.html(`<div class="guestspot-after-search">
+              $guestspotsMessage.html(`<div class="guestspot-after-search">
+                                            <div class="guest-container-search">
                                             <img src="${image}" />
                                             <div class="studio-information">
                                               <a href="${link}">
                                               <h2>${title}</h2>
                                               </a>
                                               <p>${objectLocation}</p>
+                                            </div>
                                             </div>
                                         </div>`)
             } else {
@@ -66,3 +68,21 @@
       });
   })
 })(jQuery);
+
+// Global search - tabs 
+
+function openSearch(evt, searchName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(searchName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click(); 
