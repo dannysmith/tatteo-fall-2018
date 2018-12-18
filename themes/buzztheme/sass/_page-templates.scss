@@ -667,11 +667,16 @@ footer {
 
 //Guestspots page
 .filter-guestspot {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    @include tablet{
+        flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100vw;
     display: inline-flex;
-
+    }
     input {
         border-radius: 0;
         font-weight: 600;
@@ -685,6 +690,13 @@ footer {
         width: 80px;
         height: 30px;
     }
+    @include tablet{
+    #start-date{
+        border-right: 2px solid black;
+    }
+    #finish-date{
+        border-left: 2px solid black;
+    }}
 }
 
 .page-header {
