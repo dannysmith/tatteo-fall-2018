@@ -113,13 +113,26 @@
 
 .title {
     @include profile-title;
+
+    @include desktop {
+        justify-content: left;
+        margin-left: 24rem;
+    }
 }
 
 .studio-users {
     @include multi-profile;
 
-    button {
-        @include loadmore-button;
+    a {
+        &:link,
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+            color: black;
+            text-decoration: none;
+            font-size: 1rem;
+        }
     }
 }
 
@@ -157,6 +170,11 @@ width: 100%;
     h1 {
     @include profile-title;
     }
+
+    @include desktop {
+        justify-content: left;
+        margin-left: 24rem;
+    }
 }
 
 .artist-users {
@@ -170,6 +188,18 @@ width: 100%;
             &:hover {
                 border-color: black;
             }
+        }
+    }
+
+    a {
+        &:link,
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+            color: black;
+            text-decoration: none;
+            font-size: 1rem;
         }
     }
 }
@@ -488,11 +518,11 @@ footer {
     padding-top: 3rem;
 
     a {
-
         &:link,
         &:hover,
         &:active,
-        &:focus {
+        &:focus,
+        &:visited {
             @include text($color__text-secondary, 1rem, $font__main);
         }
 
