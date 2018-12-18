@@ -83,6 +83,28 @@
             }
         }
 
+        .guestspots {
+            @include multi-profile;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+
+                .link-guestspot {
+                    height: 25rem;
+                    border: $border3;
+                    &:hover {
+                        border-color: black;
+                    }
+                }
+
+            p {
+                @include flex-centered;
+                font-weight: bold;
+                justify-content: left;
+                margin: 0.5rem;
+                font-size: 1rem;
+            }
+        }
+
         .examplesecondblock {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -739,10 +761,13 @@ h1 {
 .guestspots-container-js {
 @include multi-profile;
 
-.guestspots.container {
+.guestspots-container {
         .link-guestspot {
             height: 25rem;
-            border: $border;
+            border: $border3;
+            &:hover {
+                border-color: black;
+            }
         }
 
         p {
