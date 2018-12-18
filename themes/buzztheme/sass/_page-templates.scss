@@ -130,6 +130,7 @@
         @include profile-list;
         margin-left: 0.5rem;
     }
+
     .studio {
         @include profile-container;
 
@@ -140,6 +141,7 @@
             }
         }
     }
+
     button {
         @include loadmore-button;
     }
@@ -340,10 +342,12 @@ width: 100%;
             display: grid;
             padding-bottom: 3rem;
             @include border-bottom;
+
             @include tablet {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto 1fr auto;
             }
+
             @include desktop {
                 grid-template-columns: 1fr auto 1fr;
             }
@@ -354,6 +358,7 @@ width: 100%;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
+
                 @include tablet {
                     grid-row: 2;
                     order: 2;
@@ -361,6 +366,7 @@ width: 100%;
                     margin: 0 auto;
                     margin-bottom: 2.5rem;
                 }
+
                 @include desktop {
                     grid-column: 2;
                     grid-row: 1/3;
@@ -369,10 +375,12 @@ width: 100%;
 
             .studioname {
                 @include profile-title;
+
                 @include tablet {
                     grid-row: 1;
                     order: 1;
                 }
+
                 @include desktop {
                     grid-column: 3/4;
                 }
@@ -383,11 +391,13 @@ width: 100%;
                 font-weight: bold;
                 padding: 0.5rem;
                 margin-left: 5rem;
+
                 @include tablet {
                     grid-row: 3;
                     order: 3;
                     margin-right: 5rem;
                 }
+
                 @include desktop {
                     grid-column: 1/2;
                 }
@@ -402,6 +412,7 @@ width: 100%;
             @include tablet {
                 justify-content: center;
             }
+
             @include desktop {
                 grid-template-columns: 100%;
                 h2 {
@@ -410,6 +421,7 @@ width: 100%;
                     width: 24rem;
                 }
             }
+
             .grid-container {
                 @include previous-guestspots;
 
@@ -429,18 +441,19 @@ width: 100%;
         .instagram {
             @include profile-title;
             @include border-bottom;
-            
+
             @include tablet {
                 justify-content: center;
             }
-            
+
             @include desktop {
                 justify-content: left;
+
                 h2 {
-                margin-left: 5rem;
+                    margin-left: 5rem;
                 }
             }
-                
+
             .grid-container {
                 @include instagram;
             }
@@ -448,13 +461,16 @@ width: 100%;
 
         .studio-location {
             @include profile-title;
+
             @include tablet {
                 justify-content: center;
             }
+
             @include desktop {
                 justify-content: left;
+
                 h2 {
-                margin-left: 5rem;
+                    margin-left: 5rem;
                 }
             }
         }
@@ -464,180 +480,189 @@ width: 100%;
 /* Footer */
 
 footer {
-        display: grid;
-        grid-auto-columns: auto;
-        background: black;
-        @include text($color__text-secondary, 1rem, $font__main);
-        font-weight: bold;
-        padding-top: 3rem;
+    display: grid;
+    grid-auto-columns: auto;
+    background: black;
+    @include text($color__text-secondary, 1rem, $font__main);
+    font-weight: bold;
+    padding-top: 3rem;
 
-        a {
+    a {
 
-            &:link,
-            &:hover,
-            &:active,
-            &:focus {
-                @include text($color__text-secondary, 1rem, $font__main);
-            }
-
-            text-decoration: none;
+        &:link,
+        &:hover,
+        &:active,
+        &:focus {
+            @include text($color__text-secondary, 1rem, $font__main);
         }
 
-        .logo {
-            grid-column: 1;
-            margin-left: 5.5rem;
+        text-decoration: none;
+    }
 
-            img {
-                height: 2.4rem;
-            }
-        }
+    .logo {
+        grid-column: 1;
+        margin-left: 5.5rem;
 
-        ul {
-            list-style: none;
+        img {
+            height: 2.4rem;
         }
+    }
 
-        .footerlinks {
-            grid-column: 1;
-            grid-row: 2;
-        }
+    ul {
+        list-style: none;
+    }
 
-        .copyright {
-            grid-column: 1;
-            margin-left: 5.5rem;
-        }
+    .footerlinks {
+        grid-column: 1;
+        grid-row: 2;
+    }
 
-        .footersocialmedia {
-            grid-column: 2;
-            grid-row: 2;
-            justify-self: right;
-            margin-right: 5rem;
-            text-align: right;
-        }
+    .copyright {
+        grid-column: 1;
+        margin-left: 5.5rem;
+    }
+
+    .footersocialmedia {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: right;
+        margin-right: 5rem;
+        text-align: right;
+    }
 }
 
 /* 404 Form */
 
 .error404 {
 
-        .site-content {
-            display: flex;
-            justify-content: center;
-            margin: 5rem;
+    .site-content {
+        display: flex;
+        justify-content: center;
+        margin: 5rem;
 
-            .not-found {
+        .not-found {
+            text-align: center;
+            flex-direction: column;
+
+            fieldset {
                 text-align: center;
-                flex-direction: column;
-
-                fieldset {
-                    text-align: center;
-                    border: none;
-                }
+                border: none;
             }
         }
+    }
 }
 
 /* Search Result Page */
 
 .search {
 
-        main{
+    main {
         padding: 28px;
-        width: 100vw;    
+        width: 100vw;
 
         article {
             @extend %guestspot-mobile;
-    
+
             img {
-            @include gs-img-mobile;
+                @include gs-img-mobile;
             }
-    
+
             @include tablet {
                 height: 288px;
                 flex-direction: row;
-    
+
                 img {
-                @include gs-img-tablet;
+                    @include gs-img-tablet;
                 }
             }
-    
+
             .entry-summary {
                 padding: 20px;
-    
+
                 @include tablet {
                     padding: 44px;
                 }
             }
         }
-        }
+    }
 }
 
 /* Edit profile */
-.edit-area{
-        width:100%;
+.edit-area {
+    width: 100%;
 }
 
 .edit-profile {
 
-        width:100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .submit-form {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        font-size: 1.5em;
+        width: 80%;
+        margin-left: 1em;
 
-        .submit-form{
-            display:flex;
-            flex-direction:column;
-            font-size:1.5em;
-            width:80%;
-            margin-left: 1em;
-            
-             #username, #location, #instalink, #facelink, #userbio{
-                width:90%;
-                margin-bottom:2rem;
-                padding:5px;
-                border:$border;
-            }
-            #contactnumber, #dob{
-                width:50%;
-                margin-bottom:1.5rem;
-                padding:5px;
-                border:$border;
-            }
-            button{
-                     height: 3.5rem;
-                    width: 7.5rem;
-                    background: transparent url('../../assets/buttons/button_texture.png');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    border: none;
-                    color: $color__text-secondary;  
-                    font-weight: bold;  
-                    margin-bottom:1rem;
-            }
-            input{
-                border-radius: 0px;
-            }
-        }  
-        
-        img{
-            display:none;
-
-            @include tablet{
-                 display:inherit;
-                 height:100%;
-                 border-left: $border;
-                
-            }
+        #username,
+        #location,
+        #instalink,
+        #facelink,
+        #userbio {
+            width: 90%;
+            margin-bottom: 2rem;
+            padding: 5px;
+            border: $border;
         }
-        label{
-            font-family: $font__main;
+
+        #contactnumber,
+        #dob {
+            width: 50%;
+            margin-bottom: 1.5rem;
+            padding: 5px;
+            border: $border;
+        }
+
+        button {
+            height: 3.5rem;
+            width: 7.5rem;
+            background: transparent url('../../assets/buttons/button_texture.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: none;
+            color: $color__text-secondary;
             font-weight: bold;
-            margin-bottom:0.5rem;
-
-          
+            margin-bottom: 1rem;
         }
+
+        input {
+            border-radius: 0px;
+        }
+    }
+
+    img {
+        display: none;
+
+        @include tablet {
+            display: inherit;
+            height: 100%;
+            border-left: $border;
+
+        }
+    }
+
+    label {
+        font-family: $font__main;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+
+
+    }
 }
 
 .profilefooter {
-        order: 2;
+    order: 2;
 }
 
 //Guestspots page
@@ -677,6 +702,7 @@ h1 {
             height: 25rem;
             border: $border;
         }
+
         p {
             @include flex-centered;
             font-weight: bold;
@@ -687,3 +713,35 @@ h1 {
     }
 }
 
+.guestspot-after-search {
+    width: 90vw;
+    margin-left: 20px;
+    .guest-container-search {
+        
+        width: 100%;
+
+        @extend %guestspot-mobile;
+
+        img {
+            @include gs-img-mobile;
+        }
+
+        @include tablet {
+            height: 288px;
+            flex-direction: row;
+
+            img {
+                @include gs-img-tablet;
+            }
+        }
+
+        .studio-information {
+            padding: 20px;
+
+            @include tablet {
+                padding: 44px;
+            }
+        }
+    }
+
+}
