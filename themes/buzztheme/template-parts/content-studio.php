@@ -37,8 +37,8 @@
                 <div class="">
                     <p><?php echo get_the_title(); ?></p>
                 </div>
-            </div>
-        <?php endwhile;
+			</div>
+		<?php endwhile;
     endif;
     wp_reset_postdata();
 ?>
