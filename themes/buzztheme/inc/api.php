@@ -85,22 +85,44 @@ add_action('rest_api_init', function () {
         'location',
         array(
             'get_callback' => 'buzz_get_location',
-            'update_callback' => null,
+            'update_callback' => 'buzz_update_location',
             'schema' => null,
         )
     );
-
 });
 function buzz_get_location($user, $field_name, $request)
 {
-    // return get_userdata($user['id'])->location;
     return get_user_meta($user['id'], 'location');
+}
 
-// return get_wp_user_avatar_src($user['id'], 'original');
-    // return get_wp_user_avatar_src(get_user_meta($user['id']), 'original');
-    // return get_wp_user_avatar_src(get_user_meta($object['id'], $field_name, true));
-    // return  get_wp_user_avatar(get_the_author_meta('ID'), 'large');
-    // get_post_meta($object['id'], $field_name, true);
+// function add_user_bookmarks($user, $meta_value)
+// {
+//     $bookmarks = get_user_meta($user->ID, 'location', false);
+//     if ($bookmarks) {
+//         update_user_meta($user->ID, 'location', $meta_value);
+//     } else {
+//         add_user_meta($user->ID, 'location', $meta_value, true);
+//     }
+// }
+
+function buzz_update_location($value, $user, $field_name)
+{
+    error_log('**value**');
+    error_log($value);
+    error_log('**user**');
+    error_log(print_r($user));
+    error_log('**fieldname**');
+    error_log($field_name);
+    update_user_meta($user['id'], 'location', esc_attr($user['location']));
+    update_user_meta($user['id'], 'location', 'value');
+    update_user_meta($user['id'], 'nickname', 'value');
+    update_user_meta($user['id'], 'phone_number', 'value');
+    update_user_meta($user['id'], 'date_of_birth', 'value');
+    update_user_meta($user['id'], 'instagram', 'value');
+    update_user_meta($user['id'], 'facebook', 'value');
+    update_user_meta($user['id'], 'description', 'value');
+    // update_user_meta($user['id'], 'location', '$value');
+
 }
 
 function buzz_get_avatar($user, $field_name, $request)

@@ -297,3 +297,16 @@ function rudr_make_registered_column_sortable($columns)
 {
     return wp_parse_args(array('registration_date' => 'registered'), $columns);
 }
+
+function buzz_update_user_meta($user_login)
+{
+    //$user_id = $user->id;
+    $user = get_user_by('login', $user_login);
+    $description = $_POST['description'];
+    $location = $_POST['location'];
+
+    update_user_meta($user->id, "location", $location);
+    update_user_meta($user->id, "description", $description);
+
+}
+add_action('wp_login', 'buzz_update_user_meta', 10, 1);
