@@ -20,22 +20,33 @@
         }
       })
       .done(function (response) {
+        console.log(response);
         event.preventDefault();
         $guestspotsContainer.empty();
         $guestspotsMessage.empty();
+        let j = 0;
+        let z = 0;
         for (let i = 0; i < response.length; i++) {
           let locationJson = response[i].location.toLowerCase();
           let startDateJson = new Date(response[i].start_date);
           let finishDateJson = new Date(response[i].finish_date);
           let image = response[i].image;
           let title = response[i].title.rendered;
+          let link = response[i].link;
           if (locationLow == locationJson) {
             if (startDateChoosen >= startDateJson && finishDateChoosen <= finishDateJson) {
-              $guestspotsContainer.html(`<div><img src="${image}"><h2>${title}</h2>
-              <p>${data.location}</p>`)
+              $guestspotsContainer.html(`<a href="${link}"><div><img src="${image}"><h2>${title}</h2>
+              <p>${data.location}</p></a>`)
+            }else{
+              z++;
+            }if (z==response.length){
+              $guestspotsMessage.html('<p>Sorry, no guestspots currently available for these dates..</p>');
             }
-          } else {
-            $guestspotsMessage.html('<p>Sorry, no guestspots currently available in this location or for these dates..</p>');
+          }else{
+            j++;
+            
+          }if(j==response.length){
+            $guestspotsMessage.html('<p>Sorry, no guestspots currently available in this location..</p>');
           }
         }
       })

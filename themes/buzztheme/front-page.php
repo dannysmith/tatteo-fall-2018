@@ -12,7 +12,7 @@ get_header();?>
 
 <section class="banner-image">
 <div class="banner-title">
-<h2>Tatoos.</h2>
+<h2>Tattoos.</h2>
 <h2>Travel.</h2>
 <h2>Worldwide.</h2>
 <div>
