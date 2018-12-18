@@ -31,8 +31,6 @@ $args1 = array(
  . $user->display_name .
  '</li> <li>'
  . $user->user_email .
- '</li> <li>'
- . $user->user_description .
  '</li> </div></a>';
  }
 ?>
