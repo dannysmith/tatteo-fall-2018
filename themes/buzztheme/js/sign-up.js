@@ -125,8 +125,8 @@
       user_email: $('.new-user-email').val(),
       user_login: $('.new-user-name').val(),
       pass1: $('.new-user-password').val(),
-      // role: 'studio'
-      // first_name: 'john',
+      location: $('.new-user-location').val(),
+      description: $('.new-user-description').val(),
       role: role
     };
     $.ajax({
