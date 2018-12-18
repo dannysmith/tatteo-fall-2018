@@ -36,13 +36,15 @@
           let objectLocation = response[i].location
           if (locationLow == locationJson) {
             if (startDateChoosen >= startDateJson && finishDateChoosen <= finishDateJson) {
-              $guestspotsContainer.html(`<div class="guestspot-after-search">
+              $guestspotsMessage.html(`<div class="guestspot-after-search">
+                                            <div class="guest-container-search">
                                             <img src="${image}" />
                                             <div class="studio-information">
                                               <a href="${link}">
                                               <h2>${title}</h2>
                                               </a>
                                               <p>${objectLocation}</p>
+                                            </div>
                                             </div>
                                         </div>`)
             } else {
