@@ -5,7 +5,7 @@ $search_string = get_search_query();
 
 // Create the WP_User_Query object
 $wp_user_query = new WP_User_Query( array(
-	'role__not_in' => 'Administrator',
+	'role' => 'Artist',
     'search'         => "*{$search_string}*",
     'search_columns' => array(
         'user_login',
@@ -54,7 +54,7 @@ if ( ! empty( $users ) ) {
     echo '</div>';
 } else {
 
-	get_template_part( 'template-parts/content', 'none' ); 
+	// get_template_part( 'template-parts/content', 'none' ); 
 
 
 } ?>  

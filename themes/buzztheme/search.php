@@ -20,8 +20,10 @@ get_header(); ?>
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'searchuser' ); ?>
 			<?php get_template_part( 'template-parts/content', 'search' ); ?>
+
+			<?php get_template_part( 'template-parts/content', 'search-studio' ); ?>
+			<?php get_template_part( 'template-parts/content', 'search-artist' ); ?>
 
 			<?php endwhile; ?>
 
@@ -29,8 +31,8 @@ get_header(); ?>
 
 		<?php else : ?>
 
-		<?php get_template_part( 'template-parts/content', 'searchuser' ); ?>
-
+		<?php get_template_part( 'template-parts/content', 'search-studio' ); ?>
+		<?php get_template_part( 'template-parts/content', 'search-artist' ); ?>
 
 		<?php endif; ?>
 			
