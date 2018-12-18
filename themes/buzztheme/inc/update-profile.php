@@ -46,3 +46,4 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['action'] ) && $_POS
     wp_redirect( get_permalink() . '?updated=true' );
 	exit;
 }
+

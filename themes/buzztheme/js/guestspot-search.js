@@ -33,19 +33,29 @@
           let image = response[i].image;
           let title = response[i].title.rendered;
           let link = response[i].link;
+          let objectLocation = response[i].location
           if (locationLow == locationJson) {
             if (startDateChoosen >= startDateJson && finishDateChoosen <= finishDateJson) {
-              $guestspotsContainer.html(`<a href="${link}"><div><img src="${image}"><h2>${title}</h2>
-              <p>${data.location}</p></a>`)
-            }else{
+              $guestspotsContainer.html(`<div class="guestspot-after-search">
+                                            <img src="${image}" />
+                                            <div class="studio-information">
+                                              <a href="${link}">
+                                              <h2>${title}</h2>
+                                              </a>
+                                              <p>${objectLocation}</p>
+                                            </div>
+                                        </div>`)
+            } else {
               z++;
-            }if (z==response.length){
+            }
+            if (z == response.length) {
               $guestspotsMessage.html('<p>Sorry, no guestspots currently available for these dates..</p>');
             }
-          }else{
+          } else {
             j++;
-            
-          }if(j==response.length){
+
+          }
+          if (j == response.length) {
             $guestspotsMessage.html('<p>Sorry, no guestspots currently available in this location..</p>');
           }
         }

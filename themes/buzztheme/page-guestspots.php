@@ -43,10 +43,10 @@ get_header(); ?>
                     <div class="link-guestspot">
                         <a href="<?php the_permalink(); ?>"><img src="<?php echo CFS()->get('image'); ?>" /></a>
                     </div>
-                <ul class="">
-                   <li><?php echo get_the_title(); ?></li>
-                   <li> <?php echo CFS()->get('location'); ?></li>
-                </ul>
+                <div class="">
+                   <p><?php echo get_the_title(); ?></p>
+                   <p> <?php echo CFS()->get('location'); ?></p>
+				</div>
             </div>
         <?php endwhile;
     endif;

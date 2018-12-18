@@ -1,4 +1,4 @@
-<?php /* Template name: page-studio */ ?>
+<?php /* Template name: page-studios */ ?>
 
 <?php
 /**
