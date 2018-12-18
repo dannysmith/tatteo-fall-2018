@@ -107,30 +107,37 @@
 
 /* Studio Page */
 
+.content-area {
+    width: 100%;
+    }    
+
+.title {
+    @include profile-title;
+}
+
 .studio-users {
     @include multi-profile;
-
-    h1 {
-        @include profile-title;
-    }
 
     button {
         @include loadmore-button;
     }
 }
 
-
 .container {
     @include container;
 
     li {
         @include profile-list;
+        margin-left: 0.5rem;
     }
     .studio {
         @include profile-container;
 
         img {
             @include profile-img;
+            &:hover {
+                border-color: black;
+            }
         }
     }
     button {
@@ -138,20 +145,30 @@
     }
 }
 
-
 /* Artist Page */
 
+.content-area {
+width: 100%;
+}
+
+.title {
+    h1 {
+    @include profile-title;
+    }
+}
 
 .artist-users {
     @include multi-profile;
 
-    h1 {
-        @include profile-title;
-    }
+    .artist {
+        @include profile-container;
 
-    button {
-        @include loadmore-button;
-
+        img {
+            @include profile-img;
+            &:hover {
+                border-color: black;
+            }
+        }
     }
 }
 
@@ -161,76 +178,150 @@
 
     li {
         @include profile-list;
+        margin-left: 0.5rem;
     }
+}
 
-
+.button {
+    @include flex-centered;
+    button {
+        @include loadmore-button;
+    }
 }
 
 /* Single Artist Page */
 
 .author {
-        .artist-profile {
-            display: grid;
-            grid-template-rows: 1fr 1fr 1fr;
+    .artist-profile {
+        display: grid;
+        grid-template-rows: auto auto auto;
 
-            .entry-header {
-                display: none;
-            }
+        .entry-header {
+                @include entry-header;
+        }
 
-            .single-artist {
+        .single-artist {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                border-bottom: 6px solid black;
+                @include border-bottom;
+                padding-bottom: 1rem;
 
-                div {
+                @include tablet {
+                    grid-template-rows: auto auto auto;
+                    margin-top: 0;
+                }
+
+                @include desktop {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr;
+                    margin-top: 3rem;
+                }
+
+                .avatar {
+                    @include flex-centered;
                     img {
-                        border: 6px solid black;
+                        @include profile-img;
+                        border: $border;
+                    }
+
+                    @include tablet {
+                        grid-row: 2;
+                        margin-bottom: 1rem;
+                    }
+
+                    @include desktop {
+                        grid-column: 1;
+                        grid-row: 1/3;
+                        margin-bottom: 0rem;
                     }
                 }
 
-                h2 {
-                    grid-column: 2;
-                    border: 6px solid black;
-                    padding-left: 3.5rem;
-                    padding-right: 3.5rem;
-                    padding-top: 0.5rem;
-                    font-style: italic;
-                    text-align: center;
+                .artistname {
+                    @include profile-title;
+
+                    @include tablet {
+                        grid-row: 1;
+                        h2 {
+                            margin-top: 1rem;
+                        }
+                    }
+
+                    @include desktop {
+                        grid-column: 2;
+                        margin-top: 2rem;
+                        max-height: 6rem;
+                    }
                 }
 
-                p {
-                    border: 6px solid black;
-                    padding-top: 0.5rem;
-                    grid-column: 2;
+                .artistdescription {
+                    border: $border;
+                    padding: 0.5rem;
+
+                    @include tablet {
+                        grid-row: 3;
+                        margin-left: 1rem;
+                        margin-right: 1rem;
+                    }
+
+                    @include desktop {
+                        grid-column: 2;
+                        grid-row: 2;
+                    }
                 }
-            }
-
-            .previous-guestspots {
-                border-bottom: 6px solid black;
-
-                h2 {
-                    border: 6px solid black;
-                    padding-left: 3.5rem;
-                    padding-right: 3.5rem;
-                    padding-top: 0.5rem;
-                    font-style: italic;
-                    text-align: center;
-                }
-            }
-
-            .instagram {
-                h2 {
-                    border: 6px solid black;
-                    padding-left: 3.5rem;
-                    padding-right: 3.5rem;
-                    padding-top: 0.5rem;
-                    font-style: italic;
-                    text-align: center;
-                }
-            }
-
         }
 
+        .previous-guestspots {
+            @include profile-title;
+            @include border-bottom;
+            display: grid;
+
+            @include tablet {
+                justify-content: center;
+            }
+            @include desktop {
+                grid-template-columns: 100%;
+                h2 {
+                justify-self: left;
+                margin-left: 5rem;
+                width: 24rem;
+                }
+            }
+            .grid-container {
+                @include previous-guestspots;
+
+                @include desktop {
+                    justify-self: initial;
+                }
+
+                .guestspots {
+                    display: flex;
+                    justify-content: center;
+                    font-weight: bold;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .instagram {
+                @include profile-title;
+                @include border-bottom;
+                
+                @include tablet {
+                    justify-content: center;
+                }
+                
+                @include desktop {
+                    justify-content: left;
+                    h2 {
+                    margin-left: 5rem;
+                    }
+                }
+                    
+                .grid-container {
+                    @include instagram;
+                }
+        }
+
+    }
 }
 
 /* Single Studio Page */
@@ -306,18 +397,32 @@
         .previous-guestspots {
             @include profile-title;
             @include border-bottom;
+            display: grid;
 
             @include tablet {
                 justify-content: center;
             }
             @include desktop {
-                justify-content: left;
+                grid-template-columns: 100%;
                 h2 {
-                margin-left: 5rem;
+                    justify-content: left;
+                    margin-left: 5rem;
+                    width: 24rem;
                 }
             }
             .grid-container {
                 @include previous-guestspots;
+
+                @include desktop {
+                    justify-self: initial;
+                }
+
+                .guestspots {
+                    display: flex;
+                    justify-content: center;
+                    font-weight: bold;
+                    font-size: 1rem;
+                }
             }
         }
 
@@ -466,7 +571,6 @@ footer {
         }
 }
 
-
 /* Edit profile */
 .edit-area{
         width:100%;
@@ -538,37 +642,37 @@ footer {
 
 //Guestspots page
 .filter-guestspot {
-        justify-content: space-around;
-        align-items: center;
-        width: 100vw;
-        display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    display: inline-flex;
 
-        input {
-            border-radius: 0;
-            font-weight: 600;
-            border: 4px solid black;
-        }
+    input {
+        border-radius: 0;
+        font-weight: 600;
+        border: 4px solid black;
+    }
 
-        button {
-            margin-top: 50px;
-            border: 4px solid black;
-            font-weight: 600;
-            width: 80px;
-            height: 30px;
-        }
-}
-
-.page-header {
-    @include profile-title;
-    h1 {
-        padding-bottom: 0.5rem;
+    button {
+        margin-top: 50px;
+        border: 4px solid black;
+        font-weight: 600;
+        width: 80px;
+        height: 30px;
     }
 }
 
-.guestspots-container-js {
-    @include multi-profile;
+.page-header {
+@include profile-title;
+h1 {
+    padding-bottom: 0.5rem;
+}
+}
 
-    .guestspots.container {
+.guestspots-container-js {
+@include multi-profile;
+
+.guestspots.container {
         .link-guestspot {
             height: 25rem;
             border: $border;

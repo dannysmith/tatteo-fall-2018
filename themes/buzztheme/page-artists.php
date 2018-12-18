@@ -34,12 +34,13 @@ echo '<div class="container"><div class="artist">' .
 	'</li> </div></a>';
  }
 ?>
-	<button class="load-more">Load more</button>
+
 </section>
+
+<section class="button"><button class="load-more">Load more</button></section>
 	
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 
 <?php get_footer(); ?>
-

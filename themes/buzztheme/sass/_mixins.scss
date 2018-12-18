@@ -42,6 +42,7 @@
 	border: none;
 	color: $color__text-secondary;  
 	font-weight: bold; 
+	margin-bottom: 2rem;
 	@include tablet {
 		grid-column: 1/3;
 	}	
@@ -54,6 +55,7 @@
 	display: grid;
 	grid-gap: 5rem;
 	margin: 5rem;
+	margin-top: 0rem;
 	@include tablet {
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -79,6 +81,12 @@
     justify-self: center;
 }
 
+@mixin hover {
+	a:hover {
+		color: $border;
+	}
+}
+
 @mixin profile-list {
 	text-align: left;
 	list-style: none;
@@ -92,8 +100,8 @@
 
 @mixin profile-img {
 	height: 100%;
-	width: 20rem;
-	border: $border;
+	width: 24rem;
+	border: $border3;
 }
 
 // Single Artist and Studio Pages
