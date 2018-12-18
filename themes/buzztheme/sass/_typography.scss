@@ -12,13 +12,6 @@ textarea {
 
 /* Headings */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {}
-
 h2 {
   @include text($color__text-main, 1.7rem, $font__main);
 }
