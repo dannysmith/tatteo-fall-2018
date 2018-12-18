@@ -18,10 +18,8 @@ get_header();?>
       <?php
 $args1 = array(
     'role' => 'artist',
-    // 'orderby' => 'registered_date',
-    'orderby' => 'meta_value',
-    'meta_key' => 'user_registered',
-    'order' => 'ASC',
+    'orderby' => 'registered',
+    'order' => 'desc',
     'number' => '6',
 
 );
@@ -39,9 +37,8 @@ foreach ($artists as $user) {
         '</li> </div></a>';
 }
 ?>
-      <button class="load-more">Load more</button>
     </section>
-
+    <button class="load-more">Load more</button>
   </main><!-- #main -->
 </div><!-- #primary -->
 
