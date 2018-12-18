@@ -259,8 +259,7 @@ function rudr_modify_user_table($columns)
 
     // unset( $columns['posts'] ); // maybe you would like to remove default columns
     $columns['registration_date'] = 'Registration date'; // add new
-
-
+    
     return $columns;
 
 }
