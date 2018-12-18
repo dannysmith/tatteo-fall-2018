@@ -556,3 +556,32 @@
             height: 30px;
         }
     }
+    //Guestspots after the search filter 
+    .guestspot-after-search{
+     
+            padding: 28px;
+            width: 100vw;    
+                img {
+                @include gs-img-mobile;
+                }
+                article {
+                    @extend %guestspot-mobile;
+                @include tablet {
+                    height: 288px;
+                    flex-direction: row;
+        
+                    img {
+                    @include gs-img-tablet;
+                    }
+                }
+        
+                .entry-summary {
+                    padding: 20px;
+        
+                    @include tablet {
+                        padding: 44px;
+                    }
+                }
+            }
+
+    }
