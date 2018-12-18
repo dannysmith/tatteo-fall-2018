@@ -18,9 +18,9 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<div class="tab">
-			<button class="tablinks" onclick="openSearch(event, 'posts')" id="defaultOpen">Posts</button>
-			<button class="tablinks" onclick="openSearch(event, 'studio')">Studio's</button>
-			<button class="tablinks" onclick="openSearch(event, 'artist')">Artist's</button>
+			<button class="tablinks" onclick="openSearch(event, 'posts')" >Guestspots</button>
+			<button class="tablinks" onclick="openSearch(event, 'studio')">Studios</button>
+			<button class="tablinks" onclick="openSearch(event, 'artist')">Artists</button>
 			</div>
 
 			<!-- Start the Loop  -->

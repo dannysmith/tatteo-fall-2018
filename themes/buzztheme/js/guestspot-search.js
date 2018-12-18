@@ -73,4 +73,4 @@ function openSearch(evt, searchName) {
   evt.currentTarget.className += " active";
 }
 
-document.getElementById("defaultOpen").click();
+// document.getElementById("defaultOpen").click(); 

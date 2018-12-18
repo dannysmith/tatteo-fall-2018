@@ -27,7 +27,7 @@ $wp_user_query = new WP_User_Query( array(
 		), 
 		array(
 			'key'     => 'first_name',
-			'value'   => $search_term,
+			'value'   => $search_string,
 			'compare' => 'LIKE'
 		)
     )
