@@ -10,18 +10,19 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		
-
+		<div class="tab">
+			<button class="tablinks" id="defaultOpen" onclick="openSearch(event, 'posts')" >Guestspots</button>
+			<button class="tablinks" onclick="openSearch(event, 'studio')">Studios</button>
+			<button class="tablinks" onclick="openSearch(event, 'artist')">Artists</button>
+			</div>
+			
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( esc_html( 'Search Results for: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
-			<div class="tab">
-			<button class="tablinks" onclick="openSearch(event, 'posts')" >Guestspots</button>
-			<button class="tablinks" onclick="openSearch(event, 'studio')">Studios</button>
-			<button class="tablinks" onclick="openSearch(event, 'artist')">Artists</button>
-			</div>
+			
 
 			<!-- Start the Loop  -->
 			<?php while ( have_posts() ) : the_post(); ?>
