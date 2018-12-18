@@ -9,16 +9,14 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html( 'Nothing Found' ); ?></h1>
+		<p class="page-title"><?php esc_html( 'Nothing Found' ); ?></p>
 	</header><!-- .page-header -->
 
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php echo esc_html( 'Oops! That page can&rsquo;t be found.' ); ?></h1>
-				</header><!-- .page-header -->
+					<h1 class="page-title"><?php echo esc_html( 'Oops! Nothing Found.' ); ?></h1>
 
 				<div class="page-content">
-					<p><?php echo esc_html( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?' ); ?></p>
+					<p><?php echo esc_html( 'It looks like nothing was found. Maybe try a new search?' ); ?></p>
 
 					<?php get_search_form(); ?>
 
