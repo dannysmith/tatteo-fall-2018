@@ -70,7 +70,7 @@
 })(jQuery);
 
 // Global search - tabs 
-
+/*
 function openSearch(evt, searchName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -84,5 +84,5 @@ function openSearch(evt, searchName) {
   document.getElementById(searchName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
-document.getElementById("defaultOpen").click(); 
+*/
+document.getElementById("defaultOpen").click();
