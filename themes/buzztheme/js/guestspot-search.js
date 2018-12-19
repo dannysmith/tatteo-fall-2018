@@ -80,4 +80,4 @@ function openSearch(evt, searchName) { // eslint-disable-line
   evt.currentTarget.className += ' active';
 }
 
-document.getElementById('defaultOpen').click(); 
+document.getElementById('defaultOpen').click();
