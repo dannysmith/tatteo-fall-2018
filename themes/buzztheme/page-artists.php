@@ -32,8 +32,8 @@ foreach ($artists as $user) {
     '</div><li>'
     . $user->display_name .
     '</li> <li>'
-    . $user->user_email .
-    '</li> </div></a>';
+    . $user->location .
+        '</li> </div></a>';
 }
 ?>
 
