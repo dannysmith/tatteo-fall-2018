@@ -326,14 +326,14 @@
 }
 
 
-/* Style the tab */
+/* Global Search  */
+
 .tab {
 	display: flex; 
 	justify-content: space-around;
 	overflow: hidden;
   }
   
-  /* Style the buttons that are used to open the tab content */
   .tab button {
 	@include text($color__text-main, 16px, $font__main); 
 	cursor: pointer;
@@ -341,31 +341,78 @@
 	border: $border;
 	transition: 0.3s;
   }
-  
-  /* Change background color of buttons on hover */
+ 
   .tab button:hover {
 	background-color: #ddd;
   }
   
-  /* Style the tab content */
+
   .tabcontent {
 	display: none;
 	padding: 30px 12px;
   }
 
   .tabcontent {
-	animation: fadeEffect 1s; /* Fading effect takes 1 second */
+	animation: fadeEffect 1s; 
   }
   
-  /* Go from zero to full opacity */
   @keyframes fadeEffect {
 	from {opacity: 0;}
 	to {opacity: 1;}
   }
 
 
-  #studio{
-	  div{
+#studio{
+	  .search-studio{
 		  margin: 0 5%;
+		  display: flex;
+		flex-direction: column;
+		@include text($color__text-main, 12px, $font__main); 
 	  }
+
+	  .no-results{
+		display: flex;
+		justify-content: center;
+		
+		.error-404 {
+			text-align: center;
+
+			.page-content{
+				margin: 0;
+
+				fieldset{
+					border: none;
+				}
+		
+			}
+		}
+	}
   }
+
+#artist{
+
+	.search-artist{
+		margin: 0 5%;
+		display: flex;
+		flex-direction: column;
+		@include text($color__text-main, 12px, $font__main); 
+	}
+
+	.no-results{
+		display: flex;
+		justify-content: center;
+		
+		.error-404 {
+			text-align: center;
+
+			.page-content{
+				margin: 0;
+
+				fieldset{
+					border: none;
+				}
+		
+			}
+		}
+	}
+}
