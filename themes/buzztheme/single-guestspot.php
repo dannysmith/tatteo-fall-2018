@@ -9,7 +9,8 @@ get_header();?>
 
 <div class="edit-guestspot-form">
   <form method='post' class='guestspot-upload-form' id="<?php echo get_the_ID() ?>">
-  <img id=<?php echo CFS()->get('image', false, array( 'format' => 'raw' )); ?> src=" <?php echo CFS()->get('image'); ?>" />
+    <img id=<?php echo CFS()->get('image', false, array('format' => 'raw')); ?> src="
+    <?php echo CFS()->get('image'); ?>" />
 
     <input type='file' id='guespot-image' />
 
@@ -33,7 +34,7 @@ get_currentuserinfo();?>
       <input type="date" id="edit-guestspot-finish-date" value="<?php echo CFS()->get('finish_date'); ?>" required />
     </p>
     <p><label for="guestspot-description">Description</label><br />
-				        <input cols="40" rows="20" class="text-input" name="description" type="text" id="studiodescription" value=""/>
+      <input cols="40" rows="20" class="text-input" name="description" type="text" id="studiodescription" value="" />
     </p>
     <input type='submit' name='Submit' value="Submit" class='upload-btn'>
   </form>
@@ -43,7 +44,8 @@ get_currentuserinfo();?>
 
   <?php while (have_posts()): the_post();?>
   <section id='<?php echo get_the_ID() ?>' class="guestspot">
-    <img id=<?php echo CFS()->get('image', false, array( 'format' => 'raw' )); ?> src=" <?php echo CFS()->get('image'); ?>" />
+    <img id=<?php echo CFS()->get('image', false, array('format' => 'raw')); ?> src="
+    <?php echo CFS()->get('image'); ?>" />
     <h1 class='title'>
       <?php echo the_title() ?>
     </h1>
@@ -60,8 +62,15 @@ get_currentuserinfo();?>
       <p class="with-border content">
         <?php echo wp_strip_all_tags(get_the_content()); ?>
       </p><br>
+      <?php
+    get_currentuserinfo();
+    if ($post->post_author == $current_user->ID): ?>
       <a href="#" class="edit-guestspot-btn">Edit Guestspot</a><a href="#" class="delete-guestspot-btn">Delete
         Guestspot</a>
+      <?php else: ?>
+      <a href="mailto:<?php echo get_the_author_meta('user_email', $post->post_author->id) ?>" class="get-in-touch-btn">Get
+        in touch</a>
+      <?php endif;?>
     </div>
   </section>
   <?php endwhile; // End of the loop. ?>
