@@ -39,10 +39,10 @@ foreach ($artists as $user) {
 
     </section>
 
-    <section class="button"><button class="load-more-artists">Load more</button></section>
-
-  </main><!-- #main -->
-</div><!-- #primary -->
+<section class="button <?php if (count($artists) < 6) echo 'hidden'; ?>"><button class="load-more">Load more</button></section>
+	
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 
 <?php get_footer();?>
