@@ -21,7 +21,7 @@ get_header();?>
 $args1 = array(
     'role' => 'studio',
     'orderby' => 'registered',
-    'order' => 'ASC',
+    'order' => 'desc',
     'number' => '6',
 );
 $studios = get_users($args1);
@@ -32,7 +32,7 @@ foreach ($studios as $user) {
     '</div><li>'
     . $user->display_name .
     '</li> <li>'
-    . $user->user_email .
+    . $user->location .
         '</li> </div></a>';
 }
 ?>
