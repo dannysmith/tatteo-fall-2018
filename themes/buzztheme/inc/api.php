@@ -85,7 +85,7 @@ add_action('rest_api_init', function () {
         'location',
         array(
             'get_callback' => 'buzz_get_location',
-            'update_callback' => 'buzz_update_location',
+            'update_callback' => null,
             'schema' => null,
         )
     );
@@ -104,26 +104,6 @@ function buzz_get_location($user, $field_name, $request)
 //         add_user_meta($user->ID, 'location', $meta_value, true);
 //     }
 // }
-
-function buzz_update_location($value, $user, $field_name)
-{
-    error_log('**value**');
-    error_log($value);
-    error_log('**user**');
-    error_log(print_r($user));
-    error_log('**fieldname**');
-    error_log($field_name);
-    update_user_meta($user['id'], 'location', esc_attr($user['location']));
-    update_user_meta($user['id'], 'location', 'value');
-    update_user_meta($user['id'], 'nickname', 'value');
-    update_user_meta($user['id'], 'phone_number', 'value');
-    update_user_meta($user['id'], 'date_of_birth', 'value');
-    update_user_meta($user['id'], 'instagram', 'value');
-    update_user_meta($user['id'], 'facebook', 'value');
-    update_user_meta($user['id'], 'description', 'value');
-    // update_user_meta($user['id'], 'location', '$value');
-
-}
 
 function buzz_get_avatar($user, $field_name, $request)
 {
@@ -152,6 +132,50 @@ function buzz_update_guestspot_meta_fields($value, $object, $field_name)
     $post_data = array('ID' => $object->ID); // the ID is required
 
     CFS()->save($field_data, $post_data);
-
-    //return update_post_meta($object->ID, $field_name, strip_tags($value));
 }
+
+// Extend the `WP_REST_Posts_Controller` class
+class Artist_Custom_Controller extends WP_REST_Users_Controller
+{
+    public function register_routes()
+    {
+        register_rest_route($this->namespace, '/artist_users', [
+            [
+                'methods' => WP_REST_Server::READABLE,
+                'callback' => [$this, 'get_items'],
+                'permission_callback' => [$this, 'get_items_permissions_check'],
+                'args' => $this->get_collection_params(),
+            ],
+            'schema' => [$this, 'get_public_item_schema'],
+        ]);
+    }
+
+    public function get_items_permissions_check($request)
+    {
+
+        if (true) {
+
+            $role = $request->get_param('roles');
+            $orderby = $request->get_param('orderby');
+
+            $request->set_param('roles', "");
+            $request->set_param('orderby', "");
+
+            $result = parent::get_items_permissions_check($request);
+
+            $request->set_param('roles', $role);
+            $request->set_param('orderby', $orderby);
+        } else {
+            $result = parent::get_items_permissions_check($request);
+        }
+        return $result;
+
+    }
+
+}
+
+// Create an instance of `My_Custom_Controller` and call register_routes() methods
+add_action('rest_api_init', function () {
+    $myProductController = new Artist_Custom_Controller(); //('my_post_type');
+    $myProductController->register_routes();
+});

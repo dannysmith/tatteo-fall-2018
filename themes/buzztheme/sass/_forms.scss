@@ -184,12 +184,11 @@ body {
 				@include flex-centered;
 				flex-direction: column;
 
-
-
 				a {
 					cursor: pointer;
 					text-decoration: underline;
 				}
+
 
 				input,
 				textarea {
