@@ -247,7 +247,6 @@ add_action('init', 'register_my_menus');
 
 require get_template_directory() . '/inc/api.php';
 
-
 /*
  * Create a column. And maybe remove some of the default ones
  * @param array $columns Array of all user table columns {column ID} => {column Name}
@@ -259,7 +258,7 @@ function rudr_modify_user_table($columns)
 
     // unset( $columns['posts'] ); // maybe you would like to remove default columns
     $columns['registration_date'] = 'Registration date'; // add new
-    
+
     return $columns;
 
 }

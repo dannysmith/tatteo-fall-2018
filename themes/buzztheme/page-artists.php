@@ -32,17 +32,17 @@ foreach ($artists as $user) {
     '</div><li>'
     . $user->display_name .
     '</li> <li>'
-    . $user->user_email .
-    '</li> </div></a>';
+    . $user->location .
+        '</li> </div></a>';
 }
 ?>
 
     </section>
 
-    <section class="button"><button class="load-more-artists">Load more</button></section>
-
-  </main><!-- #main -->
-</div><!-- #primary -->
+<section class="button <?php if (count($artists) < 6) echo 'hidden'; ?>"><button class="load-more">Load more</button></section>
+	
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 
 <?php get_footer();?>
