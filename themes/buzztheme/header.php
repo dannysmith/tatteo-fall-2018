@@ -36,7 +36,6 @@
           <label>Password</label>
           <input type="password" class="user-password" name="pwd" required />
           <input class="log-in-user-btn" type="submit" value="Log in" name="wp-submit">
-
           <input type="hidden" name="redirect_to" value="http://localhost:8888/buzz/wp-admin/" />
           <input type="hidden" name="testcookie" value="1" />
         </form>
@@ -70,14 +69,16 @@
           <input type="text" class="new-user-email" required />
           <label>Password</label>
           <input type="password" class="new-user-password" required />
+          <label>Location</label>
+          <input type="text" class="new-user-location" />
+          <label>Description</label>
+          <textarea type="text" rows="6" class="new-user-description"></textarea>
           <input class="add-user-btn" type="submit" value="Submit">
         </form>
       </div>
     </div>
   </div>
   </div>
-
-
 
   <div id="page" class="hfeed site">
     <header id="masthead" class="site-header" role="banner">
