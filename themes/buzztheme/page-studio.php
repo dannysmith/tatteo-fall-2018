@@ -31,13 +31,13 @@ $args1 = array(
  . $user->display_name .
  '</li> <li>'
  . $user->user_email .
- '</li> <li>'
- . $user->user_description .
  '</li> </div></a>';
  }
 ?>
-	<button class="load-more">Load more</button>
+
 </section>
+
+<section class="button"><button class="load-more">Load more</button></section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

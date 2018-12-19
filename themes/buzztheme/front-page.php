@@ -23,25 +23,28 @@ get_header();?>
 
 <!-- need to edit this loop -->
 
-<section>
+<section class="guestspots">
 <?php
     $loop = new WP_Query( array( 'post_type' => 'guestspot', 'order' => 'ASC', 'posts_per_page' => '6') );
     if ( $loop->have_posts() ) :
         while ( $loop->have_posts() ) : $loop->the_post(); ?>
-            <div class="guestspots container">
+            <div class="guestspots-container">
                     <div class="link-guestspot">
-                        <a href="<?php the_permalink(); ?>"><img src="<?php echo CFS()->get('image'); ?>" /></a>
+                    <a href="<?php the_permalink(); ?>"><div class="avatar" style="background-image: url(<?php echo CFS()->get('image'); ?>);"></div></a>
                     </div>
-                <ul class="">
-                   <li><?php echo get_the_title(); ?></li>
-                   <li> <?php echo CFS()->get('location'); ?></li>
-                </ul>
+                <div class="">
+                   <p><?php echo get_the_title(); ?></p>
+                   <p> <?php echo CFS()->get('location'); ?></p>
+                </div>
             </div>
         <?php endwhile;
     endif;
     wp_reset_postdata();
 ?>
+
 </section>
+
+<section class="button"><button class="load-more">Load more</button></section>
     
 
     <section class="featured-artist">
