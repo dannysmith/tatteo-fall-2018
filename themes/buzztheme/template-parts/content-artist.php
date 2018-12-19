@@ -22,10 +22,11 @@
 		<div class="artistdescription" <?php echo 'hidden'; ?>></div>
 	<?php } ?>
 	</section>
-
 	<section class="instagram">
 	<h2>Instagram</h2>
-	<div class="grid container"></div>
+	<div class="grid container">
+<a href="https://www.instagram.com/<?php echo $curauth->instagram ?>"><?php echo $curauth->instagram ?></a>
+	</div>
 	</section>
 
 </article><!-- #post-## -->
