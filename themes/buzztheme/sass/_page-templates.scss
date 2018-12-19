@@ -83,6 +83,34 @@
             }
         }
 
+        .guestspots {
+            @include multi-profile;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+
+                .link-guestspot {
+                    height: 25rem;
+                    border: $border3;
+                    &:hover {
+                        border-color: black;
+                    }
+
+                    .avatar {
+                        height: 100%;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+            p {
+                @include flex-centered;
+                font-weight: bold;
+                justify-content: left;
+                margin: 0.5rem;
+                font-size: 1rem;
+            }
+        }
+
         .examplesecondblock {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -113,13 +141,26 @@
 
 .title {
     @include profile-title;
+
+    @include desktop {
+        justify-content: left;
+        margin-left: 24rem;
+    }
 }
 
 .studio-users {
     @include multi-profile;
 
-    button {
-        @include loadmore-button;
+    a {
+        &:link,
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+            color: black;
+            text-decoration: none;
+            font-size: 1rem;
+        }
     }
 }
 
@@ -157,6 +198,11 @@ width: 100%;
     h1 {
     @include profile-title;
     }
+
+    @include desktop {
+        justify-content: left;
+        margin-left: 24rem;
+    }
 }
 
 .artist-users {
@@ -170,6 +216,18 @@ width: 100%;
             &:hover {
                 border-color: black;
             }
+        }
+    }
+
+    a {
+        &:link,
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+            color: black;
+            text-decoration: none;
+            font-size: 1rem;
         }
     }
 }
@@ -488,11 +546,11 @@ footer {
     padding-top: 3rem;
 
     a {
-
         &:link,
         &:hover,
         &:active,
-        &:focus {
+        &:focus,
+        &:visited {
             @include text($color__text-secondary, 1rem, $font__main);
         }
 
@@ -667,11 +725,16 @@ footer {
 
 //Guestspots page
 .filter-guestspot {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    @include tablet{
+        flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100vw;
     display: inline-flex;
-
+    }
     input {
         border-radius: 0;
         font-weight: 600;
@@ -685,6 +748,13 @@ footer {
         width: 80px;
         height: 30px;
     }
+    @include tablet{
+    #start-date{
+        border-right: 2px solid black;
+    }
+    #finish-date{
+        border-left: 2px solid black;
+    }}
 }
 
 .page-header {
@@ -697,10 +767,19 @@ h1 {
 .guestspots-container-js {
 @include multi-profile;
 
-.guestspots.container {
+.guestspots-container {
         .link-guestspot {
             height: 25rem;
-            border: $border;
+            border: $border3;
+            &:hover {
+                border-color: black;
+            }
+
+            .avatar {
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
         }
 
         p {
@@ -743,5 +822,48 @@ h1 {
             }
         }
     }
+
+}
+    .guestspot-upload-form{
+            
+
+            img{
+                border:$border;
+            }
+
+          label{
+            font-family: $font__main;
+            font-weight: bold;
+            
+
+          }
+
+          #edit-guestspot-title, #edit-guestspot-studio-name, #edit-guestspot-location, #edit-guestspot-start-date, #edit-guestspot-finish-date, #studiodescription{
+            width:90%;
+            margin-top:0.5rem;
+            padding:5px;
+            border:$border;
+            border-radius:0;
+            
+              
+          }
+         
+
+          .upload-btn,{
+            height: 3.5rem;
+            width: 7.5rem;
+            background: transparent url('../../assets/buttons/button_texture.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: none;
+            color: $color__text-secondary;  
+            font-weight: bold;  
+            margin-bottom:1rem;
+
+          }
+
+          
+
+         
 
 }

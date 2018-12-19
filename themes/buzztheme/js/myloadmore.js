@@ -1,31 +1,31 @@
 (function ($) {
 
-    let page_number = 1;
+let page_number = 1;
 
-    $('.load-more-artists').on('click', function () {
-        event.preventDefault();
-        page_number++;
+$('.load-more-artists').on('click', function () {
+    event.preventDefault();
+    page_number++;
 
-        $.ajax({
-            url: api_vars.root_url + 'wp/v2/artist_users' + '?' +
-                $.param({
-                    roles: "artist",
-                    page: page_number,
-                    per_page: "6",
-                    context: "view",
-                    orderby: "registered_date",
-                    order: "desc"
-                }),
-            method: 'GET',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
-            }
-        }).done(function (response) {
-            if (response.length < 6) {
-                $(".load-more-artists").css('display', 'none');
-            }
-            response.forEach(element => {
-                $(".artist-users").append(`
+    $.ajax({
+        url: api_vars.root_url + 'wp/v2/artist_users' + '?' +
+            $.param({
+                roles: "artist",
+                page: page_number,
+                per_page: "6",
+                context: "view",
+                orderby: "registered_date",
+                order: "desc"
+            }),
+        method: 'GET',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce); // eslint-disable-line
+        }
+    }).done(function (response) {
+        if (response.length < 6) {
+            $(".load-more-artists").css('display', 'none');
+        }
+        response.forEach(element => {
+            $(".artist-users").append(`
                 
                 <div class="container">
                     <div class="studio"><a href="${element.link}">
@@ -37,34 +37,34 @@
                     </a>
                 </div>`);
 
-            });
-        }).fail(function () {});
-    });
+        });
+    }).fail(function () {});
+});
 
-    $('.load-more-studios').on('click', function () {
-        event.preventDefault();
-        page_number++;
+$('.load-more-studios').on('click', function () {
+    event.preventDefault();
+    page_number++;
 
-        $.ajax({
-            url: api_vars.root_url + 'wp/v2/artist_users' + '?' +
-                $.param({
-                    roles: "studio",
-                    page: page_number,
-                    per_page: "6",
-                    context: "view",
-                    orderby: "registered_date",
-                    order: "desc"
-                }),
-            method: 'GET',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
-            }
-        }).done(function (response) {
-            if (response.length < 6) {
-                $(".load-more-studios").css('display', 'none');
-            }
-            response.forEach(element => {
-                $(".artist-users").append(`
+    $.ajax({
+        url: api_vars.root_url + 'wp/v2/artist_users' + '?' +
+            $.param({
+                roles: "studio",
+                page: page_number,
+                per_page: "6",
+                context: "view",
+                orderby: "registered_date",
+                order: "desc"
+            }),
+        method: 'GET',
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
+        }
+    }).done(function (response) {
+        if (response.length < 6) {
+            $(".load-more-studios").css('display', 'none');
+        }
+        response.forEach(element => {
+            $('.artist-users').append(`
                 
                 <div class="container">
                     <div class="artist"><a href="${element.link}">
@@ -76,9 +76,15 @@
                     </a>
                 </div>`);
 
-            });
-        }).fail(function () {});
-    })
+        }); <<
+        << << < HEAD
+    }).fail(function () {}); ===
+    === =
+}).fail(function () {
+    alert('fail ');
+}); >>>
+>>> > master
+})
 
 
 })(jQuery);
