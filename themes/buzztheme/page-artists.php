@@ -24,6 +24,7 @@ $args1 = array(
 
 );
 $artists = get_users($args1);
+
 foreach ($artists as $user) {
     echo '<div class="container"><div class="artist">' .
     '<a href="' . get_author_posts_url($user->ID) . '">'
@@ -36,12 +37,12 @@ foreach ($artists as $user) {
 }
 ?>
 
-</section>
+    </section>
 
-<section class="button"><button class="load-more">Load more</button></section>
-	
-		</main><!-- #main -->
-	</div><!-- #primary -->
+    <section class="button"><button class="load-more-artists">Load more</button></section>
+
+  </main><!-- #main -->
+</div><!-- #primary -->
 
 
-<?php get_footer(); ?>
+<?php get_footer();?>
