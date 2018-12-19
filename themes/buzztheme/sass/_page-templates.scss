@@ -94,6 +94,12 @@
                     &:hover {
                         border-color: black;
                     }
+
+                    .avatar {
+                        height: 100%;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
                 }
 
             p {
@@ -767,6 +773,12 @@ h1 {
             border: $border3;
             &:hover {
                 border-color: black;
+            }
+
+            .avatar {
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
             }
         }
 
