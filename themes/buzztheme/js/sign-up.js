@@ -117,6 +117,11 @@
     toHide();
   });
 
+  $('.cancel-guestspots').on('click', function (event) {
+    event.preventDefault();
+    $('.edit-guestspot-form').hide();
+  });
+
   // Sign-up submit
   $('.register-form').on('submit', function (event) {
     event.preventDefault();

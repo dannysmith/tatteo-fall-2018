@@ -825,7 +825,8 @@ h1 {
 
 }
     .guestspot-upload-form{
-            
+        
+	    
 
             img{
                 border:$border;
@@ -847,6 +848,16 @@ h1 {
             
               
           }
+          ::-webkit-file-upload-button {
+			height: 3.5rem;
+			width: 7.5rem;
+			background: transparent url('../../assets/buttons/button_texture.png');
+			background-repeat: no-repeat;
+			background-size: contain;
+			border: none;
+			color: $color__text-secondary;
+			font-weight: bold;
+		}
          
 
           .upload-btn,{
@@ -861,9 +872,15 @@ h1 {
             margin-bottom:1rem;
 
           }
+        
+          .cancel-modal-dilog-roles {
+            background-image: url("../../assets/Buttons/close-icon.png");
+            background-size: cover;
+            width: 26px;
+            height: 26px;
+            margin: 14px;
+            
+        }
 
-          
-
-         
-
+        
 }

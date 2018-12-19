@@ -3,7 +3,7 @@
 
     $('.edit-guestspot-btn').on("click", function () {
       $(".edit-guestspot-form").css("display", "block");
-      $(".image-upload-form").css("display", "none");       
+      $(".image-upload-form").css("display", "none");      
     });
 
     $('.guestspot-upload-form').submit(function (event) {
