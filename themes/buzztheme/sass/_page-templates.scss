@@ -824,3 +824,46 @@ h1 {
     }
 
 }
+    .guestspot-upload-form{
+            
+
+            img{
+                border:$border;
+            }
+
+          label{
+            font-family: $font__main;
+            font-weight: bold;
+            
+
+          }
+
+          #edit-guestspot-title, #edit-guestspot-studio-name, #edit-guestspot-location, #edit-guestspot-start-date, #edit-guestspot-finish-date, #studiodescription{
+            width:90%;
+            margin-top:0.5rem;
+            padding:5px;
+            border:$border;
+            border-radius:0;
+            
+              
+          }
+         
+
+          .upload-btn,{
+            height: 3.5rem;
+            width: 7.5rem;
+            background: transparent url('../../assets/buttons/button_texture.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: none;
+            color: $color__text-secondary;  
+            font-weight: bold;  
+            margin-bottom:1rem;
+
+          }
+
+          
+
+         
+
+}
