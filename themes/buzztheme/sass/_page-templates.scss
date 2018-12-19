@@ -185,6 +185,9 @@
 
     button {
         @include loadmore-button;
+        &.hidden {
+            display: none;
+        }
     }
 }
 
@@ -244,6 +247,9 @@ width: 100%;
 
 .button {
     @include flex-centered;
+    &.hidden {
+        display: none;
+    }
     button {
         @include loadmore-button;
     }
