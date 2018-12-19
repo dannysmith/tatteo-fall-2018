@@ -1,4 +1,4 @@
-<?php /* Template name: page-studios */ ?>
+<?php /* Template name: page-studios */?>
 
 <?php
 /**
@@ -7,40 +7,42 @@
  * @package RED_Starter_Theme
  */
 
-get_header(); ?>
+get_header();?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div id="primary" class="content-area">
+  <main id="main" class="site-main" role="main">
 
-<section class="title"><h1>Studios</h1></section>
-<section class="studio-users">
+    <section class="title">
+      <h1>Studios</h1>
+    </section>
+    <section class="studio-users">
 
-<?php
+      <?php
 $args1 = array(
- 'role' => 'studio',
- 'orderby' => 'registered',
- 'order' => 'ASC', 
- 'number' => '6'
+    'role' => 'studio',
+    'orderby' => 'registered',
+    'order' => 'desc',
+    'number' => '6',
 );
- $studios = get_users($args1);
- foreach ($studios as $user) {
- echo '<div class="container"><div class="studio">' .
- '<a href="'.get_author_posts_url($user->ID).'">'
- . get_avatar($user->ID, 120) .
- '</div><li>' 
- . $user->display_name .
- '</li> <li>'
- . $user->user_email .
- '</li> </div></a>';
- }
+$studios = get_users($args1);
+foreach ($studios as $user) {
+    echo '<div class="container"><div class="studio">' .
+    '<a href="' . get_author_posts_url($user->ID) . '">'
+    . get_avatar($user->ID, 120) .
+    '</div><li>'
+    . $user->display_name .
+    '</li> <li>'
+    . $user->location .
+        '</li> </div></a>';
+}
 ?>
 
-</section>
+    </section>
 
-<section class="button <?php if (count($studios) < 6) echo 'hidden'; ?>"><button class="load-more">Load more</button></section>
+    <section class="button"><button class="load-more-studios">Load more</button></section>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+  </main><!-- #main -->
+</div><!-- #primary -->
 
 
-<?php get_footer(); ?>
+<?php get_footer();?>
