@@ -24,22 +24,21 @@
         $guestspotsContainer.empty();
         $guestspotsMessage.empty();
         let j = 0;
-        let z = 0;
         for (let i = 0; i < response.length; i++) {
           let locationJson = response[i].location.toLowerCase();
-          let startDateJson = new Date(response[i].startDate);
-          let finishDateJson = new Date(response[i].finishDate);
+          let startDateJson = new Date(response[i].start_date);
+          let finishDateJson = new Date(response[i].finish_date);
           let image = response[i].image;
           let title = response[i].title.rendered;
           let link = response[i].link;
           let objectLocation = response[i].location
-          if (locationLow === locationJson) {
+          if (locationLow == locationJson) {
             if (startDateChoosen >= startDateJson && finishDateChoosen <= finishDateJson) {
-              $guestspotsMessage.html(`<div class="guestspot-after-search">
-                                            <div class="guest-container-search">
-                                            <img src="${image}" />
-                                            <div class="studio-information">
-                                              <a href="${link}">
+              $guestspotsMessage.html(`<div class='guestspot-after-search'>
+                                            <div class='guest-container-search'>
+                                            <img src='${image}' />
+                                            <div class='studio-information'>
+                                              <a href='${link}'>
                                               <h2>${title}</h2>
                                               </a>
                                               <p>${objectLocation}</p>
@@ -47,16 +46,13 @@
                                             </div>
                                         </div>`)
             } else {
-              z++;
-            }
-            if (z === response.length) {
               $guestspotsMessage.html('<p>Sorry, no guestspots currently available for these dates..</p>');
             }
           } else {
             j++;
 
           }
-          if (j === response.length) {
+          if (j == response.length) {
             $guestspotsMessage.html('<p>Sorry, no guestspots currently available in this location..</p>');
           }
         }
@@ -84,4 +80,4 @@ function openSearch(evt, searchName) { // eslint-disable-line
   evt.currentTarget.className += ' active';
 }
 
-document.getElementById('defaultOpen').click();
+document.getElementById('defaultOpen').click(); 
