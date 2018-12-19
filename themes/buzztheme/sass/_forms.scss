@@ -11,7 +11,9 @@ input[type="submit"] {
 	&:hover {}
 
 	&:active,
-	&:focus {}
+	&:focus {
+		outline: none;
+	}
 }
 
 /* Fields */
@@ -21,6 +23,7 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="date"],
 input[type="tel"],
 textarea {
 	color: #666;
@@ -29,6 +32,7 @@ textarea {
 
 	&:focus {
 		color: #111;
+		outline: none;
 	}
 }
 
@@ -187,7 +191,8 @@ body {
 					text-decoration: underline;
 				}
 
-				input {
+				input,
+				textarea {
 					width: 40vw;
 					max-width: 320px;
 					margin-top: 8px;

@@ -13,17 +13,17 @@
 
   }
 
-  $(document).on("keydown", this, function (e) {
+  $(document).on('keydown', this, function (e) {
     var keycode = ((typeof e.keyCode != 'undefined' && e.keyCode) ? e.keyCode : e.which);
     if (keycode === 27) {
       toHide();
-      $(".user-menu").css("display", "none");
+      $('.user-menu').css('display', 'none');
     }
   });
 
   // Showing login form 
   $('.login-here').on('click', function (event) {
-    alert("test");
+    alert('test');
     event.preventDefault();
     toHide();
     $('.overlay').css('display', 'block');
@@ -46,12 +46,12 @@
     // let data = {
     //   log: $('.user-name').val(),
     //   pwd: $('.user-password').val(),
-    //   rememberme: "forever",
-    //   "wp-submit": "Log In",
+    //   rememberme: 'forever',
+    //   'wp-submit': 'Log In',
     //   testcookie: 1
     // };
     $.ajax({
-        url: api_vars.home_url + "/wp-login.php",
+        url: api_vars.home_url + '/wp-login.php', // eslint-disable-line
         method: 'POST',
         data: $(this).serialize(),
         success: function (response) {
@@ -64,7 +64,7 @@
         if (err) {
           $('.error-message').css('display', 'block');
           $('.error-message').empty();
-          $('.error-message').text("Incorrect Username or password. Please try again.");
+          $('.error-message').text('Incorrect Username or password. Please try again.');
         } else {
           toHide();
           location.reload(true);
@@ -74,7 +74,7 @@
   });
 
   // Sign-up form
-  $(".sign-up-link").on("click", function () {
+  $('.sign-up-link').on('click', function () {
     toHide();
     $('.overlay').css('display', 'block');
     $('.dilog-container').css('display', 'flex');
@@ -83,8 +83,8 @@
 
   let role;
   const rolesEnum = {
-    "artist": "artist",
-    "studio": "studio"
+    'artist': 'artist',
+    'studio': 'studio'
   }
 
 
@@ -122,15 +122,15 @@
     event.preventDefault();
 
     let data = {
-      user_email: $('.new-user-email').val(),
-      user_login: $('.new-user-name').val(),
+      user_email: $('.new-user-email').val(), // eslint-disable-line
+      user_login: $('.new-user-name').val(), // eslint-disable-line
       pass1: $('.new-user-password').val(),
-      // role: 'studio'
-      // first_name: 'john',
+      location: $('.new-user-location').val(),
+      description: $('.new-user-description').val(),
       role: role
     };
     $.ajax({
-        url: api_vars.home_url + "/wp-login.php?action=register",
+        url: api_vars.home_url + '/wp-login.php?action=register', // eslint-disable-line
         method: 'POST',
         data: data,
       })
@@ -141,16 +141,16 @@
           $('.error-message-sign-up').css('display', 'block');
           let parser = new DOMParser();
           const htmlDoc = parser.parseFromString(response, 'text/html');
-          console.log($(htmlDoc).find("#login_error").html());
-          $(".error-message-sign-up").append($(htmlDoc).find("#login_error").html());
+          console.log($(htmlDoc).find('#login_error').html());// eslint-disable-line
+          $('.error-message-sign-up').append($(htmlDoc).find('#login_error').html());
         } else {
           toHide();
           location.reload(true);
         }
       })
       .fail(function (response) {
-        console.log('fail');
-        console.log(response);
+        console.log('fail');// eslint-disable-line
+        console.log(response);// eslint-disable-line
       });
   });
 
