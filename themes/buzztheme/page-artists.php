@@ -24,6 +24,7 @@ $args1 = array(
 
 );
 $artists = get_users($args1);
+
 foreach ($artists as $user) {
     echo '<div class="container"><div class="artist">' .
     '<a href="' . get_author_posts_url($user->ID) . '">'
@@ -31,12 +32,12 @@ foreach ($artists as $user) {
     '</div><li>'
     . $user->display_name .
     '</li> <li>'
-    . $user->user_email .
-    '</li> </div></a>';
+    . $user->location .
+        '</li> </div></a>';
 }
 ?>
 
-</section>
+    </section>
 
 <section class="button <?php if (count($artists) < 6) echo 'hidden'; ?>"><button class="load-more">Load more</button></section>
 	
@@ -44,4 +45,4 @@ foreach ($artists as $user) {
 	</div><!-- #primary -->
 
 
-<?php get_footer(); ?>
+<?php get_footer();?>
