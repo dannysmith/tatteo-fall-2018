@@ -37,7 +37,7 @@ $args1 = array(
 
 </section>
 
-<section class="button"><button class="load-more">Load more</button></section>
+<section class="button <?php if (count($studios) < 6) echo 'hidden'; ?>"><button class="load-more">Load more</button></section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -38,7 +38,7 @@ foreach ($artists as $user) {
 
 </section>
 
-<section class="button"><button class="load-more">Load more</button></section>
+<section class="button <?php if (count($artists) < 6) echo 'hidden'; ?>"><button class="load-more">Load more</button></section>
 	
 		</main><!-- #main -->
 	</div><!-- #primary -->
