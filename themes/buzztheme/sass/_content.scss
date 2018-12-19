@@ -224,6 +224,7 @@
 	}
 }
 
+// Single Guestspot
 .guestspot {
 	width: 100%;
 
@@ -320,52 +321,119 @@
 			padding: 10px;
 			margin-right: 12px;
 			margin-top: 4%;
+			text-decoration: none;
+			color: $color__text-main;
+		}
+
+		.get-in-touch-btn {
+			height: 4rem;
+			width: 8rem;
+			background: transparent url('../../assets/buttons/button_texture.png');
+			background-repeat: no-repeat;
+			background-size: contain;
+			border: none;
+			color: $color__text-secondary;
+			font-weight: bold;
+			text-decoration: none;
+			text-align: center;
 		}
 
 	}
 }
 
 
-/* Style the tab */
+/* Global Search  */
+
 .tab {
-	display: flex; 
+	display: flex;
 	justify-content: space-around;
 	overflow: hidden;
-  }
-  
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
-	@include text($color__text-main, 16px, $font__main); 
+}
+
+.tab button {
+	@include text($color__text-main, 16px, $font__main);
 	cursor: pointer;
 	padding: 14px 10%;
 	border: $border;
 	transition: 0.3s;
-  }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
+}
+
+.tab button:hover {
 	background-color: #ddd;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
+}
+
+
+.tabcontent {
 	display: none;
 	padding: 30px 12px;
-  }
+}
 
-  .tabcontent {
-	animation: fadeEffect 1s; /* Fading effect takes 1 second */
-  }
-  
-  /* Go from zero to full opacity */
-  @keyframes fadeEffect {
-	from {opacity: 0;}
-	to {opacity: 1;}
-  }
+.tabcontent {
+	animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
 
 
-  #studio{
-	  div{
-		  margin: 0 5%;
-	  }
-  }
+#studio {
+	.search-studio {
+		margin: 0 5%;
+		display: flex;
+		flex-direction: column;
+		@include text($color__text-main, 12px, $font__main);
+	}
+
+	.no-results {
+		display: flex;
+		justify-content: center;
+
+		.error-404 {
+			text-align: center;
+
+			.page-content {
+				margin: 0;
+
+				fieldset {
+					border: none;
+				}
+
+			}
+		}
+	}
+}
+
+#artist {
+
+	.search-artist {
+		margin: 0 5%;
+		display: flex;
+		flex-direction: column;
+		@include text($color__text-main, 12px, $font__main);
+	}
+
+	.no-results {
+		display: flex;
+		justify-content: center;
+
+		.error-404 {
+			text-align: center;
+
+			.page-content {
+				margin: 0;
+
+				fieldset {
+					border: none;
+				}
+
+			}
+		}
+	}
+}

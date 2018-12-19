@@ -78,3 +78,16 @@ table {
   margin: 0 0 $base__space-unit;
   width: 100%;
 }
+
+a.get-in-touch-btn {
+  height: 3.5rem;
+  width: 7.5rem;
+  background: transparent url('../../assets/buttons/button_texture.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none !important;
+  color: $color__text-secondary;
+  font-weight: bold;
+
+
+}
