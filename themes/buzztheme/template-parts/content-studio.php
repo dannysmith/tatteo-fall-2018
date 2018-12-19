@@ -18,7 +18,11 @@
     ?>
 	<div class="avatar" style="background-image: url(<?php echo get_avatar_url($user->ID)?>);"></div>
 	<div class="studioname"><h2><?php echo $curauth->nickname; ?></h2></div>
-	<div class="studiodescription"><p><?php echo $curauth->user_description; ?></p></div>
+	<?php if(!empty($curauth->user_description)) { ?>
+		<div class="studiodescription"><p><?php echo $curauth->user_description; ?></p></div>
+	<?php } else { ?>
+		<div class="studiodescription" <?php echo 'hidden'; ?>></div>
+	<?php } ?>
 	</section>
 
 	<section class="previous-guestspots">

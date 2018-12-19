@@ -335,38 +335,6 @@ width: 100%;
                 }
         }
 
-        .previous-guestspots {
-            @include profile-title;
-            @include border-bottom;
-            display: grid;
-
-            @include tablet {
-                justify-content: center;
-            }
-            @include desktop {
-                grid-template-columns: 100%;
-                h2 {
-                justify-self: left;
-                margin-left: 5rem;
-                width: 24rem;
-                }
-            }
-            .grid-container {
-                @include previous-guestspots;
-
-                @include desktop {
-                    justify-self: initial;
-                }
-
-                .guestspots {
-                    display: flex;
-                    justify-content: center;
-                    font-weight: bold;
-                    font-size: 1rem;
-                }
-            }
-        }
-
         .instagram {
                 @include profile-title;
                 @include border-bottom;
