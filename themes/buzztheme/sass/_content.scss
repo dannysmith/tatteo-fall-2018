@@ -143,6 +143,11 @@
 		width: 80%;
 		margin-left: 5%;
 
+		img{
+			
+			
+		}
+
 		input:not([type="file"]):not([type="submit"]) {
 			padding: 5px;
 			border: $border;
@@ -222,6 +227,7 @@
 		margin-bottom: 0.5rem;
 
 	}
+	
 }
 
 // Single Guestspot
