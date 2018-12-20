@@ -25,8 +25,9 @@
 	<h2>Previous Guestspots</h2>
 	<div class="grid-container">
 	<?php
-	$author = get_the_author(); 
-	echo $author; 
+		 $current_user = wp_get_current_user();
+		 
+		 
 		?>
 	</div>
 	</section>
