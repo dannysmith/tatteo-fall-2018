@@ -86,6 +86,7 @@
         location: $('#edit-guestspot-location').val(),
         start_date: $('#edit-guestspot-start-date').val(),
         finish_date: $('#edit-guestspot-finish-date').val(),
+        content: $('#description').val(),
         post_status: 'pending',
         image: imageId,
       }

@@ -38,7 +38,7 @@ get_currentuserinfo();?>
       <input type="date" id="edit-guestspot-finish-date" value="<?php echo CFS()->get('finish_date'); ?>" required />
     </p>
     <p><label for="guestspot-description">Description</label><br />
-				        <textarea cols="40" rows="20" class="text-input" name="description" type="text" id="studiodescription" > </textarea>
+				        <textarea id="description"  cols="40" rows="20" class="text-input" name="description" type="text" id="studiodescription" > </textarea>
     </p>
     <input type='submit' name='Submit' value="Submit" class='upload-btn'>
   </form>
