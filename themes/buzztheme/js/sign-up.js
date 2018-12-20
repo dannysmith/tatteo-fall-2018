@@ -117,6 +117,16 @@
     toHide();
   });
 
+  function PreviewImage() {
+    var oFReader = new FileReader();
+    oFReader.readAsDataURL(document.getElementById("guespot-image").files[0]);
+
+    oFReader.onload = function (oFREvent) {
+        document.getElementById("guespot-image").src = oFREvent.target.result;
+    };
+};
+
+
   // Sign-up submit
   $('.register-form').on('submit', function (event) {
     event.preventDefault();
