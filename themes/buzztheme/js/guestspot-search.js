@@ -33,7 +33,7 @@
           let title = response[i].title.rendered;
           let link = response[i].link;
           let objectLocation = response[i].location
-          if (locationLow == locationJson) {
+          if (locationJson.includes(locationLow)) {
             if (startDateChoosen >= startDateJson && finishDateChoosen <= finishDateJson) {
               $guestspotsMessage.html(`<div class='guestspot-after-search'>
                                             <div class='guest-container-search'>
@@ -47,14 +47,14 @@
                                             </div>
                                         </div>`)
             } else {
-              $guestspotsMessage.html('<p>Sorry, no guestspots currently available for these dates..</p>');
+              $guestspotsMessage.html('<p class="sorry-msg">Sorry, no guestspots currently available for these dates..</p>');
             }
           } else {
             j++;
 
           }
           if (j == response.length) {
-            $guestspotsMessage.html('<p>Sorry, no guestspots currently available in this location..</p>');
+            $guestspotsMessage.html('<p class="sorry-msg">Sorry, no guestspots currently available in this location..</p>');
           }
         }
       })

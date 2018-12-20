@@ -143,6 +143,8 @@
 		width: 80%;
 		margin-left: 5%;
 
+
+
 		input:not([type="file"]):not([type="submit"]) {
 			padding: 5px;
 			border: $border;
@@ -222,6 +224,7 @@
 		margin-bottom: 0.5rem;
 
 	}
+
 }
 
 // Single Guestspot
@@ -233,11 +236,22 @@
 		margin-top: 8%;
 		position: relative;
 		width: 100%;
+		margin-top: 5px;
+		width: 80%;
+		margin-left: 30px;
+		border: 6px solid black;
+
+
 
 
 		@include tablet {
 			width: 80%;
 			margin-top: 0;
+
+			margin-top: 5px;
+			width: 80%;
+			margin-left: 71px;
+			border: 6px solid black;
 		}
 	}
 
@@ -251,15 +265,14 @@
 		margin: 0 auto;
 		left: auto;
 		right: auto;
-		left: 50%;
+		left: 77%;
 
 		transform: translateX(-50%);
 
 		@include tablet {
 			top: 10%;
-			right: 10%;
-			left: none;
-			transform: none;
+			right: 0%;
+
 			margin-top: none;
 			font-size: 2.5rem;
 		}
