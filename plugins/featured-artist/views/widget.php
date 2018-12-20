@@ -12,14 +12,14 @@ echo $before_widget;
 ?>
 <h2 class="title-featured-artist">Featured Artist</h2>
 <?php 
-if ( ! empty( $title ) ) { echo $before_title . $title . $after_title; }
+if ( ! empty( $title ) ) { echo '<a class="featured-artist-link" href="'.get_home_url().'/author/"> '.$before_title . $title . $after_title.' </a>';}
 
 echo $this->get_image_html( $instance, true );
 
 if ( ! empty( $description ) ) {
 	echo '<div class="' . esc_attr( $this->widget_options['classname'] ) . '-description" >';
 	echo wpautop( $description );
-	echo '<a href="#"></a>';
+	echo '<a class="featured-artist-link" href="'.get_home_url().'/author/"></a>';
 	echo '</div>';
 }
 echo $after_widget;
