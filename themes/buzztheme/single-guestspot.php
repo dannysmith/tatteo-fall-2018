@@ -9,14 +9,14 @@ get_header();?>
 
 <div class="edit-guestspot-form">
   
-<a class="cancel-guestspots">whyyyyyyy</a>
+<a class="cancel-guestspots"></a>
 
   <form method='post' class='guestspot-upload-form' id="<?php echo get_the_ID() ?>">
   
-  <img id=<?php echo CFS()->get('image', false, array( 'format' => 'raw' )); ?> src=" <?php echo CFS()->get('image'); ?>" />
-  
+  <img class="uploaded-image" id=<?php echo CFS()->get('image', false, array( 'format' => 'raw' )); ?> src=" <?php echo CFS()->get('image'); ?>" />
+  <br>
 
-    <input type='file' id='guespot-image' />
+    <input type='file' id='guespot-image' onchange="readURL(this)"  /> 
 
     <?php global $current_user;
 get_currentuserinfo();?>
