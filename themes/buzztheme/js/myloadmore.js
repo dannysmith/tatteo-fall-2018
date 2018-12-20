@@ -9,8 +9,8 @@
         $.ajax({
             url: api_vars.root_url + 'wp/v2/artist_users' + '?' +
                 $.param({
-                    roles: "artist",
-                    page: page_number,
+                    // roles: "Artist",
+                    page: "1", // page_number,
                     per_page: "6",
                     context: "view",
                     orderby: "registered_date",
@@ -48,12 +48,13 @@
         $.ajax({
             url: api_vars.root_url + 'wp/v2/artist_users' + '?' +
                 $.param({
-                    roles: "studio",
-                    page: page_number,
+                    // roles: "studio",
+                    page: '1', //page_number,
+                    page_: page_number,
                     per_page: "6",
                     context: "view",
-                    orderby: "registered_date",
-                    order: "desc"
+                    // orderby: "registered_date",
+                    // order: "desc"
                 }),
             method: 'GET',
             beforeSend: function (xhr) {

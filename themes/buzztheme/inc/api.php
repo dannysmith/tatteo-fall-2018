@@ -142,11 +142,11 @@ class Artist_Custom_Controller extends WP_REST_Users_Controller
         register_rest_route($this->namespace, '/artist_users', [
             [
                 'methods' => WP_REST_Server::READABLE,
-                'callback' => [$this, 'get_items'],
-                'permission_callback' => [$this, 'get_items_permissions_check'],
+                'callback' => array($this, 'get_items'),
+                'permission_callback' => array($this, 'get_items_permissions_check'),
                 'args' => $this->get_collection_params(),
             ],
-            'schema' => [$this, 'get_public_item_schema'],
+            'schema' => array($this, 'get_public_item_schema'),
         ]);
     }
 
@@ -174,8 +174,7 @@ class Artist_Custom_Controller extends WP_REST_Users_Controller
 
 }
 
-// Create an instance of `My_Custom_Controller` and call register_routes() methods
 add_action('rest_api_init', function () {
-    $myProductController = new Artist_Custom_Controller(); //('my_post_type');
+    $myProductController = new Artist_Custom_Controller();
     $myProductController->register_routes();
 });
