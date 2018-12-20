@@ -40,7 +40,7 @@ $users = $wp_user_query->get_results();
 // Check for results
 
 if ( ! empty( $users ) ) {
-    echo '<div>';
+    echo '<div class="search-artist">';
     // loop through each author
     foreach ( $users as $user ) {
         // get all the user's data
@@ -48,13 +48,14 @@ if ( ! empty( $users ) ) {
         $user_info = get_userdata( $user->ID );
 
         echo '<a href="'.get_author_posts_url($user->ID).'">
-        '. get_avatar($user->ID, 120). '
-        '. $user->display_name .'</a>';
+        '. get_avatar($user->ID, 120). '<p>
+
+        '. $user->display_name .'</p></a>';
     }
     echo '</div>';
 } else {
 
-	// get_template_part( 'template-parts/content', 'none' ); 
+	get_template_part( 'template-parts/content', 'none' ); 
 
 
 } ?>  
