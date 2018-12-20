@@ -62,6 +62,15 @@
         $guestspotsContainer.html('Something went wrong..')
       });
   })
+
+
+  // Featured Artist Part
+ const $widgetTitle = $('.widget-title');
+ const $widgetTitleValue = $widgetTitle.text()
+ const $formatWidgetTitle = $widgetTitleValue.toLowerCase();
+ const $finalArtistName = $formatWidgetTitle.split(' ').join('-');
+ const _href = $('.featured-artist-link').attr("href");
+$(".featured-artist-link").attr("href", _href + $finalArtistName);
 })(jQuery);
 
 // Global search - tabs 
@@ -81,3 +90,5 @@ function openSearch(evt, searchName) { // eslint-disable-line
 }
 
 document.getElementById('defaultOpen').click();
+
+
