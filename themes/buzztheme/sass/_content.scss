@@ -358,9 +358,9 @@
 	transition: 0.3s;
 }
 
-.tab button:hover {
-	background-color: #ddd;
-}
+// .tab button:hover {
+// 	background-color: #ddd;
+// }
 
 
 .tabcontent {
@@ -436,4 +436,40 @@
 			}
 		}
 	}
+}
+
+#posts {
+
+	.search-artist {
+		margin: 0 5%;
+		display: flex;
+		flex-direction: column;
+		@include text($color__text-main, 12px, $font__main);
+	}
+
+	.no-results {
+		display: flex;
+		justify-content: center;
+
+		.error-404 {
+			text-align: center;
+
+			.page-content {
+				margin: 0;
+
+				fieldset {
+					border: none;
+				}
+
+			}
+		}
+	}
+}
+
+.active {
+	font-weight: 600;
+}
+
+.visible {
+    display: block;
 }

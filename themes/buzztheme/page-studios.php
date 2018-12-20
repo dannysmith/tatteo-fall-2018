@@ -30,7 +30,7 @@ $args1 = array(
  '</div><li>' 
  . $user->display_name .
  '</li> <li>'
- . $user->user_email .
+ . $user->location .
  '</li> </div></a>';
  }
 ?>
