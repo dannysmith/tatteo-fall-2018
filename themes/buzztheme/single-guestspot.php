@@ -8,11 +8,15 @@
 get_header();?>
 
 <div class="edit-guestspot-form">
-  <form method='post' class='guestspot-upload-form' id="<?php echo get_the_ID() ?>">
-    <img id=<?php echo CFS()->get('image', false, array('format' => 'raw')); ?> src="
-    <?php echo CFS()->get('image'); ?>" />
+  
+<a class="cancel-guestspots"></a>
 
-    <input type='file' id='guespot-image' />
+  <form method='post' class='guestspot-upload-form' id="<?php echo get_the_ID() ?>">
+  
+  <img class="uploaded-image" id=<?php echo CFS()->get('image', false, array( 'format' => 'raw' )); ?> src=" <?php echo CFS()->get('image'); ?>" />
+  <br>
+
+    <input type='file' id='guespot-image' onchange="readURL(this)"  /> 
 
     <?php global $current_user;
 get_currentuserinfo();?>
@@ -34,7 +38,7 @@ get_currentuserinfo();?>
       <input type="date" id="edit-guestspot-finish-date" value="<?php echo CFS()->get('finish_date'); ?>" required />
     </p>
     <p><label for="guestspot-description">Description</label><br />
-      <input cols="40" rows="20" class="text-input" name="description" type="text" id="studiodescription" value="" />
+				        <textarea id="description"  cols="40" rows="20" class="text-input" name="description" type="text" id="studiodescription" > </textarea>
     </p>
     <input type='submit' name='Submit' value="Submit" class='upload-btn'>
   </form>

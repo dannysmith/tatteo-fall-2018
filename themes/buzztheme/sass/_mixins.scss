@@ -138,9 +138,14 @@
 	}
 }
 
+@mixin instagram-link {
+	justify-self: center;
+	align-self: center;
+	border: $border;
+	padding: 1rem;
+}
 
 // search mixins 
-
 
 %guestspot-mobile {
 	border: $border2;

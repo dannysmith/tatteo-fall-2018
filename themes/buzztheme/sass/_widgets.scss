@@ -99,8 +99,8 @@
                 width: fit-content;
                 display: flex;
                 flex-direction: column;
-                height: 142px;
-                width: 222px;
+                height: fit-content;
+                width: 282px;
                 color: #000000;
                 font-size: 16px;
                 letter-spacing: 0.8px;
@@ -113,7 +113,7 @@
                 p {
                     padding-left: 10px;
                     padding-right: 10px;
-                    font-size: 14px;
+                    font-size: 12px;
                     word-wrap: break-word;
                     margin-bottom: 5px;
                 }
@@ -137,7 +137,7 @@
                 width: fit-content;
                 display: flex;
                 flex-direction: column;
-                height: 232px;
+                height: fit-content;
                 width: 312px;
                 color: #000000;
                 font-size: 16px;

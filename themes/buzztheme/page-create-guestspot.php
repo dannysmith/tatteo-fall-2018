@@ -9,10 +9,15 @@ get_header();?>
 
 <div id="primary" class="content-area edit-area">
   <section class="create-guestspot-section">
+  
 
     <form method='post' class='image-upload-form'>
+    
+    
       <h1>New Guestspot</h1>
-      <input type='file' id='guespot-image' required>
+      <img class="uploaded-image-new"/>
+      <input type='file' id='new-guespot-image-input' required>
+
 
       <?php global $current_user;
 get_currentuserinfo();?>
