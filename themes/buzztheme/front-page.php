@@ -44,7 +44,6 @@ get_header();?>
 
 </section>
 
-<section class="button"><button class="load-more">Load more</button></section>
     
 
     <section class="featured-artist">

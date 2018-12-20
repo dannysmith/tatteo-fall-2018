@@ -88,19 +88,20 @@
             margin-top: 3rem;
             margin-bottom: 3rem;
 
-                .link-guestspot {
-                    height: 25rem;
-                    border: $border3;
-                    &:hover {
-                        border-color: black;
-                    }
+            .link-guestspot {
+                height: 25rem;
+                border: $border3;
 
-                    .avatar {
-                        height: 100%;
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                    }
+                &:hover {
+                    border-color: black;
                 }
+
+                .avatar {
+                    height: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+            }
 
             p {
                 @include flex-centered;
@@ -137,7 +138,7 @@
 
 .content-area {
     width: 100%;
-    }    
+}
 
 .title {
     @include profile-title;
@@ -152,6 +153,7 @@
     @include multi-profile;
 
     a {
+
         &:link,
         &:hover,
         &:active,
@@ -177,6 +179,7 @@
 
         img {
             @include profile-img;
+
             &:hover {
                 border-color: black;
             }
@@ -194,12 +197,12 @@
 /* Artist Page */
 
 .content-area {
-width: 100%;
+    width: 100%;
 }
 
 .title {
     h1 {
-    @include profile-title;
+        @include profile-title;
     }
 
     @include desktop {
@@ -216,6 +219,7 @@ width: 100%;
 
         img {
             @include profile-img;
+
             &:hover {
                 border-color: black;
             }
@@ -223,6 +227,7 @@ width: 100%;
     }
 
     a {
+
         &:link,
         &:hover,
         &:active,
@@ -263,128 +268,99 @@ width: 100%;
         grid-template-rows: auto auto auto;
 
         .entry-header {
-                @include entry-header;
+            @include entry-header;
         }
 
         .single-artist {
-                display: grid;
-                @include border-bottom;
-                padding-bottom: 1rem;
-
-                @include tablet {
-                    grid-template-rows: auto auto auto;
-                    margin-top: 0;
-                }
-
-                @include desktop {
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-rows: 1fr;
-                    margin-top: 3rem;
-                }
-
-                .avatar {
-                    @include flex-centered;
-                    img {
-                        @include profile-img;
-                        border: $border;
-                    }
-
-                    @include tablet {
-                        grid-row: 2;
-                        margin-bottom: 1rem;
-                    }
-
-                    @include desktop {
-                        grid-column: 1;
-                        grid-row: 1/3;
-                        margin-bottom: 0rem;
-                    }
-                }
-
-                .artistname {
-                    @include profile-title;
-
-                    @include tablet {
-                        grid-row: 1;
-                        h2 {
-                            margin-top: 1rem;
-                        }
-                    }
-
-                    @include desktop {
-                        grid-column: 2;
-                        margin-top: 2rem;
-                        max-height: 6rem;
-                    }
-                }
-
-                .artistdescription {
-                    border: $border;
-                    padding: 0.5rem;
-
-                    @include tablet {
-                        grid-row: 3;
-                        margin-left: 1rem;
-                        margin-right: 1rem;
-                    }
-
-                    @include desktop {
-                        grid-column: 2;
-                        grid-row: 2;
-                    }
-                }
-        }
-
-        .previous-guestspots {
-            @include profile-title;
-            @include border-bottom;
             display: grid;
+            @include border-bottom;
+            padding-bottom: 1rem;
 
             @include tablet {
-                justify-content: center;
+                grid-template-rows: auto auto auto;
+                margin-top: 0;
             }
+
             @include desktop {
-                grid-template-columns: 100%;
-                h2 {
-                justify-self: left;
-                margin-left: 5rem;
-                width: 24rem;
-                }
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+                margin-top: 3rem;
             }
-            .grid-container {
-                @include previous-guestspots;
+
+            .avatar {
+                @include flex-centered;
+
+                img {
+                    @include profile-img;
+                    border: $border;
+                }
+
+                @include tablet {
+                    grid-row: 2;
+                    margin-bottom: 1rem;
+                }
 
                 @include desktop {
-                    justify-self: initial;
+                    grid-column: 1;
+                    grid-row: 1/3;
+                    margin-bottom: 0rem;
+                }
+            }
+
+            .artistname {
+                @include profile-title;
+
+                @include tablet {
+                    grid-row: 1;
+
+                    h2 {
+                        margin-top: 1rem;
+                    }
                 }
 
-                .guestspots {
-                    display: flex;
-                    justify-content: center;
-                    font-weight: bold;
-                    font-size: 1rem;
+                @include desktop {
+                    grid-column: 2;
+                    margin-top: 2rem;
+                    max-height: 6rem;
+                }
+            }
+
+            .artistdescription {
+                border: $border;
+                padding: 0.5rem;
+
+                @include tablet {
+                    grid-row: 3;
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                }
+
+                @include desktop {
+                    grid-column: 2;
+                    grid-row: 2;
                 }
             }
         }
 
         .instagram {
-                @include profile-title;
-                @include border-bottom;
-                
-                @include tablet {
-                    justify-content: center;
-                }
-                
-                @include desktop {
-                    justify-content: left;
-                    h2 {
+            @include profile-title;
+            @include border-bottom;
+
+            @include tablet {
+                justify-content: center;
+            }
+
+            @include desktop {
+                justify-content: left;
+
+                h2 {
                     margin-left: 5rem;
-                    }
                 }
-                    
-                .grid-container {
-                    @include instagram;
-                }
+            }
+
+            .grid-container {
+                @include instagram;
+            }
         }
 
     }
@@ -479,6 +455,7 @@ width: 100%;
 
             @include desktop {
                 grid-template-columns: 100%;
+
                 h2 {
                     justify-content: left;
                     margin-left: 5rem;
@@ -552,6 +529,7 @@ footer {
     padding-top: 3rem;
 
     a {
+
         &:link,
         &:hover,
         &:active,
@@ -648,7 +626,7 @@ footer {
                 }
             }
         }
-    
+
     }
 }
 
@@ -735,13 +713,15 @@ footer {
     display: flex;
     flex-direction: column;
     margin: 20px;
-    @include tablet{
+
+    @include tablet {
         flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100vw;
-    display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100vw;
+        display: inline-flex;
     }
+
     input {
         border-radius: 0;
         font-weight: 600;
@@ -755,29 +735,34 @@ footer {
         width: 80px;
         height: 30px;
     }
-    @include tablet{
-    #start-date{
-        border-right: 2px solid black;
+
+    @include tablet {
+        #start-date {
+            border-right: 2px solid black;
+        }
+
+        #finish-date {
+            border-left: 2px solid black;
+        }
     }
-    #finish-date{
-        border-left: 2px solid black;
-    }}
 }
 
 .page-header {
-@include profile-title;
-h1 {
-    padding-bottom: 0.5rem;
-}
+    @include profile-title;
+
+    h1 {
+        padding-bottom: 0.5rem;
+    }
 }
 
 .guestspots-container-js {
-@include multi-profile;
+    @include multi-profile;
 
-.guestspots-container {
+    .guestspots-container {
         .link-guestspot {
             height: 25rem;
             border: $border3;
+
             &:hover {
                 border-color: black;
             }
@@ -802,8 +787,9 @@ h1 {
 .guestspot-after-search {
     width: 90vw;
     margin-left: 20px;
+
     .guest-container-search {
-        
+
         width: 100%;
 
         @extend %guestspot-mobile;
@@ -831,46 +817,53 @@ h1 {
     }
 
 }
-    .guestspot-upload-form{
-            
 
-            img{
-                border:$border;
-            }
+.guestspot-upload-form {
 
-          label{
-            font-family: $font__main;
-            font-weight: bold;
-            
 
-          }
+    img {
+        border: $border;
+    }
 
-          #edit-guestspot-title, #edit-guestspot-studio-name, #edit-guestspot-location, #edit-guestspot-start-date, #edit-guestspot-finish-date, #studiodescription{
-            width:90%;
-            margin-top:0.5rem;
-            padding:5px;
-            border:$border;
-            border-radius:0;
-            
-              
-          }
-         
+    label {
+        font-family: $font__main;
+        font-weight: bold;
 
-          .upload-btn,{
-            height: 3.5rem;
-            width: 7.5rem;
-            background: transparent url('../../assets/buttons/button_texture.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-            border: none;
-            color: $color__text-secondary;  
-            font-weight: bold;  
-            margin-bottom:1rem;
 
-          }
+    }
 
-          
+    #edit-guestspot-title,
+    #edit-guestspot-studio-name,
+    #edit-guestspot-location,
+    #edit-guestspot-start-date,
+    #edit-guestspot-finish-date,
+    #studiodescription {
+        width: 90%;
+        margin-top: 0.5rem;
+        padding: 5px;
+        border: $border;
+        border-radius: 0;
 
-         
+
+    }
+
+
+    .upload-btn,
+        {
+        height: 3.5rem;
+        width: 7.5rem;
+        background: transparent url('../../assets/buttons/button_texture.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        border: none;
+        color: $color__text-secondary;
+        font-weight: bold;
+        margin-bottom: 1rem;
+
+    }
+
+
+
+
 
 }
