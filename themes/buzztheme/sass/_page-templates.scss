@@ -188,6 +188,7 @@
 
     button {
         @include loadmore-button;
+
         &.hidden {
             display: none;
         }
@@ -252,9 +253,11 @@
 
 .button {
     @include flex-centered;
+
     &.hidden {
         display: none;
     }
+
     button {
         @include loadmore-button;
     }
@@ -587,7 +590,10 @@ footer {
 
     .logo {
         grid-column: 1;
-        margin-left: 5.5rem;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        @include tablet{
+        margin-left: 5.5rem;}
 
         img {
             height: 2.4rem;
@@ -595,7 +601,13 @@ footer {
     }
 
     ul {
+        margin-left: 20px;
+        padding-left: 0;
         list-style: none;
+        @include tablet{
+            margin-left: 48px;
+            padding-left: 40px;
+        }
     }
 
     .footerlinks {
@@ -605,15 +617,21 @@ footer {
 
     .copyright {
         grid-column: 1;
+        margin-left: 20px;
+        @include tablet{
         margin-left: 5.5rem;
+        }
     }
 
     .footersocialmedia {
+        margin-right: 20px;
         grid-column: 2;
         grid-row: 2;
         justify-self: right;
-        margin-right: 5rem;
         text-align: right;
+        @include tablet{
+        margin-right: 5rem;
+        }
     }
 }
 
@@ -710,7 +728,37 @@ footer {
             padding: 5px;
             border: $border;
         }
-
+        #wpua-upload-existing,
+        #wpua-undo-existing{
+            background: none;
+            margin-left: 10px;
+            color: black;
+            height: 42px;
+            width: 80px;
+            border: $border;
+        }
+        #wpua-upload-button-existing{
+            display: flex;
+            justify-content: flex-start;
+        }
+        #wpua-file-existing{
+            border: $border;
+            margin-bottom: 20px;
+            padding: 5px;
+            &::-webkit-file-upload-button {
+                color: black;
+                background-repeat: no-repeat;
+                background-size: contain;
+                border: 1px solid grey;
+                border-radius: 2px;
+                font-weight: bold;
+            }
+        }
+        #wpua-upload-messages-existing{
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        #updateuser,
         button {
             height: 3.5rem;
             width: 7.5rem;
@@ -798,7 +846,14 @@ footer {
         padding-bottom: 0.5rem;
     }
 }
-
+.guestspots-message{
+    .sorry-msg{
+        margin-top: 50px;
+        font-size: 1.1rem;
+        text-align: center;
+        font-weight: 600;
+    }
+}
 .guestspots-container-js {
     @include multi-profile;
 
@@ -864,11 +919,6 @@ footer {
 
 .guestspot-upload-form {
 
-
-    img {
-        border: $border;
-    }
-
     label {
         font-family: $font__main;
         font-weight: bold;
@@ -876,12 +926,16 @@ footer {
 
     }
 
+    img {
+        border: $border;
+    }
+
     #edit-guestspot-title,
     #edit-guestspot-studio-name,
     #edit-guestspot-location,
     #edit-guestspot-start-date,
     #edit-guestspot-finish-date,
-    #studiodescription {
+        {
         width: 90%;
         margin-top: 0.5rem;
         padding: 5px;
@@ -889,6 +943,32 @@ footer {
         border-radius: 0;
 
 
+    }
+
+    #studiodescription {
+        height: 11rem;
+        width: 90%;
+        margin-top: 0.5rem;
+        padding: 5px;
+        border: $border;
+        border-radius: 0;
+
+        @include tablet {
+            height: 8rem;
+
+
+        }
+    }
+
+    ::-webkit-file-upload-button {
+        height: 3.5rem;
+        width: 7.5rem;
+        background: transparent url('../../assets/buttons/button_texture.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        border: none;
+        color: $color__text-secondary;
+        font-weight: bold;
     }
 
 
@@ -906,8 +986,33 @@ footer {
 
     }
 
+}
+
+.edit-guestspot-form {
+    a {
+        background-image: url("../../assets/Buttons/close-icon.png");
+        background-size: cover;
+        width: 25px;
+        height: 25px;
+        top: 4px;
+        left: 4px;
+        position: absolute;
+        cursor: pointer;
+
+        @include tablet {
+            width: 35px;
+            height: 35px;
+            top: 4px;
+            left: 4px;
+        }
+
+        @include desktop {
+            width: 50px;
+            height: 50px;
+            top: 4px;
+            left: 4px;
+        }
 
 
-
-
+    }
 }

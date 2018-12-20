@@ -3,7 +3,7 @@
 
     $('.edit-guestspot-btn').on("click", function () {
       $(".edit-guestspot-form").css("display", "block");
-      $(".image-upload-form").css("display", "none");       
+      $(".image-upload-form").css("display", "none");
     });
 
     $('.guestspot-upload-form').submit(function (event) {
@@ -13,7 +13,7 @@
         formData.append('file', $('input[type = file]')[0].files[0]);
         formData.append('title', "title");
         formData.append('caption', "caption");
-  
+
         $.ajax({
           url: api_vars.root_url + 'wp/v2/media',
           type: 'POST',
@@ -27,46 +27,82 @@
         }).done(function (response) {
           console.log(response);
           updateGuestspot(response.id);
-        
+
         })
-        
+
       } else {
         updateGuestspot($('.guestspot img').attr('id'));
       }
 
 
-       
-      
+
+
     });
 
-function updateGuestspot(imageId) {
-  const data = {
-    title: $('#edit-guestspot-title').val(),
-    studio_name: $('#edit-guestspot-studio-name').val(),
-    location: $('#edit-guestspot-location').val(),
-    start_date: $('#edit-guestspot-start-date').val(),
-    finish_date: $('#edit-guestspot-finish-date').val(),
-    post_status: 'pending',
-    image: imageId,
-   
-    
-    }
+    $('.cancel-guestspots').on('click', function (event) {
+      event.preventDefault();
+      $('.edit-guestspot-form').hide();
+    });
 
-    
-    $.ajax({
-      method: 'POST',
-      url: api_vars.root_url + 'wp/v2/guestspots-api/' + $('.guestspot-upload-form').attr('id'),
-      data: data,
-      beforeSend: function(xhr) {
-          xhr.setRequestHeader( 'X-WP-Nonce', api_vars.nonce );
+
+    $("#guespot-image").change(function () {
+      if (this.files && this.files[0]) {
+        let reader = new FileReader();
+        console.log(reader);
+
+        reader.onload = function (e) {
+
+          $('.uploaded-image')
+            .attr('src', e.target.result);
+        };
+        reader.readAsDataURL(this.files[0]);
       }
-      
-  })
- 
-    .done(function() {
-      window.location.href = api_vars.home_url + "/my-guestspots/";
-    })
-}
+    });
+
+    $("#new-guespot-image-input").change(function () {
+
+      if (this.files && this.files[0]) {
+
+        let reader = new FileReader();
+        console.log(reader);
+
+        reader.onload = function (e) {
+          $('.uploaded-image-new')
+            .attr('src', e.target.result).css({
+              "width": "40%",
+              "height": "auto",
+              "border": "6px solid black",
+              "margin": "1rem"
+            });
+        };
+        reader.readAsDataURL(this.files[0]);
+      }
+    });
+
+    function updateGuestspot(imageId) {
+      const data = {
+        title: $('#edit-guestspot-title').val(),
+        studio_name: $('#edit-guestspot-studio-name').val(),
+        location: $('#edit-guestspot-location').val(),
+        start_date: $('#edit-guestspot-start-date').val(),
+        finish_date: $('#edit-guestspot-finish-date').val(),
+        content: $('#description').val(),
+        post_status: 'pending',
+        image: imageId,
+      }
+      $.ajax({
+          method: 'POST',
+          url: api_vars.root_url + 'wp/v2/guestspots-api/' + $('.guestspot-upload-form').attr('id'),
+          data: data,
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
+          }
+
+        })
+        .done(function () {
+          window.location.href = api_vars.home_url + "/my-guestspots/";
+        })
+    }
 
 
 
@@ -75,7 +111,7 @@ function updateGuestspot(imageId) {
           method: 'DELETE',
           url: api_vars.root_url + 'wp/v2/guestspots-api/' + $('.guestspot').attr('id'), // eslint-disable-line
           beforeSend: function (xhr) {
-            xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);// eslint-disable-line
+            xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce); // eslint-disable-line
           }
         })
         .done(function () {
@@ -95,14 +131,14 @@ function updateGuestspot(imageId) {
       formData.append('caption', 'caption');
 
       $.ajax({
-        url: api_vars.root_url + 'wp/v2/media',// eslint-disable-line
+        url: api_vars.root_url + 'wp/v2/media', // eslint-disable-line
         type: 'POST',
         data: formData,
         cache: false,
         processData: false,
         contentType: false,
         beforeSend: function (xhr) {
-          xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);// eslint-disable-line
+          xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce); // eslint-disable-line
         }
       }).done(function (response) {
         uploadPost(response.id);
@@ -113,7 +149,7 @@ function updateGuestspot(imageId) {
       let data = {
         title: $('#studio-name').val(),
         'status': 'publish',
-        post_type: 'guestspot',// eslint-disable-line
+        post_type: 'guestspot', // eslint-disable-line
         studio_name: $('#studio-name').val(), // eslint-disable-line
         location: $('#location').val(),
         start_date: $('#start-date').val(), // eslint-disable-line
@@ -126,20 +162,21 @@ function updateGuestspot(imageId) {
       };
       $.ajax({
           method: 'POST',
-          url: api_vars.root_url + 'wp/v2/guestspots-api',// eslint-disable-line
+          url: api_vars.root_url + 'wp/v2/guestspots-api', // eslint-disable-line
           data: data,
           beforeSend: function (xhr) {
-            xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);// eslint-disable-line
+            xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce); // eslint-disable-line
           }
         })
         .done(function () {
-          window.location.href = api_vars.home_url + '/my-guestspots/';// eslint-disable-line
+          window.location.href = api_vars.home_url + '/my-guestspots/'; // eslint-disable-line
         })
         .fail(function () {
 
         });
     }
 
-    
+
+
   });
 })(jQuery);
