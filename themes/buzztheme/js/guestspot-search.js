@@ -91,12 +91,4 @@ function openSearch(evt, searchName) { // eslint-disable-line
   }
   document.getElementById(searchName).className += ' visible';
   evt.currentTarget.className += ' active';
-<<<<<<< HEAD
 }
-=======
-}
-
-document.getElementById('defaultOpen').click();
-
-
->>>>>>> master
