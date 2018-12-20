@@ -1,5 +1,6 @@
 (function ($) {
   $('.form-guest-search').on('submit', function (event) {
+    document.getElementById('defaultOpen').click();
     const $guestspotsContainer = $('.guestspots-container-js');
     const $guestspotsMessage = $('.guestspots-message');
     event.preventDefault();
@@ -65,12 +66,12 @@
 
 
   // Featured Artist Part
- const $widgetTitle = $('.widget-title');
- const $widgetTitleValue = $widgetTitle.text()
- const $formatWidgetTitle = $widgetTitleValue.toLowerCase();
- const $finalArtistName = $formatWidgetTitle.split(' ').join('-');
- const _href = $('.featured-artist-link').attr("href");
-$(".featured-artist-link").attr("href", _href + $finalArtistName);
+  const $widgetTitle = $('.widget-title');
+  const $widgetTitleValue = $widgetTitle.text()
+  const $formatWidgetTitle = $widgetTitleValue.toLowerCase();
+  const $finalArtistName = $formatWidgetTitle.split(' ').join('-');
+  const _href = $('.featured-artist-link').attr("href");
+  $(".featured-artist-link").attr("href", _href + $finalArtistName);
 })(jQuery);
 
 // Global search - tabs 
@@ -90,5 +91,3 @@ function openSearch(evt, searchName) { // eslint-disable-line
 }
 
 document.getElementById('defaultOpen').click();
-
-

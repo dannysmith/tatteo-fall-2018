@@ -36,7 +36,7 @@ if ($guestspots->have_posts()): ?>
     <h2>Previous Guestspots</h2>
     <div class="grid-container">
       <?php while ($guestspots->have_posts()): $guestspots->the_post();?>
-      <div id='<?php echo get_the_ID() ?>' class="guestspot">
+      <div id='<?php echo get_the_ID() ?>' class="guestspots">
         <img src=" <?php echo CFS()->get('image'); ?>" />
 
         <div class="studio-information">
