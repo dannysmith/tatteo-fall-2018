@@ -272,23 +272,20 @@
         }
 
         .single-artist {
-            display: grid;
-            @include border-bottom;
+            display: flex;
             padding-bottom: 1rem;
 
             @include tablet {
-                grid-template-rows: auto auto auto;
                 margin-top: 0;
             }
 
             @include desktop {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr;
                 margin-top: 3rem;
             }
 
             .avatar {
                 @include flex-centered;
+                width: 50%;
 
                 img {
                     @include profile-img;
@@ -296,73 +293,97 @@
                 }
 
                 @include tablet {
-                    grid-row: 2;
                     margin-bottom: 1rem;
                 }
 
                 @include desktop {
-                    grid-column: 1;
-                    grid-row: 1/3;
                     margin-bottom: 0rem;
                 }
             }
 
-            .artistname {
-                @include profile-title;
+            .artistdetails {
+                width: 50%;
+                display:flex;
+                flex-direction: column;
 
-                @include tablet {
-                    grid-row: 1;
-
-                    h2 {
-                        margin-top: 1rem;
+                .artistname {
+                    @include profile-title;
+                    order: 1;
+    
+                    @include tablet {
+    
+                        h2 {
+                            margin-top: 1rem;
+                        }
+                    }
+    
+                    @include desktop {
+                        margin-top: 2rem;
+                        max-height: 6rem;
                     }
                 }
-
-                @include desktop {
-                    grid-column: 2;
-                    margin-top: 2rem;
-                    max-height: 6rem;
+    
+                .artistdescription {
+                    display: flex;
+                    border: $border;
+                    padding: 0.5rem;
+                    order: 3;
+    
+                    @include tablet {
+                        margin-left: 1rem;
+                        margin-right: 1rem;
+                    }
+    
+                    @include desktop {
+                    }
                 }
-            }
-
-            .artistdescription {
-                border: $border;
-                padding: 0.5rem;
-
-                @include tablet {
-                    grid-row: 3;
-                    margin-left: 1rem;
-                    margin-right: 1rem;
+    
+                .socialmedia {
+                    @include profile-title;
+                    flex-direction: column;
+                    order: 2;
+        
+                    .socialmedialinks {
+                        display: flex;
+                        justify-content: left;
+                        margin-left: 1rem;
+                        ul {
+                            display: flex;
+                            flex-flow: column wrap;
+                            list-style: none;
+                            margin: 0;
+                            padding-left: 0;
+                            margin-top: 2rem;
+                            margin-bottom: 1rem;
+                            li {
+                                font-weight: bold;
+                                font-size: 1rem;
+                                margin-bottom: 0.5rem;
+                                a {
+                                    display: flex;
+                                    flex-flow: row wrap;
+                                    align-items: center;
+                                    &:link,
+                                    &:hover,
+                                    &:active,
+                                    &:focus,
+                                    &:visited {
+                                        color: black;
+                                        text-decoration: none;
+                                        font-size: 1rem;
+                                        font-weight: bold;
+                                    }
+                                }
+                                i {
+                                    font-size: 2.5rem;
+                                    margin-right: 1rem;
+                                }
+                        }
+                    }
                 }
-
-                @include desktop {
-                    grid-column: 2;
-                    grid-row: 2;
                 }
             }
         }
-
-        .instagram {
-            @include profile-title;
-            @include border-bottom;
-
-            @include tablet {
-                justify-content: center;
-            }
-
-            @include desktop {
-                justify-content: left;
-
-                h2 {
-                    margin-left: 5rem;
-                }
-            }
-
-            .grid-container {
-                @include instagram;
-            }
-        }
-
     }
 }
 
@@ -413,6 +434,53 @@
                 }
             }
 
+            .socialmedia {
+                @include profile-title;
+                flex-direction: column;
+                grid-row: 2;
+                margin-left: 4rem;
+                justify-content: flex-end;
+    
+                .socialmedialinks {
+                    display: flex;
+                    justify-content: left;
+                    margin-left: 1rem;
+                    ul {
+                        display: flex;
+                        flex-flow: column wrap;
+                        list-style: none;
+                        margin: 0;
+                        padding-left: 0;
+                        margin-top: 2rem;
+                        margin-bottom: 1rem;
+                        li {
+                            font-weight: bold;
+                            font-size: 1rem;
+                            margin-bottom: 0.5rem;
+                            a {
+                                display: flex;
+                                flex-flow: row wrap;
+                                align-items: center;
+                                &:link,
+                                &:hover,
+                                &:active,
+                                &:focus,
+                                &:visited {
+                                    color: black;
+                                    text-decoration: none;
+                                    font-size: 1rem;
+                                    font-weight: bold;
+                                }
+                            }
+                            i {
+                                font-size: 2.5rem;
+                                margin-right: 1rem;
+                            }
+                    }
+                }
+            }
+            }
+
             .studioname {
                 @include profile-title;
 
@@ -446,16 +514,13 @@
 
         .previous-guestspots {
             @include profile-title;
-            @include border-bottom;
-            display: grid;
+            display: block;
 
             @include tablet {
                 justify-content: center;
             }
 
             @include desktop {
-                grid-template-columns: 100%;
-
                 h2 {
                     justify-content: left;
                     margin-left: 5rem;
@@ -465,53 +530,32 @@
 
             .grid-container {
                 @include previous-guestspots;
-
-                @include desktop {
-                    justify-self: initial;
-                }
+                margin: 3rem;
+                grid-gap: 2.5rem;
 
                 .guestspots {
-                    display: flex;
-                    justify-content: center;
-                    font-weight: bold;
-                    font-size: 1rem;
-                }
-            }
-        }
+                    border: $border3;
+                    &:hover {
+                        border-color: black;
+                    }
 
-        .instagram {
-            @include profile-title;
-            @include border-bottom;
+                    .studio-information {
+                        font-weight: bold;
+                        font-size: 1rem;
 
-            @include tablet {
-                justify-content: center;
-            }
-
-            @include desktop {
-                justify-content: left;
-
-                h2 {
-                    margin-left: 5rem;
-                }
-            }
-
-            .grid-container {
-                @include instagram;
-            }
-        }
-
-        .studio-location {
-            @include profile-title;
-
-            @include tablet {
-                justify-content: center;
-            }
-
-            @include desktop {
-                justify-content: left;
-
-                h2 {
-                    margin-left: 5rem;
+                        a {
+                            &:link,
+                            &:hover,
+                            &:active,
+                            &:focus,
+                            &:visited {
+                                color: black;
+                                text-decoration: none;
+                                font-size: 1rem;
+                                font-weight: bold;
+                            }
+                        }
+                    }
                 }
             }
         }
