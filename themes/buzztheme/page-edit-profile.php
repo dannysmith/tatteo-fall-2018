@@ -21,7 +21,7 @@ require_once 'inc/update-profile.php';
 <?php if (!empty($_GET['validation'])): ?>
 <?php if ($_GET['validation'] == 'unknown'): ?>
 <div class="error">
-  <?php _e('An unknown error accurd, please try again or contant the website administrator', 'textdomain');?>
+  <?php _e('An unknown error occured, please try again or contant the website administrator', 'textdomain');?>
 </div>
 <?php endif;?>
 
@@ -70,7 +70,7 @@ require_once 'inc/update-profile.php';
 
         <?php
 // action hook for plugin and extra fields
-do_action('edit_user_profile', $current_user);
+do_action('edit_user_profile', wp_get_current_user());
 ?>
         <p class="form-submit">
           <?php echo $referer; ?>

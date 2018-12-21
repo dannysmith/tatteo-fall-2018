@@ -9,6 +9,7 @@
 plugins/*
 !plugins/buzz-functionality/
 !plugins/featured-artist/
+!plugins/wp-user-avatar/includes/class-wp-user-avatar.php
 # Ignore everything in "themes" except the active theme. #
 themes/*
 !themes/buzztheme/
