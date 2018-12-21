@@ -9,16 +9,10 @@ get_header();?>
 
 <div id="primary" class="content-area edit-area">
   <section class="create-guestspot-section">
-  
-
     <form method='post' class='image-upload-form'>
-    
-    
       <h1>New Guestspot</h1>
-      <img class="uploaded-image-new"/>
+      <img class="uploaded-image-new" />
       <input type='file' id='new-guespot-image-input' required>
-
-
       <?php global $current_user;
 get_currentuserinfo();?>
 
@@ -26,7 +20,7 @@ get_currentuserinfo();?>
         <input type="text" id="studio-name" value="<?php echo $current_user->user_login ?>" />
       </p>
       <p>
-        <label for="location">Location</label><br />
+        <label for="location">Current City</label><br />
         <input type="text" id="location" required />
       </p>
       <p><label for="guestspot-start">Start Date</label><br />
@@ -35,7 +29,8 @@ get_currentuserinfo();?>
       <p><label for="guestspot-finish">Finish Date </label><br />
         <input type="date" id="finish-date" required />
       </p>
-      <p>
+      <p><label for="content">Description </label><br />
+        <textarea rows="6" id="guestspot-content" ></textarea>
       </p>
       <input type='submit' name='Submit' value="Add Guestspot" class='upload-btn'>
     </form>

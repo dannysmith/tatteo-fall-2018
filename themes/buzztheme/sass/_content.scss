@@ -64,6 +64,10 @@
 		padding-bottom: 52px;
 	}
 
+	h2 {
+		word-break: break-word;
+	}
+
 	.new-guestspot {
 		border: $border;
 		@include flex-centered;
@@ -73,6 +77,7 @@
 
 		h2 {
 			font-size: 1rem;
+
 		}
 
 
@@ -98,6 +103,8 @@
 
 		img {
 			@include gs-img-mobile;
+			margin: 0;
+			border: 0;
 		}
 
 		@include tablet {
@@ -134,6 +141,12 @@
 	height: 100%;
 	display: flex;
 	justify-content: space-between;
+
+	#guestspot-content {
+		border: $border;
+		width: 90%;
+	}
+
 
 
 	.image-upload-form {
@@ -245,12 +258,10 @@
 
 
 		@include tablet {
-			width: 80%;
+			max-width: 950px;
 			margin-top: 0;
-
 			margin-top: 5px;
-			width: 80%;
-			margin-left: 71px;
+			margin-left: 60px;
 			border: 6px solid black;
 		}
 	}
@@ -261,22 +272,29 @@
 		border: $border;
 		padding: 1rem;
 		font-size: 1.5rem;
-		top: 3%;
+		top: 16%;
 		margin: 0 auto;
-		left: auto;
-		right: auto;
-		left: 77%;
+		left: 76%;
+		width: 180px;
+		word-break: break-word;
+		height: fit-content;
 
 		transform: translateX(-50%);
 
 		@include tablet {
-			top: 10%;
-			right: 0%;
-
+			top: 13%;
 			margin-top: none;
+			left: 80%;
+		}
+
+		@include desktop {
 			font-size: 2.5rem;
+			word-break: break-word;
+			width: 400px;
+			height: fit-content;
 		}
 	}
+
 
 
 
@@ -352,10 +370,14 @@
 		}
 
 	}
+
+
 }
 
 
 /* Global Search  */
+
+
 
 .tab {
 	display: flex;
@@ -364,17 +386,16 @@
 }
 
 .tab button {
-	@include text($color__text-main, 16px, $font__main);
 	cursor: pointer;
-	padding: 14px 10%;
+	padding: 12px 5%;
 	border: $border;
 	transition: 0.3s;
+
+	@mixin tablet {
+		@include text($color__text-main, 15px, $font__main);
+		padding: 12px 10%;
+	}
 }
-
-// .tab button:hover {
-// 	background-color: #ddd;
-// }
-
 
 .tabcontent {
 	display: none;
@@ -397,11 +418,26 @@
 
 
 #studio {
+	@include container;
+
 	.search-studio {
-		margin: 0 5%;
-		display: flex;
-		flex-direction: column;
-		@include text($color__text-main, 12px, $font__main);
+		@include multi-profile;
+
+		a {
+			text-decoration: none;
+			display: flex;
+			justify-self: center;
+			flex-direction: column;
+
+			img {
+				@include profile-img
+			}
+		}
+
+		p {
+			@include text($color__text-main, 18px, $font__main);
+			text-align: center;
+		}
 	}
 
 	.no-results {
@@ -424,12 +460,26 @@
 }
 
 #artist {
+	@include container;
 
 	.search-artist {
-		margin: 0 5%;
-		display: flex;
-		flex-direction: column;
-		@include text($color__text-main, 12px, $font__main);
+		@include multi-profile;
+
+		a {
+			text-decoration: none;
+			display: flex;
+			justify-self: center;
+			flex-direction: column;
+
+			img {
+				@include profile-img
+			}
+		}
+
+		p {
+			@include text($color__text-main, 18px, $font__main);
+			text-align: center;
+		}
 	}
 
 	.no-results {
@@ -481,8 +531,10 @@
 
 .active {
 	font-weight: 600;
+	background-color: rgb(0, 0, 0);
+	color: #fff;
 }
 
 .visible {
-    display: block;
+	display: block;
 }

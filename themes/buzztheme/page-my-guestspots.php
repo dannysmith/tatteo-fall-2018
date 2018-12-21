@@ -6,7 +6,6 @@
  */
 
 get_header();?>
-
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main">
     <section class="guestspot-section">
@@ -21,7 +20,7 @@ $guestspots = new WP_Query($args);?>
         <div class="studio-information">
           <a href="<?php echo get_post_permalink(get_the_ID()) ?>">
             <h2>
-              <?php echo CFS()->get('studio_name'); ?>
+              <?php echo the_title(); ?>
             </h2>
           </a>
           <p>

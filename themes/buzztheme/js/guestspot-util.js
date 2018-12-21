@@ -33,10 +33,6 @@
       } else {
         updateGuestspot($('.guestspot img').attr('id'));
       }
-
-
-
-
     });
 
     $('.cancel-guestspots').on('click', function (event) {
@@ -97,7 +93,6 @@
           beforeSend: function (xhr) {
             xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
           }
-
         })
         .done(function () {
           window.location.href = api_vars.home_url + "/my-guestspots/";
@@ -154,12 +149,13 @@
         location: $('#location').val(),
         start_date: $('#start-date').val(), // eslint-disable-line
         finish_date: $('#finish-date').val(), // eslint-disable-line
+        content: $('#guestspot-content').val(), // eslint-disable-line
         image: imageId,
         author: api_vars.user_id, // eslint-disable-line
         post_author: api_vars.user_id, // eslint-disable-line
         user_ID: api_vars.user_id // eslint-disable-line
-        // author: 30
       };
+
       $.ajax({
           method: 'POST',
           url: api_vars.root_url + 'wp/v2/guestspots-api', // eslint-disable-line
@@ -169,6 +165,7 @@
           }
         })
         .done(function () {
+
           window.location.href = api_vars.home_url + '/my-guestspots/'; // eslint-disable-line
         })
         .fail(function () {
