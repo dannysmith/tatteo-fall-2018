@@ -24,7 +24,6 @@ $args1 = array(
     'order' => 'desc',
     'number' => '6',
 );
-<<<<<<< HEAD
  $studios = get_users($args1);
  foreach ($studios as $user): ?>
     <div class="container">
@@ -47,24 +46,6 @@ $args1 = array(
 <?php if(!(count($studios) <= 6)): ?>
 	<section class="button"><button class="load-more-studios">Load more</button></section>
 <?php endif; ?>
-=======
-$studios = get_users($args1);
-foreach ($studios as $user) {
-    echo '<div class="container"><div class="studio">' .
-    '<a href="' . get_author_posts_url($user->ID) . '">'
-    . get_avatar($user->ID, 120) .
-    '</div><li>'
-    . $user->display_name .
-    '</li> <li>'
-    . $user->location .
-        '</li> </div></a>';
-}
-?>
-
-    </section>
-
-    <section class="button"><button class="load-more-studios">Load more</button></section>
->>>>>>> master
 
   </main><!-- #main -->
 </div><!-- #primary -->
