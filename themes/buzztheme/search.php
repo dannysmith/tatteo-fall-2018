@@ -116,13 +116,13 @@ $search_string = get_search_query();
 				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 				<div class="entry-meta">
-					<?php red_starter_posted_on(); ?> / <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?> / <?php red_starter_posted_by(); ?>
+					<?php red_starter_posted_on(); ?> / <?php red_starter_posted_by(); ?>
 				</div><!-- .entry-meta -->
 				<?php the_excerpt(); ?>
 					</article>
 				<?php endwhile; ?>
 				<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 		
 				<?php endif; ?>
 		
@@ -160,7 +160,7 @@ $search_string = get_search_query();
 
 
 				<?php 	if ( ! empty( $studios ) ) {
-				echo '<div class="search-artist">';
+				echo '<div class="search-studio">';
 				// loop through each author
 				foreach ( $studios as $user ) {
 					// get all the user's data
