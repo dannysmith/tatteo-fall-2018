@@ -178,3 +178,12 @@ add_action('rest_api_init', function () {
     $myProductController = new Artist_Custom_Controller();
     $myProductController->register_routes();
 });
+
+add_filter('rest_user_query', 'prefix_remove_has_published_posts_from_wp_api_user_query', 10, 2);
+
+function prefix_remove_has_published_posts_from_wp_api_user_query($prepared_args, $request)
+{
+    unset($prepared_args['has_published_posts']);
+
+    return $prepared_args;
+}
