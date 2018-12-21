@@ -32,7 +32,7 @@ foreach ($studios as $user) {
     '</div><li>'
     . $user->display_name .
     '</li> <li>'
-    . $user->user_email .
+    . $user->location .
         '</li> </div></a>';
 }
 ?>
