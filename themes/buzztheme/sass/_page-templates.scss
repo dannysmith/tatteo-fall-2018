@@ -706,11 +706,23 @@ footer {
         padding: 28px;
         width: 100vw;
 
+        h1{
+            font-size: 20px;
+            @include tablet{
+                font-size: 25px;
+            } 
+            @include desktop{
+                font-size: 35px;
+            } 
+        }
+
         article {
             @extend %guestspot-mobile;
 
             img {
                 @include gs-img-mobile;
+                margin: 0;
+                border: 0;
             }
 
             @include tablet {
@@ -719,11 +731,19 @@ footer {
 
                 img {
                     @include gs-img-tablet;
+                    left: 1px;
                 }
             }
 
             .entry-summary {
                 padding: 20px;
+                @include text($color__text-main, 15px, $font__main);
+
+                    a{
+                    text-decoration: none;
+                    color: black;
+                    
+                }
 
                 @include tablet {
                     padding: 44px;
@@ -852,13 +872,13 @@ footer {
 .filter-guestspot {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    
 
     @include tablet {
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        width: 100vw;
+        width: 100%;
         display: inline-flex;
     }
 
