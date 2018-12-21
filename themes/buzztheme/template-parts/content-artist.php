@@ -10,11 +10,12 @@
 <article class="artist-profile" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		
 	</header><!-- .entry-header -->
 
 	<section class="single-artist">
 	<div class="avatar-container">
-	<div class="avatar" style="background-image:url(<?php echo esc_url(get_avatar_url($user->ID)); ?>);"></div>
+	<div class="avatar" style="background-image:url('<?php echo esc_url(get_avatar_url($user->ID)); ?>')"></div>
 	</div>
 	<div class="artistdetails">
 	<?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));?>
