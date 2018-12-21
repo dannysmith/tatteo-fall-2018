@@ -9,7 +9,7 @@
         $.ajax({
             url: api_vars.root_url + 'wp/v2/artist_users' + '?' +
                 $.param({
-                    roles: "Artist,artist",
+                    roles: "artist",
                     page: page_number,
                     per_page: "6",
                     context: "view",
@@ -49,7 +49,7 @@
             url: api_vars.root_url + 'wp/v2/artist_users' + '?' +
                 $.param({
                     roles: "studio",
-                    page_: page_number,
+                    page: page_number,
                     per_page: "6",
                     context: "view",
                     orderby: "registered_date",

@@ -21,7 +21,7 @@ get_header();?>
 $args1 = array(
     'role' => 'studio',
     'orderby' => 'registered',
-    'order' => 'ASC',
+    'order' => 'desc',
     'number' => '6',
 );
 $studios = get_users($args1);
