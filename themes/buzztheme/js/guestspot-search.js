@@ -1,5 +1,6 @@
 (function ($) {
   $('.form-guest-search').on('submit', function (event) {
+    document.getElementById('defaultOpen').click();
     const $guestspotsContainer = $('.guestspots-container-js');
     const $guestspotsMessage = $('.guestspots-message');
     event.preventDefault();
@@ -65,30 +66,30 @@
 
 
   // Featured Artist Part
- const $widgetTitle = $('.widget-title');
- const $widgetTitleValue = $widgetTitle.text()
- const $formatWidgetTitle = $widgetTitleValue.toLowerCase();
- const $finalArtistName = $formatWidgetTitle.split(' ').join('-');
- const _href = $('.featured-artist-link').attr("href");
-$(".featured-artist-link").attr("href", _href + $finalArtistName);
+  const $widgetTitle = $('.widget-title');
+  const $widgetTitleValue = $widgetTitle.text()
+  const $formatWidgetTitle = $widgetTitleValue.toLowerCase();
+  const $finalArtistName = $formatWidgetTitle.split(' ').join('-');
+  const _href = $('.featured-artist-link').attr("href");
+  $(".featured-artist-link").attr("href", _href + $finalArtistName);
 })(jQuery);
+
+
 
 // Global search - tabs 
 
 function openSearch(evt, searchName) { // eslint-disable-line
   var i, tabcontent, tablinks;
+  // hiding all of the tab panes
   tabcontent = document.getElementsByClassName('tabcontent');
   for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = 'none';
+    tabcontent[i].className = tabcontent[i].className.replace(' visible', '');
   }
+  //taking the 'active' class off all the tab buttons
   tablinks = document.getElementsByClassName('tablinks');
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(' active', '');
   }
-  document.getElementById(searchName).style.display = 'block';
+  document.getElementById(searchName).className += ' visible';
   evt.currentTarget.className += ' active';
 }
-
-document.getElementById('defaultOpen').click();
-
-
