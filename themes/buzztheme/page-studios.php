@@ -24,6 +24,30 @@ $args1 = array(
     'order' => 'desc',
     'number' => '6',
 );
+<<<<<<< HEAD
+ $studios = get_users($args1);
+ foreach ($studios as $user): ?>
+    <div class="container">
+      <div class="studio">
+      <a href=" <?php echo get_author_posts_url($user->ID)?>">
+      <div class="avatar" style="background-image:url(<?php echo esc_url(get_avatar_url($user->ID)); ?>);"></div>
+      </a>
+      </div>
+      <li>
+      <?php echo $user->display_name ?>
+      </li> 
+      <li>
+      <?php echo $user->location ?>
+      </li> 
+      </div>
+      </a>
+       <?php endforeach ?>
+</section>
+
+<?php if(!(count($studios) <= 6)): ?>
+	<section class="button"><button class="load-more-studios">Load more</button></section>
+<?php endif; ?>
+=======
 $studios = get_users($args1);
 foreach ($studios as $user) {
     echo '<div class="container"><div class="studio">' .
@@ -40,6 +64,7 @@ foreach ($studios as $user) {
     </section>
 
     <section class="button"><button class="load-more-studios">Load more</button></section>
+>>>>>>> master
 
   </main><!-- #main -->
 </div><!-- #primary -->

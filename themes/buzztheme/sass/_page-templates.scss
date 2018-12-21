@@ -83,6 +83,23 @@
             }
         }
 
+        .guesthead {
+            margin: 10px auto;
+            margin-bottom: -50px;
+
+
+            h1 {
+                font-size: 3rem;
+                border: $border;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                padding-top: 0.5rem;
+                margin-top: 3rem;
+                font-style: italic;
+
+            }
+        }
+
         .guestspots {
             @include multi-profile;
             margin-top: 3rem;
@@ -90,7 +107,12 @@
 
             .link-guestspot {
                 height: 25rem;
-                border: $border3;
+                border: $border;
+
+                @include desktop {
+                    border: $border3;
+
+                }
 
                 &:hover {
                     border-color: black;
@@ -100,6 +122,10 @@
                     height: 100%;
                     background-size: cover;
                     background-repeat: no-repeat;
+
+                    @include tablet {
+                        min-width: 300px;
+                    }
                 }
             }
 
@@ -167,19 +193,19 @@
 }
 
 .container {
-    @include container;
-
     li {
         @include profile-list;
         margin-left: 0.5rem;
     }
 
     .studio {
-        @include profile-container;
-
-        img {
-            @include profile-img;
-
+        height: 25rem;
+        border: $border3;
+        
+        .avatar {
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
             &:hover {
                 border-color: black;
             }
@@ -215,20 +241,29 @@
 .artist-users {
     @include multi-profile;
 
-    .artist {
-        @include profile-container;
-
-        img {
-            @include profile-img;
+    .container {
+        .artist {
+            height: 25rem;
+            border: $border3;
 
             &:hover {
                 border-color: black;
             }
+
+            .avatar {
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    
+        li {
+            @include profile-list;
+            margin-left: 0.5rem;
         }
     }
 
     a {
-
         &:link,
         &:hover,
         &:active,
@@ -238,16 +273,6 @@
             text-decoration: none;
             font-size: 1rem;
         }
-    }
-}
-
-
-.container {
-    @include container;
-
-    li {
-        @include profile-list;
-        margin-left: 0.5rem;
     }
 }
 
@@ -280,76 +305,116 @@
 
             @include tablet {
                 margin-top: 0;
+                flex-direction: column;
             }
 
             @include desktop {
                 margin-top: 3rem;
+                flex-direction: initial;
             }
 
-            .avatar {
-                @include flex-centered;
-                width: 50%;
-
-                img {
-                    @include profile-img;
-                    border: $border;
-                }
+            .avatar-container {
+                height: 28em;
+                display: flex;
+                justify-content: center;
 
                 @include tablet {
-                    margin-bottom: 1rem;
+                    order: -1;
+                    width: 100%;
+                    margin-top: 2rem;
                 }
 
                 @include desktop {
-                    margin-bottom: 0rem;
+                    width: 50%;
+                    order: 0;
+                    margin-top: 0rem;
+                }
+
+                .avatar {
+                    @include flex-centered;
+                    @include profile-img;
+                    height: 100%;
+                    width: 50%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border: $border;
+
+                    @include tablet {
+                        margin-bottom: 1rem;
+                    }
+
+                    @include desktop {
+                        margin-bottom: 0rem;
+                    }
                 }
             }
 
             .artistdetails {
-                width: 50%;
+<<<<<<< HEAD
                 display:flex;
+
+                @include tablet {
+                    width: 100%;
+                    flex-direction: column;
+                }
+
+                @include desktop {
+                    width: 50%;
+                }
+
+                .artistname {
+                    @include profile-title;
+    
+                    @include tablet {
+=======
+                width: 50%;
+                display: flex;
                 flex-direction: column;
 
                 .artistname {
                     @include profile-title;
                     order: 1;
-    
+
                     @include tablet {
-    
+
+>>>>>>> master
                         h2 {
                             margin-top: 1rem;
                         }
                     }
-    
+
                     @include desktop {
                         margin-top: 2rem;
                         max-height: 6rem;
                     }
                 }
-    
+
                 .artistdescription {
                     display: flex;
                     border: $border;
                     padding: 0.5rem;
                     order: 3;
-    
+
                     @include tablet {
                         margin-left: 1rem;
                         margin-right: 1rem;
+                        justify-content: center;
                     }
-    
-                    @include desktop {
-                    }
+
+                    @include desktop {}
                 }
-    
+
                 .socialmedia {
                     @include profile-title;
                     flex-direction: column;
                     order: 2;
-        
+
                     .socialmedialinks {
                         display: flex;
                         justify-content: left;
                         margin-left: 1rem;
+
                         ul {
                             display: flex;
                             flex-flow: column wrap;
@@ -358,14 +423,17 @@
                             padding-left: 0;
                             margin-top: 2rem;
                             margin-bottom: 1rem;
+
                             li {
                                 font-weight: bold;
                                 font-size: 1rem;
                                 margin-bottom: 0.5rem;
+
                                 a {
                                     display: flex;
                                     flex-flow: row wrap;
                                     align-items: center;
+
                                     &:link,
                                     &:hover,
                                     &:active,
@@ -377,13 +445,21 @@
                                         font-weight: bold;
                                     }
                                 }
+
                                 i {
                                     font-size: 2.5rem;
                                     margin-right: 1rem;
                                 }
+                            }
+<<<<<<< HEAD
+                        }
+
+                        @include tablet {
+                            justify-content: center;
+=======
+>>>>>>> master
                         }
                     }
-                }
                 }
             }
         }
@@ -409,7 +485,7 @@
 
             @include tablet {
                 grid-template-columns: 1fr;
-                grid-template-rows: auto 1fr auto;
+                grid-template-rows: auto 1fr auto auto;
             }
 
             @include desktop {
@@ -442,12 +518,26 @@
                 flex-direction: column;
                 grid-row: 2;
                 margin-left: 4rem;
-                justify-content: flex-end;
+<<<<<<< HEAD
+
+                @include tablet {
+                    margin-left: 0;
+                    grid-row: 3;
+                }
+
+                @include desktop {
+                    grid-row: 2;
+                }
     
+=======
+                justify-content: flex-end;
+
+>>>>>>> master
                 .socialmedialinks {
                     display: flex;
                     justify-content: left;
                     margin-left: 1rem;
+
                     ul {
                         display: flex;
                         flex-flow: column wrap;
@@ -456,14 +546,17 @@
                         padding-left: 0;
                         margin-top: 2rem;
                         margin-bottom: 1rem;
+
                         li {
                             font-weight: bold;
                             font-size: 1rem;
                             margin-bottom: 0.5rem;
+
                             a {
                                 display: flex;
                                 flex-flow: row wrap;
                                 align-items: center;
+
                                 &:link,
                                 &:hover,
                                 &:active,
@@ -475,13 +568,22 @@
                                     font-weight: bold;
                                 }
                             }
+
                             i {
                                 font-size: 2.5rem;
                                 margin-right: 1rem;
                             }
+                        }
+<<<<<<< HEAD
+                    }
+
+                    @include tablet {
+                        justify-content: center;
+                        margin-left: 0;
+=======
+>>>>>>> master
                     }
                 }
-            }
             }
 
             .studioname {
@@ -500,17 +602,20 @@
             .studiodescription {
                 border: $border;
                 font-weight: bold;
-                padding: 0.5rem;
-                margin-left: 5rem;
 
                 @include tablet {
-                    grid-row: 3;
+                    grid-row: 4;
                     order: 3;
-                    margin-right: 5rem;
+                    margin-left: 7.5rem;
+                    margin-right: 7.5rem;
                 }
 
                 @include desktop {
                     grid-column: 1/2;
+                    grid-row: 3;
+                    padding: 0.5rem;
+                    margin-left: 5rem;
+                    margin-right: 0;
                 }
             }
         }
@@ -538,6 +643,7 @@
 
                 .guestspots {
                     border: $border3;
+
                     &:hover {
                         border-color: black;
                     }
@@ -547,6 +653,7 @@
                         font-size: 1rem;
 
                         a {
+
                             &:link,
                             &:hover,
                             &:active,
@@ -592,8 +699,10 @@ footer {
         grid-column: 1;
         margin-left: 20px;
         margin-bottom: 10px;
-        @include tablet{
-        margin-left: 5.5rem;}
+
+        @include tablet {
+            margin-left: 5.5rem;
+        }
 
         img {
             height: 2.4rem;
@@ -604,7 +713,8 @@ footer {
         margin-left: 20px;
         padding-left: 0;
         list-style: none;
-        @include tablet{
+
+        @include tablet {
             margin-left: 48px;
             padding-left: 40px;
         }
@@ -618,8 +728,9 @@ footer {
     .copyright {
         grid-column: 1;
         margin-left: 20px;
-        @include tablet{
-        margin-left: 5.5rem;
+
+        @include tablet {
+            margin-left: 5.5rem;
         }
     }
 
@@ -629,8 +740,9 @@ footer {
         grid-row: 2;
         justify-self: right;
         text-align: right;
-        @include tablet{
-        margin-right: 5rem;
+
+        @include tablet {
+            margin-right: 5rem;
         }
     }
 }
@@ -748,8 +860,9 @@ footer {
             padding: 5px;
             border: $border;
         }
+
         #wpua-upload-existing,
-        #wpua-undo-existing{
+        #wpua-undo-existing {
             background: none;
             margin-left: 10px;
             color: black;
@@ -757,14 +870,17 @@ footer {
             width: 80px;
             border: $border;
         }
-        #wpua-upload-button-existing{
+
+        #wpua-upload-button-existing {
             display: flex;
             justify-content: flex-start;
         }
-        #wpua-file-existing{
+
+        #wpua-file-existing {
             border: $border;
             margin-bottom: 20px;
             padding: 5px;
+
             &::-webkit-file-upload-button {
                 color: black;
                 background-repeat: no-repeat;
@@ -774,10 +890,12 @@ footer {
                 font-weight: bold;
             }
         }
-        #wpua-upload-messages-existing{
+
+        #wpua-upload-messages-existing {
             font-size: 1rem;
             margin-bottom: 0;
         }
+
         #updateuser,
         button {
             height: 3.5rem;
@@ -866,14 +984,16 @@ footer {
         padding-bottom: 0.5rem;
     }
 }
-.guestspots-message{
-    .sorry-msg{
+
+.guestspots-message {
+    .sorry-msg {
         margin-top: 50px;
         font-size: 1.1rem;
         text-align: center;
         font-weight: 600;
     }
 }
+
 .guestspots-container-js {
     @include multi-profile;
 

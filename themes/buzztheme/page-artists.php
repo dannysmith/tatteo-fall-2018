@@ -23,27 +23,29 @@ $args1 = array(
     'number' => '6',
 
 );
-$artists = get_users($args1);
+$artists = get_users($args1);?>
+<?php foreach ($artists as $user):?>
 
-foreach ($artists as $user) {
-    echo '<div class="container"><div class="artist">' .
-    '<a href="' . get_author_posts_url($user->ID) . '">'
-    . get_avatar($user->ID, 120) .
-    '</div><li>'
-    . $user->display_name .
-    '</li> <li>'
-    . $user->location .
-        '</li> </div></a>';
-}
-?>
+    <div class="container">
+      <div class="artist">
+      <a href=" <?php echo get_author_posts_url($user->ID)?>">
+      <div class="avatar" style="background-image:url(<?php echo esc_url(get_avatar_url($user->ID)); ?>);"></div>
+      </a>
+      </div>
+      <li>
+      <?php echo $user->display_name ?>
+      </li> 
+      <li>
+      <?php echo $user->location ?>
+      </li> 
+      </div>
+      </a>
+       <?php endforeach ?>
+       </section>
 
-    </section>
-
-    <section class="button <?php if (count($artists) < 6) {
-    echo 'hidden';
-}
-?>"><button class="load-more-artists">Load
-        more</button></section>
+  <?php if(!(count($artists) <= 6)): ?>
+	<section class="button"><button class="load-more-artists">Load more</button></section>
+  <?php endif; ?>
 
   </main><!-- #main -->
 </div><!-- #primary -->
