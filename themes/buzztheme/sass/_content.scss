@@ -370,6 +370,8 @@
 
 /* Global Search  */
 
+
+
 .tab {
 	display: flex;
 	justify-content: space-around;
@@ -377,11 +379,16 @@
 }
 
 .tab button {
-	@include text($color__text-main, 16px, $font__main);
+	@include text($color__text-main, 14px, $font__main);
 	cursor: pointer;
-	padding: 14px 10%;
+	padding: 12px 5%;
 	border: $border;
 	transition: 0.3s;
+
+	@mixin tablet{
+		@include text($color__text-main, 15px, $font__main);
+		padding: 12px 10%;
+	}
 }
 
 // .tab button:hover {
