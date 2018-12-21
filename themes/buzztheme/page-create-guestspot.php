@@ -30,7 +30,7 @@ get_currentuserinfo();?>
         <input type="date" id="finish-date" required />
       </p>
       <p><label for="content">Description </label><br />
-        <textarea rows="6" id="guestspot-content" required></textarea>
+        <textarea rows="6" id="guestspot-content" ></textarea>
       </p>
       <input type='submit' name='Submit' value="Add Guestspot" class='upload-btn'>
     </form>

@@ -64,6 +64,10 @@
 		padding-bottom: 52px;
 	}
 
+	h2 {
+		word-break: break-word;
+	}
+
 	.new-guestspot {
 		border: $border;
 		@include flex-centered;
@@ -73,6 +77,7 @@
 
 		h2 {
 			font-size: 1rem;
+
 		}
 
 
@@ -137,6 +142,12 @@
 	display: flex;
 	justify-content: space-between;
 
+	#guestspot-content {
+		border: $border;
+		width: 90%;
+	}
+
+
 
 	.image-upload-form {
 		display: flex;
@@ -157,19 +168,6 @@
 				width: 26%;
 				min-width: 250px;
 			}
-		}
-
-		textarea {
-			padding: 5px;
-			border: $border;
-			font-size: 1.5rem;
-			width: 80%;
-
-			@include tablet {
-				width: 60%;
-				min-width: 250px;
-			}
-
 		}
 
 		#studio-name,
@@ -277,12 +275,16 @@
 		top: 16%;
 		margin: 0 auto;
 		left: 76%;
+		width: 180px;
+		word-break: break-word;
+		height: fit-content;
 
 		transform: translateX(-50%);
 
 		@include tablet {
 			top: 13%;
 			margin-top: none;
+			left: 80%;
 		}
 
 		@include desktop {
@@ -292,6 +294,7 @@
 			height: fit-content;
 		}
 	}
+
 
 
 
@@ -367,6 +370,8 @@
 		}
 
 	}
+
+
 }
 
 
@@ -386,9 +391,9 @@
 	transition: 0.3s;
 }
 
-// .tab button:hover {
-// 	background-color: #ddd;
-// }
+.tab button:hover {
+	background-color: #ddd;
+}
 
 
 .tabcontent {
@@ -464,40 +469,4 @@
 			}
 		}
 	}
-}
-
-#posts {
-
-	.search-artist {
-		margin: 0 5%;
-		display: flex;
-		flex-direction: column;
-		@include text($color__text-main, 12px, $font__main);
-	}
-
-	.no-results {
-		display: flex;
-		justify-content: center;
-
-		.error-404 {
-			text-align: center;
-
-			.page-content {
-				margin: 0;
-
-				fieldset {
-					border: none;
-				}
-
-			}
-		}
-	}
-}
-
-.active {
-	font-weight: 600;
-}
-
-.visible {
-    display: block;
 }

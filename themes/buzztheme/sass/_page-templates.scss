@@ -83,6 +83,23 @@
             }
         }
 
+        .guesthead {
+            margin: 10px auto;
+            margin-bottom: -50px;
+
+
+            h1 {
+                font-size: 3rem;
+                border: $border;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                padding-top: 0.5rem;
+                margin-top: 3rem;
+                font-style: italic;
+
+            }
+        }
+
         .guestspots {
             @include multi-profile;
             margin-top: 3rem;
@@ -90,7 +107,12 @@
 
             .link-guestspot {
                 height: 25rem;
-                border: $border3;
+                border: $border;
+
+                @include desktop {
+                    border: $border3;
+
+                }
 
                 &:hover {
                     border-color: black;
@@ -100,6 +122,10 @@
                     height: 100%;
                     background-size: cover;
                     background-repeat: no-repeat;
+
+                    @include tablet {
+                        min-width: 300px;
+                    }
                 }
             }
 
@@ -306,50 +332,50 @@
 
             .artistdetails {
                 width: 50%;
-                display:flex;
+                display: flex;
                 flex-direction: column;
 
                 .artistname {
                     @include profile-title;
                     order: 1;
-    
+
                     @include tablet {
-    
+
                         h2 {
                             margin-top: 1rem;
                         }
                     }
-    
+
                     @include desktop {
                         margin-top: 2rem;
                         max-height: 6rem;
                     }
                 }
-    
+
                 .artistdescription {
                     display: flex;
                     border: $border;
                     padding: 0.5rem;
                     order: 3;
-    
+
                     @include tablet {
                         margin-left: 1rem;
                         margin-right: 1rem;
                     }
-    
-                    @include desktop {
-                    }
+
+                    @include desktop {}
                 }
-    
+
                 .socialmedia {
                     @include profile-title;
                     flex-direction: column;
                     order: 2;
-        
+
                     .socialmedialinks {
                         display: flex;
                         justify-content: left;
                         margin-left: 1rem;
+
                         ul {
                             display: flex;
                             flex-flow: column wrap;
@@ -358,14 +384,17 @@
                             padding-left: 0;
                             margin-top: 2rem;
                             margin-bottom: 1rem;
+
                             li {
                                 font-weight: bold;
                                 font-size: 1rem;
                                 margin-bottom: 0.5rem;
+
                                 a {
                                     display: flex;
                                     flex-flow: row wrap;
                                     align-items: center;
+
                                     &:link,
                                     &:hover,
                                     &:active,
@@ -377,13 +406,14 @@
                                         font-weight: bold;
                                     }
                                 }
+
                                 i {
                                     font-size: 2.5rem;
                                     margin-right: 1rem;
                                 }
+                            }
                         }
                     }
-                }
                 }
             }
         }
@@ -443,11 +473,12 @@
                 grid-row: 2;
                 margin-left: 4rem;
                 justify-content: flex-end;
-    
+
                 .socialmedialinks {
                     display: flex;
                     justify-content: left;
                     margin-left: 1rem;
+
                     ul {
                         display: flex;
                         flex-flow: column wrap;
@@ -456,14 +487,17 @@
                         padding-left: 0;
                         margin-top: 2rem;
                         margin-bottom: 1rem;
+
                         li {
                             font-weight: bold;
                             font-size: 1rem;
                             margin-bottom: 0.5rem;
+
                             a {
                                 display: flex;
                                 flex-flow: row wrap;
                                 align-items: center;
+
                                 &:link,
                                 &:hover,
                                 &:active,
@@ -475,13 +509,14 @@
                                     font-weight: bold;
                                 }
                             }
+
                             i {
                                 font-size: 2.5rem;
                                 margin-right: 1rem;
                             }
+                        }
                     }
                 }
-            }
             }
 
             .studioname {
@@ -538,6 +573,7 @@
 
                 .guestspots {
                     border: $border3;
+
                     &:hover {
                         border-color: black;
                     }
@@ -547,6 +583,7 @@
                         font-size: 1rem;
 
                         a {
+
                             &:link,
                             &:hover,
                             &:active,
@@ -592,8 +629,10 @@ footer {
         grid-column: 1;
         margin-left: 20px;
         margin-bottom: 10px;
-        @include tablet{
-        margin-left: 5.5rem;}
+
+        @include tablet {
+            margin-left: 5.5rem;
+        }
 
         img {
             height: 2.4rem;
@@ -604,7 +643,8 @@ footer {
         margin-left: 20px;
         padding-left: 0;
         list-style: none;
-        @include tablet{
+
+        @include tablet {
             margin-left: 48px;
             padding-left: 40px;
         }
@@ -618,8 +658,9 @@ footer {
     .copyright {
         grid-column: 1;
         margin-left: 20px;
-        @include tablet{
-        margin-left: 5.5rem;
+
+        @include tablet {
+            margin-left: 5.5rem;
         }
     }
 
@@ -629,8 +670,9 @@ footer {
         grid-row: 2;
         justify-self: right;
         text-align: right;
-        @include tablet{
-        margin-right: 5rem;
+
+        @include tablet {
+            margin-right: 5rem;
         }
     }
 }
@@ -728,8 +770,9 @@ footer {
             padding: 5px;
             border: $border;
         }
+
         #wpua-upload-existing,
-        #wpua-undo-existing{
+        #wpua-undo-existing {
             background: none;
             margin-left: 10px;
             color: black;
@@ -737,14 +780,17 @@ footer {
             width: 80px;
             border: $border;
         }
-        #wpua-upload-button-existing{
+
+        #wpua-upload-button-existing {
             display: flex;
             justify-content: flex-start;
         }
-        #wpua-file-existing{
+
+        #wpua-file-existing {
             border: $border;
             margin-bottom: 20px;
             padding: 5px;
+
             &::-webkit-file-upload-button {
                 color: black;
                 background-repeat: no-repeat;
@@ -754,10 +800,12 @@ footer {
                 font-weight: bold;
             }
         }
-        #wpua-upload-messages-existing{
+
+        #wpua-upload-messages-existing {
             font-size: 1rem;
             margin-bottom: 0;
         }
+
         #updateuser,
         button {
             height: 3.5rem;
@@ -846,14 +894,16 @@ footer {
         padding-bottom: 0.5rem;
     }
 }
-.guestspots-message{
-    .sorry-msg{
+
+.guestspots-message {
+    .sorry-msg {
         margin-top: 50px;
         font-size: 1.1rem;
         text-align: center;
         font-weight: 600;
     }
 }
+
 .guestspots-container-js {
     @include multi-profile;
 
