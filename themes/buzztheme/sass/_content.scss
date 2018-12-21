@@ -98,6 +98,8 @@
 
 		img {
 			@include gs-img-mobile;
+			margin: 0;
+			border: 0;
 		}
 
 		@include tablet {
@@ -258,12 +260,10 @@
 
 
 		@include tablet {
-			width: 80%;
+			max-width: 950px;
 			margin-top: 0;
-
 			margin-top: 5px;
-			width: 80%;
-			margin-left: 71px;
+			margin-left: 60px;
 			border: 6px solid black;
 		}
 	}
@@ -274,20 +274,22 @@
 		border: $border;
 		padding: 1rem;
 		font-size: 1.5rem;
-		top: 3%;
+		top: 16%;
 		margin: 0 auto;
-		left: auto;
-		right: auto;
-		left: 77%;
+		left: 76%;
 
 		transform: translateX(-50%);
 
 		@include tablet {
-			top: 10%;
-			right: 0%;
-
+			top: 13%;
 			margin-top: none;
+		}
+
+		@include desktop {
 			font-size: 2.5rem;
+			word-break: break-word;
+			width: 400px;
+			height: fit-content;
 		}
 	}
 
