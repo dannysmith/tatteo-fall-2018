@@ -25,6 +25,14 @@
             background-size: cover;
             height: 44rem;
             width: 100%;
+            background-position: bottom;
+
+            @include tablet {
+                background-position: center;
+
+            }
+
+
 
 
             .banner-title {
@@ -706,14 +714,16 @@ footer {
         padding: 28px;
         width: 100vw;
 
-        h1{
+        h1 {
             font-size: 20px;
-            @include tablet{
+
+            @include tablet {
                 font-size: 25px;
-            } 
-            @include desktop{
+            }
+
+            @include desktop {
                 font-size: 35px;
-            } 
+            }
         }
 
         article {
@@ -739,10 +749,10 @@ footer {
                 padding: 20px;
                 @include text($color__text-main, 15px, $font__main);
 
-                    a{
+                a {
                     text-decoration: none;
                     color: black;
-                    
+
                 }
 
                 @include tablet {
@@ -872,7 +882,7 @@ footer {
 .filter-guestspot {
     display: flex;
     flex-direction: column;
-    
+
 
     @include tablet {
         flex-direction: row;
@@ -940,6 +950,7 @@ footer {
                 height: 100%;
                 background-size: cover;
                 background-repeat: no-repeat;
+                border: $border;
             }
         }
 
