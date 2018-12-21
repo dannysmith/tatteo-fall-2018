@@ -107,7 +107,12 @@
 @mixin profile-img {
 	height: 100%;
 	width: 24rem;
-	border: $border3;
+	border: $border;
+
+	@include desktop {
+		border: $border3;
+
+	}
 }
 
 // Single Artist and Studio Pages
