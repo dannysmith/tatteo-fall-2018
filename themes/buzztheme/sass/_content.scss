@@ -64,6 +64,10 @@
 		padding-bottom: 52px;
 	}
 
+	h2 {
+		word-break: break-word;
+	}
+
 	.new-guestspot {
 		border: $border;
 		@include flex-centered;
@@ -73,6 +77,7 @@
 
 		h2 {
 			font-size: 1rem;
+
 		}
 
 
@@ -137,6 +142,12 @@
 	display: flex;
 	justify-content: space-between;
 
+	#guestspot-content {
+		border: $border;
+		width: 90%;
+	}
+
+
 
 	.image-upload-form {
 		display: flex;
@@ -157,19 +168,6 @@
 				width: 26%;
 				min-width: 250px;
 			}
-		}
-
-		textarea {
-			padding: 5px;
-			border: $border;
-			font-size: 1.5rem;
-			width: 80%;
-
-			@include tablet {
-				width: 60%;
-				min-width: 250px;
-			}
-
 		}
 
 		#studio-name,
@@ -277,12 +275,16 @@
 		top: 16%;
 		margin: 0 auto;
 		left: 76%;
+		width: 180px;
+		word-break: break-word;
+		height: fit-content;
 
 		transform: translateX(-50%);
 
 		@include tablet {
 			top: 13%;
 			margin-top: none;
+			left: 80%;
 		}
 
 		@include desktop {
@@ -292,6 +294,7 @@
 			height: fit-content;
 		}
 	}
+
 
 
 
@@ -367,6 +370,8 @@
 		}
 
 	}
+
+
 }
 
 
@@ -386,7 +391,7 @@
 	border: $border;
 	transition: 0.3s;
 
-	@mixin tablet{
+	@mixin tablet {
 		@include text($color__text-main, 15px, $font__main);
 		padding: 12px 10%;
 	}
@@ -418,20 +423,20 @@
 	.search-studio {
 		@include multi-profile;
 
-		a{
-		text-decoration: none;
-		display: flex; 
-		justify-self: center;
-		flex-direction: column;
+		a {
+			text-decoration: none;
+			display: flex;
+			justify-self: center;
+			flex-direction: column;
 
-		img{
-			@include profile-img
-		}
+			img {
+				@include profile-img
+			}
 		}
 
-		p{
-		@include text($color__text-main, 18px, $font__main);
-		text-align: center;
+		p {
+			@include text($color__text-main, 18px, $font__main);
+			text-align: center;
 		}
 	}
 
@@ -460,20 +465,20 @@
 	.search-artist {
 		@include multi-profile;
 
-		a{
-		text-decoration: none;
-		display: flex; 
-		justify-self: center;
-		flex-direction: column;
+		a {
+			text-decoration: none;
+			display: flex;
+			justify-self: center;
+			flex-direction: column;
 
-			img{
+			img {
 				@include profile-img
 			}
 		}
 
-		p{
-		@include text($color__text-main, 18px, $font__main);
-		text-align: center;
+		p {
+			@include text($color__text-main, 18px, $font__main);
+			text-align: center;
 		}
 	}
 
@@ -526,7 +531,7 @@
 
 .active {
 	font-weight: 600;
-	background-color:rgb(0, 0, 0);
+	background-color: rgb(0, 0, 0);
 	color: #fff;
 }
 
