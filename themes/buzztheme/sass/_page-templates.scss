@@ -167,19 +167,19 @@
 }
 
 .container {
-    @include container;
-
     li {
         @include profile-list;
         margin-left: 0.5rem;
     }
 
     .studio {
-        @include profile-container;
-
-        img {
-            @include profile-img;
-
+        height: 25rem;
+        border: $border3;
+        
+        .avatar {
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
             &:hover {
                 border-color: black;
             }
@@ -215,20 +215,29 @@
 .artist-users {
     @include multi-profile;
 
-    .artist {
-        @include profile-container;
-
-        img {
-            @include profile-img;
+    .container {
+        .artist {
+            height: 25rem;
+            border: $border3;
 
             &:hover {
                 border-color: black;
             }
+
+            .avatar {
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    
+        li {
+            @include profile-list;
+            margin-left: 0.5rem;
         }
     }
 
     a {
-
         &:link,
         &:hover,
         &:active,
@@ -238,16 +247,6 @@
             text-decoration: none;
             font-size: 1rem;
         }
-    }
-}
-
-
-.container {
-    @include container;
-
-    li {
-        @include profile-list;
-        margin-left: 0.5rem;
     }
 }
 
@@ -280,41 +279,67 @@
 
             @include tablet {
                 margin-top: 0;
+                flex-direction: column;
             }
 
             @include desktop {
                 margin-top: 3rem;
+                flex-direction: initial;
             }
 
-            .avatar {
-                @include flex-centered;
-                width: 50%;
-
-                img {
-                    @include profile-img;
-                    border: $border;
-                }
+            .avatar-container {
+                height: 28em;
+                display: flex;
+                justify-content: center;
 
                 @include tablet {
-                    margin-bottom: 1rem;
+                    order: -1;
+                    width: 100%;
+                    margin-top: 2rem;
                 }
 
                 @include desktop {
-                    margin-bottom: 0rem;
+                    width: 50%;
+                    order: 0;
+                    margin-top: 0rem;
+                }
+
+                .avatar {
+                    @include flex-centered;
+                    @include profile-img;
+                    height: 100%;
+                    width: 50%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border: $border;
+
+                    @include tablet {
+                        margin-bottom: 1rem;
+                    }
+
+                    @include desktop {
+                        margin-bottom: 0rem;
+                    }
                 }
             }
 
             .artistdetails {
-                width: 50%;
                 display:flex;
-                flex-direction: column;
+
+                @include tablet {
+                    width: 100%;
+                    flex-direction: column;
+                }
+
+                @include desktop {
+                    width: 50%;
+                }
 
                 .artistname {
                     @include profile-title;
-                    order: 1;
     
                     @include tablet {
-    
                         h2 {
                             margin-top: 1rem;
                         }
@@ -335,6 +360,7 @@
                     @include tablet {
                         margin-left: 1rem;
                         margin-right: 1rem;
+                        justify-content: center;
                     }
     
                     @include desktop {
@@ -381,9 +407,13 @@
                                     font-size: 2.5rem;
                                     margin-right: 1rem;
                                 }
+                            }
+                        }
+
+                        @include tablet {
+                            justify-content: center;
                         }
                     }
-                }
                 }
             }
         }
@@ -409,7 +439,7 @@
 
             @include tablet {
                 grid-template-columns: 1fr;
-                grid-template-rows: auto 1fr auto;
+                grid-template-rows: auto 1fr auto auto;
             }
 
             @include desktop {
@@ -442,7 +472,15 @@
                 flex-direction: column;
                 grid-row: 2;
                 margin-left: 4rem;
-                justify-content: flex-end;
+
+                @include tablet {
+                    margin-left: 0;
+                    grid-row: 3;
+                }
+
+                @include desktop {
+                    grid-row: 2;
+                }
     
                 .socialmedialinks {
                     display: flex;
@@ -479,9 +517,14 @@
                                 font-size: 2.5rem;
                                 margin-right: 1rem;
                             }
+                        }
+                    }
+
+                    @include tablet {
+                        justify-content: center;
+                        margin-left: 0;
                     }
                 }
-            }
             }
 
             .studioname {
@@ -500,17 +543,20 @@
             .studiodescription {
                 border: $border;
                 font-weight: bold;
-                padding: 0.5rem;
-                margin-left: 5rem;
 
                 @include tablet {
-                    grid-row: 3;
+                    grid-row: 4;
                     order: 3;
-                    margin-right: 5rem;
+                    margin-left: 7.5rem;
+                    margin-right: 7.5rem;
                 }
 
                 @include desktop {
                     grid-column: 1/2;
+                    grid-row: 3;
+                    padding: 0.5rem;
+                    margin-left: 5rem;
+                    margin-right: 0;
                 }
             }
         }
