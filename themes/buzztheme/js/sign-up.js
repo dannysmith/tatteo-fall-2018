@@ -67,7 +67,7 @@
           $('.error-message').text('Incorrect Username or password. Please try again.');
         } else {
           toHide();
-          location.reload(true);
+          location.reload(true); // Refresh current page
         }
       })
       .fail(function () {});
@@ -117,14 +117,14 @@
     toHide();
   });
 
-  function PreviewImage() {
-    var oFReader = new FileReader();
-    oFReader.readAsDataURL(document.getElementById("guespot-image").files[0]);
+  // function PreviewImage() {
+  //   var oFReader = new FileReader();
+  //   oFReader.readAsDataURL(document.getElementById("guespot-image").files[0]);
 
-    oFReader.onload = function (oFREvent) {
-        document.getElementById("guespot-image").src = oFREvent.target.result;
-    };
-};
+  //   oFReader.onload = function (oFREvent) {
+  //     document.getElementById("guespot-image").src = oFREvent.target.result;
+  //   };
+  // };
 
 
   // Sign-up submit
@@ -151,7 +151,7 @@
           $('.error-message-sign-up').css('display', 'block');
           let parser = new DOMParser();
           const htmlDoc = parser.parseFromString(response, 'text/html');
-          console.log($(htmlDoc).find('#login_error').html());// eslint-disable-line
+          console.log($(htmlDoc).find('#login_error').html()); // eslint-disable-line
           $('.error-message-sign-up').append($(htmlDoc).find('#login_error').html());
         } else {
           toHide();
@@ -159,8 +159,8 @@
         }
       })
       .fail(function (response) {
-        console.log('fail');// eslint-disable-line
-        console.log(response);// eslint-disable-line
+        console.log('fail'); // eslint-disable-line
+        console.log(response); // eslint-disable-line
       });
   });
 

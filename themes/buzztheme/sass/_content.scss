@@ -157,6 +157,19 @@
 			}
 		}
 
+		textarea {
+			padding: 5px;
+			border: $border;
+			font-size: 1.5rem;
+			width: 80%;
+
+			@include tablet {
+				width: 60%;
+				min-width: 250px;
+			}
+
+		}
+
 		#studio-name,
 		#location {
 			width: 80%;
