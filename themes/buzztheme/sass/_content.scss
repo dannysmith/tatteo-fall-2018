@@ -381,7 +381,6 @@
 }
 
 .tab button {
-	@include text($color__text-main, 14px, $font__main);
 	cursor: pointer;
 	padding: 12px 5%;
 	border: $border;
@@ -392,11 +391,6 @@
 		padding: 12px 10%;
 	}
 }
-
-// .tab button:hover {
-// 	background-color: #ddd;
-// }
-
 
 .tabcontent {
 	display: none;
@@ -419,11 +413,26 @@
 
 
 #studio {
+	@include container;
+
 	.search-studio {
-		margin: 0 5%;
-		display: flex;
+		@include multi-profile;
+
+		a{
+		text-decoration: none;
+		display: flex; 
+		justify-self: center;
 		flex-direction: column;
-		@include text($color__text-main, 12px, $font__main);
+
+		img{
+			@include profile-img
+		}
+		}
+
+		p{
+		@include text($color__text-main, 18px, $font__main);
+		text-align: center;
+		}
 	}
 
 	.no-results {
@@ -446,12 +455,26 @@
 }
 
 #artist {
+	@include container;
 
 	.search-artist {
-		margin: 0 5%;
-		display: flex;
+		@include multi-profile;
+
+		a{
+		text-decoration: none;
+		display: flex; 
+		justify-self: center;
 		flex-direction: column;
-		@include text($color__text-main, 12px, $font__main);
+
+			img{
+				@include profile-img
+			}
+		}
+
+		p{
+		@include text($color__text-main, 18px, $font__main);
+		text-align: center;
+		}
 	}
 
 	.no-results {
@@ -503,8 +526,10 @@
 
 .active {
 	font-weight: 600;
+	background-color:rgb(0, 0, 0);
+	color: #fff;
 }
 
 .visible {
-    display: block;
+	display: block;
 }

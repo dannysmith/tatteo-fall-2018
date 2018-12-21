@@ -695,6 +695,13 @@ footer {
 
             .entry-summary {
                 padding: 20px;
+                @include text($color__text-main, 15px, $font__main);
+
+                    a{
+                    text-decoration: none;
+                    color: black;
+                    
+                }
 
                 @include tablet {
                     padding: 44px;
