@@ -42,7 +42,7 @@ get_header(); ?>
                     <div class="link-guestspot">
 					<a href="<?php the_permalink(); ?>"><div class="avatar" style="background-image: url(<?php echo CFS()->get('image'); ?>);"></div></a>
                     </div>
-                <div class="">
+                	<div class="">
                    <p><?php echo get_the_title(); ?></p>
                    <p> <?php echo CFS()->get('location'); ?></p>
 				</div>

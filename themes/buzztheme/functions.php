@@ -158,7 +158,12 @@ require get_template_directory() . '/inc/extras.php';
 
 // Add a custom user role
 
-$result = add_role('artist', __('Artist'), array());
+$result = add_role('artist', __('Artist'), array(
+    'upload_files' => true,
+    'edit_attachments' => true,
+    'delete_attachments' => true,
+    'publish_attachments' => true,
+));
 
 $result = add_role('studio', __('Studio'), array(
     'publish_guestspot' => true,
@@ -179,8 +184,10 @@ add_action('admin_init', 'allow_contributor_uploads');
 
 function allow_contributor_uploads()
 {
-    $contributor = get_role('studio');
-    $contributor->add_cap('upload_files');
+    $studio = get_role('studio');
+    $studio->add_cap('upload_files');
+    $artist = get_role('artist');
+    $artist->add_cap('upload_files');
     $admin = get_role('administrator');
     $admin->add_cap('edit_guestspot');
     $admin->add_cap('edit_others_guestspot');

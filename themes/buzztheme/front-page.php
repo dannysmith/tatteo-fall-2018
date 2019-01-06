@@ -22,8 +22,11 @@ get_header();?>
 </section>
 
 <!-- need to edit this loop -->
-
+<div class="guesthead">
+   <h1>Recent guestspots</h1>
+   </div>
 <section class="guestspots">
+    
 <?php
     $loop = new WP_Query( array( 'post_type' => 'guestspot', 'order' => 'ASC', 'posts_per_page' => '6') );
     if ( $loop->have_posts() ) :

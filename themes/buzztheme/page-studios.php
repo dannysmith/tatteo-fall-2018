@@ -23,12 +23,17 @@ $args1 = array(
     'orderby' => 'registered',
     'order' => 'desc',
     'number' => '6',
-);
+);?>
+
+<?php if(!(count($studios) <= 6)): ?>
+	<section class="button"><button class="load-more-studios">Load more</button></section>
+<?php endif; 
+
 $studios = get_users($args1);
 foreach ($studios as $user) {
     echo '<div class="container"><div class="studio">' .
     '<a href="' . get_author_posts_url($user->ID) . '">'
-    . get_avatar($user->ID, 120) .
+    . get_avatar($user->ID) .
     '</div><li>'
     . $user->display_name .
     '</li> <li>'
@@ -36,10 +41,11 @@ foreach ($studios as $user) {
         '</li> </div></a>';
 }
 ?>
-
     </section>
 
-    <section class="button"><button class="load-more-studios">Load more</button></section>
+<?php //if(!(count($studios) <= 6)): ?>
+	<section class="button"><button class="load-more-studios">Load more</button></section>
+<?php// endif; ?>
 
   </main><!-- #main -->
 </div><!-- #primary -->

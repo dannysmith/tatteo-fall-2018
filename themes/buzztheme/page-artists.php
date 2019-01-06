@@ -21,36 +21,24 @@ $args1 = array(
     'orderby' => 'registered',
     'order' => 'desc',
     'number' => '6',
-
 );
-$artists = get_users($args1);?>
-
-      <?php foreach ($artists as $user): ?>
-      <div class="container">
-        <div class="artist">
-          <a href=" <?php echo get_author_posts_url($user->ID) ?>">
-            <a href='<?php echo the_permalink() ?>'>
-              <div class="avatar" style="background-image:url(<?php echo CFS()->get('image') ?>);">
-              </div>
-            </a>
-        </div>
-        <li>
-          <?php echo $user->display_name ?>
-        </li>
-        <li>
-          <?php echo $user->location ?>
-        </li>
-      </div></a>
-    </section>
-    <?php endforeach?>
-
-
-
-    <section class="button <?php if (count($artists) < 6) {
-    echo 'hidden';
+$artists = get_users($args1);
+foreach ($artists as $user) {
+    echo '<div class="container"><div class="artist">' .
+    '<a href="' . get_author_posts_url($user->ID) . '">'
+    . get_avatar($user->ID, 120) .
+    '</div><li>'
+    . $user->display_name .
+    '</li> <li>'
+    . $user->location .
+        '</li> </div></a>';
 }
-?>"><button class="load-more-artists">Load
-        more</button></section>
+?>
+    </section>
+
+    <?php// if(!(count($artists) <= 6)): ?>
+    <section class="button"><button class="load-more-artists">Load more</button></section>
+    <?php// endif; ?>
 
   </main><!-- #main -->
 </div><!-- #primary -->

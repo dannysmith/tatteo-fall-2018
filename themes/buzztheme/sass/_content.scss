@@ -64,6 +64,10 @@
 		padding-bottom: 52px;
 	}
 
+	h2 {
+		word-break: break-word;
+	}
+
 	.new-guestspot {
 		border: $border;
 		@include flex-centered;
@@ -73,6 +77,7 @@
 
 		h2 {
 			font-size: 1rem;
+
 		}
 
 
@@ -138,6 +143,12 @@
 	display: flex;
 	justify-content: space-between;
 
+	#guestspot-content {
+		border: $border;
+		width: 90%;
+	}
+
+
 
 	.image-upload-form {
 		display: flex;
@@ -156,19 +167,6 @@
 				width: 26%;
 				min-width: 250px;
 			}
-		}
-
-		textarea {
-			padding: 5px;
-			border: $border;
-			font-size: 1.5rem;
-			width: 80%;
-
-			@include tablet {
-				width: 60%;
-				min-width: 250px;
-			}
-
 		}
 
 		#studio-name,
@@ -265,95 +263,106 @@
 		font-size: 1.5rem;
 		top: 3%;
 		margin: 0 auto;
-		left: auto;
-		right: auto;
-		left: 77%;
+		left: 76%;
+		width: 180px;
+		word-break: break-word;
+		height: fit-content;
+
 		transform: translateX(-50%);
 
 		@include tablet {
-			top: 10%;
-			right: 0%;
-
+			top: 13%;
 			margin-top: none;
-			font-size: 2.5rem;
-		}
-	}
-
-	.info {
-		padding: 4% 8%;
-
-		h3 {
-			font-size: 1.4rem;
+			left: 80%;
 		}
 
-		p,
-		a {
-			margin: 0;
-			font-size: 1rem;
-		}
-
-		.with-border {
-			display: inline-block;
-			border: $border2;
-			padding: 10px;
-			margin-bottom: 2%;
-
-		}
-
-		.with-border:not(span) {
-			width: 90%;
-
-			@include tablet {
-				width: 50%;
-			}
-		}
-
-		span {
-			width: 45%;
-			font-size: 1rem;
-
-			@include tablet {
-				width: 12rem;
-			}
-
-		}
-
-
-		.first-date {
-			border-right: none;
-		}
-
-		.content {
-			height: 200px;
-		}
-
-		a {
-			display: inline-block;
-			border: $border2;
-			padding: 10px;
-			margin-right: 12px;
-			margin-top: 4%;
-			text-decoration: none;
-			color: $color__text-main;
-		}
-
-		a.get-in-touch-btn {
-			height: 4rem;
-			width: 8rem;
-			background: transparent url('../../assets/buttons/button_texture.png');
-			background-repeat: no-repeat;
-			background-size: contain;
-			border: none;
-			color: $color__text-secondary;
-			font-weight: bold;
-			text-decoration: none;
-			text-align: center;
-		}
+		margin-top: none;
+		font-size: 2.5rem;
 	}
 }
 
 
+
+
+.info {
+	padding: 4% 8%;
+
+	h3 {
+		font-size: 1.4rem;
+	}
+
+	p,
+	a {
+		margin: 0;
+		font-size: 1rem;
+	}
+
+	.with-border {
+		display: inline-block;
+		border: $border2;
+		padding: 10px;
+		margin-bottom: 2%;
+
+	}
+
+	.with-border:not(span) {
+		width: 90%;
+
+		@include tablet {
+			width: 50%;
+		}
+	}
+
+	span {
+		width: 45%;
+		font-size: 1rem;
+
+		@include tablet {
+			width: 12rem;
+		}
+
+	}
+
+
+	.first-date {
+		border-right: none;
+	}
+
+	.content {
+		height: 200px;
+	}
+
+	a {
+		display: inline-block;
+		border: $border2;
+		padding: 10px;
+		margin-right: 12px;
+		margin-top: 4%;
+		text-decoration: none;
+		color: $color__text-main;
+	}
+
+	a.get-in-touch-btn {
+		height: 4rem;
+		width: 8rem;
+		background: transparent url('../../assets/buttons/button_texture.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		border: none;
+		color: $color__text-secondary;
+		font-weight: bold;
+		text-decoration: none;
+		text-align: center;
+	}
+}
+
+
+
+
+
 /* Global Search  */
+
+
 
 .tab {
 	display: flex;
@@ -362,17 +371,16 @@
 }
 
 .tab button {
-	@include text($color__text-main, 16px, $font__main);
 	cursor: pointer;
-	padding: 14px 10%;
+	padding: 12px 5%;
 	border: $border;
 	transition: 0.3s;
+
+	@mixin tablet {
+		@include text($color__text-main, 15px, $font__main);
+		padding: 12px 10%;
+	}
 }
-
-// .tab button:hover {
-// 	background-color: #ddd;
-// }
-
 
 .tabcontent {
 	display: none;
@@ -395,11 +403,26 @@
 
 
 #studio {
+	@include container;
+
 	.search-studio {
-		margin: 0 5%;
-		display: flex;
-		flex-direction: column;
-		@include text($color__text-main, 12px, $font__main);
+		@include multi-profile;
+
+		a {
+			text-decoration: none;
+			display: flex;
+			justify-self: center;
+			flex-direction: column;
+
+			img {
+				@include profile-img
+			}
+		}
+
+		p {
+			@include text($color__text-main, 18px, $font__main);
+			text-align: center;
+		}
 	}
 
 	.no-results {
@@ -422,12 +445,26 @@
 }
 
 #artist {
+	@include container;
 
 	.search-artist {
-		margin: 0 5%;
-		display: flex;
-		flex-direction: column;
-		@include text($color__text-main, 12px, $font__main);
+		@include multi-profile;
+
+		a {
+			text-decoration: none;
+			display: flex;
+			justify-self: center;
+			flex-direction: column;
+
+			img {
+				@include profile-img
+			}
+		}
+
+		p {
+			@include text($color__text-main, 18px, $font__main);
+			text-align: center;
+		}
 	}
 
 	.no-results {
@@ -479,6 +516,8 @@
 
 .active {
 	font-weight: 600;
+	background-color: rgb(0, 0, 0);
+	color: #fff;
 }
 
 .visible {

@@ -1,6 +1,5 @@
 (function ($) {
   $('.form-guest-search').on('submit', function (event) {
-    document.getElementById('defaultOpen').click();
     const $guestspotsContainer = $('.guestspots-container-js');
     const $guestspotsMessage = $('.guestspots-message');
     event.preventDefault();
