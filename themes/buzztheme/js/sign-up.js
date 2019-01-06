@@ -10,7 +10,6 @@
     $('.error-message').css('display', 'none');
     $('.error-message').empty();
     $('.error-message-sign-up').empty();
-
   }
 
   $(document).on('keydown', this, function (e) {
@@ -23,7 +22,6 @@
 
   // Showing login form 
   $('.login-here').on('click', function (event) {
-    alert('test');
     event.preventDefault();
     toHide();
     $('.overlay').css('display', 'block');
@@ -43,13 +41,6 @@
   // Log in submit
   $('.login-form').on('submit', function (event) {
     event.preventDefault();
-    // let data = {
-    //   log: $('.user-name').val(),
-    //   pwd: $('.user-password').val(),
-    //   rememberme: 'forever',
-    //   'wp-submit': 'Log In',
-    //   testcookie: 1
-    // };
     $.ajax({
         url: api_vars.home_url + '/wp-login.php', // eslint-disable-line
         method: 'POST',
@@ -87,7 +78,6 @@
     'studio': 'studio'
   }
 
-
   // chosing studio role
   $('.studio-role').on('click', function (event) {
     event.preventDefault();
@@ -117,33 +107,28 @@
     toHide();
   });
 
-  // function PreviewImage() {
-  //   var oFReader = new FileReader();
-  //   oFReader.readAsDataURL(document.getElementById("guespot-image").files[0]);
-
-  //   oFReader.onload = function (oFREvent) {
-  //     document.getElementById("guespot-image").src = oFREvent.target.result;
-  //   };
-  // };
-
-
   // Sign-up submit
   $('.register-form').on('submit', function (event) {
     event.preventDefault();
-
     let data = {
       user_email: $('.new-user-email').val(), // eslint-disable-line
       user_login: $('.new-user-name').val(), // eslint-disable-line
-      pass1: $('.new-user-password').val(),
+      password: $('.new-user-password').val(),
       location: $('.new-user-location').val(),
       description: $('.new-user-description').val(),
       role: role
     };
+
+
     $.ajax({
-        url: api_vars.home_url + '/wp-login.php?action=register', // eslint-disable-line
+        url: api_vars.home_url + '/signup/',
         method: 'POST',
         data: data,
+        beforeSend: function (xhr) {
+          xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
+        }
       })
+
       .done(function (response) {
         console.log(response);
         if ($(response).text().includes('ERROR')) {

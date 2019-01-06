@@ -105,10 +105,14 @@
 			@include gs-img-mobile;
 			margin: 0;
 			border: 0;
+			width: auto;
+			object-fit: fill;
+			object-position: top;
+			border-bottom: $border;
 		}
 
 		@include tablet {
-			height: 288px;
+			height: 360px;
 			flex-direction: row;
 
 			img {
@@ -127,16 +131,13 @@
 
 			@include tablet {
 				padding: 44px;
-
 			}
 		}
 	}
 }
 
 // Create new guestpot page
-
 .create-guestspot-section {
-	// padding: 28px;
 	width: auto;
 	height: 100%;
 	display: flex;
@@ -155,8 +156,6 @@
 		font-size: 1.5em;
 		width: 80%;
 		margin-left: 5%;
-
-
 
 		input:not([type="file"]):not([type="submit"]) {
 			padding: 5px;
@@ -180,7 +179,6 @@
 			}
 		}
 
-
 		::-webkit-file-upload-button {
 			height: 3.5rem;
 			width: 7.5rem;
@@ -191,7 +189,6 @@
 			color: $color__text-secondary;
 			font-weight: bold;
 		}
-
 
 		.upload-btn {
 			height: 3.5rem;
@@ -213,7 +210,6 @@
 		height: 100%;
 		display: none;
 
-
 		@include tablet {
 			display: block;
 			border-left: $border;
@@ -228,22 +224,17 @@
 		}
 	}
 
-
-
 	label {
 		font-family: $font__main;
 		font-weight: bold;
 		display: inline-block;
 		margin-bottom: 0.5rem;
-
 	}
-
 }
 
 // Single Guestspot
 .guestspot {
 	width: 100%;
-
 
 	img {
 		margin-top: 8%;
@@ -254,14 +245,12 @@
 		margin-left: 30px;
 		border: 6px solid black;
 
-
-
-
 		@include tablet {
-			max-width: 950px;
-			margin-top: 0;
+			width: 80%;
+			// margin-top: 0;
 			margin-top: 5px;
-			margin-left: 60px;
+			width: 80%;
+			margin-left: 71px;
 			border: 6px solid black;
 		}
 	}
@@ -272,7 +261,7 @@
 		border: $border;
 		padding: 1rem;
 		font-size: 1.5rem;
-		top: 16%;
+		top: 3%;
 		margin: 0 auto;
 		left: 76%;
 		width: 180px;
@@ -287,97 +276,84 @@
 			left: 80%;
 		}
 
-		@include desktop {
-			font-size: 2.5rem;
-			word-break: break-word;
-			width: 400px;
-			height: fit-content;
-		}
+		margin-top: none;
+		font-size: 2.5rem;
 	}
-
-
-
-
-	.info {
-		padding: 4% 8%;
-
-		h3 {
-			font-size: 1.4rem;
-		}
-
-		p,
-		a {
-			margin: 0;
-			font-size: 1rem;
-		}
-
-		.with-border {
-			display: inline-block;
-			border: $border2;
-			padding: 10px;
-			margin-bottom: 2%;
-
-		}
-
-		.with-border:not(span) {
-			width: 90%;
-
-			@include tablet {
-				width: 50%;
-			}
-		}
-
-		span {
-			width: 45%;
-			font-size: 1rem;
-
-			@include tablet {
-				width: 12rem;
-			}
-
-		}
-
-
-		.first-date {
-			border-right: none;
-		}
-
-		.content {
-			height: 200px;
-		}
-
-		a {
-			display: inline-block;
-			border: $border2;
-			padding: 10px;
-			margin-right: 12px;
-			margin-top: 4%;
-			text-decoration: none;
-			color: $color__text-main;
-		}
-
-		a.get-in-touch-btn {
-			height: 4rem;
-			width: 8rem;
-			background: transparent url('../../assets/buttons/button_texture.png');
-			background-repeat: no-repeat;
-			background-size: contain;
-			border: none;
-			color: $color__text-secondary;
-			font-weight: bold;
-			text-decoration: none;
-			text-align: center;
-		}
-
-	}
-
-
 }
 
+.info {
+	padding: 4% 8%;
+
+	h3 {
+		font-size: 1.4rem;
+	}
+
+	p,
+	a {
+		margin: 0;
+		font-size: 1rem;
+	}
+
+	.with-border {
+		display: inline-block;
+		border: $border2;
+		padding: 10px;
+		margin-bottom: 2%;
+
+	}
+
+	.with-border:not(span) {
+		width: 90%;
+
+		@include tablet {
+			width: 50%;
+		}
+	}
+
+	span {
+		width: 45%;
+		font-size: 1rem;
+
+		@include tablet {
+			width: 12rem;
+		}
+
+	}
+
+
+	.first-date {
+		border-right: none;
+	}
+
+	.content {
+		height: 200px;
+	}
+
+	a {
+		display: inline-block;
+		border: $border2;
+		padding: 10px;
+		margin-right: 12px;
+		margin-top: 4%;
+		text-decoration: none;
+		color: $color__text-main;
+	}
+
+	a.get-in-touch-btn {
+		height: 4rem;
+		width: 8rem;
+		background: transparent url('../../assets/buttons/button_texture.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		border: none;
+		color: $color__text-secondary;
+		font-weight: bold;
+		text-decoration: none;
+		text-align: center;
+	}
+}
 
 /* Global Search  */
-
-
 
 .tab {
 	display: flex;

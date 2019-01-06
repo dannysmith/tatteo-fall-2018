@@ -15,7 +15,7 @@ get_header();?>
     </section>
     <section class="artist-users">
 
-    <?php
+      <?php
 $args1 = array(
     'role' => 'artist',
     'orderby' => 'registered',
@@ -34,11 +34,11 @@ foreach ($artists as $user) {
         '</li> </div></a>';
 }
 ?>
-       </section>
+    </section>
 
-  <?php// if(!(count($artists) <= 6)): ?>
-	<section class="button"><button class="load-more-artists">Load more</button></section>
-  <?php// endif; ?>
+    <?php// if(!(count($artists) <= 6)): ?>
+    <section class="button"><button class="load-more-artists">Load more</button></section>
+    <?php// endif; ?>
 
   </main><!-- #main -->
 </div><!-- #primary -->

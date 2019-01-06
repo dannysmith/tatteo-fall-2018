@@ -69,7 +69,7 @@
           <input type="text" class="new-user-email" required />
           <label>Password</label>
           <input type="password" class="new-user-password" required />
-          <label>Location</label>
+          <label>Current City</label>
           <input type="text" class="new-user-location" />
           <label>Description</label>
           <textarea type="text" rows="6" class="new-user-description"></textarea>
