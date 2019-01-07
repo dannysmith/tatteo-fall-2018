@@ -7,40 +7,60 @@
 
 ?>
 
-<article class="studio-profile" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+<article class="studio-profile" id="post-<?php the_ID();?>" <?php post_class();?>>
+  <header class="entry-header">
+    <?php the_title('<h1 class="entry-title">', '</h1>');?>
+  </header><!-- .entry-header -->
 
-	<section class="single-studio">
-	<?php
-    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-    ?>
-	<div class="avatar"><?php echo get_avatar($user->ID, 120)?></div>
-	<div class="studioname"><h2><?php echo $curauth->nickname; ?></h2></div>
-	<?php if(!empty($curauth->facebook&&$curauth->instagram)) { ?>
-		<div class="socialmedia">
-		<div class="socialmedialinks">
-		<ul>
-		<li><a href="https://www.instagram.com/<?php echo $curauth->instagram ?>"><i class="fa fa-instagram"></i><?php echo $curauth->instagram ?></a></li>
-		<li><a href="https://www.facebook.com/<?php echo $curauth->facebook ?>"><i class="fa fa-facebook"></i><?php echo $curauth->facebook ?></a></li>
-		</ul>
-		</div>
-		</div>
-	<?php } else { ?>
-		<div class="socialmedia" <?php echo 'hidden'; ?>></div>
-	<?php } ?>
-	<?php if(!empty($curauth->user_description)) { ?>
-		<div class="studiodescription"><p><?php echo $curauth->user_description; ?></p></div>
-	<?php } else { ?>
-		<div class="studiodescription" <?php echo 'hidden'; ?>></div>
-	<?php } ?>
-	</section>
+  <section class="single-studio">
+    <?php
+$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 
-	<section class="previous-guestspots">
+function scrapeImage($text)
+{
+    $pattern = '/src=[\'"]?([^\'" >]+)[\'" >]/';
+    preg_match($pattern, $text, $link);
+    $link = $link[1];
+    $link = urldecode($link);
+    return $link;
+}
+?>
+    <div class="avatar" style="background-image:url('<?php echo scrapeImage(get_wp_user_avatar($user_info->ID)); ?>')"></div>
+
+    <div class="studioname">
+      <h2>
+        <?php echo $curauth->nickname; ?>
+      </h2>
+    </div>
+    <?php if (!empty($curauth->facebook && $curauth->instagram)) {?>
+    <div class="socialmedia">
+      <div class="socialmedialinks">
+        <ul>
+          <li><a href="https://www.instagram.com/<?php echo $curauth->instagram ?>"><i class="fa fa-instagram"></i>
+              <?php echo $curauth->instagram ?></a></li>
+          <li><a href="https://www.facebook.com/<?php echo $curauth->facebook ?>"><i class="fa fa-facebook"></i>
+              <?php echo $curauth->facebook ?></a></li>
+        </ul>
+      </div>
+    </div>
+    <?php } else {?>
+    <div class="socialmedia" <?php echo 'hidden' ; ?>></div>
+    <?php }?>
+    <?php if (!empty($curauth->user_description)) {?>
+    <div class="studiodescription">
+      <p>
+        <?php echo $curauth->user_description; ?>
+      </p>
+    </div>
+    <?php } else {?>
+    <div class="studiodescription" <?php echo 'hidden' ; ?>></div>
+    <?php }?>
+  </section>
+
+  <section class="previous-guestspots">
     <?php $args = array('post_type' => 'guestspot', 'author' => $curauth->ID, 'order' => 'ASC', 'posts_per_page' => '3');
-	$guestspots = new WP_Query($args);
-	if ($guestspots->have_posts()): ?>
+$guestspots = new WP_Query($args);
+if ($guestspots->have_posts()): ?>
     <h2>Previous Guestspots</h2>
     <div class="grid-container">
       <?php while ($guestspots->have_posts()): $guestspots->the_post();?>
@@ -57,14 +77,15 @@
             <?php echo CFS()->get('location'); ?>
           </p>
           <p>
-			<?php get_currentuserinfo(); ?>
-			<a href="https://www.instagram.com/<?php echo $curauth->instagram ?>"><?php echo $curauth->instagram ?></a>
+            <?php get_currentuserinfo();?>
+            <a href="https://www.instagram.com/<?php echo $curauth->instagram ?>">
+              <?php echo $curauth->instagram ?></a>
           </p>
         </div>
 
-    </div>
-    <?php endwhile;?>
-    <?php endif;
+      </div>
+      <?php endwhile;?>
+      <?php endif;
 wp_reset_postdata();
 ?>
     </div>
