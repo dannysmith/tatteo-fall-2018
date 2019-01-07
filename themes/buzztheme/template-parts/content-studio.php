@@ -16,16 +16,17 @@
     <?php
 $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 
-function scrapeImage($text)
-{
-    $pattern = '/src=[\'"]?([^\'" >]+)[\'" >]/';
-    preg_match($pattern, $text, $link);
-    $link = $link[1];
-    $link = urldecode($link);
-    return $link;
-}
+// function scrapeImage($text)
+// {
+//     $pattern = '/src=[\'"]?([^\'" >]+)[\'" >]/';
+//     preg_match($pattern, $text, $link);
+//     $link = $link[1];
+//     $link = urldecode($link);
+//     return $link;
+// }
+// scrapeImage(get_wp_user_avatar($user_info->ID));
 ?>
-    <div class="avatar" style="background-image:url('<?php echo scrapeImage(get_wp_user_avatar($user_info->ID)); ?>')"></div>
+    <?php echo get_wp_user_avatar($user_info->ID) ?>
 
     <div class="studioname">
       <h2>
