@@ -18,7 +18,7 @@ get_header(); ?>
 		</div>
 		<div class="date-div">
 			<h3>Dates</h3>
-			<input id="start-date" type="date" value="2018-12-21"><input id="finish-date" type="date" value="2018-12-21">
+			<input id="start-date" type="date"><input id="finish-date" type="date">
 		</div>
 		<button>Search</button>
 			</form>
