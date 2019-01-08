@@ -3,58 +3,84 @@
     const $guestspotsContainer = $('.guestspots-container-js');
     const $guestspotsMessage = $('.guestspots-message');
     event.preventDefault();
-    let data = {
-      location: $('#location').val(),
-      startDate: $('#start-date').val(),
-      finishDate: $('#finish-date').val(),
-    }
-    let locationLow = data.location.toLowerCase();
-    let startDateChoosen = new Date(data.startDate);
-    let finishDateChoosen = new Date(data.finishDate);
+
+    const searchLocation = $('#location').val().toLowerCase();
+    const searchStartDate = $('#start-date').val();
+    const searchFinishDate = $('#finish-date').val();
+
+    let startDateChoosen = searchStartDate == "" ? null : new Date(searchStartDate);
+    let finishDateChoosen = searchFinishDate == "" ? null : new Date(searchFinishDate);
     $.ajax({
         method: 'GET',
         url: api_vars.root_url + 'wp/v2/guestspots-api', // eslint-disable-line
-        data: data,
+        // data: data,
         beforeSend: function (xhr) {
           xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce); // eslint-disable-line
         }
       })
       .done(function (response) {
-        event.preventDefault();
+        // event.preventDefault();
         $guestspotsContainer.empty();
         $guestspotsMessage.empty();
-        let j = 0;
-        for (let i = 0; i < response.length; i++) {
-          let locationJson = response[i].location.toLowerCase();
-          let startDateJson = new Date(response[i].start_date);
-          let finishDateJson = new Date(response[i].finish_date);
-          let image = response[i].image;
-          let title = response[i].title.rendered;
-          let link = response[i].link;
-          let objectLocation = response[i].location
-          if (locationJson.includes(locationLow)) {
-            if (startDateChoosen >= startDateJson && finishDateChoosen <= finishDateJson) {
-              $guestspotsMessage.html(`<div class='guestspot-after-search'>
-                                            <div class='guest-container-search'>
-                                            <img src='${image}' />
-                                            <div class='studio-information'>
-                                              <a href='${link}'>
-                                              <h2>${title}</h2>
-                                              </a>
-                                              <p>${objectLocation}</p>
-                                            </div>
-                                            </div>
-                                        </div>`)
-            } else {
-              $guestspotsMessage.html('<p class="sorry-msg">Sorry, no guestspots currently available for these dates..</p>');
-            }
-          } else {
-            j++;
+        let filteredGuestspots = [];
 
+        response.forEach(guestspot => {
+
+          let guestspotLocation = guestspot.location;
+
+          if ((searchLocation != '') && (!guestspotLocation.toLowerCase().includes(searchLocation))) {
+            return;
           }
-          if (j == response.length) {
-            $guestspotsMessage.html('<p class="sorry-msg">Sorry, no guestspots currently available in this location..</p>');
+
+          let guestspotFinishDate = new Date(guestspot.finish_date);
+          if (startDateChoosen !== null && startDateChoosen > guestspotFinishDate) {
+            return;
           }
+          let guestspotStartDate = new Date(guestspot.start_date);
+          if (finishDateChoosen !== null && finishDateChoosen < guestspotStartDate) {
+            return;
+          }
+          filteredGuestspots.push(guestspot);
+        });
+
+        filteredGuestspots.forEach(guestspot => {
+          let guestspotLocation = guestspot.location;
+          if ((searchLocation != '') && (!guestspotLocation.toLowerCase().includes(searchLocation))) {
+            return;
+          }
+          let image = guestspot.image;
+          let title = guestspot.title.rendered;
+          let link = guestspot.link;
+          $guestspotsMessage.append(`<div class='guestspot-after-search'>
+                                              <div class='guest-container-search'>
+                                              <img src='${image}' />
+                                              <div class='studio-information'>
+                                                <a href='${link}'>
+                                                <h2>${title}</h2>
+                                                </a>
+                                                <p>${guestspotLocation}</p>
+                                              </div>
+                                              </div>
+                                        </div>`);
+        });
+
+        if (filteredGuestspots.length == 0) {
+          let errorMessage = "";
+
+          if (searchLocation !== "") {
+            if (searchStartDate !== "" || searchFinishDate !== "") {
+              errorMessage = "Sorry, no guestspots currently available for these dates and/or in this location.";
+            } else { //if (searchStartDate === "" && searchFinishDate === "")
+              errorMessage = "Sorry, no guestspots currently available in this location.";
+            }
+          } else { //  if (searchLocation === "")
+            if (searchStartDate !== "" || searchFinishDate !== "") {
+              errorMessage = "Sorry, no guestspots currently available for these dates.";
+            } else {
+              errorMessage = "Sorry, no guestspots currently available.";
+            }
+          }
+          $guestspotsMessage.html(`<p class="sorry-msg">${errorMessage}</p>`);
         }
       })
       .fail(function () {
