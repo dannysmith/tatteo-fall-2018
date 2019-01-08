@@ -499,12 +499,15 @@
                 height: auto !important;
                 margin: 0 !important;
 
+                @include mobile {
+                    margin: 0 auto !important;
+                }
+
                 @include tablet {
                     grid-row: 2;
                     // order: 2;
                     height: 20rem;
-                    margin: 0 auto;
-                    margin-bottom: 2.5rem;
+                    margin: 0 auto !important;
                 }
 
                 @include desktop {
@@ -584,6 +587,11 @@
                 }
 
                 @include profile-title;
+
+                @include mobile {
+                    grid-row: 1;
+                    order: 1;
+                }
 
                 @include tablet {
                     grid-row: 1;
